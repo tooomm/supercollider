@@ -1841,13 +1841,6 @@ bool parseOneClass(PyrSymbol *fileSym)
 	return res;
 }
 
-//void ClearLibMenu();
-
-void aboutToFreeRuntime();
-void aboutToFreeRuntime()
-{
-	//ClearLibMenu();
-}
 
 //void init_graph_compile();
 //void tellPlugInsAboutToCompile();
@@ -1855,7 +1848,6 @@ void aboutToFreeRuntime()
 void initPassOne()
 {
 	post("initPassOne started\n");
-	aboutToFreeRuntime();
 
 	//dump_pool_histo(pyr_pool_runtime);
 	pyr_pool_runtime->FreeAllInternal();
