@@ -1846,9 +1846,7 @@ void initPassOne()
 {
 	post("initPassOne started\n");
 
-	//dump_pool_histo(pyr_pool_runtime);
 	pyr_pool_runtime->FreeAllInternal();
-	//dump_pool_histo(pyr_pool_runtime);
 	//gPermanentObjPool.Init(pyr_pool_runtime, PERMOBJCHUNK);
 	sClassExtFiles = 0;
 
