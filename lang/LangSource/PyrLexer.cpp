@@ -891,7 +891,7 @@ leave:
 	yytext[yylen] = 0;
 
 	if (gDebugLexer) postfl("yylex: %d  '%s'\n",r,yytext);
-	//if (lexCmdLine>0) postfl("yylex: %d  '%s'\n",r,yytext);
+
 	return r;
 }
 
