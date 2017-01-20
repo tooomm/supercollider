@@ -73,8 +73,6 @@ int yyparse();
 int processaccidental1(char *s);
 int processaccidental2(char *s);
 
-
-extern bool gFullyFunctional;
 double compileStartTime;
 int gNumCompiledFiles;
 /*
