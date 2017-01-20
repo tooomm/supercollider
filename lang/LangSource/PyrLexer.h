@@ -112,13 +112,10 @@ extern bool compiledOK;
 extern int gNumCompiledFiles;
 extern int gClassCompileOrderNum;
 extern ClassDependancy **gClassCompileOrder;
-extern char curfilename[PATH_MAX];
 
 extern int runcount;
 
 extern const char *binopchars;
-extern char yytext[MAXYYLEN];
-extern char curfilename[PATH_MAX];
 
 extern int yylen;
 extern int lexCmdLine;
