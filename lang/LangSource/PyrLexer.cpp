@@ -262,8 +262,6 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 
 void startLexerCmdLine(char *textbuf, int textbuflen)
 {
-	// pyrmalloc:
-	// lifetime: kill after compile. (this one gets killed anyway)
 	text = (char*)pyr_pool_compile->Alloc((textbuflen+2) * sizeof(char));
 	MEMFAIL(text);
 	memcpy(text, textbuf, textbuflen);
