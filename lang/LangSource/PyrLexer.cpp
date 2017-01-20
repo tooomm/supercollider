@@ -1847,7 +1847,7 @@ void initPassOne()
 	post("initPassOne started\n");
 
 	pyr_pool_runtime->FreeAllInternal();
-	//gPermanentObjPool.Init(pyr_pool_runtime, PERMOBJCHUNK);
+
 	sClassExtFiles = 0;
 
 	void *ptr = pyr_pool_runtime->Alloc(sizeof(SymbolTable));
