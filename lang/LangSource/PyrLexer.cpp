@@ -239,8 +239,8 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 	if(!fileSym->u.source) {
 		if (!getFileText(filename, &text, &textlen))
 			return false;
-		fileSym->u.source = text;
 		rtf2txt(text);
+		fileSym->u.source = text;
 	}
 	else
 		text = fileSym->u.source;
