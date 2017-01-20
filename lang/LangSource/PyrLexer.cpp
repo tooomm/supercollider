@@ -270,7 +270,7 @@ void startLexerCmdLine(char *textbuf, int textbuflen)
 	MEMFAIL(text);
 	memcpy(text, textbuf, textbuflen);
 	text[textbuflen] = ' ';
-	text[textbuflen+1] = 0;
+	text[textbuflen+1] = '\0';
 	textlen = textbuflen + 1;
 
 	rtf2txt(text);
