@@ -211,6 +211,24 @@ static bool getFileText(char* filename, char **text, int *length)
 	return true;
 }
 
+void initLexerGlobals() {
+	initLongStack(&brackets);
+	initLongStack(&closedFuncCharNo);
+	initLongStack(&generatorStack);
+	lastClosedFuncCharNo = 0;
+	textpos = 0;
+	linepos = 0;
+	lineno = 1;
+	charno = 0;
+	yylen = 0;
+	zzval = 0;
+	parseFailed = 0;
+	maxlinestarts = 1000;
+	linestarts = (int*)pyr_pool_compile->Alloc(maxlinestarts * sizeof(int*));
+	linestarts[0] = 0;
+	linestarts[1] = 0;
+}
+
 bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 {
 	char *filename = fileSym->name;
@@ -238,24 +256,10 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 	if(startPos > 0) errCharPosOffset = startPos;
 	else errCharPosOffset = 0;
 
-	initLongStack(&brackets);
-	initLongStack(&closedFuncCharNo);
-	initLongStack(&generatorStack);
-	lastClosedFuncCharNo = 0;
-	textpos = 0;
-	linepos = 0;
-	lineno = 1;
-	charno = 0;
+	initLexerGlobals();
 
-	yylen = 0;
-	zzval = 0;
-	parseFailed = 0;
 	lexCmdLine = 0;
 	strcpy(curfilename, filename);
-	maxlinestarts = 1000;
-	linestarts = (int*)pyr_pool_compile->Alloc(maxlinestarts * sizeof(int*));
-	linestarts[0] = 0;
-	linestarts[1] = 0;
 
 	return true;
 }
@@ -271,24 +275,10 @@ void startLexerCmdLine(char *textbuf, int textbuflen)
 
 	rtf2txt(text);
 
-	initLongStack(&brackets);
-	initLongStack(&closedFuncCharNo);
-	initLongStack(&generatorStack);
-	lastClosedFuncCharNo = 0;
-	textpos = 0;
-	linepos = 0;
-	lineno = 1;
-	charno = 0;
+	initLexerGlobals();
 
-	yylen = 0;
-	zzval = 0;
-	parseFailed = 0;
 	lexCmdLine = 1;
 	strcpy(curfilename, "selected text");
-	maxlinestarts = 1000;
-	linestarts = (int*)pyr_pool_compile->Alloc(maxlinestarts * sizeof(int*));
-	linestarts[0] = 0;
-	linestarts[1] = 0;
 
 	errLineOffset = 0;
 	errCharPosOffset = 0;
