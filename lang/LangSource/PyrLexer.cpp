@@ -69,9 +69,9 @@
 #include "SC_DirUtils.h"
 #include "SC_TextUtils.hpp"
 
-int yyparse(); // this should be removed once the new Bison header file is added
-int processaccidental1(char *s); // move into header
-int processaccidental2(char *s); // move into header
+int yyparse();
+int processaccidental1(char *s);
+int processaccidental2(char *s);
 
 double compileStartTime;
 int gNumCompiledFiles;
