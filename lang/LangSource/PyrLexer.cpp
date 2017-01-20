@@ -211,10 +211,6 @@ static bool getFileText(char* filename, char **text, int *length)
 	return true;
 }
 
-
-int bugctr = 0;
-
-
 bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 {
 	char *filename = fileSym->name;
