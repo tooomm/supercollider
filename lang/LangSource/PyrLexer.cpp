@@ -1851,7 +1851,6 @@ void aboutToFreeRuntime()
 
 //void init_graph_compile();
 //void tellPlugInsAboutToCompile();
-void pyrmath_init_globs();
 
 void initPassOne()
 {
@@ -1868,8 +1867,6 @@ void initPassOne()
 	gMainVMGlobals->symbolTable  = new (ptr) SymbolTable(pyr_pool_runtime, 65536);
 
 	//gFileSymbolTable = newSymbolTable(512);
-
-	pyrmath_init_globs();
 
 	initSymbols(); // initialize symbol globals
 	//init_graph_compile();
