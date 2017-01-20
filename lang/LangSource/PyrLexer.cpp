@@ -292,11 +292,6 @@ void finiLexer()
 	freeLongStack(&generatorStack);
 }
 
-void initLexer()
-{
-	//strcpy(binopchars, "!@%&*-+=|:<>?/");
-}
-
 int input()
 {
 	int c;
@@ -1885,7 +1880,6 @@ void initPassOne()
 	initParseNodes();
 	initPrimitives();
 	//tellPlugInsAboutToCompile();
-	initLexer();
 	compileErrors = 0;
 	numClassDeps = 0;
 	compiledOK = false;
