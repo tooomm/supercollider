@@ -205,7 +205,6 @@ static bool getFileText(char* filename, char **text, int *length)
 		return false;
 	}
 	ltext[llength] = 0;
-	//ltext[llength] = 0;
 	*length = llength;
 	fclose(file);
 	*text = ltext;
