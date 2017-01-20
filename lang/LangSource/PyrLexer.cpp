@@ -75,9 +75,6 @@ int processaccidental2(char *s);
 
 double compileStartTime;
 int gNumCompiledFiles;
-/*
-thisProcess.interpreter.executeFile("Macintosh HD:score").size.postln;
-*/
 
 PyrSymbol *gCompilingFileSym = 0;
 VMGlobals *gCompilingVMGlobals = 0;
