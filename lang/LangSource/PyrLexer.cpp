@@ -100,7 +100,6 @@ char curfilename[PATH_MAX];
 int yylen;
 int lexCmdLine = 0;
 bool compilingCmdLine = false;
-bool compilingCmdLineErrorWindow = false;
 
 intptr_t zzval;
 

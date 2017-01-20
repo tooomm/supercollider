@@ -2620,7 +2620,6 @@ int prCompileString(struct VMGlobals *g, int numArgsPushed)
 	compileErrors = 0;
 	compilingCmdLine = true;
 	gCompilingVMGlobals = g;
-	compilingCmdLineErrorWindow = false;
 		//assert(g->gc->SanityCheck());
 	parseFailed = yyparse();
 		//assert(g->gc->SanityCheck());
