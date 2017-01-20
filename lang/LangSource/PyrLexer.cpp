@@ -69,6 +69,8 @@
 #include "SC_DirUtils.h"
 #include "SC_TextUtils.hpp"
 
+#define MAXYYLEN 8192
+
 int yyparse(); /* should be deleted once real Bison header is made */
 int processaccidental1(char *s); /* should be moved into header */
 int processaccidental2(char *s); /* should be moved into header */
