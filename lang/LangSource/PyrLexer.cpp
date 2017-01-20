@@ -1842,7 +1842,6 @@ bool parseOneClass(PyrSymbol *fileSym)
 }
 
 
-//void init_graph_compile();
 //void tellPlugInsAboutToCompile();
 
 void initPassOne()
@@ -1861,7 +1860,6 @@ void initPassOne()
 	//gFileSymbolTable = newSymbolTable(512);
 
 	initSymbols(); // initialize symbol globals
-	//init_graph_compile();
 	initSpecialSelectors();
 	initSpecialClasses();
 	initClasses();
