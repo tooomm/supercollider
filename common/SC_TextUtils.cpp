@@ -33,13 +33,6 @@ text:
 	switch (txt[wrpos]=txt[rdpos++])
 	{
 	case 0:
-		/*{
-					char fname[32];
-					sprintf(fname, "rtf2txt_out%d.txt", bugctr++);
-					FILE *fp = fopen(fname, "w");
-					fwrite(txt,wrpos,1,fp);
-					fclose(fp);
-				}*/
 		return wrpos;
 	case OPENCURLY:
 	case CLOSCURLY:
