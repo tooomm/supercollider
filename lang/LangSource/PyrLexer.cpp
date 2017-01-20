@@ -225,6 +225,7 @@ void initLexerGlobals() {
 	parseFailed = 0;
 	maxlinestarts = 1000;
 	linestarts = (int*)pyr_pool_compile->Alloc(maxlinestarts * sizeof(int*));
+	MEMFAIL(linestarts);
 	linestarts[0] = 0;
 	linestarts[1] = 0;
 }
