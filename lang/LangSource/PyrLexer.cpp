@@ -80,9 +80,12 @@ PyrSymbol *gCompilingFileSym = 0;
 VMGlobals *gCompilingVMGlobals = 0;
 static char gCompileDir[MAXPATHLEN];
 
+/* set to true to print detailed debug messages */
 const bool gDebugLexer = false;
 
-bool gShowWarnings = false;
+/* set to true to do a rigorous check of the symbol table after compilation */
+const bool gDebugSymbolTable = false;
+
 LongStack brackets;
 LongStack closedFuncCharNo;
 LongStack generatorStack;
@@ -2143,7 +2146,7 @@ SCLANG_DLLEXPORT_C bool compileLibrary(bool standalone)
 			traverseFullDepTree2();
 			flushPostBuf();
 
-			if (!compileErrors && gShowWarnings) {
+			if (!compileErrors && gDebugSymbolTable) {
 				SymbolTable* symbolTable = gMainVMGlobals->symbolTable;
 				symbolTable->CheckSymbols();
 			}
