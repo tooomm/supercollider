@@ -69,12 +69,12 @@
 #include "SC_DirUtils.h"
 #include "SC_TextUtils.hpp"
 
-int yyparse();
-int processaccidental1(char *s);
-int processaccidental2(char *s);
+int yyparse(); /* should be deleted once real Bison header is made */
+int processaccidental1(char *s); /* should be moved into header */
+int processaccidental2(char *s); /* should be moved into header */
 
-double compileStartTime;
-int gNumCompiledFiles;
+double compileStartTime; /* should be given local scope */
+int gNumCompiledFiles; /* can probably be given local scope */
 
 PyrSymbol *gCompilingFileSym = 0;
 VMGlobals *gCompilingVMGlobals = 0;
