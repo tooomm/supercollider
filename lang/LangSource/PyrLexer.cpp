@@ -1842,8 +1842,6 @@ bool parseOneClass(PyrSymbol *fileSym)
 }
 
 
-//void tellPlugInsAboutToCompile();
-
 void initPassOne()
 {
 	post("initPassOne started\n");
@@ -1866,7 +1864,6 @@ void initPassOne()
 	initParserPool();
 	initParseNodes();
 	initPrimitives();
-	//tellPlugInsAboutToCompile();
 	compileErrors = 0;
 	numClassDeps = 0;
 	compiledOK = false;
