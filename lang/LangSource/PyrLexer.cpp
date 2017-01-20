@@ -236,7 +236,8 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 	textlen = -1;
 
 	if(!fileSym->u.source) {
-		if (!getFileText(filename, &text, &textlen)) return false;
+		if (!getFileText(filename, &text, &textlen))
+			return false;
 		fileSym->u.source = text;
 		rtf2txt(text);
 	}
@@ -250,11 +251,8 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 	else if(textlen == -1)
 		textlen = strlen(text);
 
-	if(lineOffset > 0) errLineOffset = lineOffset;
-	else errLineOffset = 0;
-
-	if(startPos > 0) errCharPosOffset = startPos;
-	else errCharPosOffset = 0;
+	errLineOffset = MAX(lineOffset, 0);
+	errCharPosOffset = MAX(startPos, 0);
 
 	initLexerGlobals();
 
