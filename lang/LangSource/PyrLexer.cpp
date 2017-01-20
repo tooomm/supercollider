@@ -80,8 +80,7 @@ PyrSymbol *gCompilingFileSym = 0;
 VMGlobals *gCompilingVMGlobals = 0;
 static char gCompileDir[MAXPATHLEN];
 
-//#define DEBUGLEX 1
-bool gDebugLexer = false;
+const bool gDebugLexer = false;
 
 bool gShowWarnings = false;
 LongStack brackets;
@@ -334,7 +333,9 @@ int input()
 		charno = 0;
 	}
 	if (c != 0 && yylen < MAXYYLEN-2) yytext[yylen++] = c;
-	//if (gDebugLexer) postfl("input '%c' %d\n",c,c);
+
+	if (gDebugLexer) postfl("input '%c' %d\n",c,c);
+
 	return c;
 }
 
@@ -361,7 +362,9 @@ int input0()
 		}
 		charno = 0;
 	}
-	//if (gDebugLexer) postfl("input0 '%c' %d\n",c,c);
+
+	if (gDebugLexer) postfl("input0 '%c' %d\n",c,c);
+
 	return c;
 }
 
@@ -882,9 +885,7 @@ error2:
 leave:
 	yytext[yylen] = 0;
 
-#if DEBUGLEX
 	if (gDebugLexer) postfl("yylex: %d  '%s'\n",r,yytext);
-#endif
 	//if (lexCmdLine>0) postfl("yylex: %d  '%s'\n",r,yytext);
 	return r;
 }
@@ -895,9 +896,8 @@ int processbinop(char *token)
 	PyrSlot slot;
 	PyrSlotNode *node;
 
-#if DEBUGLEX
 	if (gDebugLexer) postfl("processbinop: '%s'\n",token);
-#endif
+
 	sym = getsym(token);
 	SetSymbol(&slot, sym);
 	node = newPyrSlotNode(&slot);
@@ -921,9 +921,9 @@ int processkeywordbinop(char *token)
 
 	//post("'%s'  file '%s'\n", token, curfilename);
 
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("processkeywordbinop: '%s'\n",token);
-#endif
+
 	token[strlen(token)-1] = 0; // strip off colon
 	sym = getsym(token);
 	SetSymbol(&slot, sym);
@@ -943,9 +943,9 @@ int processident(char *token)
 	c = token[0];
 	zzval = (intptr_t) -1;
 
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("word: '%s'\n",token);
-#endif
+
 	/*
 	strcpy(uptoken, token);
 	for (str = uptoken; *str; ++str) {
@@ -970,9 +970,8 @@ int processident(char *token)
 		SetSymbol(&slot, sym);
 		node = newPyrSlotNode(&slot);
 		zzval = (intptr_t)node;
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("CLASSNAME: '%s'\n",token);
-#endif
 		return CLASSNAME;
 	}
 	if (strcmp("var",token) ==0) return VAR;
@@ -1033,9 +1032,8 @@ int processhex(char *s)
 	PyrSlotNode *node;
 	char *c;
 	int val;
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("processhex: '%s'\n",s);
-#endif
 
 	c = s;
 	val = 0;
@@ -1057,9 +1055,8 @@ int processintradix(char *s, int n, int radix)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("processintradix: '%s'\n",s);
-#endif
 
 	SetInt(&slot, sc_strtoi(s, n, radix));
 	node = newPyrSlotNode(&slot);
@@ -1071,9 +1068,8 @@ int processfloatradix(char *s, int n, int radix)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("processfloatradix: '%s'\n",s);
-#endif
 
 	SetFloat(&slot, sc_strtof(s, n, radix));
 	node = newPyrSlotNode(&slot);
@@ -1085,9 +1081,8 @@ int processint(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("processint: '%s'\n",s);
-#endif
 
 	SetInt(&slot, atoi(s));
 	node = newPyrSlotNode(&slot);
@@ -1099,9 +1094,8 @@ int processchar(int c)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("processhex: '%c'\n",c);
-#endif
 
 	SetChar(&slot, c);
 	node = newPyrSlotNode(&slot);
@@ -1114,9 +1108,8 @@ int processfloat(char *s, int sawpi)
 	PyrSlot slot;
 	PyrSlotNode *node;
 	double z;
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("processfloat: '%s'\n",s);
-#endif
 
 	if (sawpi) { z = atof(s)*pi; SetFloat(&slot, z); }
 	else  { SetFloat(&slot, atof(s)); }
@@ -1134,9 +1127,8 @@ int processaccidental1(char *s)
 	double degree=0.;
 	double cents=0.;
 	double centsdiv=1000.;
-#if 0
-	printf("processaccidental1: '%s'\n",s);
-#endif
+
+	if (gDebugLexer) postfl("processaccidental1: '%s'\n",s);
 
 	c = s;
 	while (*c) {
@@ -1172,9 +1164,8 @@ int processaccidental2(char *s)
 	char *c;
 	double degree=0.;
 	double semitones=0.;
-#if 0
-	printf("processaccidental2: '%s'\n",s);
-#endif
+
+	if (gDebugLexer) postfl("processaccidental2: '%s'\n",s);
 
 	c = s;
 	while (*c) {
@@ -1203,9 +1194,9 @@ int processsymbol(char *s)
 	PyrSlot slot;
 	PyrSlotNode *node;
 	PyrSymbol *sym;
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("processsymbol: '%s'\n",s);
-#endif
+
 	sym = getsym(s+1);
 
 	SetSymbol(&slot, sym);
@@ -1219,9 +1210,9 @@ int processstring(char *s)
 	PyrSlot slot;
 	PyrSlotNode *node;
 	PyrString *string;
-#if DEBUGLEX
+
 	if (gDebugLexer) postfl("processstring: '%s'\n",s);
-#endif
+
 	int flags = compilingCmdLine ? obj_immutable : obj_permanent | obj_immutable;
 	string = newPyrString(gMainVMGlobals->gc, s+1, flags, false);
 	SetObject(&slot, string);
@@ -1369,9 +1360,8 @@ bool scanForClosingBracket()
 	bool res = true;
 	// finite state machine to parse input stream into tokens
 
-#if DEBUGLEX
 	if (gDebugLexer) postfl("->scanForClosingBracket\n");
-#endif
+
 	startLevel = brackets.num;
 start:
 	c = input0();
@@ -1543,9 +1533,8 @@ error2:
 	goto leave;
 
 leave:
-#if DEBUGLEX
 	if (gDebugLexer) postfl("<-scanForClosingBracket\n");
-#endif
+
 	return res;
 }
 
