@@ -71,6 +71,13 @@
 
 #define MAXYYLEN 8192
 
+#define OPENPAREN '('
+#define OPENCURLY '{'
+#define OPENSQUAR '['
+#define CLOSSQUAR ']'
+#define CLOSCURLY '}'
+#define CLOSPAREN ')'
+
 int yyparse(); /* should be deleted once real Bison header is made */
 int processaccidental1(char *s); /* should be moved into header */
 int processaccidental2(char *s); /* should be moved into header */
@@ -115,13 +122,6 @@ int parseFailed = 0;
 bool compiledOK = false;
 std::set<std::string> compiledDirectories;
 
-/* so the text editor's dumb paren matching will work */
-#define OPENPAREN '('
-#define OPENCURLY '{'
-#define OPENSQUAR '['
-#define CLOSSQUAR ']'
-#define CLOSCURLY '}'
-#define CLOSPAREN ')'
 
 int sc_strtoi(const char *str, int n, int base)
 {
