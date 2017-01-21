@@ -668,15 +668,13 @@ binop:
 radix_digits_1:
 
 	c = input();
+	c2 = toupper(c);
 	if (c >= '0' && c <= '0' + sc_min(10, radix) - 1)
-		goto radix_digits_1;
-	if (c >= 'a' && c <= 'a' + sc_min(36, radix) - 11)
 		goto radix_digits_1;
 	if (c >= 'A' && c <= 'A' + sc_min(36, radix) - 11)
 		goto radix_digits_1;
-	if (c == '.') {
+	if (c == '.')
 		goto radix_digits_2;
-	}
 	unput(c);
 	yytext[yylen] = 0;
 	r = processintradix(yytext, yylen, radix);
@@ -685,11 +683,11 @@ radix_digits_1:
 radix_digits_2:
 
 	c = input();
+	// do not allow lower case after decimal point.
 	if (c >= '0' && c <= '0' + sc_min(10,radix) - 1)
 		goto radix_digits_2;
 	if (c >= 'A' && c <= 'A' + sc_min(36,radix) - 11)
 		goto radix_digits_2;
-	// do not allow lower case after decimal point.
 	unput(c);
 	yytext[yylen] = 0;
 	r = processfloatradix(yytext, yylen, radix);
