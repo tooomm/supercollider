@@ -1301,32 +1301,6 @@ void fatal()
 	//Debugger();
 }
 
-#if 0
-void postErrorLine()
-{
-	int i, j, start, end;
-	char str[256];
-
-	parseFailed = true;
-	for (i=textpos-1; i>=0; --i) {
-		if (text[i] == '\r' || text[i] == '\n') break;
-	}
-	start = i+1;
-	for (i=textpos; i < textlen; ++i) {
-		if (text[i] == '\r' || text[i] == '\n') break;
-	}
-	end=i;
-	for (i=start, j=0; i<end; ++i) {
-		if (i == textpos) str[j++] = '¶';
-		str[j++] = text[i];
-	}
-	if (textpos == end) str[j++] = '¶';
-	str[j] = 0;
-
-	postfl("%s\n", str);
-}
-#endif
-
 void postErrorLine(int linenum, int start, int charpos)
 {
 	int i, j, end, pos;
