@@ -112,7 +112,7 @@ char yytext[MAXYYLEN];
 char curfilename[PATH_MAX];
 
 int yylen;
-int gLexMode = 0;
+int gLexMode;
 enum {
 	LEXMODE_COMPILE = 0,
 	LEXMODE_START_CMDLINE = 1,
