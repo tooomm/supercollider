@@ -1090,7 +1090,6 @@ int processHexInt(char *s)
 	return INTEGER;
 }
 
-
 int processIntRadix(char *s, int n, int radix)
 {
 	PyrSlot slot;
@@ -1162,7 +1161,6 @@ int processFloat(char *s, int sawpi)
 	zzval = (intptr_t)node;
 	return SC_FLOAT;
 }
-
 
 int processAccidental1(char *s)
 {
@@ -1554,7 +1552,6 @@ ClassExtFile* newClassExtFile(PyrSymbol *fileSym, int startPos, int endPos)
 	return classext;
 }
 
-
 ClassDependency* newClassDependency(PyrSymbol *className, PyrSymbol *superClassName,
 	PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 {
@@ -1642,7 +1639,6 @@ void traverseFullDepTree()
 	//postfl("<-traverseFullDepTree\n"); fflush(stdout);
 }
 
-
 void traverseDepTree(ClassDependency *classdep, int level)
 {
 	ClassDependency *subclassdep;
@@ -1666,7 +1662,6 @@ void traverseDepTree(ClassDependency *classdep, int level)
 
 	gClassCompileOrder[gClassCompileOrderNum++] = classdep;
 }
-
 
 void compileClass(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 {
@@ -1854,7 +1849,6 @@ bool parseOneClass(PyrSymbol *fileSym)
 	}
 	return res;
 }
-
 
 void initPassOne()
 {
