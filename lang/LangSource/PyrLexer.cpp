@@ -1606,10 +1606,10 @@ ClassExtFile* newClassExtFile(PyrSymbol *fileSym, int startPos, int endPos)
 }
 
 
-ClassDependancy* newClassDependancy(PyrSymbol *className, PyrSymbol *superClassName,
+ClassDependency* newClassDependency(PyrSymbol *className, PyrSymbol *superClassName,
 	PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 {
-	ClassDependancy* classdep;
+	ClassDependency* classdep;
 
 	//post("classdep '%s' '%s' '%s' %d %d\n", className->name, superClassName->name,
 	//	fileSym->name, className, superClassName);
@@ -1622,7 +1622,7 @@ ClassDependancy* newClassDependancy(PyrSymbol *className, PyrSymbol *superClassN
 		postfl("%s\n\n",fileSym->name);
 		return className->classdep;
 	}
-	classdep = (ClassDependancy*)pyr_pool_compile->Alloc(sizeof(ClassDependancy));
+	classdep = (ClassDependency*)pyr_pool_compile->Alloc(sizeof(ClassDependency));
 	MEMFAIL(text);
 	classdep->className = className;
 	classdep->superClassName = superClassName;
@@ -1641,7 +1641,7 @@ ClassDependancy* newClassDependancy(PyrSymbol *className, PyrSymbol *superClassN
 
 void buildDepTree()
 {
-	ClassDependancy *next;
+	ClassDependency *next;
 	SymbolTable* symbolTable = gMainVMGlobals->symbolTable;
 
 	//postfl("->buildDepTree\n"); fflush(stdout);
@@ -1665,7 +1665,7 @@ void buildDepTree()
 
 extern PyrClass *gClassList;
 
-ClassDependancy **gClassCompileOrder;
+ClassDependency **gClassCompileOrder;
 int gClassCompileOrderNum = 0;
 int gClassCompileOrderSize = 1000;
 
@@ -1675,8 +1675,8 @@ void traverseFullDepTree()
 {
 	//postfl("->traverseFullDepTree\n"); fflush(stdout);
 	gClassCompileOrderNum = 0;
-	gClassCompileOrder = (ClassDependancy**)pyr_pool_compile->Alloc(
-								gClassCompileOrderSize * sizeof(ClassDependancy));
+	gClassCompileOrder = (ClassDependency**)pyr_pool_compile->Alloc(
+								gClassCompileOrderSize * sizeof(ClassDependency));
 	MEMFAIL(gClassCompileOrder);
 
 	// parse and compile all files
@@ -1694,9 +1694,9 @@ void traverseFullDepTree()
 }
 
 
-void traverseDepTree(ClassDependancy *classdep, int level)
+void traverseDepTree(ClassDependency *classdep, int level)
 {
-	ClassDependancy *subclassdep;
+	ClassDependency *subclassdep;
 
 	if (!classdep) return;
 
@@ -1706,8 +1706,8 @@ void traverseDepTree(ClassDependancy *classdep, int level)
 	}
 	if (gClassCompileOrderNum > gClassCompileOrderSize) {
 		gClassCompileOrderSize *= 2;
-		gClassCompileOrder = (ClassDependancy**)pyr_pool_compile->Realloc(gClassCompileOrder,
-								gClassCompileOrderSize * sizeof(ClassDependancy));
+		gClassCompileOrder = (ClassDependency**)pyr_pool_compile->Realloc(gClassCompileOrder,
+								gClassCompileOrderSize * sizeof(ClassDependency));
 		MEMFAIL(gClassCompileOrder);
 	}
 
@@ -1753,7 +1753,7 @@ void compileClass(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 
 void compileDepTree()
 {
-	ClassDependancy *classdep;
+	ClassDependency *classdep;
 	int i;
 
 	for (i=gClassCompileOrderNum-1; i>=0; --i) {
@@ -1828,7 +1828,7 @@ bool parseOneClass(PyrSymbol *fileSym)
 {
 	int token;
 	PyrSymbol *className, *superClassName;
-	ClassDependancy *classdep;
+	ClassDependency *classdep;
 	bool res;
 
 	int startPos, startLineOffset;
@@ -1862,7 +1862,7 @@ bool parseOneClass(PyrSymbol *fileSym)
 				if (token == 0) return false;
 				if (token == OPENCURLY) {
 					scanForClosingBracket(); // eat class body
-					classdep = newClassDependancy(className, superClassName, fileSym, startPos, textpos, startLineOffset);
+					classdep = newClassDependency(className, superClassName, fileSym, startPos, textpos, startLineOffset);
 				} else {
 					compileErrors++;
 					postfl("Expected %c.  got token: '%s' %d\n", OPENCURLY, yytext, token);
@@ -1879,7 +1879,7 @@ bool parseOneClass(PyrSymbol *fileSym)
 			if (className == s_object) superClassName = s_none;
 			else superClassName = s_object;
 			scanForClosingBracket(); // eat class body
-			classdep = newClassDependancy(className, superClassName, fileSym, startPos, textpos, startLineOffset);
+			classdep = newClassDependency(className, superClassName, fileSym, startPos, textpos, startLineOffset);
 		} else {
 			compileErrors++;
 			post("Expected ':' or %c.  got token: '%s' %d\n", OPENCURLY, yytext, token);

@@ -44,11 +44,11 @@ typedef struct classdep {
 	PyrSymbol *superClassName;
 	PyrSymbol *fileSym;
 	int startPos, endPos, lineOffset;
-} ClassDependancy;
+} ClassDependency;
 
 extern PyrSymbol *gCompilingFileSym;
 
-ClassDependancy* newClassDependancy(PyrSymbol *className, PyrSymbol *superClassName,
+ClassDependency* newClassDependency(PyrSymbol *className, PyrSymbol *superClassName,
 	PyrSymbol *fileSym, int startPos, int endPos, int lineOffset);
 bool parseOneClass(PyrSymbol *fileSym);
 void initPassOne();
@@ -56,9 +56,9 @@ void finiPassOne();
 bool passOne();
 void buildDepTree();
 void traverseFullDepTree();
-void traverseDepTree(ClassDependancy *classdep, int level);
+void traverseDepTree(ClassDependency *classdep, int level);
 void traverseFullDepTree2();
-void traverseDepTree2(ClassDependancy *classdep, int level);
+void traverseDepTree2(ClassDependency *classdep, int level);
 void compileClassExtensions();
 void compileClass(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset);
 
@@ -109,7 +109,7 @@ extern bool compiledOK;
 
 extern int gNumCompiledFiles;
 extern int gClassCompileOrderNum;
-extern ClassDependancy **gClassCompileOrder;
+extern ClassDependency **gClassCompileOrder;
 
 extern int runcount;
 
