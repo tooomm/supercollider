@@ -18,56 +18,61 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
+/*** INCLUDES: BEGIN ***/
+
+/* standard C headers */
 #include <stdlib.h>
 #include <string.h>
 #include <float.h>
 #include <math.h>
-#include <new>
 #include <stdlib.h>
 #include <ctype.h>
+
+/* C++ headers */
+#include <new>
 #include <cerrno>
 #include <limits>
 #include <set>
 
+/* platform-dependent declarations */
 #ifdef _WIN32
 # include <direct.h>
 #else
 # include <sys/param.h>
-#endif
-
-#include <boost/filesystem/path.hpp>
-
-
-#include "PyrParseNode.h"
-#include "Bison/lang11d_tab.h"
-#include "SCBase.h"
-#include "PyrObject.h"
-#include "PyrObjectProto.h"
-#include "PyrLexer.h"
-#include "PyrSched.h"
-#include "SC_InlineUnaryOp.h"
-#include "SC_InlineBinaryOp.h"
-#include "GC.h"
-#include "SimpleStack.h"
-
-#include "PyrSymbolTable.h"
-#include "PyrInterpreter.h"
-#include "PyrPrimitive.h"
-#include "PyrObjectProto.h"
-#include "PyrPrimitiveProto.h"
-#include "PyrKernelProto.h"
-#include "InitAlloc.h"
-#include "PredefinedSymbols.h"
-#ifdef _WIN32
-#else
 # include "dirent.h"
 #endif
-#include <string.h>
 
-#include "SC_LanguageConfig.hpp"
+/* boost headers */
+#include <boost/filesystem/path.hpp>
 
+/* Bison-generated parser header */
+#include "Bison/lang11d_tab.h"
+
+/* SuperCollider headers */
+#include "GC.h"
+#include "InitAlloc.h"
+#include "PredefinedSymbols.h"
+#include "PyrInterpreter.h"
+#include "PyrKernelProto.h"
+#include "PyrLexer.h"
+#include "PyrObject.h"
+#include "PyrObjectProto.h"
+#include "PyrParseNode.h"
+#include "PyrPrimitive.h"
+#include "PyrPrimitiveProto.h"
+#include "PyrSched.h"
+#include "PyrSymbolTable.h"
+#include "SCBase.h"
 #include "SC_DirUtils.h"
+#include "SC_InlineUnaryOp.h"
+#include "SC_InlineBinaryOp.h"
+#include "SC_LanguageConfig.hpp"
 #include "SC_TextUtils.hpp"
+#include "SimpleStack.h"
+
+/*** INCLUDES: END ***/
+
+/*** DEFINES: BEGIN ***/
 
 #define MAXYYLEN 8192
 
@@ -79,6 +84,8 @@
 #define CLOSPAREN ')'
 
 #define LEXER_CMD_LINE_FILENAME "selected text"
+
+/*** DEFINES: END ***/
 
 int yyparse(); /* should be deleted once real Bison header is made */
 
