@@ -564,7 +564,7 @@ start:
 	else if (strchr(binopchars, c)) {
 		goto binop;
 	}
-	else if(!(isprint(c) || isspace(c) || c == 0)) {
+	else if(!isprint(c)) {
 		yylen = 0;
 		goto start;
 	}
