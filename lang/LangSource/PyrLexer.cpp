@@ -642,14 +642,10 @@ symbolAfterBackslash:
 binaryOp:
 	c = input();
 
-	if (c == 0)
-		goto binop2;
-
 	/* binopchars: "!@%&*-+=|<>?/" */
-	if (strchr(binopchars, c))
+	if (c && strchr(binopchars, c))
 		goto binaryOp;
 	else {
-		binop2:
 		unput(c);
 		yytext[yylen] = 0;
 		r = processBinaryOperator(yytext) ;
