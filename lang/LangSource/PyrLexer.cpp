@@ -259,12 +259,13 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 	else if(textlen == -1)
 		textlen = strlen(text);
 
+	initLexerGlobals();
+
 	errLineOffset = MAX(lineOffset, 0);
 	errCharPosOffset = MAX(startPos, 0);
 
-	initLexerGlobals();
-
 	lexCmdLine = 0;
+
 	strcpy(curfilename, filename);
 
 	return true;
@@ -288,11 +289,12 @@ void startLexerCmdLine(char *textbuf, int textbuflen)
 
 	initLexerGlobals();
 
-	lexCmdLine = 1;
-	strcpy(curfilename, "selected text");
-
 	errLineOffset = 0;
 	errCharPosOffset = 0;
+
+	lexCmdLine = 1;
+
+	strcpy(curfilename, "selected text");
 }
 
 void finiLexer()
