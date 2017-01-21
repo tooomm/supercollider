@@ -307,6 +307,9 @@ void finiLexer()
 	freeLongStack(&generatorStack);
 }
 
+/* This function consists of code factored out of input() and input0(). It updates
+ * the lexer's internal counters to begin parsing a new line and allocates double
+ * memory if the file goes beyond the initial maxlinestarts */
 void input_startNewLine() {
 	lineno++;
 	linepos = textpos;
