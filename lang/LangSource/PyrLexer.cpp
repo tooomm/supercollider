@@ -554,6 +554,8 @@ start:
 	}
 	else if (c == '=') {
 		c = input();
+		/* binopchars: "!@%&*-+=|<>?/" */
+		/* If c is 0 here, this will goto binop. Not sure if that's correct behavior - Brian H */
 		if (strchr(binopchars, c)) goto binop;
 		else {
 			unput(c);
@@ -628,7 +630,10 @@ binop:
 	c = input();
 
 	if (c == 0) goto binop2;
+
+	/* binopchars: "!@%&*-+=|<>?/" */
 	if (strchr(binopchars, c))  goto binop;
+
 	else {
 		binop2:
 		unput(c);
