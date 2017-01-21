@@ -112,7 +112,7 @@ char yytext[MAXYYLEN];
 char curfilename[PATH_MAX];
 
 int yylen;
-int lexCmdLine = 0;
+int gLexMode = 0;
 bool compilingCmdLine = false;
 
 intptr_t zzval;
@@ -272,7 +272,7 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 	errLineOffset = sc_max(lineOffset, 0);
 	errCharPosOffset = sc_max(startPos, 0);
 
-	lexCmdLine = 0;
+	gLexMode = 0;
 
 	strcpy(curfilename, filename);
 
@@ -300,7 +300,7 @@ void startLexerCmdLine(char *textbuf, int textbuflen)
 	errLineOffset = 0;
 	errCharPosOffset = 0;
 
-	lexCmdLine = 1;
+	gLexMode = 1;
 
 	strcpy(curfilename, LEXER_CMD_LINE_FILENAME);
 }
@@ -449,8 +449,8 @@ int yylex()
 	yylen = 0;
 	// finite state machine to parse input stream into tokens
 
-	if (lexCmdLine == 1) {
-		lexCmdLine = 2;
+	if (gLexMode == 1) {
+		gLexMode = 2;
 		r = INTERPRET;
 		goto leave;
 	}
@@ -539,7 +539,7 @@ start:
 		goto leave;
 	}
 	else if (c == '^') {
-		if (lexCmdLine > 0) {
+		if (gLexMode > 0) {
 			fatal();
 			post("'%c' is not allowed outside of class methods\n", c);
 			goto error2;
