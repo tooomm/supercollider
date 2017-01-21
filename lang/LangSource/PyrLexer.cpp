@@ -421,6 +421,19 @@ int convertEscapeSequence(int c)
 	}
 }
 
+
+/***************************************************************************/
+/*       MAIN PARSING FUNCTIONS: yylex() and scanForClosingBracket()       */
+/***************************************************************************/
+
+/* yylex is responsible for choosing the right token type to throw back up to
+ * the Bison parser. scanForClosingBracket is a simplified version that quickly
+ * jumps to the next closing bracket in order to recognize the limits of class
+ * and class extension definitions. Changes to Bison should be mirrored here.
+ *
+ * Most of the custom and cute parsing rules in SC are contained in the next
+ * hundred lines. Read carefully!
+ */
 int yylex()
 {
 	int r, c, c2;
