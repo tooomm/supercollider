@@ -934,24 +934,14 @@ leave:
 
 int processIdentifier(char *token)
 {
-	char c;
-	PyrSymbol *sym;
+	if (gDebugLexer)
+		postfl("processIdentifier: '%s'\n", token);
 
+	PyrSymbol *sym;
 	PyrSlot slot;
 	PyrParseNode *node;
 
-	c = token[0];
 	zzval = (intptr_t) -1;
-
-
-	if (gDebugLexer)
-		postfl("processIdentifier: '%s'\n",token);
-
-	/*
-	 strcpy(uptoken, token);
-	 for (str = uptoken; *str; ++str) {
-		if (*str >= 'a' && *str <= 'z') *str += 'A' - 'a';
-	 }*/
 
 	if (token[0] == '_') {
 		if (token[1] == 0) {
