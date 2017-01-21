@@ -492,12 +492,12 @@ start:
 		if (!emptyls(&brackets)) {
 			if ((d = popls(&brackets)) != OPENSQUAR) {
 				fatal();
-				post("opening bracket was a '%c', but found a '%c'\n",d,c);
+				post("opening bracket was a '%c', but found a '%c'\n", d, c);
 				goto error2;
 			}
 		} else {
 			fatal();
-			post("unmatched '%c'\n",c);
+			post("unmatched '%c'\n", c);
 			goto error2;
 		}
 		r = c;
@@ -507,12 +507,12 @@ start:
 		if (!emptyls(&brackets)) {
 			if ((d = popls(&brackets)) != OPENPAREN) {
 				fatal();
-				post("opening bracket was a '%c', but found a '%c'\n",d,c);
+				post("opening bracket was a '%c', but found a '%c'\n", d, c);
 				goto error2;
 			}
 		} else {
 			fatal();
-			post("unmatched '%c'\n",c);
+			post("unmatched '%c'\n", c);
 			goto error2;
 		}
 		r = c;
@@ -522,13 +522,13 @@ start:
 		if (!emptyls(&brackets)) {
 			if ((d = popls(&brackets)) != OPENCURLY) {
 				fatal();
-				post("opening bracket was a '%c', but found a '%c'\n",d,c);
+				post("opening bracket was a '%c', but found a '%c'\n", d, c);
 				goto error2;
 			}
 			lastClosedFuncCharNo = popls(&closedFuncCharNo);
 		} else {
 			fatal();
-			post("unmatched '%c'\n",c);
+			post("unmatched '%c'\n", c);
 			goto error2;
 		}
 		r = c;
@@ -618,12 +618,12 @@ identifier:
 		goto identifier;
 	else if (c == ':') {
 		yytext[yylen] = 0;
-		r = processKeywordBinaryOperator(yytext) ;
+		r = processKeywordBinaryOperator(yytext);
 		goto leave;
 	} else {
 		unput(c);
 		yytext[yylen] = 0;
-		r = processIdentifier(yytext) ;
+		r = processIdentifier(yytext);
 		goto leave;
 	}
 
@@ -635,7 +635,7 @@ symbolAfterBackslash:
 	else {
 		unput(c);
 		yytext[yylen] = 0;
-		r = processSymbol(yytext) ;
+		r = processSymbol(yytext);
 		goto leave;
 	}
 
@@ -648,7 +648,7 @@ binaryOp:
 	else {
 		unput(c);
 		yytext[yylen] = 0;
-		r = processBinaryOperator(yytext) ;
+		r = processBinaryOperator(yytext);
 		goto leave;
 	}
 
