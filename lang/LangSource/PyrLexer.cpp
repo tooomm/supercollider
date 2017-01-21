@@ -78,6 +78,8 @@
 #define CLOSCURLY '}'
 #define CLOSPAREN ')'
 
+#define LEXER_CMD_LINE_FILENAME "selected text"
+
 int yyparse(); /* should be deleted once real Bison header is made */
 int processaccidental1(char *s); /* should be moved into header */
 int processaccidental2(char *s); /* should be moved into header */
@@ -294,7 +296,7 @@ void startLexerCmdLine(char *textbuf, int textbuflen)
 
 	lexCmdLine = 1;
 
-	strcpy(curfilename, "selected text");
+	strcpy(curfilename, LEXER_CMD_LINE_FILENAME);
 }
 
 void finiLexer()
