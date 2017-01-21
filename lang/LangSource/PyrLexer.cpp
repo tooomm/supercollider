@@ -426,11 +426,11 @@ start:
 		r = 0;
 		goto leave;
 	}
-	else if (c==' ' || c=='\t' || c=='\n' || c=='\r' || c=='\v' || c=='\f') {
+	else if (isspace(c)) {
 		yylen = 0;
 		goto start;
 	}
-	else if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '_') {
+	else if (isalpha(c) || c == '_') {
 		goto ident;
 	}
 	else if (c == '/') {
@@ -439,7 +439,7 @@ start:
 		else if (c == '*') goto comment2;
 		else { unput(c); goto binop; }
 	}
-	else if (c >= '0' && c <= '9') {
+	else if (isdigit(c)) {
 		goto digits_1;
 	}
 	else if (c == OPENPAREN || c == OPENSQUAR || c == OPENCURLY) {
