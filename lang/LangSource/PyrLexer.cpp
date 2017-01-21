@@ -461,19 +461,19 @@ start:
 		goto start;
 	}
 	else if (isalpha(c) || c == '_') {
-		goto ident;
+		goto identifier;
 	}
 	else if (c == '/') {
 		c = input();
 		if (c == '/')
-			goto comment1;
+			goto commentLine;
 		else if (c == '*')
-			goto comment2;
+			goto commentBlock;
 		unput(c);
-		goto binop;
+		goto binaryOp;
 	}
 	else if (isdigit(c)) {
-		goto digits_1;
+		goto digitsBeforePoint;
 	}
 	else if (c == OPENPAREN || c == OPENSQUAR || c == OPENCURLY) {
 		pushls(&brackets, (intptr_t)c);
@@ -534,13 +534,13 @@ start:
 		goto leave;
 	}
 	else if (c == '\\') {
-		goto symbol1;
+		goto symbolAfterBackslash;
 	}
 	else if (c == '\'') {
-		goto symbol3;
+		goto symbolAfterQuote;
 	}
 	else if (c == '"') {
-		goto string1;
+		goto stringAfterQuote;
 	}
 	else if (c == '.') {
 		if ((c = input()) == '.') {
@@ -584,7 +584,7 @@ start:
 		/* If c is 0 here, this will still goto binop.
 		 * Not sure if that's correct behavior - Brian H */
 		if (strchr(binopchars, c))
-			goto binop;
+			goto binaryOp;
 		else {
 			unput(c);
 			r = '=';
@@ -592,7 +592,7 @@ start:
 		}
 	}
 	else if (strchr(binopchars, c)) {
-		goto binop;
+		goto binaryOp;
 	}
 	else if(!isprint(c)) {
 		yylen = 0;
@@ -606,11 +606,11 @@ start:
 	 * to catch non-ASCII characters, but I think the use of !isprint(c) here precludes that. - Brian H
 	 */
 
-ident:
+identifier:
 	c = input();
 
 	if (isalnum(c) || c == '_')
-		goto ident;
+		goto identifier;
 	else if (c == ':') {
 		yytext[yylen] = 0;
 		r = processkeywordbinop(yytext) ;
@@ -622,7 +622,7 @@ ident:
 		goto leave;
 	}
 
-symbol1:
+symbolAfterBackslash:
 	c = input();
 
 	if (isalpha(c) || c == '_')
@@ -661,7 +661,7 @@ symbol4:
 
 
 
-binop:
+binaryOp:
 	c = input();
 
 	if (c == 0)
@@ -669,7 +669,7 @@ binop:
 
 	/* binopchars: "!@%&*-+=|<>?/" */
 	if (strchr(binopchars, c))
-		goto binop;
+		goto binaryOp;
 	else {
 		binop2:
 		unput(c);
@@ -678,58 +678,58 @@ binop:
 		goto leave;
 	}
 
-radix_digits_1:
+radixDigitsBeforePoint:
 
 	c = input();
 	c2 = toupper(c);
 	if (c2 >= '0' && c2 <= '0' + sc_min(10, radix) - 1)
-		goto radix_digits_1;
+		goto radixDigitsBeforePoint;
 	if (c2 >= 'A' && c2 <= 'A' + sc_min(36, radix) - 11)
-		goto radix_digits_1;
+		goto radixDigitsBeforePoint;
 	if (c2 == '.')
-		goto radix_digits_2;
+		goto radixDigitsAfterPoint;
 	unput(c);
 	yytext[yylen] = 0;
 	r = processintradix(yytext, yylen, radix);
 	goto leave;
 
-radix_digits_2:
+radixDigitsAfterPoint:
 
 	c = input();
 	// do not allow lower case after decimal point.
 	if (c >= '0' && c <= '0' + sc_min(10,radix) - 1)
-		goto radix_digits_2;
+		goto radixDigitsAfterPoint;
 	if (c >= 'A' && c <= 'A' + sc_min(36,radix) - 11)
-		goto radix_digits_2;
+		goto radixDigitsAfterPoint;
 	unput(c);
 	yytext[yylen] = 0;
 	r = processfloatradix(yytext, yylen, radix);
 	goto leave;
 
-hexdigits:
+hexDigits:
 
 	c = input();
 	if (isxdigit(c))
-		goto hexdigits;
+		goto hexDigits;
 	unput(c);
 	yytext[yylen] = 0;
 	r = processhex(yytext);
 	goto leave;
 
-digits_1:	/* number started with digits */
+digitsBeforePoint:
 
 	c = input();
 
-	if (isdigit(c)) goto digits_1;
+	if (isdigit(c)) goto digitsBeforePoint;
 	else if (c == 'r') {
 		radix = sc_strtoi(yytext, yylen-1, 10);
 		yylen = 0;
-		goto radix_digits_1;
+		goto radixDigitsBeforePoint;
 	}
-	else if (c == 'e' || c == 'E') goto expon_1;
+	else if (c == 'e' || c == 'E') goto exponentFound;
 	else if (c == '.') {
 		c2 = input();
-		if (isdigit(c2)) goto digits_2;
+		if (isdigit(c2)) goto digitsAfterPoint;
 		else {
 			unput(c2);
 			unput(c);
@@ -740,12 +740,12 @@ digits_1:	/* number started with digits */
 	}
 	else if (c == 'b' || c == 's') {
 		d = input();
-		if (isdigit(d)) goto accidental1;
+		if (isdigit(d)) goto accidentalFound;
 		if (d == c) goto accidental2;
 		goto accidental3;
-accidental1:
+accidentalFound:
 		d = input();
-		if (isdigit(d)) goto accidental1;
+		if (isdigit(d)) goto accidentalFound;
 		unput(d);
 		yytext[yylen] = 0;
 		r = processaccidental1(yytext);
@@ -761,7 +761,7 @@ accidental3:
 	}
 	else if (c == 'x') {
 		yylen = 0;
-		goto hexdigits;
+		goto hexDigits;
 	} else {
 		unput(c);
 		yytext[yylen] = 0;
@@ -769,14 +769,14 @@ accidental3:
 		goto leave;
 	}
 
-digits_2:
+digitsAfterPoint:
 
 	c = input();
 
 	if (isdigit(c))
-		goto digits_2;
+		goto digitsAfterPoint;
 	else if (c == 'e' || c == 'E')
-		goto expon_1;
+		goto exponentFound;
 	else {
 		unput(c);
 		yytext[yylen] = 0;
@@ -784,7 +784,7 @@ digits_2:
 		goto leave;
 	}
 
-expon_1:	/* e has been seen, need digits */
+exponentFound:	/* e has been seen, need digits */
 	c = input();
 
 	if (isdigit(c))
@@ -813,7 +813,7 @@ expon_3:
 		goto leave;
 	}
 
-symbol3 : {
+symbolAfterQuote: {
 		int startline, endchar;
 		startline = lineno;
 		endchar = '\'';
@@ -851,7 +851,7 @@ symbol3 : {
 		goto leave;
 	}
 
-string1 : {
+stringAfterQuote: {
 		int startline, endchar;
 		startline = lineno;
 		endchar = '"';
@@ -880,7 +880,7 @@ string1 : {
 			c = input0();
 		} while (c && isspace(c));
 
-		if (c == '"') goto string1;
+		if (c == '"') goto stringAfterQuote;
 		else if (c) unput0(c);
 
 		yytext[yylen] = 0;
@@ -888,7 +888,7 @@ string1 : {
 		goto leave;
 	}
 
-comment1:	/* comment -- to end of line */
+commentLine:	/* comment -- to end of line */
 	do {
 		c = input0();
 	} while (c != '\n' && c != '\r' && c != 0);
@@ -896,7 +896,7 @@ comment1:	/* comment -- to end of line */
 	if (c == 0) { r = 0; goto leave; }
 	else goto start;
 
-comment2 : {
+commentBlock: {
 		int startline, clevel, prevc;
 		startline = lineno;
 		prevc = 0;
@@ -1374,12 +1374,12 @@ start:
 	else if (c==' ' || c=='\t' || c=='\n' || c=='\r' || c=='\v' || c=='\f') {
 		goto start;
 	}
-	else if (c == '\'') goto symbol3;
-	else if (c == '"') goto string1;
+	else if (c == '\'') goto symbolAfterQuote;
+	else if (c == '"') goto stringAfterQuote;
 	else if (c == '/') {
 		c = input0();
-		if (c == '/') goto comment1;
-		else if (c == '*') goto comment2;
+		if (c == '/') goto commentLine;
+		else if (c == '*') goto commentBlock;
 		else { unput(c); goto start; }
 	}
 	else if (c == '$') {
@@ -1449,7 +1449,7 @@ start:
 	} else {
 		goto start;
 	}
-symbol3 : {
+symbolAfterQuote: {
 		int startline, endchar;
 		startline = lineno;
 		endchar = '\'';
@@ -1470,7 +1470,7 @@ symbol3 : {
 		goto start;
 	}
 
-string1 : {
+stringAfterQuote: {
 		int startline, endchar;
 		startline = lineno;
 		endchar = '\"';
@@ -1490,14 +1490,14 @@ string1 : {
 		}
 		goto start;
 	}
-comment1:	/* comment -- to end of line */
+commentLine:	/* comment -- to end of line */
 	do {
 		c = input0();
 	} while (c != '\n' && c != '\r' && c != 0);
 	if (c == 0) { goto leave; }
 	else goto start;
 
-comment2 : {
+commentBlock: {
 		int startline, clevel, prevc;
 		startline = lineno;
 		prevc = 0;
