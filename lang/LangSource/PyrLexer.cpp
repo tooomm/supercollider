@@ -1235,6 +1235,7 @@ int processFloatRadix(char *s, int n, int radix)
 		postfl("processFloatRadix: '%s'\n", s);
 
 	SetFloat(&slot, sc_strtof(s, n, radix));
+
 	node = newPyrSlotNode(&slot);
 	zzval = (intptr_t)node;
 	return SC_FLOAT;
@@ -1333,6 +1334,7 @@ int processString(char *s)
 
 	int flags = compilingCmdLine ? obj_immutable : obj_permanent | obj_immutable;
 	string = newPyrString(gMainVMGlobals->gc, s+1, flags, false);
+
 	SetObject(&slot, string);
 	node = newPyrSlotNode(&slot);
 	zzval = (intptr_t)node;
