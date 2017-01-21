@@ -575,7 +575,7 @@ start:
 			c = input();
 			c = convertEscapeSequence(c);
 		}
-		r = processchar(c);
+		r = processChar(c);
 		goto leave;
 	}
 	else if (c == '=') {
@@ -613,12 +613,12 @@ identifier:
 		goto identifier;
 	else if (c == ':') {
 		yytext[yylen] = 0;
-		r = processkeywordbinop(yytext) ;
+		r = processKeywordBinaryOperator(yytext) ;
 		goto leave;
 	} else {
 		unput(c);
 		yytext[yylen] = 0;
-		r = processident(yytext) ;
+		r = processIdentifier(yytext) ;
 		goto leave;
 	}
 
@@ -630,7 +630,7 @@ symbolAfterBackslash:
 	else {
 		unput(c);
 		yytext[yylen] = 0;
-		r = processsymbol(yytext) ;
+		r = processSymbol(yytext) ;
 		goto leave;
 	}
 
@@ -647,7 +647,7 @@ binaryOp:
 		binop2:
 		unput(c);
 		yytext[yylen] = 0;
-		r = processbinop(yytext) ;
+		r = processBinaryOperator(yytext) ;
 		goto leave;
 	}
 
@@ -663,7 +663,7 @@ radixDigitsBeforePoint:
 		goto radixDigitsAfterPoint;
 	unput(c);
 	yytext[yylen] = 0;
-	r = processintradix(yytext, yylen, radix);
+	r = processIntRadix(yytext, yylen, radix);
 	goto leave;
 
 radixDigitsAfterPoint:
@@ -676,7 +676,7 @@ radixDigitsAfterPoint:
 		goto radixDigitsAfterPoint;
 	unput(c);
 	yytext[yylen] = 0;
-	r = processfloatradix(yytext, yylen, radix);
+	r = processFloatRadix(yytext, yylen, radix);
 	goto leave;
 
 hexDigits:
@@ -686,7 +686,7 @@ hexDigits:
 		goto hexDigits;
 	unput(c);
 	yytext[yylen] = 0;
-	r = processhex(yytext);
+	r = processHexInt(yytext);
 	goto leave;
 
 digitsBeforePoint:
@@ -707,7 +707,7 @@ digitsBeforePoint:
 			unput(c2);
 			unput(c);
 			yytext[yylen] = 0;
-			r = processint(yytext);
+			r = processInt(yytext);
 			goto leave;
 		}
 	}
@@ -738,7 +738,7 @@ accidental3:
 	} else {
 		unput(c);
 		yytext[yylen] = 0;
-		r = processint(yytext);
+		r = processInt(yytext);
 		goto leave;
 	}
 
@@ -753,7 +753,7 @@ digitsAfterPoint:
 	else {
 		unput(c);
 		yytext[yylen] = 0;
-		r = processfloat(yytext, 0);
+		r = processFloat(yytext, 0);
 		goto leave;
 	}
 
@@ -782,7 +782,7 @@ expon_3:
 	else {
 		unput(c);
 		yytext[yylen] = 0;
-		r = processfloat(yytext, 0);
+		r = processFloat(yytext, 0);
 		goto leave;
 	}
 
@@ -820,7 +820,7 @@ symbolAfterQuote: {
 		}
 		yytext[yylen] = 0;
 		yytext[yylen-1] = 0;
-		r = processsymbol(yytext);
+		r = processSymbol(yytext);
 		goto leave;
 	}
 
@@ -857,7 +857,7 @@ stringAfterQuote: {
 		else if (c) unput0(c);
 
 		yytext[yylen] = 0;
-		r = processstring(yytext);
+		r = processString(yytext);
 		goto leave;
 	}
 
@@ -923,14 +923,18 @@ leave:
 	return r;
 }
 
-int processbinop(char *token)
+/********************************/
+/*  TOKEN PROCESSING FUNCTIONS  */
+/********************************/
+
+int processBinaryOperator(char *token)
 {
 	PyrSymbol *sym;
 	PyrSlot slot;
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processbinop: '%s'\n",token);
+		postfl("processBinaryOperator: '%s'\n",token);
 
 	sym = getsym(token);
 	SetSymbol(&slot, sym);
@@ -947,7 +951,7 @@ int processbinop(char *token)
 	return BINOP;
 }
 
-int processkeywordbinop(char *token)
+int processKeywordBinaryOperator(char *token)
 {
 	PyrSymbol *sym;
 	PyrSlot slot;
@@ -957,7 +961,7 @@ int processkeywordbinop(char *token)
 
 
 	if (gDebugLexer)
-		postfl("processkeywordbinop: '%s'\n",token);
+		postfl("processKeywordBinaryOperator: '%s'\n",token);
 
 	token[strlen(token)-1] = 0; // strip off colon
 	sym = getsym(token);
@@ -967,7 +971,7 @@ int processkeywordbinop(char *token)
 	return KEYBINOP;
 }
 
-int processident(char *token)
+int processIdentifier(char *token)
 {
 	char c;
 	PyrSymbol *sym;
@@ -980,7 +984,7 @@ int processident(char *token)
 
 
 	if (gDebugLexer)
-		postfl("word: '%s'\n",token);
+		postfl("processIdentifier: '%s'\n",token);
 
 	/*
 	strcpy(uptoken, token);
@@ -1063,7 +1067,7 @@ int processident(char *token)
 	return NAME;
 }
 
-int processhex(char *s)
+int processHexInt(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
@@ -1071,7 +1075,7 @@ int processhex(char *s)
 	int val;
 
 	if (gDebugLexer)
-		postfl("processhex: '%s'\n",s);
+		postfl("processHexInt: '%s'\n",s);
 
 	c = s;
 	val = 0;
@@ -1089,13 +1093,13 @@ int processhex(char *s)
 }
 
 
-int processintradix(char *s, int n, int radix)
+int processIntRadix(char *s, int n, int radix)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processintradix: '%s'\n",s);
+		postfl("processIntRadix: '%s'\n",s);
 
 	SetInt(&slot, sc_strtoi(s, n, radix));
 	node = newPyrSlotNode(&slot);
@@ -1103,13 +1107,13 @@ int processintradix(char *s, int n, int radix)
 	return INTEGER;
 }
 
-int processfloatradix(char *s, int n, int radix)
+int processFloatRadix(char *s, int n, int radix)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processfloatradix: '%s'\n",s);
+		postfl("processFloatRadix: '%s'\n",s);
 
 	SetFloat(&slot, sc_strtof(s, n, radix));
 	node = newPyrSlotNode(&slot);
@@ -1117,13 +1121,13 @@ int processfloatradix(char *s, int n, int radix)
 	return SC_FLOAT;
 }
 
-int processint(char *s)
+int processInt(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processint: '%s'\n",s);
+		postfl("processInt: '%s'\n",s);
 
 	SetInt(&slot, atoi(s));
 	node = newPyrSlotNode(&slot);
@@ -1131,13 +1135,13 @@ int processint(char *s)
 	return INTEGER;
 }
 
-int processchar(int c)
+int processChar(int c)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processhex: '%c'\n",c);
+		postfl("processHex: '%c'\n",c);
 
 	SetChar(&slot, c);
 	node = newPyrSlotNode(&slot);
@@ -1145,14 +1149,14 @@ int processchar(int c)
 	return ASCII;
 }
 
-int processfloat(char *s, int sawpi)
+int processFloat(char *s, int sawpi)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
 	double z;
 
 	if (gDebugLexer)
-		postfl("processfloat: '%s'\n",s);
+		postfl("processFloat: '%s'\n",s);
 
 	if (sawpi) { z = atof(s)*pi; SetFloat(&slot, z); }
 	else  { SetFloat(&slot, atof(s)); }
@@ -1234,14 +1238,14 @@ int processaccidental2(char *s)
 	return ACCIDENTAL;
 }
 
-int processsymbol(char *s)
+int processSymbol(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
 	PyrSymbol *sym;
 
 	if (gDebugLexer)
-		postfl("processsymbol: '%s'\n",s);
+		postfl("processSymbol: '%s'\n",s);
 
 	sym = getsym(s+1);
 
@@ -1251,14 +1255,14 @@ int processsymbol(char *s)
 	return SYMBOL;
 }
 
-int processstring(char *s)
+int processString(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
 	PyrString *string;
 
 	if (gDebugLexer)
-		postfl("processstring: '%s'\n",s);
+		postfl("processString: '%s'\n",s);
 
 	int flags = compilingCmdLine ? obj_immutable : obj_permanent | obj_immutable;
 	string = newPyrString(gMainVMGlobals->gc, s+1, flags, false);

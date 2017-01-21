@@ -80,17 +80,17 @@ bool passOne_ProcessOneFile(const char *filename, int level);
 
 extern void asRelativePath(char *inPath,char *outPath);
 
-int processbinop(char *token);
-int processident(char *token);
-int processfloat(char *token, int sawpi);
-int processint(char *token);
-int processchar(int c);
-int processintradix(char *s, int n, int radix);
-int processfloatradix(char *s, int n, int radix);
-int processhex(char *s);
-int processsymbol(char *token);
-int processstring(char *token);
-int processkeywordbinop(char *token);
+int processBinaryOperator(char *token);
+int processIdentifier(char *token);
+int processFloat(char *token, int sawpi);
+int processInt(char *token);
+int processChar(int c);
+int processIntRadix(char *s, int n, int radix);
+int processFloatRadix(char *s, int n, int radix);
+int processHexInt(char *s);
+int processSymbol(char *token);
+int processString(char *token);
+int processKeywordBinaryOperator(char *token);
 
 void postErrorLine(int linenum, int start, int charpos);
 bool scanForClosingBracket();
