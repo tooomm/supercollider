@@ -335,6 +335,8 @@ int input()
 	if (textpos >= textlen) {
 		c = 0;
 		/* should this block have `textpos++` (c.f. input0() below)? - Brian H */
+		/* if this block ends up matching input0()'s corresponding block below, move
+		 * both into input_startNewLine() and rename accordingly - Brian H */
 	} else {
 		c = text[textpos++];
 		charno++;
