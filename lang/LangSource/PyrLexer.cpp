@@ -213,7 +213,8 @@ static bool getFileText(char* filename, char **text, int *length)
 	return true;
 }
 
-void initLexerGlobals() {
+void initLexerGlobals()
+{
 	initLongStack(&brackets);
 	initLongStack(&closedFuncCharNo);
 	initLongStack(&generatorStack);
@@ -310,7 +311,8 @@ void finiLexer()
 /* This function consists of code factored out of input() and input0(). It updates
  * the lexer's internal counters to begin parsing a new line and allocates double
  * memory if the file goes beyond the initial maxlinestarts */
-void input_startNewLine() {
+void input_startNewLine()
+{
 	lineno++;
 	linepos = textpos;
 	if (linestarts) {
