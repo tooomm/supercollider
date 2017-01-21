@@ -268,6 +268,9 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 	return true;
 }
 
+/* Readies the lexer to parse a command line, either from the actual command
+ * line, the SC-IDE command line, or interpreted text executed from the SC-IDE.
+ */
 void startLexerCmdLine(char *textbuf, int textbuflen)
 {
 	text = (char*)pyr_pool_compile->Alloc((textbuflen+2) * sizeof(char));
@@ -277,6 +280,8 @@ void startLexerCmdLine(char *textbuf, int textbuflen)
 	text[textbuflen+1] = '\0';
 	textlen = textbuflen + 1;
 
+	/* I think rtf2txt is useless in this particular case, but that's only a
+	 * hypothesis for now - Brian H */
 	rtf2txt(text);
 
 	initLexerGlobals();
