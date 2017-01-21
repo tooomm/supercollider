@@ -1097,15 +1097,24 @@ int processBinaryOperator(char *token)
 	node = newPyrSlotNode(&slot);
 	zzval = (intptr_t)node;
 
-	if (strcmp(token, "<-")==0) return LEFTARROW;
-	if (strcmp(token, "<>")==0) return READWRITEVAR;
-	if (strcmp(token, "|")==0) return '|';
-	if (strcmp(token, "<")==0) return '<';
-	if (strcmp(token, ">")==0) return '>';
-	if (strcmp(token, "-")==0) return '-';
-	if (strcmp(token, "*")==0) return '*';
-	if (strcmp(token, "+")==0) return '+';
-	return BINOP;
+	if (!strcmp(token, "<-"))
+		return LEFTARROW;
+	else if (!strcmp(token, "<>"))
+		return READWRITEVAR;
+	else if (!strcmp(token, "|"))
+		return '|';
+	else if (!strcmp(token, "<"))
+		return '<';
+	else if (!strcmp(token, ">"))
+		return '>';
+	else if (!strcmp(token, "-"))
+		return '-';
+	else if (!strcmp(token, "*"))
+		return '*';
+	else if (!strcmp(token, "+"))
+		return '+';
+	else
+		return BINOP;
 }
 
 /* We get here by having an alphanumeric sequence ending with `:',
