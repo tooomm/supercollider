@@ -1247,34 +1247,24 @@ int processAccidental1(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
-	char *c;
-	double degree=0.;
-	double cents=0.;
-	double centsdiv=1000.;
+	double degree = 0.;
+	double cents = 0.;
+	double centsdiv;
 
 	if (gDebugLexer)
 		postfl("processAccidental1: '%s'\n", s);
 
-	c = s;
-	while (*c) {
-		if (*c >= '0' && *c <= '9') degree = degree*10. + *c - '0';
-		else break;
-		c++;
-	}
+	while (isdigit(*s))
+		degree = (degree*10.) + *s++ - '0';
 
-	if (*c == 'b') centsdiv = -1000.;
-	else if (*c == 's') centsdiv = 1000.;
-	c++;
+	/* if b, then flat, otherwise (assuming good input) s for sharp */
+	centsdiv = *s++ == 'b' ? -1000. : 1000.;
 
-	while (*c) {
-		if (*c >= '0' && *c <= '9') {
-			cents = cents*10. + *c - '0';
-		}
-		else break;
-		c++;
-	}
+	while (isdigit(*s))
+		cents = (cents*10.) + *s++ - '0';
 
-	if (cents > 499.) cents = 499.;
+	/* limits to 499 cents. not a fan of this, but needs discussion. - Brian H */
+	cents = sc_max(cents, 499.);
 
 	SetFloat(&slot, degree + cents/centsdiv);
 	node = newPyrSlotNode(&slot);
@@ -1290,30 +1280,24 @@ int processAccidental2(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
-	char *c;
-	double degree=0.;
-	double semitones=0.;
+	double degree = 0.;
+	double semitones = 0.;
+	double sLim = 4.; // max distance possible in semitones
+	double sDiv = 10.; // denominator for semitone distance
 
 	if (gDebugLexer)
 		postfl("processAccidental2: '%s'\n", s);
 
-	c = s;
-	while (*c) {
-		if (*c >= '0' && *c <= '9') degree = degree*10. + *c - '0';
-		else break;
-		c++;
-	}
+	while (isdigit(*s))
+		degree = (degree*10.) + *s++ - '0';
 
-	while (*c) {
-		if (*c == 'b') semitones -= 1.;
-		else if (*c == 's') semitones += 1.;
-		c++;
-	}
+	while (*s)
+		semitones += (*s++ == 'b') ? -1. : 1.;
 
-	if (semitones > 4.) semitones = 4.;
-	else if (semitones < -4.) semitones = -4.;
+	semitones = sc_min(semitones, sLim);
+	semitones = sc_max(semitones, -sLim);
 
-	SetFloat(&slot, degree + semitones/10.);
+	SetFloat(&slot, degree + semitones/sDiv);
 	node = newPyrSlotNode(&slot);
 	zzval = (intptr_t)node;
 	return ACCIDENTAL;
