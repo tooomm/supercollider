@@ -353,6 +353,8 @@ int input0()
 {
 	int c;
 
+	/* We could factor out the textpos++, but probably best to leave it like this while there's a lack
+	 * of parallelism between input and input0 - Brian H */
 	if (textpos >= textlen) {
 		c = 0;
 		textpos++; // so unput will work properly
