@@ -81,8 +81,6 @@
 #define LEXER_CMD_LINE_FILENAME "selected text"
 
 int yyparse(); /* should be deleted once real Bison header is made */
-int processaccidental1(char *s); /* should be moved into header */
-int processaccidental2(char *s); /* should be moved into header */
 
 double compileStartTime; /* should be given local scope */
 int gNumCompiledFiles; /* can probably be given local scope */
@@ -721,7 +719,7 @@ accidentalFound:
 		if (isdigit(d)) goto accidentalFound;
 		unput(d);
 		yytext[yylen] = 0;
-		r = processaccidental1(yytext);
+		r = processAccidental1(yytext);
 		goto leave;
 accidental2:
 		d = input();
@@ -729,7 +727,7 @@ accidental2:
 accidental3:
 		unput(d);
 		yytext[yylen] = 0;
-		r = processaccidental2(yytext);
+		r = processAccidental2(yytext);
 		goto leave;
 	}
 	else if (c == 'x') {
@@ -1166,7 +1164,7 @@ int processFloat(char *s, int sawpi)
 }
 
 
-int processaccidental1(char *s)
+int processAccidental1(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
@@ -1176,7 +1174,7 @@ int processaccidental1(char *s)
 	double centsdiv=1000.;
 
 	if (gDebugLexer)
-		postfl("processaccidental1: '%s'\n",s);
+		postfl("processAccidental1: '%s'\n",s);
 
 	c = s;
 	while (*c) {
@@ -1205,7 +1203,7 @@ int processaccidental1(char *s)
 	return ACCIDENTAL;
 }
 
-int processaccidental2(char *s)
+int processAccidental2(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
@@ -1214,7 +1212,7 @@ int processaccidental2(char *s)
 	double semitones=0.;
 
 	if (gDebugLexer)
-		postfl("processaccidental2: '%s'\n",s);
+		postfl("processAccidental2: '%s'\n",s);
 
 	c = s;
 	while (*c) {

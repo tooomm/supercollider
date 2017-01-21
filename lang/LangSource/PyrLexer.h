@@ -91,6 +91,8 @@ int processHexInt(char *s);
 int processSymbol(char *token);
 int processString(char *token);
 int processKeywordBinaryOperator(char *token);
+int processAccidental1(char *s);
+int processAccidental2(char *s);
 
 void postErrorLine(int linenum, int start, int charpos);
 bool scanForClosingBracket();
