@@ -1314,7 +1314,7 @@ int processSymbol(char *s)
 	if (gDebugLexer)
 		postfl("processSymbol: '%s'\n", s);
 
-	sym = getsym(s+1);
+	sym = getsym(++s); // move past first delimiter
 
 	SetSymbol(&slot, sym);
 	node = newPyrSlotNode(&slot);
