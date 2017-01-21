@@ -932,50 +932,6 @@ leave:
 /*  TOKEN PROCESSING FUNCTIONS  */
 /********************************/
 
-int processBinaryOperator(char *token)
-{
-	PyrSymbol *sym;
-	PyrSlot slot;
-	PyrSlotNode *node;
-
-	if (gDebugLexer)
-		postfl("processBinaryOperator: '%s'\n",token);
-
-	sym = getsym(token);
-	SetSymbol(&slot, sym);
-	node = newPyrSlotNode(&slot);
-	zzval = (intptr_t)node;
-	if (strcmp(token, "<-")==0) return LEFTARROW;
-	if (strcmp(token, "<>")==0) return READWRITEVAR;
-	if (strcmp(token, "|")==0) return '|';
-	if (strcmp(token, "<")==0) return '<';
-	if (strcmp(token, ">")==0) return '>';
-	if (strcmp(token, "-")==0) return '-';
-	if (strcmp(token, "*")==0) return '*';
-	if (strcmp(token, "+")==0) return '+';
-	return BINOP;
-}
-
-int processKeywordBinaryOperator(char *token)
-{
-	PyrSymbol *sym;
-	PyrSlot slot;
-	PyrSlotNode *node;
-
-	//post("'%s'  file '%s'\n", token, curfilename);
-
-
-	if (gDebugLexer)
-		postfl("processKeywordBinaryOperator: '%s'\n",token);
-
-	token[strlen(token)-1] = 0; // strip off colon
-	sym = getsym(token);
-	SetSymbol(&slot, sym);
-	node = newPyrSlotNode(&slot);
-	zzval = (intptr_t)node;
-	return KEYBINOP;
-}
-
 int processIdentifier(char *token)
 {
 	char c;
@@ -992,10 +948,10 @@ int processIdentifier(char *token)
 		postfl("processIdentifier: '%s'\n",token);
 
 	/*
-	strcpy(uptoken, token);
-	for (str = uptoken; *str; ++str) {
+	 strcpy(uptoken, token);
+	 for (str = uptoken; *str; ++str) {
 		if (*str >= 'a' && *str <= 'z') *str += 'A' - 'a';
-	}*/
+	 }*/
 
 	if (token[0] == '_') {
 		if (token[1] == 0) {
@@ -1016,8 +972,8 @@ int processIdentifier(char *token)
 		node = newPyrSlotNode(&slot);
 		zzval = (intptr_t)node;
 
-	if (gDebugLexer)
-		postfl("CLASSNAME: '%s'\n",token);
+		if (gDebugLexer)
+			postfl("CLASSNAME: '%s'\n",token);
 		return CLASSNAME;
 	}
 	if (strcmp("var",token) ==0) return VAR;
@@ -1072,6 +1028,78 @@ int processIdentifier(char *token)
 	return NAME;
 }
 
+int processBinaryOperator(char *token)
+{
+	PyrSymbol *sym;
+	PyrSlot slot;
+	PyrSlotNode *node;
+
+	if (gDebugLexer)
+		postfl("processBinaryOperator: '%s'\n",token);
+
+	sym = getsym(token);
+	SetSymbol(&slot, sym);
+	node = newPyrSlotNode(&slot);
+	zzval = (intptr_t)node;
+	if (strcmp(token, "<-")==0) return LEFTARROW;
+	if (strcmp(token, "<>")==0) return READWRITEVAR;
+	if (strcmp(token, "|")==0) return '|';
+	if (strcmp(token, "<")==0) return '<';
+	if (strcmp(token, ">")==0) return '>';
+	if (strcmp(token, "-")==0) return '-';
+	if (strcmp(token, "*")==0) return '*';
+	if (strcmp(token, "+")==0) return '+';
+	return BINOP;
+}
+
+int processKeywordBinaryOperator(char *token)
+{
+	PyrSymbol *sym;
+	PyrSlot slot;
+	PyrSlotNode *node;
+
+	//post("'%s'  file '%s'\n", token, curfilename);
+
+
+	if (gDebugLexer)
+		postfl("processKeywordBinaryOperator: '%s'\n",token);
+
+	token[strlen(token)-1] = 0; // strip off colon
+	sym = getsym(token);
+	SetSymbol(&slot, sym);
+	node = newPyrSlotNode(&slot);
+	zzval = (intptr_t)node;
+	return KEYBINOP;
+}
+
+int processChar(int c)
+{
+	PyrSlot slot;
+	PyrSlotNode *node;
+
+	if (gDebugLexer)
+		postfl("processHex: '%c'\n",c);
+
+	SetChar(&slot, c);
+	node = newPyrSlotNode(&slot);
+	zzval = (intptr_t)node;
+	return ASCII;
+}
+
+int processInt(char *s)
+{
+	PyrSlot slot;
+	PyrSlotNode *node;
+
+	if (gDebugLexer)
+		postfl("processInt: '%s'\n",s);
+
+	SetInt(&slot, atoi(s));
+	node = newPyrSlotNode(&slot);
+	zzval = (intptr_t)node;
+	return INTEGER;
+}
+
 int processHexInt(char *s)
 {
 	PyrSlot slot;
@@ -1111,48 +1139,6 @@ int processIntRadix(char *s, int n, int radix)
 	return INTEGER;
 }
 
-int processFloatRadix(char *s, int n, int radix)
-{
-	PyrSlot slot;
-	PyrSlotNode *node;
-
-	if (gDebugLexer)
-		postfl("processFloatRadix: '%s'\n",s);
-
-	SetFloat(&slot, sc_strtof(s, n, radix));
-	node = newPyrSlotNode(&slot);
-	zzval = (intptr_t)node;
-	return SC_FLOAT;
-}
-
-int processInt(char *s)
-{
-	PyrSlot slot;
-	PyrSlotNode *node;
-
-	if (gDebugLexer)
-		postfl("processInt: '%s'\n",s);
-
-	SetInt(&slot, atoi(s));
-	node = newPyrSlotNode(&slot);
-	zzval = (intptr_t)node;
-	return INTEGER;
-}
-
-int processChar(int c)
-{
-	PyrSlot slot;
-	PyrSlotNode *node;
-
-	if (gDebugLexer)
-		postfl("processHex: '%c'\n",c);
-
-	SetChar(&slot, c);
-	node = newPyrSlotNode(&slot);
-	zzval = (intptr_t)node;
-	return ASCII;
-}
-
 int processFloat(char *s, int sawpi)
 {
 	PyrSlot slot;
@@ -1164,6 +1150,20 @@ int processFloat(char *s, int sawpi)
 
 	if (sawpi) { z = atof(s)*pi; SetFloat(&slot, z); }
 	else  { SetFloat(&slot, atof(s)); }
+	node = newPyrSlotNode(&slot);
+	zzval = (intptr_t)node;
+	return SC_FLOAT;
+}
+
+int processFloatRadix(char *s, int n, int radix)
+{
+	PyrSlot slot;
+	PyrSlotNode *node;
+
+	if (gDebugLexer)
+		postfl("processFloatRadix: '%s'\n",s);
+
+	SetFloat(&slot, sc_strtof(s, n, radix));
 	node = newPyrSlotNode(&slot);
 	zzval = (intptr_t)node;
 	return SC_FLOAT;
