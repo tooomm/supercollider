@@ -415,8 +415,8 @@ int convertEscapeSequence(int c)
 		case 'f' : return '\f';
 		case 'v' : return '\v';
 		default:
-			post("invalid escape sequence '\\%c' found on line %d, char %d\n",
-				 lineno, charno);
+			//post("invalid escape sequence '\\%c' found on line %d, char %d\n",
+			//	 lineno, charno);
 			return c;
 	}
 }
