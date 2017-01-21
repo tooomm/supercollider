@@ -1106,7 +1106,7 @@ int processKeywordBinaryOperator(char *token)
 	if (gDebugLexer)
 		postfl("processKeywordBinaryOperator: '%s'\n", token);
 
-	token[strlen(token)-1] = 0; // strip off colon
+	token[yylen-1] = 0; // strip off colon
 	sym = getsym(token);
 	SetSymbol(&slot, sym);
 	node = newPyrSlotNode(&slot);
