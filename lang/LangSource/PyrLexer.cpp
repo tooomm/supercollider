@@ -932,6 +932,10 @@ leave:
 /*  TOKEN PROCESSING FUNCTIONS  */
 /********************************/
 
+/* Handles processing of all alphanumeric tokens beginning with [_a-zA-Z].
+ * Keywords: arg, const, classvar, false, inf, nil, pi, true, var, while
+ * Identifiers: primitives, class names, other alphanumeric IDs
+ * Curry arguments, e.g. `array.collect(_.max)' */
 int processIdentifier(char *token)
 {
 	if (gDebugLexer)
