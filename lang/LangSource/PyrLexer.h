@@ -27,9 +27,6 @@
 #include "SC_Export.h"
 #include "SCBase.h"
 
-extern int charno, lineno, linepos;
-extern int *linestarts;
-
 struct ClassExtFile {
 	struct ClassExtFile *next;
 	PyrSymbol *fileSym;
@@ -83,9 +80,6 @@ bool passOne_ProcessOneFile(const char *filename, int level);
 
 extern void asRelativePath(char *inPath,char *outPath);
 
-void initLexer();
-void init_SuperCollider();
-
 int processbinop(char *token);
 int processident(char *token);
 int processfloat(char *token, int sawpi);
@@ -102,11 +96,6 @@ void postErrorLine(int linenum, int start, int charpos);
 bool scanForClosingBracket();
 void parseClasses();
 
-extern int parseFailed;
-extern bool compilingCmdLine;
-extern bool compilingCmdLineErrorWindow;
-extern bool compiledOK;
-
 extern int gNumCompiledFiles;
 extern int gClassCompileOrderNum;
 extern ClassDependency **gClassCompileOrder;
@@ -118,7 +107,6 @@ extern const char *binopchars;
 extern int yylen;
 extern int lexCmdLine;
 extern bool compilingCmdLine;
-extern bool compilingCmdLineErrorWindow;
 extern intptr_t zzval;
 extern intptr_t gParserResult;
 
