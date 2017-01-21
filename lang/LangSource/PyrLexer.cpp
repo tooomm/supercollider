@@ -534,9 +534,19 @@ start:
 		r = c;
 		goto leave;
 	}
-	else if (c == '^' || c == '~' || c == ';' || c == ':' || c == '`' || c == ',') {
+	else if (c == '~' || c == ';' || c == ':' || c == '`' || c == ',') {
 		r = c;
 		goto leave;
+	}
+	else if (c == '^') {
+		if (lexCmdLine > 0) {
+			fatal();
+			post("'%c' is not allowed outside of class methods\n", c);
+			goto error2;
+		} else {
+			r = c;
+			goto leave;
+		}
 	}
 	else if (c == '\\') {
 		goto symbolAfterBackslash;
