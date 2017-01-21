@@ -1036,7 +1036,7 @@ int processIdentifier(char *token)
 				break;
 
 		case 'w':
-			if (!strcmp(token, "while")){
+			if (!strcmp(token, "while")) {
 				sym = getsym(token);
 				SetSymbol(&slot, sym);
 				node = newPyrSlotNode(&slot);
@@ -1058,7 +1058,7 @@ int processIdentifier(char *token)
 		zzval = (intptr_t)node;
 
 		if (gDebugLexer)
-			postfl("CLASSNAME: '%s'\n",token);
+			postfl("CLASSNAME: '%s'\n", token);
 
 		return CLASSNAME;
 	}
@@ -1078,7 +1078,7 @@ int processBinaryOperator(char *token)
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processBinaryOperator: '%s'\n",token);
+		postfl("processBinaryOperator: '%s'\n", token);
 
 	sym = getsym(token);
 	SetSymbol(&slot, sym);
@@ -1105,7 +1105,7 @@ int processKeywordBinaryOperator(char *token)
 
 
 	if (gDebugLexer)
-		postfl("processKeywordBinaryOperator: '%s'\n",token);
+		postfl("processKeywordBinaryOperator: '%s'\n", token);
 
 	token[strlen(token)-1] = 0; // strip off colon
 	sym = getsym(token);
@@ -1121,7 +1121,7 @@ int processChar(int c)
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processHex: '%c'\n",c);
+		postfl("processHex: '%c'\n", c);
 
 	SetChar(&slot, c);
 	node = newPyrSlotNode(&slot);
@@ -1135,7 +1135,7 @@ int processInt(char *s)
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processInt: '%s'\n",s);
+		postfl("processInt: '%s'\n", s);
 
 	SetInt(&slot, atoi(s));
 	node = newPyrSlotNode(&slot);
@@ -1151,7 +1151,7 @@ int processHexInt(char *s)
 	int val;
 
 	if (gDebugLexer)
-		postfl("processHexInt: '%s'\n",s);
+		postfl("processHexInt: '%s'\n", s);
 
 	c = s;
 	val = 0;
@@ -1174,7 +1174,7 @@ int processIntRadix(char *s, int n, int radix)
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processIntRadix: '%s'\n",s);
+		postfl("processIntRadix: '%s'\n", s);
 
 	SetInt(&slot, sc_strtoi(s, n, radix));
 	node = newPyrSlotNode(&slot);
@@ -1189,7 +1189,7 @@ int processFloat(char *s, int sawpi)
 	double z;
 
 	if (gDebugLexer)
-		postfl("processFloat: '%s'\n",s);
+		postfl("processFloat: '%s'\n", s);
 
 	if (sawpi) { z = atof(s)*pi; SetFloat(&slot, z); }
 	else  { SetFloat(&slot, atof(s)); }
@@ -1204,7 +1204,7 @@ int processFloatRadix(char *s, int n, int radix)
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processFloatRadix: '%s'\n",s);
+		postfl("processFloatRadix: '%s'\n", s);
 
 	SetFloat(&slot, sc_strtof(s, n, radix));
 	node = newPyrSlotNode(&slot);
@@ -1222,7 +1222,7 @@ int processAccidental1(char *s)
 	double centsdiv=1000.;
 
 	if (gDebugLexer)
-		postfl("processAccidental1: '%s'\n",s);
+		postfl("processAccidental1: '%s'\n", s);
 
 	c = s;
 	while (*c) {
@@ -1260,7 +1260,7 @@ int processAccidental2(char *s)
 	double semitones=0.;
 
 	if (gDebugLexer)
-		postfl("processAccidental2: '%s'\n",s);
+		postfl("processAccidental2: '%s'\n", s);
 
 	c = s;
 	while (*c) {
@@ -1291,7 +1291,7 @@ int processSymbol(char *s)
 	PyrSymbol *sym;
 
 	if (gDebugLexer)
-		postfl("processSymbol: '%s'\n",s);
+		postfl("processSymbol: '%s'\n", s);
 
 	sym = getsym(s+1);
 
@@ -1308,7 +1308,7 @@ int processString(char *s)
 	PyrString *string;
 
 	if (gDebugLexer)
-		postfl("processString: '%s'\n",s);
+		postfl("processString: '%s'\n", s);
 
 	int flags = compilingCmdLine ? obj_immutable : obj_permanent | obj_immutable;
 	string = newPyrString(gMainVMGlobals->gc, s+1, flags, false);
@@ -1439,7 +1439,7 @@ start:
 		if (!emptyls(&brackets)) {
 			if ((d = popls(&brackets)) != OPENSQUAR) {
 				fatal();
-				post("opening bracket was a '%c', but found a '%c'\n",d,c);
+				post("opening bracket was a '%c', but found a '%c'\n", d, c);
 				goto error1;
 			}
 		} else {
@@ -1455,7 +1455,7 @@ start:
 		if (!emptyls(&brackets)) {
 			if ((d = popls(&brackets)) != (intptr_t) OPENPAREN) {
 				fatal();
-				post("opening bracket was a '%c', but found a '%c'\n",d,c);
+				post("opening bracket was a '%c', but found a '%c'\n", d, c);
 				goto error1;
 			}
 		} else {
@@ -1470,7 +1470,7 @@ start:
 		if (!emptyls(&brackets)) {
 			if ((d = popls(&brackets)) != OPENCURLY) {
 				fatal();
-				post("opening bracket was a '%c', but found a '%c'\n",d,c);
+				post("opening bracket was a '%c', but found a '%c'\n", d, c);
 				goto error1;
 			}
 		} else {
