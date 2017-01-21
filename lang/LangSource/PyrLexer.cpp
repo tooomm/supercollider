@@ -435,9 +435,12 @@ start:
 	}
 	else if (c == '/') {
 		c = input();
-		if (c == '/') goto comment1;
-		else if (c == '*') goto comment2;
-		else { unput(c); goto binop; }
+		if (c == '/')
+			goto comment1;
+		else if (c == '*')
+			goto comment2;
+		unput(c);
+		goto binop;
 	}
 	else if (isdigit(c)) {
 		goto digits_1;
@@ -524,7 +527,6 @@ start:
 			r = '.';
 			goto leave;
 		}
-
 	}
 	else if (c == '#') {
 		if ((c = input()) == OPENCURLY) {
@@ -555,8 +557,10 @@ start:
 	else if (c == '=') {
 		c = input();
 		/* binopchars: "!@%&*-+=|<>?/" */
-		/* If c is 0 here, this will goto binop. Not sure if that's correct behavior - Brian H */
-		if (strchr(binopchars, c)) goto binop;
+		/* If c is 0 here, this will still goto binop.
+		 * Not sure if that's correct behavior - Brian H */
+		if (strchr(binopchars, c))
+			goto binop;
 		else {
 			unput(c);
 			r = '=';
