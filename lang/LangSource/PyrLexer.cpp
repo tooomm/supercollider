@@ -2136,8 +2136,6 @@ SCLANG_DLLEXPORT_C bool compileLibrary(bool standalone)
 	return compiledOK;
 }
 
-void signal_init_globs();
-
 void dumpByteCodes(PyrBlock *theBlock);
 
 SCLANG_DLLEXPORT_C void runLibrary(PyrSymbol* selector)

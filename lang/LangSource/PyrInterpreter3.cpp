@@ -338,7 +338,6 @@ bool initRuntime(VMGlobals *g, int poolSize, AllocPool *inPool)
 	g->rgen = (RGen*)(slotRawObject(&g->thread->randData)->slots);
 
 	//initUGenFuncs();
-	signal_init_globs();
 	initThreads();
 	initPatterns();
 	initUniqueMethods();
