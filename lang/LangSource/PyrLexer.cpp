@@ -232,6 +232,8 @@ void initLexerGlobals() {
 
 /* Readies the lexer to parse a file from startPos to endPos.
  * The lineOffset is used to give helpful error messages.
+ * This function returns `false` if and only if the source was not
+ * already loaded and this function failed to load it.
  */
 bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 {
