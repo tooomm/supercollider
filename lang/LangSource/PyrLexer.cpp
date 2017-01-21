@@ -1217,8 +1217,9 @@ int processFloat(char *s, int sawpi)
 	if (gDebugLexer)
 		postfl("processFloat: '%s'\n", s);
 
-	if (sawpi) { z = atof(s)*pi; SetFloat(&slot, z); }
-	else  { SetFloat(&slot, atof(s)); }
+	z = atof(s) * sawpi ? pi : 1;
+	SetFloat(&slot, z);
+
 	node = newPyrSlotNode(&slot);
 	zzval = (intptr_t)node;
 	return SC_FLOAT;
