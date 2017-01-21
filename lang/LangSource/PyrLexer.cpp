@@ -625,41 +625,14 @@ identifier:
 symbolAfterBackslash:
 	c = input();
 
-	if (isalpha(c) || c == '_')
-		goto symbol2;
-	else if (isdigit(c))
-		goto symbol4;
-	else {
-		unput(c);
-		yytext[yylen] = 0;
-		r = processsymbol(yytext) ;
-		goto leave;
-	}
-
-symbol2:
-	c = input();
-
 	if (isalnum(c) || c == '_')
-		goto symbol2;
+		goto symbolAfterBackslash;
 	else {
 		unput(c);
 		yytext[yylen] = 0;
 		r = processsymbol(yytext) ;
 		goto leave;
 	}
-
-symbol4:
-	c = input();
-	if (isdigit(c))
-		goto symbol4;
-	else {
-		unput(c);
-		yytext[yylen] = 0;
-		r = processsymbol(yytext) ;
-		goto leave;
-	}
-
-
 
 binaryOp:
 	c = input();
