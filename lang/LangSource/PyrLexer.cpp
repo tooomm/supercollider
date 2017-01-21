@@ -324,12 +324,15 @@ void input_startNewLine() {
 int input()
 {
 	int c;
+
 	if (textpos >= textlen) {
 		c = 0;
+		/* should this block have `textpos++` (c.f. input0() below)? - Brian H */
 	} else {
 		c = text[textpos++];
 		charno++;
 	}
+
 	if (c == '\n' || c == '\r') {
 		input_startNewLine();
 	}
