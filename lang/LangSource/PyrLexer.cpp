@@ -336,9 +336,8 @@ int input()
 		charno++;
 	}
 
-	if (c == '\n' || c == '\r') {
+	if (c == '\n' || c == '\r')
 		input_startNewLine();
-	}
 
 	if (c != 0 && yylen < MAXYYLEN-2)
 		yytext[yylen++] = c;
@@ -363,9 +362,8 @@ int input0()
 		charno++;
 	}
 
-	if (c == '\n' || c == '\r') {
+	if (c == '\n' || c == '\r')
 		input_startNewLine();
-	}
 
 	if (gDebugLexer)
 		postfl("input0 '%c' %d\n", c, c);
