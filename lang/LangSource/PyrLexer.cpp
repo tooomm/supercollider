@@ -669,11 +669,11 @@ radix_digits_1:
 
 	c = input();
 	c2 = toupper(c);
-	if (c >= '0' && c <= '0' + sc_min(10, radix) - 1)
+	if (c2 >= '0' && c2 <= '0' + sc_min(10, radix) - 1)
 		goto radix_digits_1;
-	if (c >= 'A' && c <= 'A' + sc_min(36, radix) - 11)
+	if (c2 >= 'A' && c2 <= 'A' + sc_min(36, radix) - 11)
 		goto radix_digits_1;
-	if (c == '.')
+	if (c2 == '.')
 		goto radix_digits_2;
 	unput(c);
 	yytext[yylen] = 0;
