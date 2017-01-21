@@ -263,8 +263,8 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 
 	initLexerGlobals();
 
-	errLineOffset = MAX(lineOffset, 0);
-	errCharPosOffset = MAX(startPos, 0);
+	errLineOffset = sc_max(lineOffset, 0);
+	errCharPosOffset = sc_max(startPos, 0);
 
 	lexCmdLine = 0;
 
