@@ -307,6 +307,20 @@ void finiLexer()
 	freeLongStack(&generatorStack);
 }
 
+void input_startNewLine() {
+	lineno++;
+	linepos = textpos;
+	if (linestarts) {
+		if (lineno >= maxlinestarts) {
+			maxlinestarts += maxlinestarts;
+			linestarts = (int*)pyr_pool_compile->Realloc(
+				linestarts,  maxlinestarts * sizeof(int*));
+		}
+		linestarts[lineno] = linepos;
+	}
+	charno = 0;
+}
+
 int input()
 {
 	int c;
@@ -317,17 +331,7 @@ int input()
 		charno++;
 	}
 	if (c == '\n' || c == '\r') {
-		lineno++;
-		linepos = textpos;
-		if (linestarts) {
-			if (lineno >= maxlinestarts) {
-				maxlinestarts += maxlinestarts;
-				linestarts = (int*)pyr_pool_compile->Realloc(
-					linestarts,  maxlinestarts * sizeof(int*));
-			}
-			linestarts[lineno] = linepos;
-		}
-		charno = 0;
+		input_startNewLine();
 	}
 
 	if (c != 0 && yylen < MAXYYLEN-2)
@@ -350,17 +354,7 @@ int input0()
 		charno++;
 	}
 	if (c == '\n' || c == '\r') {
-		lineno++;
-		linepos = textpos;
-		if (linestarts) {
-			if (lineno >= maxlinestarts) {
-				maxlinestarts += maxlinestarts;
-				linestarts = (int*)pyr_pool_compile->Realloc(
-					linestarts,  maxlinestarts * sizeof(int*));
-			}
-			linestarts[lineno] = linepos;
-		}
-		charno = 0;
+		input_startNewLine();
 	}
 
 	if (gDebugLexer)
