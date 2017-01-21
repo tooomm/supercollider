@@ -382,23 +382,26 @@ int input0()
  */
 void unput(int c)
 {
-	if (textpos>0) textpos--;
+	if (textpos > 0)
+		--textpos;
 	if (c) {
-		if (yylen) --yylen;
-		if (charno) --charno;
-		if (c == '\n' || c == '\r') {
+		if (yylen > 0)
+			--yylen;
+		if (charno > 0)
+			--charno;
+		if (c == '\n' || c == '\r')
 			--lineno;
-		}
 	}
 }
 
 void unput0(int c)
 {
-	if (textpos>0) textpos--;
-	if (charno) --charno;
-	if (c == '\n' || c == '\r') {
+	if (textpos > 0)
+		--textpos;
+	if (charno > 0)
+		--charno;
+	if (c == '\n' || c == '\r')
 		--lineno;
-	}
 }
 
 int yylex()
