@@ -581,8 +581,8 @@ start:
 ident:
 	c = input();
 
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| c == '_' || (c >= '0' && c <= '9')) goto ident;
+	if (isalnum(c) || c == '_')
+		goto ident;
 	else if (c == ':') {
 		yytext[yylen] = 0;
 		r = processkeywordbinop(yytext) ;
@@ -597,8 +597,10 @@ ident:
 symbol1:
 	c = input();
 
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '_') goto symbol2;
-	else if (c >= '0' && c <= '9') goto symbol4;
+	if (isalpha(c) || c == '_')
+		goto symbol2;
+	else if (isdigit(c))
+		goto symbol4;
 	else {
 		unput(c);
 		yytext[yylen] = 0;
@@ -609,8 +611,8 @@ symbol1:
 symbol2:
 	c = input();
 
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| c == '_' || (c >= '0' && c <= '9')) goto symbol2;
+	if (isalnum(c) || c == '_')
+		goto symbol2;
 	else {
 		unput(c);
 		yytext[yylen] = 0;
@@ -620,7 +622,8 @@ symbol2:
 
 symbol4:
 	c = input();
-	if (c >= '0' && c <= '9') goto symbol4;
+	if (isdigit(c))
+		goto symbol4;
 	else {
 		unput(c);
 		yytext[yylen] = 0;
@@ -631,14 +634,14 @@ symbol4:
 
 
 binop:
-
 	c = input();
 
-	if (c == 0) goto binop2;
+	if (c == 0)
+		goto binop2;
 
 	/* binopchars: "!@%&*-+=|<>?/" */
-	if (strchr(binopchars, c))  goto binop;
-
+	if (strchr(binopchars, c))
+		goto binop;
 	else {
 		binop2:
 		unput(c);
@@ -650,9 +653,12 @@ binop:
 radix_digits_1:
 
 	c = input();
-	if (c >= '0' && c <= '0' + sc_min(10,radix) - 1) goto radix_digits_1;
-	if (c >= 'a' && c <= 'a' + sc_min(36,radix) - 11) goto radix_digits_1;
-	if (c >= 'A' && c <= 'A' + sc_min(36,radix) - 11) goto radix_digits_1;
+	if (c >= '0' && c <= '0' + sc_min(10, radix) - 1)
+		goto radix_digits_1;
+	if (c >= 'a' && c <= 'a' + sc_min(36, radix) - 11)
+		goto radix_digits_1;
+	if (c >= 'A' && c <= 'A' + sc_min(36, radix) - 11)
+		goto radix_digits_1;
 	if (c == '.') {
 		goto radix_digits_2;
 	}
@@ -664,8 +670,10 @@ radix_digits_1:
 radix_digits_2:
 
 	c = input();
-	if (c >= '0' && c <= '0' + sc_min(10,radix) - 1)  goto radix_digits_2;
-	if (c >= 'A' && c <= 'A' + sc_min(36,radix) - 11) goto radix_digits_2;
+	if (c >= '0' && c <= '0' + sc_min(10,radix) - 1)
+		goto radix_digits_2;
+	if (c >= 'A' && c <= 'A' + sc_min(36,radix) - 11)
+		goto radix_digits_2;
 	// do not allow lower case after decimal point.
 	unput(c);
 	yytext[yylen] = 0;
@@ -675,9 +683,8 @@ radix_digits_2:
 hexdigits:
 
 	c = input();
-	if (c >= '0' && c <= '9') goto hexdigits;
-	if (c >= 'a' && c <= 'f') goto hexdigits;
-	if (c >= 'A' && c <= 'F') goto hexdigits;
+	if (isxdigit(c))
+		goto hexdigits;
 	unput(c);
 	yytext[yylen] = 0;
 	r = processhex(yytext);
@@ -687,7 +694,7 @@ digits_1:	/* number started with digits */
 
 	c = input();
 
-	if (c >= '0' && c <= '9') goto digits_1;
+	if (isdigit(c)) goto digits_1;
 	else if (c == 'r') {
 		radix = sc_strtoi(yytext, yylen-1, 10);
 		yylen = 0;
@@ -696,7 +703,7 @@ digits_1:	/* number started with digits */
 	else if (c == 'e' || c == 'E') goto expon_1;
 	else if (c == '.') {
 		c2 = input();
-		if (c2 >= '0' && c2 <= '9') goto digits_2;
+		if (isdigit(c2)) goto digits_2;
 		else {
 			unput(c2);
 			unput(c);
@@ -707,12 +714,12 @@ digits_1:	/* number started with digits */
 	}
 	else if (c == 'b' || c == 's') {
 		d = input();
-		if (d >= '0' && d <= '9') goto accidental1;
+		if (isdigit(d)) goto accidental1;
 		if (d == c) goto accidental2;
 		goto accidental3;
 accidental1:
 		d = input();
-		if (d >= '0' && d <= '9') goto accidental1;
+		if (isdigit(d)) goto accidental1;
 		unput(d);
 		yytext[yylen] = 0;
 		r = processaccidental1(yytext);
@@ -740,8 +747,10 @@ digits_2:
 
 	c = input();
 
-	if (c >= '0' && c <= '9') goto digits_2;
-	else if (c == 'e' || c == 'E') goto expon_1;
+	if (isdigit(c))
+		goto digits_2;
+	else if (c == 'e' || c == 'E')
+		goto expon_1;
 //	else if (c == 'π' || c == '∏') {
 //		--yylen;
 //		yytext[yylen] = 0;
@@ -758,20 +767,25 @@ digits_2:
 expon_1:	/* e has been seen, need digits */
 	c = input();
 
-	if (c >= '0' && c <= '9') goto expon_3;
-	else if (c == '+' || c == '-') goto expon_2;
+	if (isdigit(c))
+		goto expon_3;
+	else if (c == '+' || c == '-')
+		goto expon_2;
 	else goto error1;
 
 expon_2:	/* + or - seen but still need digits */
 	c = input();
 
-	if (c >= '0' && c <= '9') goto expon_3;
-	else goto error1;
+	if (isdigit(c))
+		goto expon_3;
+	else
+		goto error1;
 
 expon_3:
 	c = input();
 
-	if (c >= '0' && c <= '9') goto expon_3;
+	if (isdigit(c))
+		goto expon_3;
 //	else if (c == 'π' || c == '∏') {
 //		--yylen;
 //		yytext[yylen] = 0;
