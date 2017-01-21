@@ -341,7 +341,7 @@ int input()
 		yytext[yylen++] = c;
 
 	if (gDebugLexer)
-		postfl("input '%c' %d\n",c,c);
+		postfl("input '%c' %d\n", c, c);
 
 	return c;
 }
@@ -349,6 +349,7 @@ int input()
 int input0()
 {
 	int c;
+
 	if (textpos >= textlen) {
 		c = 0;
 		textpos++; // so unput will work properly
@@ -356,12 +357,13 @@ int input0()
 		c = text[textpos++];
 		charno++;
 	}
+
 	if (c == '\n' || c == '\r') {
 		input_startNewLine();
 	}
 
 	if (gDebugLexer)
-		postfl("input0 '%c' %d\n",c,c);
+		postfl("input0 '%c' %d\n", c, c);
 
 	return c;
 }
