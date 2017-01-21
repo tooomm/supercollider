@@ -956,7 +956,7 @@ int processIdentifier(char *token)
 			return PRIMITIVENAME;
 		}
 	}
-	if (token[0] >= 'A' && token[0] <= 'Z') {
+	else if (isupper(token[0])) {
 		sym = getsym(token);
 		SetSymbol(&slot, sym);
 		node = newPyrSlotNode(&slot);
