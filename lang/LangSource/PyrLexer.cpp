@@ -1331,6 +1331,10 @@ void postErrorLine(int linenum, int start, int charpos)
 	post("-----------------------------------\n", str);
 }
 
+/***************************************************************************/
+/*         SECONDARY PARSING FUNCTION : scanForClosingBracket              */
+/***************************************************************************/
+
 bool scanForClosingBracket()
 {
 	int r, c, startLevel;
@@ -1518,6 +1522,11 @@ leave:
 	return res;
 }
 
+/***************************************************************************/
+/*                      MAIN PARSING FUNCTIONS : END                       */
+/***************************************************************************/
+/*               CLASS SYSTEM STRUCTURING FUNCTIONS : BEGIN                */
+/***************************************************************************/
 
 int numClassDeps;
 static ClassExtFile* sClassExtFiles;
