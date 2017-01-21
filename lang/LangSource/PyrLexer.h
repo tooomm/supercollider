@@ -100,8 +100,6 @@ extern int gNumCompiledFiles;
 extern int gClassCompileOrderNum;
 extern ClassDependency **gClassCompileOrder;
 
-extern int runcount;
-
 extern const char *binopchars;
 
 extern int yylen;
