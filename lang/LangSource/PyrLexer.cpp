@@ -1146,20 +1146,20 @@ int processHexInt(char *s)
 {
 	PyrSlot slot;
 	PyrSlotNode *node;
-	char *c;
-	int val;
+	int val = 0;
 
 	if (gDebugLexer)
 		postfl("processHexInt: '%s'\n", s);
 
-	c = s;
-	val = 0;
-	while (*c) {
-		if (*c >= '0' && *c <= '9') val = val*16 + *c - '0';
-		else if (*c >= 'a' && *c <= 'z') val = val*16 + *c - 'a' + 10;
-		else if (*c >= 'A' && *c <= 'Z') val = val*16 + *c - 'A' + 10;
-		c++;
-	}
+	do {
+		val *= 16;
+		if (isdigit(*s))
+			val = *s - '0';
+		else if (islower(*s))
+			val = *s - 'a' + 10;
+		else
+			val = *s - 'A' + 10; // assume well-formed input
+	} while(*++s);
 
 	SetInt(&slot, val);
 	node = newPyrSlotNode(&slot);
