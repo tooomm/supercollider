@@ -115,8 +115,8 @@ int yylen;
 int gLexMode;
 enum {
 	LEXMODE_COMPILE = 0,
-	LEXMODE_START_CMDLINE = 1,
-	LEXMODE_IN_CMDLINE = 2
+	LEXMODE_PRE_INTERPRET = 1,
+	LEXMODE_INTERPRET = 2
 };
 bool compilingCmdLine = false;
 
