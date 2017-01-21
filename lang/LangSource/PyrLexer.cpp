@@ -324,6 +324,10 @@ void input_startNewLine() {
 	charno = 0;
 }
 
+/* input() and input0() pull the next character from the text; the only difference is
+ * that input() also adds the character to yytext (what will eventually be passed to
+ * the Bison-generated parser). unput() and unput0() are the corresponding inverse operations
+ */
 int input()
 {
 	int c;
@@ -371,6 +375,9 @@ int input0()
 	return c;
 }
 
+/* unput() and unput0() are the inverses of input() and input0() — the `0` signifies that the operation
+ * doesn't involve yytext.
+ */
 void unput(int c)
 {
 	if (textpos>0) textpos--;
