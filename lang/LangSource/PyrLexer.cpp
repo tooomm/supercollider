@@ -586,9 +586,7 @@ start:
 	else if (c == '=') {
 		c = input();
 		/* binopchars: "!@%&*-+=|<>?/" */
-		/* If c is 0 here, this will still goto binop.
-		 * Not sure if that's correct behavior - Brian H */
-		if (strchr(binopchars, c))
+		if (c && strchr(binopchars, c))
 			goto binaryOp;
 		else {
 			unput(c);
