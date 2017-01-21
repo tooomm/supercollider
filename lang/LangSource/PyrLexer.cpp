@@ -1126,6 +1126,7 @@ int processChar(int c)
 	return ASCII;
 }
 
+/* A sequence of digits, optionally preceded by `-' */
 int processInt(char *s)
 {
 	PyrSlot slot;
@@ -1140,6 +1141,7 @@ int processInt(char *s)
 	return INTEGER;
 }
 
+/* A sequence of hex digits */
 int processHexInt(char *s)
 {
 	PyrSlot slot;
@@ -1165,6 +1167,7 @@ int processHexInt(char *s)
 	return INTEGER;
 }
 
+/* A sequence of digits in the given radix, ignoring case */
 int processIntRadix(char *s, int n, int radix)
 {
 	PyrSlot slot;
