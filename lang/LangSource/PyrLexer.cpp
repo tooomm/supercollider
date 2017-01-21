@@ -422,19 +422,26 @@ int yylex()
 start:
 	c = input();
 
-	if (c == 0)   { r = 0; goto leave; }
+	if (c == 0) {
+		r = 0;
+		goto leave;
+	}
 	else if (c==' ' || c=='\t' || c=='\n' || c=='\r' || c=='\v' || c=='\f') {
 		yylen = 0;
 		goto start;
 	}
-	else if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '_') goto ident;
+	else if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '_') {
+		goto ident;
+	}
 	else if (c == '/') {
 		c = input();
 		if (c == '/') goto comment1;
 		else if (c == '*') goto comment2;
 		else { unput(c); goto binop; }
 	}
-	else if (c >= '0' && c <= '9') goto digits_1;
+	else if (c >= '0' && c <= '9') {
+		goto digits_1;
+	}
 	else if (c == OPENPAREN || c == OPENSQUAR || c == OPENCURLY) {
 		pushls(&brackets, (intptr_t)c);
 		if (c == OPENCURLY) {
@@ -489,14 +496,19 @@ start:
 		r = c;
 		goto leave;
 	}
-	else if (c == '^') { r = c; goto leave; }
-	else if (c == '~') { r = c; goto leave; }
-	else if (c == ';') { r = c; goto leave; }
-	else if (c == ':') { r = c; goto leave; }
-	else if (c == '`') { r = c; goto leave; }
-	else if (c == '\\') goto symbol1;
-	else if (c == '\'') goto symbol3;
-	else if (c == '"') goto string1;
+	else if (c == '^' || c == '~' || c == ';' || c == ':' || c == '`' || c == ',') {
+		r = c;
+		goto leave;
+	}
+	else if (c == '\\') {
+		goto symbol1;
+	}
+	else if (c == '\'') {
+		goto symbol3;
+	}
+	else if (c == '"') {
+		goto string1;
+	}
 	else if (c == '.') {
 		if ((c = input()) == '.') {
 			if ((c = input()) == '.') {
@@ -540,7 +552,6 @@ start:
 		r = processchar(c);
 		goto leave;
 	}
-	else if (c == ',') { r = c; goto leave; }
 	else if (c == '=') {
 		c = input();
 		if (strchr(binopchars, c)) goto binop;
@@ -550,12 +561,15 @@ start:
 			goto leave;
 		}
 	}
-	else if (strchr(binopchars, c))  goto binop;
+	else if (strchr(binopchars, c)) {
+		goto binop;
+	}
 	else if(!(isprint(c) || isspace(c) || c == 0)) {
 		yylen = 0;
 		goto start;
 	}
-	else goto error1;
+	else
+		goto error1;
 
 ident:
 	c = input();
