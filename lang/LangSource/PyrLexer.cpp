@@ -572,6 +572,11 @@ start:
 	}
 	else
 		goto error1;
+	/* At this point, we've checked:
+	 * null, space, alpha, digits, /, [{()}], ^~;:`,\'".#$, !@%&*-+=|<>?, and non-printing.
+	 * By my estimate, that's everything. error1 is, I think, supposed
+	 * to catch non-ASCII characters, but I think the use of !isprint(c) here precludes that. - Brian H
+	 */
 
 ident:
 	c = input();
