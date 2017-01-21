@@ -943,7 +943,110 @@ int processIdentifier(char *token)
 
 	zzval = (intptr_t) -1;
 
-	/* Starting with an uppercase character is always a class name */
+	/* Use a switch to speed up string comparisons, in order to give a better
+	 * worst-case cost for name identifiers. - Brian H */
+	switch (token[0]) {
+		/* starting with an underscore can either be a curry arg or a primitive */
+		case '_':
+			if (token[1] == 0) {
+				node = newPyrCurryArgNode();
+				zzval = (intptr_t)node;
+				return CURRYARG;
+			} else {
+				sym = getsym(token);
+				SetSymbol(&slot, sym);
+				node = newPyrSlotNode(&slot);
+				zzval = (intptr_t)node;
+				return PRIMITIVENAME;
+			}
+			break; // for security
+
+		case 'a':
+			if (!strcmp(token, "arg"))
+				return ARG;
+			else
+				break;
+
+		case 'c':
+			if (!strcmp(token, "const"))
+				return SC_CONST;
+			else if (!strcmp(token, "classvar"))
+				return CLASSVAR;
+			else
+				break;
+
+		case 'f':
+			if (!strcmp(token, "false")) {
+				SetFalse(&slot);
+				node = newPyrSlotNode(&slot);
+				zzval = (intptr_t)node;
+				return FALSEOBJ;
+			}
+			else
+				break;
+
+		case 'i':
+			if(!strcmp(token, "inf")) {
+				SetFloat(&slot, std::numeric_limits<double>::infinity());
+				node = newPyrSlotNode(&slot);
+				zzval = (intptr_t)node;
+				return SC_FLOAT;
+			}
+			else
+				break;
+
+		case 'n':
+			if (!strcmp(token, "nil")) {
+				SetNil(&slot);
+				node = newPyrSlotNode(&slot);
+				zzval = (intptr_t)node;
+				return NILOBJ;
+			}
+			else
+				break;
+
+		case 'p':
+			if (!strcmp(token, "pi")) {
+				SetFloat(&slot, pi);
+				node = newPyrSlotNode(&slot);
+				zzval = (intptr_t)node;
+				return PIE;
+			}
+			else
+				break;
+
+		case 't':
+			if (!strcmp(token, "true")) {
+				SetTrue(&slot);
+				node = newPyrSlotNode(&slot);
+				zzval = (intptr_t)node;
+				return TRUEOBJ;
+			}
+			else
+				break;
+
+		case 'v':
+			if (!strcmp(token, "var"))
+				return VAR;
+			else
+				break;
+
+		case 'w':
+			if (!strcmp(token, "while")){
+				sym = getsym(token);
+				SetSymbol(&slot, sym);
+				node = newPyrSlotNode(&slot);
+				zzval = (intptr_t)node;
+				return WHILE;
+			}
+			else
+				break;
+
+		default:
+			break; // fall out of switch
+	}
+
+	/* An ID starting with an uppercase character is always a class name */
 	if (isupper(token[0])) {
 		sym = getsym(token);
 		SetSymbol(&slot, sym);
@@ -952,67 +1055,12 @@ int processIdentifier(char *token)
 
 		if (gDebugLexer)
 			postfl("CLASSNAME: '%s'\n",token);
+
 		return CLASSNAME;
 	}
-	if (token[0] == '_') {
-		if (token[1] == 0) {
-			node = newPyrCurryArgNode();
-			zzval = (intptr_t)node;
-			return CURRYARG;
-		} else {
-			sym = getsym(token);
-			SetSymbol(&slot, sym);
-			node = newPyrSlotNode(&slot);
-			zzval = (intptr_t)node;
-			return PRIMITIVENAME;
-		}
-	}
-	if (strcmp("var",token) ==0) return VAR;
-	if (strcmp("arg",token) ==0) return ARG;
-	if (strcmp("classvar",token) ==0) return CLASSVAR;
-	if (strcmp("const",token) ==0) return SC_CONST;
 
-	if (strcmp("while",token) ==0) {
-
-		sym = getsym(token);
-		SetSymbol(&slot, sym);
-		node = newPyrSlotNode(&slot);
-		zzval = (intptr_t)node;
-		return WHILE;
-	}
-	if (strcmp("pi",token) ==0) {
-		SetFloat(&slot, pi);
-		node = newPyrSlotNode(&slot);
-		zzval = (intptr_t)node;
-		return PIE;
-	}
-	if (strcmp("true",token) ==0) {
-		SetTrue(&slot);
-		node = newPyrSlotNode(&slot);
-		zzval = (intptr_t)node;
-		return TRUEOBJ;
-	}
-	if (strcmp("false",token) ==0) {
-		SetFalse(&slot);
-		node = newPyrSlotNode(&slot);
-		zzval = (intptr_t)node;
-		return FALSEOBJ;
-	}
-	if (strcmp("nil",token) ==0) {
-		SetNil(&slot);
-		node = newPyrSlotNode(&slot);
-		zzval = (intptr_t)node;
-		return NILOBJ;
-	}
-	if (strcmp("inf",token) ==0) {
-		SetFloat(&slot, std::numeric_limits<double>::infinity());
-		node = newPyrSlotNode(&slot);
-		zzval = (intptr_t)node;
-		return SC_FLOAT;
-	}
-
+	/* Default case: name identifier, non-keyword, non-classname */
 	sym = getsym(token);
-
 	SetSymbol(&slot, sym);
 	node = newPyrSlotNode(&slot);
 	zzval = (intptr_t)node;
