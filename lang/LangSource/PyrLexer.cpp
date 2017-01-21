@@ -455,7 +455,7 @@ start:
 	}
 	else if (c == CLOSSQUAR) {
 		if (!emptyls(&brackets)) {
-			if ((d = popls(&brackets)) != (intptr_t) OPENSQUAR) {
+			if ((d = popls(&brackets)) != OPENSQUAR) {
 				fatal();
 				post("opening bracket was a '%c', but found a '%c'\n",d,c);
 				goto error2;
