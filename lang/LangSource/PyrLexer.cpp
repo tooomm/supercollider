@@ -922,8 +922,6 @@ error1:
 	post("illegal input string '%s' \n   at '%s' line %d char %d\n",
 		yytext, extPath, lineno+errLineOffset, charno);
 	post("code %d\n", c);
-	//postfl(" '%c' '%s'\n", c, binopchars);
-	//postfl("%d\n", strchr(binopchars, c));
 
 error2:
 	asRelativePath(curfilename, extPath);
@@ -1370,32 +1368,6 @@ void postErrorLine(int linenum, int start, int charpos)
 		post("  %s\n", str);
 	}
 	post("-----------------------------------\n", str);
-}
-
-void pstrncpy(unsigned char *s1, unsigned char *s2, int n);
-void pstrncpy(unsigned char *s1, unsigned char *s2, int n)
-{
-	int i, m;
-	m = *s2++;
-	n = (n < m) ? n : m;
-	*s1 = n; s1++;
-	for (i=0; i<n; ++i) { *s1 = *s2; s1++; s2++; }
-}
-
-int pstrcmp(unsigned char *s1, unsigned char *s2);
-int pstrcmp(unsigned char *s1, unsigned char *s2)
-{
-	int i, len1, len2, len;
-	len1 = *s1++;
-	len2 = *s2++;
-	len = sc_min(len1, len2);
-	for (i=0; i<len; ++i) {
-		if (s1[i] < s2[i]) return -1;
-		if (s1[i] > s2[i]) return 1;
-	}
-	if (len1 < len2) return -1;
-	if (len1 > len2) return 1;
-	return 0;
 }
 
 bool scanForClosingBracket()
