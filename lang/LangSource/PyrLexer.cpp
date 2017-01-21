@@ -1136,6 +1136,7 @@ int processKeywordBinaryOperator(char *token)
 	return KEYBINOP;
 }
 
+/* A single char preceded by `$' */
 int processChar(int c)
 {
 	PyrSlot slot;
@@ -1206,6 +1207,7 @@ int processIntRadix(char *s, int n, int radix)
 	return INTEGER;
 }
 
+/* A non-radix floating point number, optionally suffixed by `pi' */
 int processFloat(char *s, int sawpi)
 {
 	PyrSlot slot;
@@ -1222,6 +1224,7 @@ int processFloat(char *s, int sawpi)
 	return SC_FLOAT;
 }
 
+/* A radix floating point number */
 int processFloatRadix(char *s, int n, int radix)
 {
 	PyrSlot slot;
@@ -1236,6 +1239,9 @@ int processFloatRadix(char *s, int n, int radix)
 	return SC_FLOAT;
 }
 
+/* Accidental notation of the form `degree+flat/sharp+cents', where
+ * degree and cents are integers and flat/sharp is either `b' or `s'.
+ * This function assumes well-formed input */
 int processAccidental1(char *s)
 {
 	PyrSlot slot;
@@ -1275,6 +1281,10 @@ int processAccidental1(char *s)
 	return ACCIDENTAL;
 }
 
+/* Accidental notation of the form `degree+distance' where degree
+ * is an integer and distance is a sequence of `[sb]' representing
+ * the distance in half-steps from the degree. Note that there is a
+ * maximum limit to this distance. Assumes well-formed input. */
 int processAccidental2(char *s)
 {
 	PyrSlot slot;
@@ -1308,6 +1318,7 @@ int processAccidental2(char *s)
 	return ACCIDENTAL;
 }
 
+/* A symbol notated either as \abc or 'abc' */
 int processSymbol(char *s)
 {
 	PyrSlot slot;
@@ -1325,6 +1336,7 @@ int processSymbol(char *s)
 	return SYMBOL;
 }
 
+/* A string notated as "abc" */
 int processString(char *s)
 {
 	PyrSlot slot;
