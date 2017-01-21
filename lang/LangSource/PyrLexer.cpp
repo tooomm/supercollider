@@ -230,12 +230,16 @@ void initLexerGlobals() {
 	linestarts[1] = 0;
 }
 
+/* Readies the lexer to parse a file from startPos to endPos.
+ * The lineOffset is used to give helpful error messages. - Brian H
+ */
 bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 {
 	char *filename = fileSym->name;
 
 	textlen = -1;
 
+	/* if there's no source text, attempt to pull it now */
 	if(!fileSym->u.source) {
 		if (!getFileText(filename, &text, &textlen))
 			return false;
@@ -245,6 +249,7 @@ bool startLexer(PyrSymbol *fileSym, int startPos, int endPos, int lineOffset)
 	else
 		text = fileSym->u.source;
 
+	/* if there's no start or end position, set it up to read the whole file */
 	if((startPos >= 0) && (endPos > 0)) {
 		textlen = endPos - startPos;
 		text += startPos;
