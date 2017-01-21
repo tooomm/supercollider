@@ -406,6 +406,21 @@ void unput0(int c)
 		--lineno;
 }
 
+int convertEscapeSequence(int c)
+{
+	switch(c) {
+		case 'n' : return '\n';
+		case 'r' : return '\r';
+		case 't' : return '\t';
+		case 'f' : return '\f';
+		case 'v' : return '\v';
+		default:
+			post("invalid escape sequence '\\%c' found on line %d, char %d\n",
+				 lineno, charno);
+			return c;
+	}
+}
+
 int yylex()
 {
 	int r, c, c2;
@@ -545,13 +560,7 @@ start:
 		c = input();
 		if (c == '\\') {
 			c = input();
-			switch (c) {
-				case 'n' : c = '\n'; break;
-				case 'r' : c = '\r'; break;
-				case 't' : c = '\t'; break;
-				case 'f' : c = '\f'; break;
-				case 'v' : c = '\v'; break;
-			}
+			c = convertEscapeSequence(c);
 		}
 		r = processchar(c);
 		goto leave;
@@ -840,13 +849,7 @@ string1 : {
 			if (c == '\\') {
 				yylen--;
 				c = input();
-				switch (c) {
-					case 'n' : yytext[yylen-1] = '\n'; break;
-					case 'r' : yytext[yylen-1] = '\r'; break;
-					case 't' : yytext[yylen-1] = '\t'; break;
-					case 'f' : yytext[yylen-1] = '\f'; break;
-					case 'v' : yytext[yylen-1] = '\v'; break;
-				}
+				yytext[yylen-1] = convertEscapeSequence(c);
 			} else if (c == '\r') c = '\n';
 			else if (c == endchar) break;
 			if (c == 0) break;
