@@ -1117,7 +1117,7 @@ int processChar(int c)
 	PyrSlotNode *node;
 
 	if (gDebugLexer)
-		postfl("processHex: '%c'\n", c);
+		postfl("processChar: '%c'\n", c);
 
 	SetChar(&slot, c);
 	node = newPyrSlotNode(&slot);
