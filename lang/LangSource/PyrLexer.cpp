@@ -1372,25 +1372,6 @@ void postErrorLine(int linenum, int start, int charpos)
 	post("-----------------------------------\n", str);
 }
 
-/*
-void c2pstrcpy(unsigned char* dst, const char *src);
-void c2pstrcpy(unsigned char* dst, const char *src)
-{
-	int c;
-	unsigned char *dstp = &dst[1];
-	while ((c = *src++) != 0) *dstp++ = c;
-	dst[0] = dstp - dst - 1;
-}
-
-void p2cstrcpy(char *dst, const unsigned char* src);
-void p2cstrcpy(char *dst, const unsigned char* src)
-{
-	int n = *src++;
-	for (int i=0; i<n; ++i) *dst++ = *src++;
-	*dst++ = 0;
-}
-*/
-
 void pstrncpy(unsigned char *s1, unsigned char *s2, int n);
 void pstrncpy(unsigned char *s1, unsigned char *s2, int n)
 {
