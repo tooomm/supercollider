@@ -452,7 +452,7 @@ int yylex()
 start:
 	c = input();
 
-	if (c == 0) {
+	if (c == '\0') {
 		r = 0;
 		goto leave;
 	}
