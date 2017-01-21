@@ -943,6 +943,17 @@ int processIdentifier(char *token)
 
 	zzval = (intptr_t) -1;
 
+	/* Starting with an uppercase character is always a class name */
+	if (isupper(token[0])) {
+		sym = getsym(token);
+		SetSymbol(&slot, sym);
+		node = newPyrSlotNode(&slot);
+		zzval = (intptr_t)node;
+
+		if (gDebugLexer)
+			postfl("CLASSNAME: '%s'\n",token);
+		return CLASSNAME;
+	}
 	if (token[0] == '_') {
 		if (token[1] == 0) {
 			node = newPyrCurryArgNode();
@@ -955,16 +966,6 @@ int processIdentifier(char *token)
 			zzval = (intptr_t)node;
 			return PRIMITIVENAME;
 		}
-	}
-	else if (isupper(token[0])) {
-		sym = getsym(token);
-		SetSymbol(&slot, sym);
-		node = newPyrSlotNode(&slot);
-		zzval = (intptr_t)node;
-
-		if (gDebugLexer)
-			postfl("CLASSNAME: '%s'\n",token);
-		return CLASSNAME;
 	}
 	if (strcmp("var",token) ==0) return VAR;
 	if (strcmp("arg",token) ==0) return ARG;
