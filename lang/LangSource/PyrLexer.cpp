@@ -596,6 +596,7 @@ start:
 			goto leave;
 		}
 	}
+	/* binopchars: "!@%&*-+=|<>?/" */
 	else if (strchr(binopchars, c)) {
 		goto binaryOp;
 	}
@@ -1067,6 +1068,8 @@ int processIdentifier(char *token)
 	return NAME;
 }
 
+/* binopchars: "!@%&*-+=|<>?/" */
+/* We get here by having a sequence of these characters of any length. */
 int processBinaryOperator(char *token)
 {
 	PyrSymbol *sym;
@@ -1080,6 +1083,7 @@ int processBinaryOperator(char *token)
 	SetSymbol(&slot, sym);
 	node = newPyrSlotNode(&slot);
 	zzval = (intptr_t)node;
+
 	if (strcmp(token, "<-")==0) return LEFTARROW;
 	if (strcmp(token, "<>")==0) return READWRITEVAR;
 	if (strcmp(token, "|")==0) return '|';
@@ -1091,14 +1095,13 @@ int processBinaryOperator(char *token)
 	return BINOP;
 }
 
+/* We get here by having an alphanumeric sequence ending with `:',
+ * an infix method selector like `x pow: y' */
 int processKeywordBinaryOperator(char *token)
 {
 	PyrSymbol *sym;
 	PyrSlot slot;
 	PyrSlotNode *node;
-
-	//post("'%s'  file '%s'\n", token, curfilename);
-
 
 	if (gDebugLexer)
 		postfl("processKeywordBinaryOperator: '%s'\n", token);
