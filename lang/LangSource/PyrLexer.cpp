@@ -755,12 +755,6 @@ digits_2:
 		goto digits_2;
 	else if (c == 'e' || c == 'E')
 		goto expon_1;
-//	else if (c == 'π' || c == '∏') {
-//		--yylen;
-//		yytext[yylen] = 0;
-//		r = processfloat(yytext, 1);
-//		goto leave;
-//	}
 	else {
 		unput(c);
 		yytext[yylen] = 0;
@@ -790,12 +784,6 @@ expon_3:
 
 	if (isdigit(c))
 		goto expon_3;
-//	else if (c == 'π' || c == '∏') {
-//		--yylen;
-//		yytext[yylen] = 0;
-//		r = processfloat(yytext, 1);
-//		goto leave;
-//	}
 	else {
 		unput(c);
 		yytext[yylen] = 0;
