@@ -880,10 +880,10 @@ commentBlock: {
 				if (--clevel <= 0)
                     break;
                 else
-                    prevc = c, c = input0(); // eat both characters
+                    c = input0(); // eat both characters
             } else if (c == '*' && prevc == '/') {
                 clevel++;
-                prevc = c, c = input0(); // eat both characters
+                c = input0(); // eat both characters
             }
 			prevc = c;
 		} while (c != 0);
@@ -1481,10 +1481,10 @@ commentBlock: {
                 if (--clevel <= 0)
                     break;
                 else
-                    prevc = c, c = input0(); // eat both characters
+                    c = input0(); // eat both characters
             } else if (c == '*' && prevc == '/') {
                 clevel++;
-                prevc = c, c = input0(); // eat both characters
+                c = input0(); // eat both characters
             }
 			prevc = c;
 		} while (c != 0);
