@@ -1270,6 +1270,10 @@ int processString(char *s)
 	return STRING;
 }
 
+/********************************/
+/*   ERROR HANDLING FUNCTIONS   */
+/********************************/
+
 void yyerror(const char *s)
 {
 	parseFailed = 1;
@@ -1335,6 +1339,9 @@ void postErrorLine(int linenum, int start, int charpos)
 /*         SECONDARY PARSING FUNCTION : scanForClosingBracket              */
 /***************************************************************************/
 
+/* Note that this function only uses input0 -- the goal here isn't to really
+ * parse anything, just find the closing bracket as quickly and efficiently
+ * as possible */
 bool scanForClosingBracket()
 {
 	int r, c, startLevel;
