@@ -1586,8 +1586,10 @@ error2:
 	goto leave;
 
 leave:
-	if (gDebugLexer)
+	if (gDebugLexer) {
 		postfl("<-scanForClosingBracket\n");
+		postfl("startLevel: %d\nbrackets.num: %d\n", startLevel, brackets.num);
+	}
 
 	return res;
 }
