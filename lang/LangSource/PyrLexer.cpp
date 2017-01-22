@@ -1412,7 +1412,7 @@ void postErrorLine(int linenum, int start, int charpos)
  * set: /\"'$ and [](){} */
 bool scanForClosingBracket()
 {
-	int r, c, startLevel;
+	int c, startLevel;
 	intptr_t d;
 	bool res = true;
 	// finite state machine to parse input stream into tokens
@@ -1449,7 +1449,6 @@ start:
 	}
 	else if (c == OPENPAREN || c == OPENSQUAR || c == OPENCURLY) {
 		pushls(&brackets, (intptr_t)c);
-		r = c;
 		goto start;
 	}
 	else if (c == CLOSSQUAR) {
@@ -1464,7 +1463,6 @@ start:
 			post("unmatched '%c'\n",c);
 			goto error1;
 		}
-		r = c;
 		if (brackets.num < startLevel) goto leave;
 		else goto start;
 	}
