@@ -1217,7 +1217,7 @@ int processFloat(char *s, int sawpi)
 	if (gDebugLexer)
 		postfl("processFloat: '%s'\n", s);
 
-	z = atof(s) * sawpi ? pi : 1;
+	z = atof(s) * (sawpi ? pi : 1);
 	SetFloat(&slot, z);
 
 	node = newPyrSlotNode(&slot);
@@ -1420,6 +1420,7 @@ bool scanForClosingBracket()
 	if (gDebugLexer)
 		postfl("->scanForClosingBracket\n");
 
+
 	startLevel = brackets.num;
 
 start:
@@ -1450,8 +1451,8 @@ start:
 		if (c == '\\') {
 			c = input0();
 			c = convertEscapeSequence(c);
-		} else
-			goto start;
+		}
+		goto start;
 	}
 	else if (c == OPENPAREN || c == OPENSQUAR || c == OPENCURLY) {
 		pushls(&brackets, (intptr_t)c);
