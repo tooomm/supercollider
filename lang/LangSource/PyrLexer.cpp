@@ -1564,15 +1564,16 @@ commentBlock:
                 c = input0(); // eat both characters
             }
 			prevc = c;
-		} while (c != 0);
-		if (c == 0) {
+		} while (c);
+		if (c)
+			goto start;
+		else {
 			char extPath[MAXPATHLEN];
 			asRelativePath(curfilename, extPath);
 			post("Open ended comment started on line %d in file '%s'\n",
 				 startline, extPath);
 			goto error2;
 		}
-		goto start;
 	}
 
 error1:
