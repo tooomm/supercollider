@@ -1539,13 +1539,15 @@ stringAfterQuote: {
 		goto start;
 	}
 commentLine:	/* comment -- to end of line */
-	do {
-		c = input0();
-	} while (c != '\n' && c != '\r' && c != 0);
-	if (c == 0) { goto leave; }
-	else goto start;
+	for ( ; c && c != '\n' && c != '\r'; c = input0())
+		;
+	if (c)
+		goto start;
+	else
+		goto leave;
 
-commentBlock: {
+commentBlock:
+	{
 		int startline, clevel, prevc;
 		startline = lineno;
 		prevc = 0;
