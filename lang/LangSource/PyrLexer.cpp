@@ -1408,7 +1408,8 @@ void postErrorLine(int linenum, int start, int charpos)
 
 /* Note that this function only uses input0 -- the goal here isn't to really
  * parse anything, just find the closing bracket as quickly and efficiently
- * as possible */
+ * as possible. As a result, this function only cares about a limited character
+ * set: /\"'$ and [](){} */
 bool scanForClosingBracket()
 {
 	int r, c, startLevel;
@@ -1499,9 +1500,12 @@ start:
 		}
 		if (brackets.num < startLevel) goto leave;
 		else goto start;
-	} else {
+	}
+	else {
+		/* anything that isn't /\"'$[](){} */
 		goto start;
 	}
+
 symbolAfterQuote: {
 		int startline, endchar;
 		startline = lineno;
