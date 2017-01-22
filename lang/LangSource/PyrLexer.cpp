@@ -1424,9 +1424,15 @@ bool scanForClosingBracket()
 start:
 	c = input0();
 
-	if (c == 0) goto leave;
-	else if (c == '\'') goto symbolAfterQuote;
-	else if (c == '"') goto stringAfterQuote;
+	if (c == 0) {
+		goto leave;
+	}
+	else if (c == '\'') {
+		goto symbolAfterQuote;
+	}
+	else if (c == '"') {
+		goto stringAfterQuote;
+	}
 	else if (c == '/') {
 		c = input0();
 		if (c == '/') goto commentLine;
