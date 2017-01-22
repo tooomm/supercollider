@@ -1425,9 +1425,6 @@ start:
 	c = input0();
 
 	if (c == 0) goto leave;
-	else if (c==' ' || c=='\t' || c=='\n' || c=='\r' || c=='\v' || c=='\f') {
-		goto start;
-	}
 	else if (c == '\'') goto symbolAfterQuote;
 	else if (c == '"') goto stringAfterQuote;
 	else if (c == '/') {
