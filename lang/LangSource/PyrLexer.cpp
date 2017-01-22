@@ -1457,19 +1457,39 @@ start:
 		pushls(&brackets, (intptr_t)c);
 		goto start;
 	}
-	else if (c == CLOSPAREN || c == CLOSSQUAR || c == CLOSCURLY) {
-		/* because we're only searching for the next closure, and not dispatching anything,
-		 * this section may be simplified to handle all three cases the same way. */
-		int matchingOpen;
-		if(c == CLOSPAREN)
-			matchingOpen = OPENPAREN;
-		else if(c == CLOSSQUAR)
-			matchingOpen = OPENSQUAR;
-		else if(c == CLOSCURLY)
-			matchingOpen = OPENCURLY;
-
+	else if (c == CLOSSQUAR) {
 		if (!emptyls(&brackets)) {
-			if ((d = popls(&brackets)) != matchingOpen) {
+			if ((d = popls(&brackets)) != OPENSQUAR) {
+				fatal();
+				post("opening bracket was a '%c', but found a '%c'\n", d, c);
+				goto error1;
+			}
+		} else {
+			fatal();
+			post("unmatched '%c'\n",c);
+			goto error1;
+		}
+		if (brackets.num < startLevel) goto leave;
+		else goto start;
+	}
+	else if (c == CLOSPAREN) {
+		if (!emptyls(&brackets)) {
+			if ((d = popls(&brackets)) != (intptr_t) OPENPAREN) {
+				fatal();
+				post("opening bracket was a '%c', but found a '%c'\n", d, c);
+				goto error1;
+			}
+		} else {
+			fatal();
+			post("unmatched '%c'\n",c);
+			goto error1;
+		}
+		if (brackets.num < startLevel) goto leave;
+		else goto start;
+	}
+	else if (c == CLOSCURLY) {
+		if (!emptyls(&brackets)) {
+			if ((d = popls(&brackets)) != OPENCURLY) {
 				fatal();
 				post("opening bracket was a '%c', but found a '%c'\n", d, c);
 				goto error1;
