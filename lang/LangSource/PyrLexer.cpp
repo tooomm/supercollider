@@ -1437,13 +1437,7 @@ start:
 		c = input0();
 		if (c == '\\') {
 			c = input0();
-			switch (c) {
-				case 'n' : c = '\n'; break;
-				case 'r' : c = '\r'; break;
-				case 't' : c = '\t'; break;
-				case 'f' : c = '\f'; break;
-				case 'v' : c = '\v'; break;
-			}
+			c = convertEscapeSequence(c);
 		}
 		goto start;
 	}
