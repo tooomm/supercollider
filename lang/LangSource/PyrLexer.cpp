@@ -1499,7 +1499,7 @@ start:
 		else goto start;
 	}
 	else {
-		/* anything that isn't /\"'$[](){} */
+		/* anything that isn't /\"'$[](){}, including alphanumeric characters */
 		goto start;
 	}
 
