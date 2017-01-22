@@ -1421,6 +1421,7 @@ bool scanForClosingBracket()
 		postfl("->scanForClosingBracket\n");
 
 	startLevel = brackets.num;
+
 start:
 	c = input0();
 
@@ -1435,17 +1436,22 @@ start:
 	}
 	else if (c == '/') {
 		c = input0();
-		if (c == '/') goto commentLine;
-		else if (c == '*') goto commentBlock;
-		else { unput(c); goto start; }
+		if (c == '/')
+			goto commentLine;
+		else if (c == '*')
+			goto commentBlock;
+		else {
+			unput(c);
+			goto start;
+		}
 	}
 	else if (c == '$') {
 		c = input0();
 		if (c == '\\') {
 			c = input0();
 			c = convertEscapeSequence(c);
-		}
-		goto start;
+		} else
+			goto start;
 	}
 	else if (c == OPENPAREN || c == OPENSQUAR || c == OPENCURLY) {
 		pushls(&brackets, (intptr_t)c);
@@ -1473,55 +1479,63 @@ start:
 			post("unmatched '%c'\n",c);
 			goto error1;
 		}
-		if (brackets.num < startLevel) goto leave;
-		else goto start;
+
+		if (brackets.num < startLevel)
+			goto leave;
+		else
+			goto start;
 	}
 	else {
 		/* anything that isn't /\"'$[](){}, including alphanumeric characters */
 		goto start;
 	}
 
-symbolAfterQuote: {
+symbolAfterQuote:
+	{
 		int startline, endchar;
 		startline = lineno;
 		endchar = '\'';
 
 		do {
 			c = input0();
-			if (c == '\\') {
+			if (c == '\\')
 				c = input0();
-			}
-		} while (c != endchar && c != 0);
-		if (c == 0) {
+		} while (c != endchar && c);
+
+		if (c) {
+			goto start;
+		} else {
 			char extPath[MAXPATHLEN];
 			asRelativePath(curfilename, extPath);
 			post("Open ended symbol started on line %d in file '%s'\n",
 				 startline, extPath);
 			goto error2;
 		}
-		goto start;
 	}
 
-stringAfterQuote: {
+stringAfterQuote:
+	{
 		int startline, endchar;
 		startline = lineno;
 		endchar = '\"';
 
-		do  {
+		do {
 			c = input0();
-			if (c == '\\') {
+			if (c == '\\')
 				c = input0();
-			}
-		} while (c != endchar && c != 0);
-		if (c == 0) {
+		} while (c != endchar && c);
+
+		if (c) {
+			goto start;
+		} else {
 			char extPath[MAXPATHLEN];
 			asRelativePath(curfilename, extPath);
 			post("Open ended string started on line %d in file '%s'\n",
 				 startline, extPath);
 			goto error2;
 		}
-		goto start;
 	}
+
 commentLine:	/* comment -- to end of line */
 	for ( ; c && c != '\n' && c != '\r'; c = input0())
 		;
@@ -1547,8 +1561,8 @@ commentBlock:
                 clevel++;
                 c = input0(); // eat both characters
             }
-			prevc = c;
-		} while (c);
+		} while ((prevc = c));
+
 		if (c)
 			goto start;
 		else {
