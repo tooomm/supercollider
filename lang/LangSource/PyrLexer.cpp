@@ -1281,7 +1281,7 @@ void postErrorLine()
 
 void postErrorLine(int linenum, int start, int charpos)
 {
-	int i, j, end, pos;
+	/*int i, j, end, pos;
 	char str[256];
 
 	//post("start %d\n", start);
@@ -1319,7 +1319,7 @@ void postErrorLine(int linenum, int start, int charpos)
 		str[j] = 0;
 		post("  %s\n", str);
 	}
-	post("-----------------------------------\n", str);
+	post("-----------------------------------\n", str);*/
 }
 
 /*
@@ -1834,13 +1834,13 @@ bool parseOneClass(PyrSymbol *fileSym)
 					classdep = newClassDependancy(className, superClassName, fileSym, startPos, textpos, startLineOffset);
 				} else {
 					compileErrors++;
-					postfl("Expected %c.  got token: '%s' %d\n", OPENCURLY, yytext, token);
+					//postfl("Expected %c.  got token: '%s' %d\n", OPENCURLY, yytext, token);
 					postErrorLine(lineno, linepos, charno);
 					return false;
 				}
 			} else {
 				compileErrors++;
-				post("Expected superclass name.  got token: '%s' %d\n", yytext, token);
+				//post("Expected superclass name.  got token: '%s' %d\n", yytext, token);
 				postErrorLine(lineno, linepos, charno);
 				return false;
 			}
@@ -1851,7 +1851,7 @@ bool parseOneClass(PyrSymbol *fileSym)
 			classdep = newClassDependancy(className, superClassName, fileSym, startPos, textpos, startLineOffset);
 		} else {
 			compileErrors++;
-			post("Expected ':' or %c.  got token: '%s' %d\n", OPENCURLY, yytext, token);
+			//post("Expected ':' or %c.  got token: '%s' %d\n", OPENCURLY, yytext, token);
 			postErrorLine(lineno, linepos, charno);
 			return false;
 		}
@@ -1865,7 +1865,7 @@ bool parseOneClass(PyrSymbol *fileSym)
 	} else {
 		if (token != 0) {
 			compileErrors++;
-			post("Expected class name.  got token: '%s' %d\n", yytext, token);
+			//post("Expected class name.  got token: '%s' %d\n", yytext, token);
 			postErrorLine(lineno, linepos, charno);
 			return false;
 		} else {
@@ -2200,7 +2200,7 @@ SCLANG_DLLEXPORT_C void runLibrary(PyrSymbol* selector)
 		} else {
 			post("caught exception in runLibrary\n");
 		}
-		error(ex.what());
+		//error(ex.what());
 	} catch (...) {
 		postfl("DANGER: OUT of MEMORY. Operation failed.\n");
 	}
