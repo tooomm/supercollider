@@ -1,3 +1,6 @@
+#ifndef SC_STANDALONEINFO_DARWIN_H
+#define SC_STANDALONEINFO_DARWIN_H
+
 #if defined(__APPLE__) || defined(SC_IPHONE)
 
 #ifndef _SC_StandAloneInfo_
@@ -18,4 +21,7 @@ public:
 	static bool IsStandAlone();
 	static void GetResourceDir(char* pathBuf, int length);
 };
-#endif
+
+#endif // defined(__APPLE__) || defined(SC_IPHONE)
+
+#endif // SC_STANDALONEINFO_DARWIN_H
