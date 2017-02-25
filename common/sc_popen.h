@@ -1,3 +1,6 @@
+#ifndef SC_POPEN_H
+#define SC_POPEN_H
+
 #include <stdio.h>
 #include <sys/types.h>
 
@@ -29,3 +32,5 @@
 FILE * sc_popen(const char *command, pid_t *pidp, const char *type);
 FILE * sc_popen_argv(const char *filename, char *const argv[], pid_t *pidp, const char *type);
 int sc_pclose(FILE *iop, pid_t mPid);
+
+#endif // SC_POPEN_H
