@@ -21,7 +21,8 @@
 ** taken from sndfile.h
 **/
 
-
+#ifndef SC_SNDFILE_STUB_H
+#define SC_SNDFILE_STUB_H
 
 /* A SNDFILE* pointer can be passed around much like stdio.h's FILE* pointer. */
 
@@ -54,4 +55,4 @@ struct SF_INFO
 
 typedef struct SF_INFO SF_INFO ;
 
-
+#endif
