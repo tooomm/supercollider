@@ -1,5 +1,5 @@
-#ifndef QC_HELPER
-#define QC_HELPER
+#ifndef QCHELPER_H
+#define QCHELPER_H
 
 #include "Common.h"
 

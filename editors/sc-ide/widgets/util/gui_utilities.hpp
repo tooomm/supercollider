@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_UTIL_GUI_UTILITIES_HPP_INCLUDED
-#define SCIDE_WIDGETS_UTIL_GUI_UTILITIES_HPP_INCLUDED
+#ifndef GUI_UTILITIES_HPP
+#define GUI_UTILITIES_HPP
 
 #include <QPlainTextEdit>
 #include <QRegExp>
@@ -77,4 +77,4 @@ QRect fittedToScreen( const QRect & rect, QWidget * referenceWidget );
 
 } // namespace ScIDE
 
-#endif // SCIDE_WIDGETS_UTIL_GUI_UTILITIES_HPP_INCLUDED
+#endif // GUI_UTILITIES_HPP

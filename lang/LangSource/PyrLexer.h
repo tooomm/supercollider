@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _PYRLEXER_H_
-#define _PYRLEXER_H_
+#ifndef PYRLEXER_H
+#define PYRLEXER_H
 
 #include "PyrSlot.h"
 #include "PyrSymbol.h"

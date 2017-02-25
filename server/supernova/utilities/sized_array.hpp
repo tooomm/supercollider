@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_SIZED_ARRAY_HPP
-#define UTILITIES_SIZED_ARRAY_HPP
+#ifndef SIZED_ARRAY_HPP
+#define SIZED_ARRAY_HPP
 
 #include <algorithm>
 #include <cassert>
@@ -290,4 +290,4 @@ private:
 
 } /* namespace nova */
 
-#endif /* UTILITIES_SIZED_ARRAY_HPP */
+#endif /* SIZED_ARRAY_HPP */

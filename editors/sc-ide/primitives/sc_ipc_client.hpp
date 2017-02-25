@@ -18,8 +18,8 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-#ifndef SuperCollider_sc_ipc_client_hpp
-#define SuperCollider_sc_ipc_client_hpp
+#ifndef SC_IPC_CLIENT_HPP
+#define SC_IPC_CLIENT_HPP
 
 #include <QObject>
 #include <QLocalSocket>

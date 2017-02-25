@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef SERVER_BUFFER_MANAGER_HPP
-#define SERVER_BUFFER_MANAGER_HPP
+#ifndef BUFFER_MANAGER_HPP
+#define BUFFER_MANAGER_HPP
 
 #include <algorithm>
 #include <cassert>
@@ -216,4 +216,4 @@ private:
 
 } /* namespace nova */
 
-#endif /* SERVER_BUFFER_MANAGER_HPP */
+#endif /* BUFFER_MANAGER_HPP */

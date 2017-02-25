@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_WIDGET_PROXY_H
-#define QC_WIDGET_PROXY_H
+#ifndef QWIDGETPROXY_H
+#define QWIDGETPROXY_H
 
 #include "QObjectProxy.h"
 
@@ -132,4 +132,4 @@ struct SetAlwaysOnTopEvent  : public QEvent
 
 }
 
-#endif //QC_WIDGET_PROXY_H
+#endif //QWIDGETPROXY_H

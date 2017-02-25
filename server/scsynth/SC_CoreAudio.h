@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_CoreAudio_
-#define _SC_CoreAudio_
+#ifndef SC_COREAUDIO_H
+#define SC_COREAUDIO_H
 
 #include "MsgFifo.h"
 #include "SC_FifoMsg.h"

@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_HiddenWorld_
-#define _SC_HiddenWorld_
+#ifndef SC_HIDDENWORLD_H
+#define SC_HIDDENWORLD_H
 
 #include "SC_Types.h"
 #include "SC_Rate.h"

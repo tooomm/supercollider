@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef LANG_BYTECODEARRAY_H
-#define LANG_BYTECODEARRAY_H
+#ifndef BYTECODEARRAY_H
+#define BYTECODEARRAY_H
 
 
 typedef unsigned char Byte;

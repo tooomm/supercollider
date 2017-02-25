@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef SERVER_MEMORY_POOL_HPP
-#define SERVER_MEMORY_POOL_HPP
+#ifndef MEMORY_POOL_HPP
+#define MEMORY_POOL_HPP
 
 #include "../utilities/simple_pool.hpp"
 
@@ -116,4 +116,4 @@ public:
 
 } /* namespace nova */
 
-#endif /* SERVER_MEMORY_POOL_HPP */
+#endif /* MEMORY_POOL_HPP */

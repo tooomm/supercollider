@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _scpacket_
-#define _scpacket_
+#ifndef SCSYNTHSEND_H
+#define SCSYNTHSEND_H
 
 #include "SC_Endian.h"
 #include "SC_Types.h"

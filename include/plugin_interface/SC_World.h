@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_World_
-#define _SC_World_
+#ifndef SC_WORLD_H
+#define SC_WORLD_H
 
 #include "SC_Types.h"
 #include "SC_Rate.h"

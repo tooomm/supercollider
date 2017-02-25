@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_WorldOptions_
-#define _SC_WorldOptions_
+#ifndef SC_WORLDOPTIONS_H
+#define SC_WORLDOPTIONS_H
 
 #include <stdarg.h>
 #include "SC_Reply.h"
@@ -112,4 +112,4 @@ SCSYNTH_DLLEXPORT_C bool World_SendPacketWithContext(struct World *inWorld, int 
 SCSYNTH_DLLEXPORT_C int World_CopySndBuf(struct World *world, uint32 index, struct SndBuf *outBuf, bool onlyIfChanged, bool *didChange);
 SCSYNTH_DLLEXPORT_C int scprintf(const char *fmt, ...);
 
-#endif // _SC_WorldOptions_
+#endif // SC_WORLDOPTIONS_H

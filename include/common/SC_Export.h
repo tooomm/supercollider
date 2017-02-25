@@ -17,8 +17,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_EXPORTS_
-#define _SC_EXPORTS_
+#ifndef SC_EXPORT_H
+#define SC_EXPORT_H
 
 #if defined _WIN32 || defined __CYGWIN__
 #  define SC_API_IMPORT __declspec(dllimport)

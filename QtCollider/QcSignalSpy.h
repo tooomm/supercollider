@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_SIGNALSPY_H
-#define QC_SIGNALSPY_H
+#ifndef QCSIGNALSPY_H
+#define QCSIGNALSPY_H
 
 #include "Common.h"
 #include "QObjectProxy.h"
@@ -179,4 +179,4 @@ protected:
 };
 
 
-#endif //QC_SIGNALSPY_H
+#endif //QCSIGNALSPY_H

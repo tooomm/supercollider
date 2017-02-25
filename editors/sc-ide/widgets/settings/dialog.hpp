@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_SETTINGS_DIALOG_HPP_INCLUDED
-#define SCIDE_WIDGETS_SETTINGS_DIALOG_HPP_INCLUDED
+#ifndef DIALOG_HPP
+#define DIALOG_HPP
 
 #include <QDialog>
 
@@ -58,4 +58,4 @@ private:
 
 }} // namespace ScIDE::Settings
 
-#endif // SCIDE_WIDGETS_SETTINGS_DIALOG_HPP_INCLUDED
+#endif // DIALOG_HPP

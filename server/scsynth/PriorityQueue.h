@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _PriorityQueue_
-#define _PriorityQueue_
+#ifndef PRIORITYQUEUE_H
+#define PRIORITYQUEUE_H
 
 #include <stdio.h>
 #include <math.h>

@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __AUInput_h__
-#define __AUInput_h__
+#ifndef AUINPUTELEMENT_H
+#define AUINPUTELEMENT_H
 
 #include "AUScopeElement.h"
 #include "AUBuffer.h"
@@ -122,4 +122,4 @@ protected:
 };
 
 
-#endif // __AUInput_h__
+#endif // AUINPUTELEMENT_H

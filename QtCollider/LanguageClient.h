@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_LANGUAGE_CLIENT_H
-#define QC_LANGUAGE_CLIENT_H
+#ifndef LANGUAGECLIENT_H
+#define LANGUAGECLIENT_H
 
 #include "SC_TerminalClient.h"
 #include "Common.h"
@@ -65,4 +65,4 @@ private:
 
 } // namespace QtCollider
 
-#endif // QC_LANGUAGE_CLIENT_H
+#endif // LANGUAGECLIENT_H

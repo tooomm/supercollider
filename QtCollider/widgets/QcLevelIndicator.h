@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_LEVEL_INDICATOR_H
-#define QC_LEVEL_INDICATOR_H
+#ifndef QCLEVELINDICATOR_H
+#define QCLEVELINDICATOR_H
 
 #include "../QcHelper.h"
 #include "../style/style.hpp"

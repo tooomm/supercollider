@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_SCOPE_H
-#define QC_SCOPE_H
+#ifndef QCSCOPE_H
+#define QCSCOPE_H
 
 #include "../QcHelper.h"
 

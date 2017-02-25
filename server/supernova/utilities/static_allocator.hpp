@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_STATIC_ALLOCATOR_HPP
-#define UTILITIES_STATIC_ALLOCATOR_HPP
+#ifndef STATIC_ALLOCATOR_HPP
+#define STATIC_ALLOCATOR_HPP
 
 extern "C"
 {
@@ -173,5 +173,5 @@ bool operator!=( static_allocator<T, ts, tb> const& left, static_allocator<U, us
 
 } /* namespace nova */
 
-#endif /* UTILITIES_STATIC_ALLOCATOR_HPP */
+#endif /* STATIC_ALLOCATOR_HPP */
 

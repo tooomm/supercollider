@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_PEN_PRINTER_H
-#define QC_PEN_PRINTER_H
+#ifndef QCPENPRINTER_H
+#define QCPENPRINTER_H
 
 #include "../painting.h"
 #include "../debug.h"
@@ -92,4 +92,4 @@ private:
   QPrintDialog *dialog;
 };
 
-#endif // QC_PEN_PRINTER_H
+#endif // QCPENPRINTER_H

@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Lock_
-#define _SC_Lock_
+#ifndef SC_LOCK_H
+#define SC_LOCK_H
 
 #include <chrono>
 #include <condition_variable>

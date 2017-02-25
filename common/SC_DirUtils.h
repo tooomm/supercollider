@@ -19,8 +19,8 @@
  *
  */
 
-#ifndef SC_DIR_UTILS_H_INCLUDED
-#define SC_DIR_UTILS_H_INCLUDED
+#ifndef SC_DIRUTILS_H
+#define SC_DIRUTILS_H
 
 #include <limits.h>
 #include <stdio.h>
@@ -142,4 +142,4 @@ void sc_GlobFree(SC_GlobHandle* glob);
 // Return NULL at end of stream.
 const char* sc_GlobNext(SC_GlobHandle* glob);
 
-#endif // SC_DIR_UTILS_H_INCLUDED
+#endif // SC_DIRUTILS_H

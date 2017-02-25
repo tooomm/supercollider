@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_UTIL_COLOR_WIDGET_HPP_INCLUDED
-#define SCIDE_WIDGETS_UTIL_COLOR_WIDGET_HPP_INCLUDED
+#ifndef COLOR_WIDGET_HPP
+#define COLOR_WIDGET_HPP
 
 #include <QLabel>
 #include <QColorDialog>
@@ -106,4 +106,4 @@ private:
 
 } // namespace ScIDE
 
-#endif // SCIDE_WIDGETS_UTIL_COLOR_WIDGET_HPP_INCLUDED
+#endif // COLOR_WIDGET_HPP

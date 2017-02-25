@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_BoundsMacros_
-#define _SC_BoundsMacros_
+#ifndef SC_BOUNDSMACROS_H
+#define SC_BOUNDSMACROS_H
 
 #include <cstdlib>              /* std::abs */
 #include <cmath>                /* std::abs */

@@ -25,8 +25,8 @@ Thus it is very fast.
 
 */
 
-#ifndef _AdvancingAllocPool_
-#define _AdvancingAllocPool_
+#ifndef ADVANCINGALLOCPOOL_H
+#define ADVANCINGALLOCPOOL_H
 
 #include <stdexcept>
 #include <stdlib.h>

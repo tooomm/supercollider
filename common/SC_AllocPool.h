@@ -27,8 +27,8 @@ Improved bit block scanning by using a count leading zeroes instruction.
 
 */
 
-#ifndef _AllocPool_
-#define _AllocPool_
+#ifndef SC_ALLOCPOOL_H
+#define SC_ALLOCPOOL_H
 
 #include "SC_List.h"
 #include "clz.h"

@@ -23,8 +23,8 @@ Functions for defining language primitives.
 
 */
 
-#ifndef _PYRPRIMITIVE_H_
-#define _PYRPRIMITIVE_H_
+#ifndef PYRPRIMITIVE_H
+#define PYRPRIMITIVE_H
 
 #include "PyrSlot.h"
 

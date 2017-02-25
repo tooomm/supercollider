@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _BufGen_
-#define _BufGen_
+#ifndef SC_BUFGEN_H
+#define SC_BUFGEN_H
 
 #include "SC_Types.h"
 

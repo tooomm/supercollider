@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_GRAPH_H
-#define QC_GRAPH_H
+#ifndef QCGRAPH_H
+#define QCGRAPH_H
 
 #include "../Common.h"
 #include "../QcHelper.h"

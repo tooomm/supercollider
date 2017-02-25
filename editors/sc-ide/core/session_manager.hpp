@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_SESSION_MANAGER_HPP_INCLUDED
-#define SCIDE_SESSION_MANAGER_HPP_INCLUDED
+#ifndef SESSION_MANAGER_HPP
+#define SESSION_MANAGER_HPP
 
 #include <QObject>
 #include <QDir>
@@ -76,4 +76,4 @@ private:
 
 } // namespace ScIDE
 
-#endif // SCIDE_SESSION_MANAGER_HPP_INCLUDED
+#endif // SESSION_MANAGER_HPP

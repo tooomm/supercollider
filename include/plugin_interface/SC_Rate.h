@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _Rate_
-#define _Rate_
+#ifndef SC_RATE_H
+#define SC_RATE_H
 
 enum { calc_ScalarRate, calc_BufRate, calc_FullRate, calc_DemandRate };
 

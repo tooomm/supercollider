@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __AUMIDIBase_h__
-#define __AUMIDIBase_h__
+#ifndef AUMIDIBASE_H
+#define AUMIDIBASE_H
 
 #include "AUBase.h"
 
@@ -207,4 +207,4 @@ public:
 														AUMIDIBase 					*This);
 };
 
-#endif // __AUMIDIBase_h__
+#endif // AUMIDIBASE_H

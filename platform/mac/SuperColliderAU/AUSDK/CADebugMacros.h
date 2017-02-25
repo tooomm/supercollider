@@ -42,8 +42,8 @@
 	CADebugMacros.h
 
 =============================================================================*/
-#if !defined(__CADebugMacros_h__)
-#define __CADebugMacros_h__
+#if !defined(CADEBUGMACROS_H)
+#define CADEBUGMACROS_H
 
 //=============================================================================
 //	Includes

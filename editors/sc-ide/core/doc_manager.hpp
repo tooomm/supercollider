@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_DOC_MANAGER_HPP_INCLUDED
-#define SCIDE_DOC_MANAGER_HPP_INCLUDED
+#ifndef DOC_MANAGER_HPP
+#define DOC_MANAGER_HPP
 
 #include "../widgets/code_editor/editor.hpp"
 #include <QDateTime>
@@ -257,4 +257,4 @@ private:
 
 Q_DECLARE_METATYPE( ScIDE::Document* )
 
-#endif // SCIDE_DOC_MANAGER_HPP_INCLUDED
+#endif // DOC_MANAGER_HPP

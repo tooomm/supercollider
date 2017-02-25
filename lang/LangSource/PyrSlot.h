@@ -25,8 +25,8 @@ A PyrSlot is an 8-byte value which is either a double precision float or a
 
 */
 
-#ifndef _PYRSLOT_H_
-#define _PYRSLOT_H_
+#ifndef PYRSLOT_H
+#define PYRSLOT_H
 
 #if   ( __SIZEOF_POINTER__ == 8 ) || defined(__x86_64__) || defined(_M_X64)  || defined(__LP64__)  || defined(_WIN64)
 #include "PyrSlot64.h"

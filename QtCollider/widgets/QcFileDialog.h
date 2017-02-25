@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_FILE_DIALOG_H
-#define QC_FILE_DIALOG_H
+#ifndef QCFILEDIALOG_H
+#define QCFILEDIALOG_H
 
 #include "../Common.h"
 
@@ -73,4 +73,4 @@ private:
   QPointer<QFileDialog> dialog;
 };
 
-#endif // QC_FILE_DIALOG_H
+#endif // QCFILEDIALOG_H

@@ -25,8 +25,8 @@ what loop constructs the compiler can best generate code.
 
 */
 
-#ifndef _Unroll_
-#define _Unroll_
+#ifndef UNROLL_H
+#define UNROLL_H
 
 #include <string.h>
 #include <cassert>

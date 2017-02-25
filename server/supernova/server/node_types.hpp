@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef SERVER_NODE_TYPES_HPP
-#define SERVER_NODE_TYPES_HPP
+#ifndef NODE_TYPES_HPP
+#define NODE_TYPES_HPP
 
 #include <boost/detail/atomic_count.hpp>
 #include <boost/intrusive/list.hpp>
@@ -243,4 +243,4 @@ typedef std::pair<server_node *, node_position> node_position_constraint;
 
 } /* namespace nova */
 
-#endif /* SERVER_NODE_TYPES_HPP */
+#endif /* NODE_TYPES_HPP */

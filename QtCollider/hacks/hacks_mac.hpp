@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_MAC_HACKS_H
-#define QC_MAC_HACKS_H
+#ifndef HACKS_MAC_HPP
+#define HACKS_MAC_HPP
 
 #include <QWidget>
 

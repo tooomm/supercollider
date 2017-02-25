@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_POPUP_TEXT_INPUT_HPP_INCLUDED
-#define SCIDE_WIDGETS_POPUP_TEXT_INPUT_HPP_INCLUDED
+#ifndef POPUP_TEXT_INPUT_HPP
+#define POPUP_TEXT_INPUT_HPP
 
 #include <QInputDialog>
 #include <QKeyEvent>
@@ -76,4 +76,4 @@ private:
 
 }
 
-#endif // SCIDE_WIDGETS_POPUP_TEXT_INPUT_HPP_INCLUDED
+#endif // POPUP_TEXT_INPUT_HPP

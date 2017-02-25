@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_CORE_SETTINGS_MANAGER_HPP_INCLUDED
-#define SCIDE_CORE_SETTINGS_MANAGER_HPP_INCLUDED
+#ifndef MANAGER_HPP
+#define MANAGER_HPP
 
 #include "serialization.hpp" // to forward meta type declarations
 

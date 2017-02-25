@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_SIMPLE_POOL_HPP
-#define UTILITIES_SIMPLE_POOL_HPP
+#ifndef SIMPLE_POOL_HPP
+#define SIMPLE_POOL_HPP
 
 extern "C"
 {
@@ -151,5 +151,5 @@ private:
 
 } /* namespace nova */
 
-#endif /* UTILITIES_SIMPLE_POOL_HPP */
+#endif /* SIMPLE_POOL_HPP */
 

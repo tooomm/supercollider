@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_SOUND_FILE_VIEW_H
-#define QC_SOUND_FILE_VIEW_H
+#ifndef VIEW_HPP
+#define VIEW_HPP
 
 #include "../../Common.h"
 #include "../../QcHelper.h"

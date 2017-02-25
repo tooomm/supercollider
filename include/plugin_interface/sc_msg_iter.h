@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _sc_msg_iter_
-#define _sc_msg_iter_
+#ifndef SC_MSG_ITER_H
+#define SC_MSG_ITER_H
 
 #include "SC_Endian.h"
 #include "SC_Types.h"

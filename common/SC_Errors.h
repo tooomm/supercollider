@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Errors_
-#define _SC_Errors_
+#ifndef SC_ERRORS_H
+#define SC_ERRORS_H
 
 typedef int SCErr;
 

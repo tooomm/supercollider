@@ -20,8 +20,8 @@
 
 /*  a 4 byte aligned and zero padded string allows faster string operations. */
 
-#ifndef _SC_Str4_
-#define _SC_Str4_
+#ifndef SC_STR4_H
+#define SC_STR4_H
 
 #include "Hash.h"
 #include <stdio.h>

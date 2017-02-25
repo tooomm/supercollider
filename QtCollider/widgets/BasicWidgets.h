@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef _WIDGETS_H
-#define _WIDGETS_H
+#ifndef BASICWIDGETS_H
+#define BASICWIDGETS_H
 
 #include "QcCanvas.h"
 #include "../layouts/classic_layouts.hpp"
@@ -92,4 +92,4 @@ class QcCustomPainted : public QcCanvas
     QtCollider::DefaultLayout l;
 };
 
-#endif // _WIDGETS_H
+#endif // BASICWIDGETS_H

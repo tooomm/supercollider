@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_Samp_
-#define _SC_Samp_
+#ifndef SAMP_HPP
+#define SAMP_HPP
 
 #include "SC_Types.h"
 

@@ -1,5 +1,5 @@
-#ifndef QT_COLLIDER_H
-#define QT_COLLIDER_H
+#ifndef QTCOLLIDER_H
+#define QTCOLLIDER_H
 
 namespace QtCollider {
   void initPrimitives ();
@@ -7,4 +7,4 @@ namespace QtCollider {
   int exec(int argc, char** argv);
 }
 
-#endif // QT_COLLIDER_H
+#endif // QTCOLLIDER_H

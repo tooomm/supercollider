@@ -23,8 +23,8 @@
 *
 ************************************************************************/
 
-#ifndef QT_COLLIDER_STACK_LAYOUT_HPP_INCLUDED
-#define QT_COLLIDER_STACK_LAYOUT_HPP_INCLUDED
+#ifndef STACK_LAYOUT_HPP
+#define STACK_LAYOUT_HPP
 
 #include <QLayout>
 #include <QList>
@@ -84,4 +84,4 @@ private:
 
 } // namespace QtCollider
 
-#endif // QT_COLLIDER_STACK_LAYOUT_HPP_INCLUDED
+#endif // STACK_LAYOUT_HPP

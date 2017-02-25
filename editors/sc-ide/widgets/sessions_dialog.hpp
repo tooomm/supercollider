@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_SESSIONS_DIALOG_HPP_INCLUDED
-#define SCIDE_WIDGETS_SESSIONS_DIALOG_HPP_INCLUDED
+#ifndef SESSIONS_DIALOG_HPP
+#define SESSIONS_DIALOG_HPP
 
 #include "../core/session_manager.hpp"
 

@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Complex_
-#define _SC_Complex_
+#ifndef SC_COMPLEX_H
+#define SC_COMPLEX_H
 
 #include <cmath>
 

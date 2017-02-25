@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_CORE_SC_INTROSPECTION_HPP_INCLUDED
-#define SCIDE_CORE_SC_INTROSPECTION_HPP_INCLUDED
+#ifndef SC_INTROSPECTION_HPP
+#define SC_INTROSPECTION_HPP
 
 #include <QHash>
 #include <QList>
@@ -178,4 +178,4 @@ private:
 Q_DECLARE_METATYPE(ScIDE::ScLanguage::Class*)
 Q_DECLARE_METATYPE(const ScIDE::ScLanguage::Method*)
 
-#endif // SCIDE_CORE_SC_INTROSPECTION_HPP_INCLUDED
+#endif // SC_INTROSPECTION_HPP

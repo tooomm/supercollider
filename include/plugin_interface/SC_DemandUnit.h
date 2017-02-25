@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_DemandUnit_
-#define _SC_DemandUnit_
+#ifndef SC_DEMANDUNIT_H
+#define SC_DEMANDUNIT_H
 
 #include "SC_Unit.h"
 #include "SC_Wire.h"

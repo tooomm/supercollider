@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Reply_
-#define _SC_Reply_
+#ifndef SC_REPLY_H
+#define SC_REPLY_H
 
 struct ReplyAddress;
 typedef void (*ReplyFunc)(struct ReplyAddress *inReplyAddr, char* inBuf, int inSize);

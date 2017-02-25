@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_UTILS_HPP
-#define UTILITIES_UTILS_HPP
+#ifndef UTILS_HPP
+#define UTILS_HPP
 
 #include <cstddef>
 #include <cassert>
@@ -206,4 +206,4 @@ private:
 
 } /* namespace nova */
 
-#endif /* UTILITIES_UTILS_HPP */
+#endif /* UTILS_HPP */

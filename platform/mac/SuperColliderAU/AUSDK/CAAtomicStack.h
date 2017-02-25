@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __TStack_h__
-#define __TStack_h__
+#ifndef CAATOMICSTACK_H
+#define CAATOMICSTACK_H
 
 #if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
 	#include <libkern/OSAtomic.h>
@@ -174,4 +174,4 @@ protected:
 	T *		mHead;
 };
 
-#endif // __TStack_h__
+#endif // CAATOMICSTACK_H

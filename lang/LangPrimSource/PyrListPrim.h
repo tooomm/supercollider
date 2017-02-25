@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _PYRARRAYPRIM_H_
-#define _PYRARRAYPRIM_H_
+#ifndef PYRLISTPRIM_H
+#define PYRLISTPRIM_H
 
 void initArrayPrimitives();
 

@@ -26,8 +26,8 @@
  *
  */
 
-#ifndef _OSC_Packet_
-#define _OSC_Packet_
+#ifndef OSC_PACKET_H
+#define OSC_PACKET_H
 
 #include "SC_ReplyImpl.hpp"
 #include "SC_Types.h"

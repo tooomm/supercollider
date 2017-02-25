@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_SCROLL_AREA_H
-#define QC_SCROLL_AREA_H
+#ifndef QCSCROLLAREA_H
+#define QCSCROLLAREA_H
 
 #include "QcCanvas.h"
 #include "../QcHelper.h"
@@ -62,4 +62,4 @@ class QcScrollArea : public QScrollArea, public QcHelper
     QSize minimumSizeHint() const { return QSize( 50, 50 ); }
 };
 
-#endif //QC_SCROLL_AREA_H
+#endif //QCSCROLLAREA_H

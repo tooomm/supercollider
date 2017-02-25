@@ -42,8 +42,8 @@
 	CAAudioChannelLayout.h
 
 =============================================================================*/
-#if !defined(__CAAudioChannelLayout_h__)
-#define __CAAudioChannelLayout_h__
+#if !defined(CAAUDIOCHANNELLAYOUT_H)
+#define CAAUDIOCHANNELLAYOUT_H
 
 //=============================================================================
 //	Includes

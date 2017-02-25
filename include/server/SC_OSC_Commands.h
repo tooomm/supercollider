@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_OSC_Commands_
-#define _SC_OSC_Commands_
+#ifndef SC_OSC_COMMANDS_H
+#define SC_OSC_COMMANDS_H
 
 // command numbers:
 enum {
@@ -115,4 +115,4 @@ enum {
 	NUMBER_OF_COMMANDS = 65
 };
 
-#endif /* _SC_OSC_Commands_ */
+#endif /* SC_OSC_COMMANDS_H */

@@ -17,8 +17,8 @@
  */
 
 
-#ifndef _ControlSpecs_
-#define _ControlSpecs_
+#ifndef CONTROLSPECS_H
+#define CONTROLSPECS_H
 #include <Carbon/Carbon.h>
 #include <AudioUnit/AudioUnitProperties.h>
 #include "SC_World.h"

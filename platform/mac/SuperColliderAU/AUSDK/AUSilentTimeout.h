@@ -42,8 +42,8 @@
 //	AUSilentTimeout.h
 //
 
-#ifndef __AUSilentTimeout
-#define __AUSilentTimeout
+#ifndef AUSILENTTIMEOUT_H
+#define AUSILENTTIMEOUT_H
 
 class AUSilentTimeout
 {
@@ -88,4 +88,4 @@ private:
 	bool				mResetTimer;
 };
 
-#endif // __AUSilentTimeout
+#endif // AUSILENTTIMEOUT_H

@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Lib_Cintf_
-#define _SC_Lib_Cintf_
+#ifndef SC_LIB_CINTF_H
+#define SC_LIB_CINTF_H
 
 #include "SC_Lib.h"
 #include "SC_Reply.h"

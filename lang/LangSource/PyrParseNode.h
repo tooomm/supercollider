@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _PYRPARSENODE_H_
-#define _PYRPARSENODE_H_
+#ifndef PYRPARSENODE_H
+#define PYRPARSENODE_H
 
 #include "PyrSlot.h"
 #include "PyrKernel.h"

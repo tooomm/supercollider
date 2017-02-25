@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_CALLBACK_INTERPRETER_HPP
-#define UTILITIES_CALLBACK_INTERPRETER_HPP
+#ifndef CALLBACK_INTERPRETER_HPP
+#define CALLBACK_INTERPRETER_HPP
 
 #include <atomic>
 #include <thread>
@@ -213,4 +213,4 @@ private:
 
 } /* namespace nova */
 
-#endif /* UTILITIES_CALLBACK_INTERPRETER_HPP */
+#endif /* CALLBACK_INTERPRETER_HPP */

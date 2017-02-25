@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_WIDGET_FACTORY_H
-#define QC_WIDGET_FACTORY_H
+#ifndef QCWIDGETFACTORY_H
+#define QCWIDGETFACTORY_H
 
 #include "QcObjectFactory.h"
 #include "QWidgetProxy.h"

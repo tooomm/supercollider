@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_KEY_SEQUENCE_EDIT_HPP_INCLUDED
-#define SCIDE_WIDGETS_KEY_SEQUENCE_EDIT_HPP_INCLUDED
+#ifndef KEY_SEQUENCE_EDIT_HPP
+#define KEY_SEQUENCE_EDIT_HPP
 
 #include <QLineEdit>
 #include <QKeyEvent>
@@ -177,4 +177,4 @@ private:
 
 } // namespace ScIDE
 
-#endif // SCIDE_WIDGETS_KEY_SEQUENCE_EDIT_HPP_INCLUDED
+#endif // KEY_SEQUENCE_EDIT_HPP

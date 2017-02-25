@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_ASYNCHRONOUS_LOG_HPP
-#define UTILITIES_ASYNCHRONOUS_LOG_HPP
+#ifndef ASYNCHRONOUS_LOG_HPP
+#define ASYNCHRONOUS_LOG_HPP
 
 #include <array>
 #include <cstring>
@@ -173,4 +173,4 @@ using asynchronous_log_impl::asynchronous_log_thread;
 
 } /* namespace nova */
 
-#endif /* UTILITIES_ASYNCHRONOUS_LOG_HPP */
+#endif /* ASYNCHRONOUS_LOG_HPP */

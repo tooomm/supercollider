@@ -1,5 +1,5 @@
-#ifndef _SC_VFP11_
-#define _SC_VFP11_
+#ifndef SC_VFP11_H
+#define SC_VFP11_H
 
 #include <TargetConditionals.h>
 

@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_CALLBACK_SYSTEM_HPP
-#define UTILITIES_CALLBACK_SYSTEM_HPP
+#ifndef CALLBACK_SYSTEM_HPP
+#define CALLBACK_SYSTEM_HPP
 
 #include <memory>
 #include <exception>
@@ -95,4 +95,4 @@ protected:
 
 } /* namespace nova */
 
-#endif /* UTILITIES_CALLBACK_SYSTEM_HPP */
+#endif /* CALLBACK_SYSTEM_HPP */

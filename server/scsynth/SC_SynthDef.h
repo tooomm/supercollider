@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SynthDef_
-#define _SynthDef_
+#ifndef SC_SYNTHDEF_H
+#define SC_SYNTHDEF_H
 
 #include "SC_Types.h"
 #include "sc_msg_iter.h"

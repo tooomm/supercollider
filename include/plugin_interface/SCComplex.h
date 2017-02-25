@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SCComplex_
-#define _SCComplex_
+#ifndef SCCOMPLEX_H
+#define SCCOMPLEX_H
 
 #include "SC_Complex.h"
 

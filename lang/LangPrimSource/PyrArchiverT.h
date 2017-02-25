@@ -24,8 +24,8 @@ An object archiving system for SuperCollider.
 */
 
 
-#ifndef _PyrArchiver_
-#define _PyrArchiver_
+#ifndef PYRARCHIVERT_H
+#define PYRARCHIVERT_H
 
 #include "PyrObject.h"
 #include "SC_AllocPool.h"

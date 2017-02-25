@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef LANG_MISCINLINEMATH_H
-#define LANG_MISCINLINEMATH_H
+#ifndef MISCINLINEMATH_H
+#define MISCINLINEMATH_H
 
 #define NUMPRIMES 6542
 long nthPrime(int n);

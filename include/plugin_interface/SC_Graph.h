@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_Graph_
-#define _SC_Graph_
+#ifndef SC_GRAPH_H
+#define SC_GRAPH_H
 
 #include "SC_Node.h"
 #include "SC_Rate.h"

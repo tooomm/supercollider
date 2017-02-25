@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_SLIDER
-#define QC_SLIDER
+#ifndef QCSLIDER_H
+#define QCSLIDER_H
 
 #include "QcAbstractStepValue.h"
 #include "../QcHelper.h"

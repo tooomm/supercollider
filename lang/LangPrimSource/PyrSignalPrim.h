@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _PYRSIGNALPRIM_H_
-#define _PYRSIGNALPRIM_H_
+#ifndef PYRSIGNALPRIM_H
+#define PYRSIGNALPRIM_H
 
 extern PyrSymbol *s_wavetable;
 extern struct PyrClass *class_wavetable;

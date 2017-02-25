@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_SAFE_PTR_H
-#define QC_SAFE_PTR_H
+#ifndef SAFEPTR_HPP
+#define SAFEPTR_HPP
 
 #include "Common.h"
 

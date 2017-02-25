@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_DOC_LIST_HPP_INCLUDED
-#define SCIDE_WIDGETS_DOC_LIST_HPP_INCLUDED
+#ifndef DOC_LIST_HPP
+#define DOC_LIST_HPP
 
 #include "util/docklet.hpp"
 #include "../core/doc_manager.hpp"
@@ -101,4 +101,4 @@ private:
 
 } // namespace ScIDE
 
-#endif // SCIDE_WIDGETS_DOC_LIST_HPP_INCLUDED
+#endif // DOC_LIST_HPP

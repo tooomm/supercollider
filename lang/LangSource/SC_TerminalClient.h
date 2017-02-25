@@ -24,8 +24,8 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SC_TERMINALCLIENT_H_INCLUDED
-#define SC_TERMINALCLIENT_H_INCLUDED
+#ifndef SC_TERMINALCLIENT_H
+#define SC_TERMINALCLIENT_H
 
 #include "SC_LanguageClient.h"
 #include "SC_StringBuffer.h"
@@ -186,4 +186,4 @@ private:
 	boost::sync::semaphore mReadlineSem;
 };
 
-#endif // SC_TERMINALCLIENT_H_INCLUDED
+#endif // SC_TERMINALCLIENT_H

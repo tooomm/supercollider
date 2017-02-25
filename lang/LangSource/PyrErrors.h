@@ -23,8 +23,8 @@ virtual machine error codes.
 
 */
 
-#ifndef _SCErrors_
-#define _SCErrors_
+#ifndef PYRERRORS_H
+#define PYRERRORS_H
 
 enum { // primitive errors
 	errReturn = -1,	// not really an error.. primitive executed a non-local return

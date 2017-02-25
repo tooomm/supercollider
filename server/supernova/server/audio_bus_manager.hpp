@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef SERVER_AUDIO_BUS_MANAGER_HPP
-#define SERVER_AUDIO_BUS_MANAGER_HPP
+#ifndef AUDIO_BUS_MANAGER_HPP
+#define AUDIO_BUS_MANAGER_HPP
 
 #include <cstdint>
 #include "sample_types.hpp"
@@ -78,4 +78,4 @@ private:
 
 } /* namespace nova */
 
-#endif /* SERVER_AUDIO_BUS_MANAGER_HPP */
+#endif /* AUDIO_BUS_MANAGER_HPP */

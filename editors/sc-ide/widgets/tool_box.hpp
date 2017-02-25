@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_TOOL_BOX_HPP_INCLUDED
-#define SCIDE_WIDGETS_TOOL_BOX_HPP_INCLUDED
+#ifndef TOOL_BOX_HPP
+#define TOOL_BOX_HPP
 
 #include <QtCollider/layouts/stack_layout.hpp>
 

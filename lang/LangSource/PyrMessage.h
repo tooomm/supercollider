@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _PYRMESSAGE_H_
-#define _PYRMESSAGE_H_
+#ifndef PYRMESSAGE_H
+#define PYRMESSAGE_H
 
 #include "PyrKernel.h"
 

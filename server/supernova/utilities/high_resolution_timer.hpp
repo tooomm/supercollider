@@ -6,8 +6,8 @@
     (See accompanying file LICENSE_1_0.txt or copy at
     http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
-#if !defined(BOOST_HIGH_RESOLUTION_TIMER_HPP)
-#define BOOST_HIGH_RESOLUTION_TIMER_HPP
+#if !defined(HIGH_RESOLUTION_TIMER_HPP)
+#define HIGH_RESOLUTION_TIMER_HPP
 
 #include <boost/config.hpp>
 #include <boost/throw_exception.hpp>
@@ -204,5 +204,5 @@ namespace boost {
 
 #endif
 
-#endif  // !defined(BOOST_HIGH_RESOLUTION_TIMER_HPP)
+#endif  // !defined(HIGH_RESOLUTION_TIMER_HPP)
 

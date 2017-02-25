@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_SIG_MUX_HPP_INCLUDED
-#define SCIDE_SIG_MUX_HPP_INCLUDED
+#ifndef SIG_MUX_HPP
+#define SIG_MUX_HPP
 
 #include <QObject>
 #include <QPointer>

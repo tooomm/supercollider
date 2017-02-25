@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_NUMBER_BOX
-#define QC_NUMBER_BOX
+#ifndef QCNUMBERBOX_H
+#define QCNUMBERBOX_H
 
 #include <QLineEdit>
 

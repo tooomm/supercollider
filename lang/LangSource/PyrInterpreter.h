@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _PYRINTERPRETER_H_
-#define _PYRINTERPRETER_H_
+#ifndef PYRINTERPRETER_H
+#define PYRINTERPRETER_H
 
 #include "PyrSlot.h"
 #include "VMGlobals.h"

@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _InitAlloc_
-#define _InitAlloc_
+#ifndef INITALLOC_H
+#define INITALLOC_H
 
 #include "SCBase.h"
 #include "SC_AllocPool.h"

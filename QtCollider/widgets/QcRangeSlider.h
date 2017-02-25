@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_RANGE_SLIDER
-#define QC_RANGE_SLIDER
+#ifndef QCRANGESLIDER_H
+#define QCRANGESLIDER_H
 
 #include "QcAbstractStepValue.h"
 #include "../QcHelper.h"

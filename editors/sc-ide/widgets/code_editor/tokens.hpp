@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_CODE_EDITOR_BRACKETS_HPP_INCLUDED
-#define SCIDE_WIDGETS_CODE_EDITOR_BRACKETS_HPP_INCLUDED
+#ifndef TOKENS_HPP
+#define TOKENS_HPP
 
 #include <QTextBlock>
 #include <vector>
@@ -343,4 +343,4 @@ public:
 
 } // namespace ScIDE
 
-#endif // SCIDE_WIDGETS_CODE_EDITOR_BRACKETS_HPP_INCLUDED
+#endif // TOKENS_HPP

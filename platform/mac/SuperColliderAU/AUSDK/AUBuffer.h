@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __AUBuffer_h__
-#define __AUBuffer_h__
+#ifndef AUBUFFER_H
+#define AUBUFFER_H
 
 #include <TargetConditionals.h>
 #if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
@@ -264,4 +264,4 @@ private:
 	UInt32		mBufferSizeBytes;
 };
 
-#endif // __AUBuffer_h__
+#endif // AUBUFFER_H

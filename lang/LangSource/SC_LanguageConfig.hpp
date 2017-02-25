@@ -21,8 +21,8 @@
  *
  */
 
-#ifndef SC_LANGUAGECONFIG_HPP_INCLUDED
-#define SC_LANGUAGECONFIG_HPP_INCLUDED
+#ifndef SC_LANGUAGECONFIG_HPP
+#define SC_LANGUAGECONFIG_HPP
 
 #include <vector>
 #include <string>
@@ -69,4 +69,4 @@ private:
 
 extern SC_LanguageConfig* gLanguageConfig;
 
-#endif // SC_LANGUAGECONFIG_HPP_INCLUDED
+#endif // SC_LANGUAGECONFIG_HPP

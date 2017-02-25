@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_GraphDef_
-#define _SC_GraphDef_
+#ifndef SC_GRAPHDEF_H
+#define SC_GRAPHDEF_H
 
 #include "SC_SynthDef.h"
 #include "HashTable.h"

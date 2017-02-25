@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_TEXT_EDIT
-#define QC_TEXT_EDIT
+#ifndef QCTEXTEDIT_H
+#define QCTEXTEDIT_H
 
 #include "../QcHelper.h"
 

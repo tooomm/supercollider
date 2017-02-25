@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_CANVAS_H
-#define QC_CANVAS_H
+#ifndef QCCANVAS_H
+#define QCCANVAS_H
 
 #include "image_painter.h"
 

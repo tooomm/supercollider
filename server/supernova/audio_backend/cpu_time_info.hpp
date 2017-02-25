@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef AUDIO_BACKEND_CPU_TIME_INFO_HPP
-#define AUDIO_BACKEND_CPU_TIME_INFO_HPP
+#ifndef CPU_TIME_INFO_HPP
+#define CPU_TIME_INFO_HPP
 
 #include <vector>
 
@@ -68,4 +68,4 @@ private:
 
 }
 
-#endif /* AUDIO_BACKEND_CPU_TIME_INFO_HPP */
+#endif /* CPU_TIME_INFO_HPP */

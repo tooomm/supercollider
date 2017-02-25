@@ -21,8 +21,8 @@
 ************************************************************************/
 
 
-#ifndef QC_HACKS_HACKS_X11_HPP
-#define QC_HACKS_HACKS_X11_HPP
+#ifndef HACKS_X11_HPP
+#define HACKS_X11_HPP
 
 #include <QtGlobal>
 

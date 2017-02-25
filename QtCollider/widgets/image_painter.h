@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QT_COLLIDER_IMAGE_PAINTER_INCLUDED
-#define QT_COLLIDER_IMAGE_PAINTER_INCLUDED
+#ifndef IMAGE_PAINTER_H
+#define IMAGE_PAINTER_H
 
 #include "../image.h"
 #include "../debug.h"
@@ -220,4 +220,4 @@ struct ImagePainter
 
 } // namespace QtCollider
 
-#endif // QT_COLLIDER_IMAGE_PAINTER_INCLUDED
+#endif // IMAGE_PAINTER_H

@@ -23,8 +23,8 @@ PyrObject represents the structure of all SC Objects.
 
 */
 
-#ifndef _PYROBJECT_H_
-#define _PYROBJECT_H_
+#ifndef PYROBJECT_H
+#define PYROBJECT_H
 
 #include "PyrSlot.h"
 

@@ -23,8 +23,8 @@ This file contains the definitions of the core objects that implement the class 
 
 */
 
-#ifndef _PYRKERNEL_H_
-#define _PYRKERNEL_H_
+#ifndef PYRKERNEL_H
+#define PYRKERNEL_H
 
 #include "PyrObject.h"
 #include "VMGlobals.h"

@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QT_COLLIDER_META_TYPE_INCLUDED
-#define QT_COLLIDER_META_TYPE_INCLUDED
+#ifndef METATYPE_HPP
+#define METATYPE_HPP
 
 #include "type_codec.hpp"
 
@@ -213,4 +213,4 @@ inline bool set( PyrSlot *s, const QVariant &var )
 
 } // namespace QtCollider
 
-#endif // QT_COLLIDER_META_TYPE_INCLUDED
+#endif // METATYPE_HPP

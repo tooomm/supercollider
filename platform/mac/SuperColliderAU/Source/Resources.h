@@ -17,8 +17,8 @@
  */
 
 
-#ifndef _Resources_
-#define _Resources_
+#ifndef RESOURCES_H
+#define RESOURCES_H
 #include "SC_World.h"
 #include <CoreFoundation/CFString.h>
 

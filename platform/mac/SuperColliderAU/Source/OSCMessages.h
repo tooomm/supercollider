@@ -16,8 +16,8 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-#ifndef _OSCMessages_
-#define _OSCMessages_
+#ifndef OSCMESSAGES_H
+#define OSCMESSAGES_H
 #include "scsynthsend.h"
 #include <CoreFoundation/CFString.h>
 

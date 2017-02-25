@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _HashTable_
-#define _HashTable_
+#ifndef HASHTABLE_H
+#define HASHTABLE_H
 
 #include "SC_Types.h"
 #include "SC_BoundsMacros.h"

@@ -19,8 +19,8 @@ Copyright (c) 2008 Dan Stowell. All rights reserved.
 
 */
 
-#ifndef _SC_fftlib_
-#define _SC_fftlib_
+#ifndef SC_FFTLIB_H
+#define SC_FFTLIB_H
 
 #include <string.h>
 

@@ -1,5 +1,5 @@
-#ifndef SCIDE_LOCALSOCKET_UTILS_HPP
-#define SCIDE_LOCALSOCKET_UTILS_HPP
+#ifndef LOCALSOCKET_UTILS_HPP
+#define LOCALSOCKET_UTILS_HPP
 
 #include <QByteArray>
 #include <QLocalSocket>

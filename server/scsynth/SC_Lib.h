@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Lib_
-#define _SC_Lib_
+#ifndef SC_LIB_H
+#define SC_LIB_H
 
 #include "SC_Errors.h"
 #include "SC_Types.h"

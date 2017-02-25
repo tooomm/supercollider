@@ -17,8 +17,8 @@
 *
 ************************************************************************/
 
-#ifndef _SC_APPLE_H_
-#define _SC_APPLE_H_
+#ifndef SC_APPLE_HPP
+#define SC_APPLE_HPP
 
 namespace SC {
 namespace Apple {

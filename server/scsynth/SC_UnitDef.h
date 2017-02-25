@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _UnitDef_
-#define _UnitDef_
+#ifndef SC_UNITDEF_H
+#define SC_UNITDEF_H
 
 #include "SC_Types.h"
 #include "SC_Unit.h"

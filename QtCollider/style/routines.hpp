@@ -1,5 +1,5 @@
-#ifndef QC_STYLE_ROUTINES_H
-#define QC_STYLE_ROUTINES_H
+#ifndef ROUTINES_HPP
+#define ROUTINES_HPP
 
 #include <QPainter>
 #include <QPalette>

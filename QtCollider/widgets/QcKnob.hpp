@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_KNOB_HPP
-#define QC_KNOB_HPP
+#ifndef QCKNOB_HPP
+#define QCKNOB_HPP
 
 #include <QWidget>
 #include "QcAbstractStepValue.h"
@@ -71,4 +71,4 @@ private:
   bool _centered;
 };
 
-#endif // QC_KNOB_HPP
+#endif // QCKNOB_HPP

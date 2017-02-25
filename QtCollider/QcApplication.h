@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_APPLICATION_H
-#define QC_APPLICATION_H
+#ifndef QCAPPLICATION_H
+#define QCAPPLICATION_H
 
 #include "Common.h"
 
@@ -76,4 +76,4 @@ class QcApplication : public QApplication
     bool _handleCmdPeriod;
 };
 
-#endif // QC_APPLICATION_H
+#endif // QCAPPLICATION_H

@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Group_
-#define _SC_Group_
+#ifndef SC_GROUP_H
+#define SC_GROUP_H
 
 #include "SC_Graph.h"
 

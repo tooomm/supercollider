@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SndBuf_
-#define _SndBuf_
+#ifndef SC_SNDBUF_H
+#define SC_SNDBUF_H
 
 #include <stdint.h>
 

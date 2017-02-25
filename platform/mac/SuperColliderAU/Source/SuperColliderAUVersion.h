@@ -17,8 +17,8 @@
  */
 
 
-#ifndef __SuperColliderAUVersion_h__
-#define __SuperColliderAUVersion_h__
+#ifndef SUPERCOLLIDERAUVERSION_H
+#define SUPERCOLLIDERAUVERSION_H
 
 
 #ifdef DEBUG

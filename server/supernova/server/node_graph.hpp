@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef SERVER_NODE_GRAPH_HPP
-#define SERVER_NODE_GRAPH_HPP
+#ifndef NODE_GRAPH_HPP
+#define NODE_GRAPH_HPP
 
 #include <memory>
 #include <tuple>

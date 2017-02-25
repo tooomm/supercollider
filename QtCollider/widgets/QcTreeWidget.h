@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_TREE_WIDGET_H
-#define QC_TREE_WIDGET_H
+#ifndef QCTREEWIDGET_H
+#define QCTREEWIDGET_H
 
 #include "../Common.h"
 #include "../QObjectProxy.h"

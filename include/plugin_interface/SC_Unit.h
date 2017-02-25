@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Unit_
-#define _SC_Unit_
+#ifndef SC_UNIT_H
+#define SC_UNIT_H
 
 #include "SC_Types.h"
 #include "SC_SndBuf.h"

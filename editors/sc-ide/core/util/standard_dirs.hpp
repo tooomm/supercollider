@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_CORE_UTIL_STANDARD_DIRS_INCLUDED
-#define SCIDE_CORE_UTIL_STANDARD_DIRS_INCLUDED
+#ifndef STANDARD_DIRS_HPP
+#define STANDARD_DIRS_HPP
 
 #include <QString>
 
@@ -41,4 +41,4 @@ QString standardDirectory( StandardDirectory type );
 
 } // namespace ScIDE
 
-#endif // SCIDE_CORE_UTIL_STANDARD_DIRS_INCLUDED
+#endif // STANDARD_DIRS_HPP

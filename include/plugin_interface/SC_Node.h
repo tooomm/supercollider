@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Node_
-#define _SC_Node_
+#ifndef SC_NODE_H
+#define SC_NODE_H
 
 #include "SC_Types.h"
 

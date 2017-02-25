@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef SERVER_SC_OSC_HANDLER_HPP
-#define SERVER_SC_OSC_HANDLER_HPP
+#ifndef SC_OSC_HANDLER_HPP
+#define SC_OSC_HANDLER_HPP
 
 #include <algorithm>
 #include <mutex>
@@ -426,4 +426,4 @@ using detail::sc_osc_handler;
 } /* namespace nova */
 
 
-#endif /* SERVER_SC_OSC_HANDLER_HPP */
+#endif /* SC_OSC_HANDLER_HPP */

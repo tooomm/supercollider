@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Msg_
-#define _SC_Msg_
+#ifndef SC_MSG_H
+#define SC_MSG_H
 
 #include <stdio.h>
 #include <stdlib.h>

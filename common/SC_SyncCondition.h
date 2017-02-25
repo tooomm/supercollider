@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_SyncCondition_
-#define _SC_SyncCondition_
+#ifndef SC_SYNCCONDITION_H
+#define SC_SYNCCONDITION_H
 
 #include "SC_Lock.h"
 

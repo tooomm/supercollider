@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_STATIC_POOLED_CLASS_HPP
-#define UTILITIES_STATIC_POOLED_CLASS_HPP
+#ifndef STATIC_POOLED_CLASS_HPP
+#define STATIC_POOLED_CLASS_HPP
 
 #include <cstddef>
 
@@ -172,5 +172,5 @@ freelist static_pooled_class<tag, pool_size, pool_locking, recover_count>::dispo
 
 } /* namespace nova */
 
-#endif /* UTILITIES_STATIC_POOLED_CLASS_HPP */
+#endif /* STATIC_POOLED_CLASS_HPP */
 

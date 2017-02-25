@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_ALIGNED_CLASS
-#define UTILITIES_ALIGNED_CLASS
+#ifndef ALIGNED_CLASS_HPP
+#define ALIGNED_CLASS_HPP
 
 #include "malloc_aligned.hpp"
 
@@ -40,4 +40,4 @@ struct aligned_class
 } /* namespace nova */
 
 
-#endif /* UTILITIES_ALIGNED_CLASS */
+#endif /* ALIGNED_CLASS_HPP */

@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _Hash_
-#define _Hash_
+#ifndef HASH_H
+#define HASH_H
 
 #include "SC_Types.h"
 #include "SC_Endian.h"

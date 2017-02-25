@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_WireSpec_
-#define _SC_WireSpec_
+#ifndef SC_WIRESPEC_H
+#define SC_WIRESPEC_H
 
 #include "SC_Types.h"
 

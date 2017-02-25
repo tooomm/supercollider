@@ -1,5 +1,5 @@
-#ifndef QC_PROXY_STYLE_H
-#define QC_PROXY_STYLE_H
+#ifndef PROXYSTYLE_HPP
+#define PROXYSTYLE_HPP
 
 #include <QProxyStyle>
 
@@ -19,4 +19,4 @@ public:
 
 } // namespace QtCollider
 
-#endif // QC_PROXY_STYLE_H
+#endif // PROXYSTYLE_HPP

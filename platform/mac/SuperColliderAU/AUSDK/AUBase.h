@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __AUBase_h__
-#define __AUBase_h__
+#ifndef AUBASE_H
+#define AUBASE_H
 
 #include <TargetConditionals.h>
 
@@ -820,4 +820,4 @@ private:
 	static SInt32	sVectorUnitType;
 };
 
-#endif // __AUBase_h__
+#endif // AUBASE_H

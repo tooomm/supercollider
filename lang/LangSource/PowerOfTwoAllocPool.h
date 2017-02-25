@@ -24,8 +24,8 @@
 // It uses AdvancingAllocPool as its parent allocator.
 // It is very fast. This is used to allocate Unit output buffers.
 
-#ifndef _PowerOfTwoAllocPool_
-#define _PowerOfTwoAllocPool_
+#ifndef POWEROFTWOALLOCPOOL_H
+#define POWEROFTWOALLOCPOOL_H
 
 #include <stdexcept>
 #include <stdlib.h>

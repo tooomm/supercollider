@@ -1,5 +1,5 @@
-#ifndef QC_STYLE_H
-#define QC_STYLE_H
+#ifndef STYLE_HPP
+#define STYLE_HPP
 
 #include "ProxyStyle.hpp"
 #include "routines.hpp"

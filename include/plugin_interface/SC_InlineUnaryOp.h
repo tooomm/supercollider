@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _UnaryOpUGen_
-#define _UnaryOpUGen_
+#ifndef SC_INLINEUNARYOP_H
+#define SC_INLINEUNARYOP_H
 
 #include "SC_Types.h"
 #include "SC_Constants.h"

@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef SERVER_SYNC_COMMANDS_HPP
-#define SERVER_SYNC_COMMANDS_HPP
+#ifndef SYNC_COMMANDS_HPP
+#define SYNC_COMMANDS_HPP
 
 #include "server_scheduler.hpp"
 
@@ -72,4 +72,4 @@ private:
 }
 
 
-#endif /* SERVER_SYNC_COMMANDS_HPP */
+#endif /* SYNC_COMMANDS_HPP */

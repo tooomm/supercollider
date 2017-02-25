@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_SynthInterfaceTable_
-#define _SC_SynthInterfaceTable_
+#ifndef SC_INTERFACETABLE_H
+#define SC_INTERFACETABLE_H
 
 static const int sc_api_version = 2;
 

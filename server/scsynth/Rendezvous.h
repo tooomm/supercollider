@@ -27,8 +27,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _Rendezvous_
-#define _Rendezvous_
+#ifndef RENDEZVOUS_H
+#define RENDEZVOUS_H
 
 typedef enum {
 	kSCRendezvous_UDP,

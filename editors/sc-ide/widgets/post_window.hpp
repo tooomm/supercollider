@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_POST_WINDOW_HPP_INCLUDED
-#define SCIDE_WIDGETS_POST_WINDOW_HPP_INCLUDED
+#ifndef POST_WINDOW_HPP
+#define POST_WINDOW_HPP
 
 #include "util/docklet.hpp"
 #include <QAction>

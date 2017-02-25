@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __CAThreadSafeList_h__
-#define __CAThreadSafeList_h__
+#ifndef CATHREADSAFELIST_H
+#define CATHREADSAFELIST_H
 
 #include "CAAtomicStack.h"
 
@@ -252,4 +252,4 @@ private:
 	NodeStack	mFreeList;		// free nodes for reuse - threadsafe
 };
 
-#endif // __CAThreadSafeList_h__
+#endif // CATHREADSAFELIST_H

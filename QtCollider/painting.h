@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_PAINTING_H
-#define QC_PAINTING_H
+#ifndef PAINTING_H
+#define PAINTING_H
 
 class QPainter;
 class QWidget;

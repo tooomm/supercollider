@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef _SC_QT_COMMON_H
-#define _SC_QT_COMMON_H
+#ifndef COMMON_H
+#define COMMON_H
 
 #include "debug.h"
 
@@ -112,4 +112,4 @@ QC_DO_SYMBOLS
 
 }
 
-#endif //_SC_QT_COMMON_H
+#endif //COMMON_H

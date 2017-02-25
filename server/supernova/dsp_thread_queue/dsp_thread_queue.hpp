@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef DSP_THREAD_QUEUE_DSP_THREAD_QUEUE_HPP
-#define DSP_THREAD_QUEUE_DSP_THREAD_QUEUE_HPP
+#ifndef DSP_THREAD_QUEUE_HPP
+#define DSP_THREAD_QUEUE_HPP
 
 #include <algorithm>
 #include <atomic>
@@ -662,4 +662,4 @@ private:
 
 } /* namespace nova */
 
-#endif /* DSP_THREAD_QUEUE_DSP_THREAD_QUEUE_HPP */
+#endif /* DSP_THREAD_QUEUE_HPP */

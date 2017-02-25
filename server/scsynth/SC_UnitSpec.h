@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_UnitSpec_
-#define _SC_UnitSpec_
+#ifndef SC_UNITSPEC_H
+#define SC_UNITSPEC_H
 
 #include <ctype.h> // for size_t
 

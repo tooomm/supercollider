@@ -18,8 +18,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef SC_SNDFILEHELPERS_HPP_INCLUDED
-#define SC_SNDFILEHELPERS_HPP_INCLUDED
+#ifndef SC_SNDFILEHELPERS_HPP
+#define SC_SNDFILEHELPERS_HPP
 
 #include "SC_Errors.h"
 
@@ -114,4 +114,4 @@ static inline int sndfileFormatInfoFromStrings(struct SF_INFO *info, const char 
 
 #endif
 
-#endif /* SC_SNDFILEHELPERS_HPP_INCLUDED */
+#endif /* SC_SNDFILEHELPERS_HPP */

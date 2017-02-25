@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_WINDOW_H
-#define QC_WINDOW_H
+#ifndef QCWINDOW_H
+#define QCWINDOW_H
 
 #include "BasicWidgets.h"
 #include "QcScrollArea.h"

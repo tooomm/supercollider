@@ -17,10 +17,10 @@
    Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 
    02110-1301 USA.  */
 
-#ifndef _GETOPT_H
+#ifndef GETOPT_H
 
 #ifndef __need_getopt
-# define _GETOPT_H 1
+# define GETOPT_H 1
 #endif
 
 /* If __GNU_LIBRARY__ is not already defined, either we are being used

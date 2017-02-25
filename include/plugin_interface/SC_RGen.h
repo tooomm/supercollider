@@ -46,8 +46,8 @@
 // - James McCartney
 //----------------------------------------------------------------------------//
 
-#ifndef _SC_RGen_
-#define _SC_RGen_
+#ifndef SC_RGEN_H
+#define SC_RGEN_H
 
 #include "SC_Endian.h"
 #include "SC_Types.h"

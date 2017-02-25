@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SC_FIFO_H_INCLUDED
-#define SC_FIFO_H_INCLUDED
+#ifndef SC_FIFO_H
+#define SC_FIFO_H
 
 #ifdef __APPLE__
 # include <libkern/OSAtomic.h>
@@ -93,4 +93,4 @@ private:
 	T mItems[N];
 };
 
-#endif // SC_FIFO_H_INCLUDED
+#endif // SC_FIFO_H

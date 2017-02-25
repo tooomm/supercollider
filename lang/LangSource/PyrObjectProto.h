@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _PYROBJPROTO_H_
-#define _PYROBJPROTO_H_
+#ifndef PYROBJECTPROTO_H
+#define PYROBJECTPROTO_H
 
 #include "PyrObject.h"
 

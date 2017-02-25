@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef SERVER_NOVA_SERVER_HPP
-#define SERVER_NOVA_SERVER_HPP
+#ifndef SERVER_HPP
+#define SERVER_HPP
 
 #include <atomic>
 
@@ -354,4 +354,4 @@ inline bool log(const char * string, size_t length)
 
 } /* namespace nova */
 
-#endif /* SERVER_NOVA_SERVER_HPP */
+#endif /* SERVER_HPP */

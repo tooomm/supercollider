@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_QUARTZCOMPOSER
-#define QC_QUARTZCOMPOSER
+#ifndef QCQUARTZCOMPOSERVIEW_H
+#define QCQUARTZCOMPOSERVIEW_H
 
 #include <QVariantList>
 

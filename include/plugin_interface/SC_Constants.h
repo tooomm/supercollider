@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_Constants_
-#define _SC_Constants_
+#ifndef SC_CONSTANTS_H
+#define SC_CONSTANTS_H
 
 #include <cmath>
 

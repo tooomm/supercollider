@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_LAYOUTS_H
-#define QC_LAYOUTS_H
+#ifndef LAYOUTS_HPP
+#define LAYOUTS_HPP
 
 #include "stack_layout.hpp"
 #include "../Common.h"

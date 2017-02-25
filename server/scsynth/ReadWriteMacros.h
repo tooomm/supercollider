@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _ReadWriteMacros_
-#define _ReadWriteMacros_
+#ifndef READWRITEMACROS_H
+#define READWRITEMACROS_H
 
 #include "SC_Types.h"
 #include <stdio.h>

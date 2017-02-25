@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_ABSTRACT_STEP_VALUE
-#define QC_ABSTRACT_STEP_VALUE
+#ifndef QCABSTRACTSTEPVALUE_H
+#define QCABSTRACTSTEPVALUE_H
 
 class QcAbstractStepValue
 {

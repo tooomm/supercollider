@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __AUScopeElement_h__
-#define __AUScopeElement_h__
+#ifndef AUSCOPEELEMENT_H
+#define AUSCOPEELEMENT_H
 
 #include <map>
 #include <vector>
@@ -505,4 +505,4 @@ private:
 
 
 
-#endif // __AUScopeElement_h__
+#endif // AUSCOPEELEMENT_H

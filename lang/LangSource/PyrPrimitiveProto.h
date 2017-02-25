@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _PYRPRIMITIVEPROTO_H_
-#define _PYRPRIMITIVEPROTO_H_
+#ifndef PYRPRIMITIVEPROTO_H
+#define PYRPRIMITIVEPROTO_H
 
 #include "PyrPrimitive.h"
 

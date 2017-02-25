@@ -23,8 +23,8 @@ Each virtual machine has a copy of VMGlobals, which contains the state of the vi
 
 */
 
-#ifndef _VMGLOBALS_H_
-#define _VMGLOBALS_H_
+#ifndef VMGLOBALS_H
+#define VMGLOBALS_H
 
 #include "PyrSlot.h"
 #include "SC_AllocPool.h"

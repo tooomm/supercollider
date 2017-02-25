@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __AUMIDIEffectBase_h__
-#define __AUMIDIEffectBase_h__
+#ifndef AUMIDIEFFECTBASE_H
+#define AUMIDIEFFECTBASE_H
 
 #include "AUMIDIBase.h"
 #include "AUEffectBase.h"
@@ -83,4 +83,4 @@ public:
 														AUMIDIEffectBase *				This);
 };
 
-#endif // __AUMIDIEffectBase_h__
+#endif // AUMIDIEFFECTBASE_H

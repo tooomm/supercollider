@@ -24,8 +24,8 @@ Pools for memory allocation.
 */
 
 
-#ifndef _AllocPools_
-#define _AllocPools_
+#ifndef ALLOCPOOLS_H
+#define ALLOCPOOLS_H
 
 class AllocPool;
 extern AllocPool *pyr_pool_compile;

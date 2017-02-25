@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef LANG_SIMPLESTACK_H
-#define LANG_SIMPLESTACK_H
+#ifndef SIMPLESTACK_H
+#define SIMPLESTACK_H
 
 typedef struct {
 	intptr_t *stak;

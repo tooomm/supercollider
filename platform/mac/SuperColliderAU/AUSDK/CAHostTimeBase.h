@@ -42,8 +42,8 @@
 	CAHostTimeBase.h
 
 =============================================================================*/
-#if !defined(__CAHostTimeBase_h__)
-#define __CAHostTimeBase_h__
+#if !defined(CAHOSTTIMEBASE_H)
+#define CAHOSTTIMEBASE_H
 
 //=============================================================================
 //	Includes

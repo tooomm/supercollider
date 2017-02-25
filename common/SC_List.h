@@ -24,8 +24,8 @@ A doubly linked list template.
 
 */
 
-#ifndef _SC_List_
-#define _SC_List_
+#ifndef SC_LIST_H
+#define SC_LIST_H
 
 #include <stdexcept>
 #include <assert.h>

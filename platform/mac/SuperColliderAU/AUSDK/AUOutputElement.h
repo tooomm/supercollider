@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __AUOutput_h__
-#define __AUOutput_h__
+#ifndef AUOUTPUTELEMENT_H
+#define AUOUTPUTELEMENT_H
 
 #include "AUScopeElement.h"
 #include "AUBuffer.h"
@@ -62,4 +62,4 @@ public:
 	virtual bool		NeedsBufferSpace() const { return true; }
 };
 
-#endif // __AUOutput_h__
+#endif // AUOUTPUTELEMENT_H

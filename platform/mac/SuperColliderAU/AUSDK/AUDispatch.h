@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __AUDispatch_h__
-#define __AUDispatch_h__
+#ifndef AUDISPATCH_H
+#define AUDISPATCH_H
 
 // Fast dispatch function prototypes
 
@@ -78,4 +78,4 @@ pascal ComponentResult AudioUnitBaseRender(			AUBase *				This,
 													UInt32					inNumberFrames,
 													AudioBufferList *		ioData);
 
-#endif // __AUDispatch_h__
+#endif // AUDISPATCH_H

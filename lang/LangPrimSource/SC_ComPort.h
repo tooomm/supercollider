@@ -18,8 +18,8 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _SC_ComPort_
-#define _SC_ComPort_
+#ifndef SC_COMPORT_H
+#define SC_COMPORT_H
 
 #include "SC_Types.h"
 

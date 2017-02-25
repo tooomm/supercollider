@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _SC_Prototypes_
-#define _SC_Prototypes_
+#ifndef SC_PROTOTYPES_H
+#define SC_PROTOTYPES_H
 
 #include <ctype.h> // for size_t
 #include <cstdlib>

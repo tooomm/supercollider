@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_WEB_VIEW_H
-#define QC_WEB_VIEW_H
+#ifndef QCWEBVIEW_H
+#define QCWEBVIEW_H
 
 #include <QWebView>
 #include <QWebPage>
@@ -96,4 +96,4 @@ private:
 
 } // namespace QtCollider
 
-#endif // QC_WEB_VIEW_H
+#endif // QCWEBVIEW_H

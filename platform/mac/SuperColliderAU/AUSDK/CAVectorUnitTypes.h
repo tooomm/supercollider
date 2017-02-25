@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __CAVectorUnitTypes_h__
-#define __CAVectorUnitTypes_h__
+#ifndef CAVECTORUNITTYPES_H
+#define CAVECTORUNITTYPES_H
 
 enum {
 	kVecUninitialized = -1,

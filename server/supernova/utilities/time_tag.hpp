@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_TIME_TAG_HPP
-#define UTILITIES_TIME_TAG_HPP
+#ifndef TIME_TAG_HPP
+#define TIME_TAG_HPP
 
 #include <cstdint>
 #include <cmath>
@@ -241,4 +241,4 @@ private:
 
 } /* namespace nova */
 
-#endif /* UTILITIES_TIME_TAG_HPP */
+#endif /* TIME_TAG_HPP */

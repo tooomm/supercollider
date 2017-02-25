@@ -18,8 +18,8 @@
 
 // Contains the most common definitions.
 
-#ifndef _SCBASE_
-#define _SCBASE_
+#ifndef SCBASE_H
+#define SCBASE_H
 
 #include <limits.h>
 #include <stdio.h>

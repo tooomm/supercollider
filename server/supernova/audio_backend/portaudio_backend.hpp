@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef _PORTAUDIO_HPP
-#define _PORTAUDIO_HPP
+#ifndef PORTAUDIO_BACKEND_HPP
+#define PORTAUDIO_BACKEND_HPP
 
 #include <cstdio>
 #include <string>
@@ -335,4 +335,4 @@ private:
 
 } /* namespace nova */
 
-#endif /* _PORTAUDIO_HPP */
+#endif /* PORTAUDIO_BACKEND_HPP */

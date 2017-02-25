@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_FORCE_INLINE_HPP
-#define UTILITIES_FORCE_INLINE_HPP
+#ifndef FORCE_INLINE_HPP
+#define FORCE_INLINE_HPP
 
 #ifndef always_inline
 
@@ -29,4 +29,4 @@
 
 #endif /* always_inline */
 
-#endif /* UTILITIES_FORCE_INLINE_HPP */
+#endif /* FORCE_INLINE_HPP */

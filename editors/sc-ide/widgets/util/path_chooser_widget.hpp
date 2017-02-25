@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef SCIDE_WIDGETS_PATH_CHOOSER_WIDGET_HPP_INCLUDED
-#define SCIDE_WIDGETS_PATH_CHOOSER_WIDGET_HPP_INCLUDED
+#ifndef PATH_CHOOSER_WIDGET_HPP
+#define PATH_CHOOSER_WIDGET_HPP
 
 #include <QLineEdit>
 #include <QPushButton>
@@ -93,4 +93,4 @@ private:
 
 } // namespace ScIDE
 
-#endif // SCIDE_WIDGETS_PATH_CHOOSER_WIDGET_HPP_INCLUDED
+#endif // PATH_CHOOSER_WIDGET_HPP

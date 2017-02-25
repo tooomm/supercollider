@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __CAVectorUnit_h__
-#define __CAVectorUnit_h__
+#ifndef CAVECTORUNIT_H
+#define CAVECTORUNIT_H
 
 #include <TargetConditionals.h>
 #include "CAVectorUnitTypes.h"
@@ -72,4 +72,4 @@ private:
 	static int sVectorUnitType;
 };
 
-#endif // __CAVectorUnit_h__
+#endif // CAVECTORUNIT_H

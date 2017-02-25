@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __ComponentBase_h__
-#define __ComponentBase_h__
+#ifndef COMPONENTBASE_H
+#define COMPONENTBASE_H
 
 #if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
 	#include <CoreServices/CoreServices.h>
@@ -201,4 +201,4 @@ protected:
 	ComponentInstance		mComponentInstance;
 };
 
-#endif // __ComponentBase_h__
+#endif // COMPONENTBASE_H

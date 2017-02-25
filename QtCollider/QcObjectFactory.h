@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_OBJECT_FACTORY_H
-#define QC_OBJECT_FACTORY_H
+#ifndef QCOBJECTFACTORY_H
+#define QCOBJECTFACTORY_H
 
 #include "QObjectProxy.h"
 #include "Common.h"
@@ -133,4 +133,4 @@ protected:
 
 
 
-#endif //QC_OBJECT_FACTORY_H
+#endif //QCOBJECTFACTORY_H

@@ -16,8 +16,8 @@
 //  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 //  Boston, MA 02111-1307, USA.
 
-#ifndef UTILITIES_TL_ALLOCATOR_HPP
-#define UTILITIES_TL_ALLOCATOR_HPP
+#ifndef TL_ALLOCATOR_HPP
+#define TL_ALLOCATOR_HPP
 
 extern "C"
 {
@@ -235,5 +235,5 @@ private:
 
 } /* namespace nova */
 
-#endif /* UTILITIES_TL_ALLOCATOR_HPP */
+#endif /* TL_ALLOCATOR_HPP */
 

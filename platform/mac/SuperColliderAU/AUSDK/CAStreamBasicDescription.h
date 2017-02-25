@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __CAStreamBasicDescription_h__
-#define __CAStreamBasicDescription_h__
+#ifndef CASTREAMBASICDESCRIPTION_H
+#define CASTREAMBASICDESCRIPTION_H
 
 #if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
 	#include <CoreAudio/CoreAudioTypes.h>
@@ -244,4 +244,4 @@ inline bool	operator>(const AudioStreamBasicDescription& x, const AudioStreamBas
 bool SanityCheck(const AudioStreamBasicDescription& x);
 
 
-#endif // __CAStreamBasicDescription_h__
+#endif // CASTREAMBASICDESCRIPTION_H

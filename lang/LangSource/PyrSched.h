@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _PYRSCHED_H_
-#define _PYRSCHED_H_
+#ifndef PYRSCHED_H
+#define PYRSCHED_H
 
 #include "VMGlobals.h"
 #include "SC_Export.h"

@@ -24,8 +24,8 @@ Based on Wilson and Johnstone's real time collector and the Baker treadmill.
 
 */
 
-#ifndef _GC_
-#define _GC_
+#ifndef GC_H
+#define GC_H
 
 #include "PyrObject.h"
 #include "VMGlobals.h"

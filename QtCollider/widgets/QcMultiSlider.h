@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_MULTI_SLIDER
-#define QC_MULTI_SLIDER
+#ifndef QCMULTISLIDER_H
+#define QCMULTISLIDER_H
 
 #include "../QcHelper.h"
 #include "../style/style.hpp"

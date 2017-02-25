@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __AUEffectBase_h__
-#define __AUEffectBase_h__
+#ifndef AUEFFECTBASE_H
+#define AUEFFECTBASE_H
 
 #include "AUBase.h"
 #include "AUSilentTimeout.h"
@@ -270,4 +270,4 @@ protected:
 
 
 
-#endif // __AUEffectBase_h__
+#endif // AUEFFECTBASE_H

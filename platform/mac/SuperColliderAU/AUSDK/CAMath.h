@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __CAMath_h__
-#define __CAMath_h__
+#ifndef CAMATH_H
+#define CAMATH_H
 
 #if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
 	#include <CoreAudio/CoreAudioTypes.h>
@@ -64,4 +64,4 @@ inline bool fequal(const Float32 &a, const Float32 &b) { return a == b; }
 inline bool fnotequal(const Float64 &a, const Float64 &b) { return !fequal(a, b); }
 inline bool fnotequal(const Float32 &a, const Float32 &b) { return !fequal(a, b); }
 
-#endif // __CAMath_h__
+#endif // CAMATH_H

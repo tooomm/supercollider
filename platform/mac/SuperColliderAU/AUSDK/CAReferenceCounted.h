@@ -43,8 +43,8 @@
 
 =============================================================================*/
 
-#ifndef __CAReferenceCounted_h__
-#define __CAReferenceCounted_h__
+#ifndef CAREFERENCECOUNTED_H
+#define CAREFERENCECOUNTED_H
 
 #if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
 	#include <libkern/OSAtomic.h>
@@ -95,4 +95,4 @@ private:
 };
 
 
-#endif // __CAReferenceCounted_h__
+#endif // CAREFERENCECOUNTED_H

@@ -23,8 +23,8 @@ An object archiving system for SuperCollider.
 
 */
 
-#ifndef _PyrDeepFreezer_
-#define _PyrDeepFreezer_
+#ifndef PYRDEEPFREEZER_H
+#define PYRDEEPFREEZER_H
 
 #include <stdexcept>
 #include <cstring>

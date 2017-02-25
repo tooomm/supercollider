@@ -18,8 +18,8 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
 
-#ifndef _BinaryOpUGen_
-#define _BinaryOpUGen_
+#ifndef SC_INLINEBINARYOP_H
+#define SC_INLINEBINARYOP_H
 
 #include "SC_BoundsMacros.h"
 #include "SC_InlineUnaryOp.h"

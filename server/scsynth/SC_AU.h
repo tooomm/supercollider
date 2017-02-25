@@ -22,8 +22,8 @@
 
 
 #if SC_AUDIO_API == SC_AUDIO_API_AUDIOUNITS
-#ifndef _SC_AU_
-#define _SC_AU_
+#ifndef SC_AU_H
+#define SC_AU_H
 
 
 #include "SC_CoreAudio.h"

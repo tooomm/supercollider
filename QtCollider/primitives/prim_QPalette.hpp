@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_PRIM_QPALETTE_HPP
-#define QC_PRIM_QPALETTE_HPP
+#ifndef PRIM_QPALETTE_HPP
+#define PRIM_QPALETTE_HPP
 
 #include <QPalette>
 

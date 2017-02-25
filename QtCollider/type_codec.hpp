@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QT_COLLIDER_TYPE_CODEC_INCLUDED
-#define QT_COLLIDER_TYPE_CODEC_INCLUDED
+#ifndef TYPE_CODEC_HPP
+#define TYPE_CODEC_HPP
 
 #include "widgets/QcTreeWidget.h"
 #include "image.h"
@@ -427,4 +427,4 @@ template <> struct TypeCodec<QVariantList>
 
 } // namespace QtCollider
 
-#endif // QT_COLLIDER_TYPE_CODEC_INCLUDED
+#endif // TYPE_CODEC_HPP

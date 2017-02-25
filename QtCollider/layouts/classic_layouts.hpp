@@ -19,8 +19,8 @@
 *
 ************************************************************************/
 
-#ifndef QC_CLASSIC_LAYOUTS_H
-#define QC_CLASSIC_LAYOUTS_H
+#ifndef CLASSIC_LAYOUTS_HPP
+#define CLASSIC_LAYOUTS_HPP
 
 #include <QWidget>
 #include <QResizeEvent>
@@ -226,4 +226,4 @@ private:
 
 } // namespace QtCollider
 
-#endif // QC_CLASSIC_LAYOUTS_H
+#endif // CLASSIC_LAYOUTS_HPP

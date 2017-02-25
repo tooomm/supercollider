@@ -19,8 +19,8 @@
 
 /** \file */
 
-#ifndef _OnsetsDS_
-#define _OnsetsDS_
+#ifndef ONSETSDS_H
+#define ONSETSDS_H
 
 #ifdef __cplusplus
 extern "C" {

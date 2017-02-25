@@ -19,8 +19,8 @@
 */
 
 
-#ifndef _PYRKERNELPROTO_H_
-#define _PYRKERNELPROTO_H_
+#ifndef PYRKERNELPROTO_H
+#define PYRKERNELPROTO_H
 
 PyrClass* newClassObj(PyrClass *classObjSuperClass,
 	PyrSymbol* className, PyrSymbol* superClassName,
