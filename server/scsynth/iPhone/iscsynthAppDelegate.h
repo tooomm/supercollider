@@ -5,6 +5,8 @@
 //  Created by Axel Balley on 20/10/08.
 //  Copyright __MyCompanyName__ 2008. All rights reserved.
 //
+#ifndef ISCSYNTHAPPDELEGATE_H
+#define ISCSYNTHAPPDELEGATE_H
 
 #import <UIKit/UIKit.h>
 
@@ -18,3 +20,4 @@
 
 @end
 
+#endif

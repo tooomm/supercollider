@@ -5,6 +5,8 @@
 //  Created by Axel Balley on 21/10/08.
 //  Copyright 2008 __MyCompanyName__. All rights reserved.
 //
+#ifndef ISCSYNTHCONTROLLER_H
+#define ISCSYNTHCONTROLLER_H
 
 #import <UIKit/UIKit.h>
 #import "FileBrowserViewController.h"
@@ -46,3 +48,4 @@
 - (void) selectSynthdef:(NSString *)string;
 
 @end
+#endif

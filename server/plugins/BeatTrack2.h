@@ -17,6 +17,8 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
+#ifndef BEATTRACK2_H
+#define BEATTRACK2_H
 
 
 //N feature stream inputs, cross correlation with template on each channel
@@ -107,3 +109,4 @@ extern "C"
 	void BeatTrack2_Ctor(BeatTrack2 *unit);
 	void BeatTrack2_Dtor(BeatTrack2 *unit);
 }
+#endif

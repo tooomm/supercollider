@@ -23,6 +23,8 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
+#ifndef ONSETS_H
+#define ONSETS_H
 
 #include "onsetsds.h"
 
@@ -42,3 +44,4 @@ extern "C"
 	void Onsets_next_rawodf(Onsets *unit, int inNumSamples);
 	void Onsets_Dtor(Onsets *unit);
 }
+#endif

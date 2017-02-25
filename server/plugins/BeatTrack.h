@@ -17,6 +17,8 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
+#ifndef BEATTRACK_H
+#define BEATTRACK_H
 
 
 #define DFFRAMELENGTH 512
@@ -128,3 +130,4 @@ extern "C"
 	void BeatTrack_Dtor(BeatTrack *unit);
 }
 
+#endif
