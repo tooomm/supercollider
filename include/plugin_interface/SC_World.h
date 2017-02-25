@@ -22,10 +22,18 @@
 #ifndef SC_WORLD_H
 #define SC_WORLD_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_RATE_H
 #include "SC_Rate.h"
+#endif
+#ifndef SC_SNDBUF_H
 #include "SC_SndBuf.h"
+#endif
+#ifndef SC_RGEN_H
 #include "SC_RGen.h"
+#endif
 
 #ifdef SUPERNOVA
 namespace nova

@@ -27,7 +27,9 @@ count leading zeroes function and those that can be derived from it
 #ifndef CLZ_H
 #define CLZ_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 
 #ifdef __MWERKS__
 

@@ -22,8 +22,12 @@
 #ifndef SC_MSG_ITER_H
 #define SC_MSG_ITER_H
 
+#ifndef SC_ENDIAN_H
 #include "SC_Endian.h"
+#endif
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 #include <string.h>
 
 // return the ptr to the byte after the OSC string.

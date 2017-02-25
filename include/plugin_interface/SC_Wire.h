@@ -22,7 +22,9 @@
 #ifndef SC_WIRE_H
 #define SC_WIRE_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 
 struct Wire
 {

@@ -27,7 +27,9 @@
 #ifndef SC_LANGUAGECLIENT_H
 #define SC_LANGUAGECLIENT_H
 
+#ifndef SC_EXPORT_H
 #include "SC_Export.h"
+#endif
 #include <cstdio>
 #include <cstdarg>
 

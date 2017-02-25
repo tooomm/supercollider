@@ -22,8 +22,12 @@
 #ifndef HASH_H
 #define HASH_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_ENDIAN_H
 #include "SC_Endian.h"
+#endif
 
 // These hash functions are among the best there are in terms of both speed and quality.
 // A good hash function makes a lot of difference.

@@ -21,9 +21,15 @@
 #ifndef SC_GRAPH_H
 #define SC_GRAPH_H
 
+#ifndef SC_NODE_H
 #include "SC_Node.h"
+#endif
+#ifndef SC_RATE_H
 #include "SC_Rate.h"
+#endif
+#ifndef SC_SNDBUF_H
 #include "SC_SndBuf.h"
+#endif
 
 struct Graph
 {

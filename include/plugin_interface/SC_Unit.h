@@ -22,8 +22,12 @@
 #ifndef SC_UNIT_H
 #define SC_UNIT_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_SNDBUF_H
 #include "SC_SndBuf.h"
+#endif
 
 typedef void (*UnitCtorFunc)(struct Unit* inUnit);
 typedef void (*UnitDtorFunc)(struct Unit* inUnit);

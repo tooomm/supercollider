@@ -21,7 +21,9 @@
 #ifndef SC_BUFGEN_H
 #define SC_BUFGEN_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 
 typedef void (*BufGenFunc)(struct World *world, struct SndBuf *buf, struct sc_msg_iter *msg);
 

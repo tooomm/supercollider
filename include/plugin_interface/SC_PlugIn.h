@@ -21,21 +21,49 @@
 #ifndef SC_PLUGIN_H
 #define SC_PLUGIN_H
 
+#ifndef SC_WORLD_H
 #include "SC_World.h"
+#endif
+#ifndef SC_GRAPH_H
 #include "SC_Graph.h"
+#endif
+#ifndef SC_UNIT_H
 #include "SC_Unit.h"
+#endif
+#ifndef SC_WIRE_H
 #include "SC_Wire.h"
+#endif
+#ifndef SC_INTERFACETABLE_H
 #include "SC_InterfaceTable.h"
+#endif
+#ifndef UNROLL_H
 #include "Unroll.h"
+#endif
+#ifndef SC_INLINEUNARYOP_H
 #include "SC_InlineUnaryOp.h"
+#endif
+#ifndef SC_INLINEBINARYOP_H
 #include "SC_InlineBinaryOp.h"
+#endif
+#ifndef SC_BOUNDSMACROS_H
 #include "SC_BoundsMacros.h"
+#endif
+#ifndef SC_RGEN_H
 #include "SC_RGen.h"
+#endif
+#ifndef SC_DEMANDUNIT_H
 #include "SC_DemandUnit.h"
+#endif
+#ifndef CLZ_H
 #include "clz.h"
+#endif
+#ifndef SC_MSG_ITER_H
 #include "sc_msg_iter.h"
+#endif
 #include <stdlib.h>
+#ifndef SC_ALLOCA_H
 #include "SC_Alloca.h"
+#endif
 
 #ifdef _WIN32
 

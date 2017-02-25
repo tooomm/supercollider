@@ -21,8 +21,12 @@
 #ifndef SC_INLINEBINARYOP_H
 #define SC_INLINEBINARYOP_H
 
+#ifndef SC_BOUNDSMACROS_H
 #include "SC_BoundsMacros.h"
+#endif
+#ifndef SC_INLINEUNARYOP_H
 #include "SC_InlineUnaryOp.h"
+#endif
 #include <cmath>
 
 inline float sc_mod(float in, float hi)

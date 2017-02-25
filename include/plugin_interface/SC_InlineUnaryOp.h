@@ -21,8 +21,12 @@
 #ifndef SC_INLINEUNARYOP_H
 #define SC_INLINEUNARYOP_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_CONSTANTS_H
 #include "SC_Constants.h"
+#endif
 
 #include <cmath>
 #include <limits>

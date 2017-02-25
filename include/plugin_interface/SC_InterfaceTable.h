@@ -23,13 +23,27 @@
 
 static const int sc_api_version = 2;
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_SNDBUF_H
 #include "SC_SndBuf.h"
+#endif
+#ifndef SC_UNIT_H
 #include "SC_Unit.h"
+#endif
+#ifndef SC_BUFGEN_H
 #include "SC_BufGen.h"
+#endif
+#ifndef SC_FIFOMSG_H
 #include "SC_FifoMsg.h"
+#endif
+#ifndef SC_FFTLIB_H
 #include "SC_fftlib.h"
+#endif
+#ifndef SC_EXPORT_H
 #include "SC_Export.h"
+#endif
 
 typedef	struct SF_INFO SF_INFO ;
 

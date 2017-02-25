@@ -49,10 +49,18 @@
 #ifndef SC_RGEN_H
 #define SC_RGEN_H
 
+#ifndef SC_ENDIAN_H
 #include "SC_Endian.h"
+#endif
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_BOUNDSMACROS_H
 #include "SC_BoundsMacros.h"
+#endif
+#ifndef HASH_H
 #include "Hash.h"
+#endif
 #include <math.h>
 
 struct RGen

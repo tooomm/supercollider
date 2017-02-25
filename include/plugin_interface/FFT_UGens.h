@@ -21,8 +21,12 @@
 #ifndef FFT_UGENS_H
 #define FFT_UGENS_H
 
+#ifndef SC_PLUGIN_H
 #include "SC_PlugIn.h"
+#endif
+#ifndef SCCOMPLEX_H
 #include "SCComplex.h"
+#endif
 
 #include <string.h>
 

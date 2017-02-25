@@ -21,8 +21,12 @@
 #ifndef SC_DEMANDUNIT_H
 #define SC_DEMANDUNIT_H
 
+#ifndef SC_UNIT_H
 #include "SC_Unit.h"
+#endif
+#ifndef SC_WIRE_H
 #include "SC_Wire.h"
+#endif
 
 // demand rate unit support.
 

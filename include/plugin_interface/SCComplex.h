@@ -22,7 +22,9 @@
 #ifndef SCCOMPLEX_H
 #define SCCOMPLEX_H
 
+#ifndef SC_COMPLEX_H
 #include "SC_Complex.h"
+#endif
 
 /** wrapper for backwards compatibility */
 

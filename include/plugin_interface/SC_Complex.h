@@ -24,9 +24,15 @@
 
 #include <cmath>
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_CONSTANTS_H
 #include "SC_Constants.h"
+#endif
+#ifndef FLOAT_H
 #include "float.h"
+#endif
 
 #ifdef _MSC_VER
 // hypotf is c99, but not c++

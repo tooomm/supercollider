@@ -23,8 +23,12 @@
 
 #include <cassert>
 
+#ifndef SC_PLUGIN_H
 #include "SC_PlugIn.h"
+#endif
+#ifndef FUNCTION_ATTRIBUTES_H
 #include "function_attributes.h"
+#endif
 
 #include <type_traits>
 

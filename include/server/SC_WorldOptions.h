@@ -23,9 +23,15 @@
 #define SC_WORLDOPTIONS_H
 
 #include <stdarg.h>
+#ifndef SC_REPLY_H
 #include "SC_Reply.h"
+#endif
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_EXPORT_H
 #include "SC_Export.h"
+#endif
 
 typedef int (*PrintFunc)(const char *format, va_list ap);
 

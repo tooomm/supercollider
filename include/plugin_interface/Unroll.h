@@ -129,7 +129,9 @@ meanings of the indexing macros:
 #define ZOUT(i) (OUT(i) - ZOFF)		// get buffer pointer offset for iteration
 #define ZOUT0(i) (OUT(i)[0])		// get first sample
 
+#ifndef SC_BOUNDSMACROS_H
 #include "SC_BoundsMacros.h"
+#endif
 
 #include <assert.h>
 
