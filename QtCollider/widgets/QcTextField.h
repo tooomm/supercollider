@@ -18,6 +18,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
 ************************************************************************/
+#ifndef QCTEXTFIELD_H
+#define QCTEXTFIELD_H
 
 #include "../QcWidgetFactory.h"
 
@@ -48,3 +50,5 @@ Q_SIGNALS:
 };
 
 QC_DECLARE_QWIDGET_FACTORY( QcTextField );
+
+#endif

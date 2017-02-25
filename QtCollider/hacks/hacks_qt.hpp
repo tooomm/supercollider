@@ -18,6 +18,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
 ************************************************************************/
+#ifndef HACKS_QT_HPP
+#define HACKS_QT_HPP
 
 #include <QtGlobal>
 
@@ -25,4 +27,6 @@
 #define QURL_IS_LOCAL_FILE(url) url.isLocalFile()
 #else
 #define QURL_IS_LOCAL_FILE(url) url.scheme() == QString("file")
+#endif
+
 #endif

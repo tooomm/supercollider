@@ -18,6 +18,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
 ************************************************************************/
+#ifndef QCCHECKBOX_H
+#define QCCHECKBOX_H
 
 #include "../QcWidgetFactory.h"
 
@@ -40,3 +42,5 @@ class QcCheckBox : public QCheckBox
 };
 
 QC_DECLARE_QWIDGET_FACTORY( QcCheckBox );
+
+#endif

@@ -18,6 +18,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
 ************************************************************************/
+#ifndef PRIMITIVES_H
+#define PRIMITIVES_H
 
 #include <PyrPrimitive.h>
 #include <VMGlobals.h>
@@ -74,4 +76,5 @@ private:
   int name ( receiver, args, global ); \
   static QtCollider::LangPrimitive<&name> p_##name( "_" #name, argc ); \
   int name ( receiver, args, global )
+#endif
 #endif

@@ -18,6 +18,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
 ************************************************************************/
+#ifndef DEBUG_H
+#define DEBUG_H
 
 namespace QtCollider {
   int debugLevel();
@@ -46,3 +48,5 @@ extern void error(const char *fmt, ...);
 #define qcErrorMsg( MSG ) error( "Qt: %s\n", QString(MSG).toStdString().c_str() )
 
 #define qcWarningMsg( MSG ) postfl( "Qt: %s\n", QString(MSG).toStdString().c_str() )
+
+#endif

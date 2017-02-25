@@ -18,6 +18,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
 ************************************************************************/
+#ifndef QCPOPUPMENU_H
+#define QCPOPUPMENU_H
 
 #include "../QcHelper.h"
 #include <QComboBox>
@@ -46,3 +48,5 @@ private:
     bool _changed;
     bool _reactivation;
 };
+
+#endif

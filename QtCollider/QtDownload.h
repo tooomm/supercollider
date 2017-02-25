@@ -20,6 +20,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+#ifndef QTDOWNLOAD_H
+#define QTDOWNLOAD_H
 
 #include <QObject>
 #include <QString>
@@ -60,3 +62,4 @@ public Q_SLOTS:
     void downloadProgress(qint64 recieved, qint64 total);
 	void replyError(QNetworkReply::NetworkError errorCode);
 };
+#endif

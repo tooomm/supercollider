@@ -18,6 +18,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *
 ************************************************************************/
+#ifndef QCBUTTON_H
+#define QCBUTTON_H
 
 #include "../QcHelper.h"
 #include "../style/style.hpp"
@@ -56,3 +58,5 @@ class QcButton : public QPushButton, QcHelper, QtCollider::Style::Client
     QList<State> states;
     int currentState;
 };
+
+#endif
