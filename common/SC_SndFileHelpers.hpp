@@ -21,12 +21,20 @@
 #ifndef SC_SNDFILEHELPERS_HPP
 #define SC_SNDFILEHELPERS_HPP
 
+#ifndef SC_ERRORS_H
 #include "SC_Errors.h"
+#endif
 
 #ifndef NO_LIBSNDFILE
+#ifndef SNDFILE_H
 #include "sndfile.h"
+#endif
+#ifndef STRING_H
 #include "string.h"
+#endif
+#ifndef SC_DIRUTILS_H
 #include "SC_DirUtils.h"
+#endif
 
 static inline int headerFormatFromString(const char *name)
 {

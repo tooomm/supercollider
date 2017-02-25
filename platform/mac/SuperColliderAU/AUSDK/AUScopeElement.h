@@ -54,8 +54,12 @@
 #else
 	#include <AudioUnit.h>
 #endif
+#ifndef COMPONENTBASE_H
 #include "ComponentBase.h"
+#endif
+#ifndef AUBUFFER_H
 #include "AUBuffer.h"
+#endif
 
 
 class AUBase;

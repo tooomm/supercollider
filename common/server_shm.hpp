@@ -20,14 +20,28 @@
 #ifndef SERVER_SHM_HPP
 #define SERVER_SHM_HPP
 
+#ifndef SCOPE_BUFFER_HPP
 #include "scope_buffer.hpp"
+#endif
 
+#ifndef BOOST_VERSION_HPP
 #include <boost/version.hpp>
+#endif
+#ifndef BOOST_FOREACH_HPP
 #include <boost/foreach.hpp>
+#endif
+#ifndef BOOST_REF_HPP
 #include <boost/ref.hpp>
+#endif
+#ifndef BOOST_LEXICAL_CAST_HPP
 #include <boost/lexical_cast.hpp>
+#endif
+#ifndef BOOST_MANAGED_SHARED_MEMORY_HPP
 #include <boost/interprocess/managed_shared_memory.hpp>
+#endif
+#ifndef BOOST_VECTOR_HPP
 #include <boost/interprocess/containers/vector.hpp>
+#endif
 
 namespace detail_server_shm {
 

@@ -53,7 +53,9 @@
 	#include <CoreServices.h>
 #endif
 #include <new>
+#ifndef CADEBUGMACROS_H
 #include "CADebugMacros.h"
+#endif
 
 #if !TARGET_OS_WIN32
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
@@ -76,7 +78,9 @@
 #if SUPPORT_AU_VERSION_1
 
 #if TARGET_OS_WIN32
+	#ifndef CAGUARD_H
 	#include "CAGuard.h"
+	#endif
 #endif
 
 class ComponentInitLocker

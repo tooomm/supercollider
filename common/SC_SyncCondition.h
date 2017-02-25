@@ -22,7 +22,9 @@
 #ifndef SC_SYNCCONDITION_H
 #define SC_SYNCCONDITION_H
 
+#ifndef SC_LOCK_H
 #include "SC_Lock.h"
+#endif
 
 class SC_SyncCondition
 {

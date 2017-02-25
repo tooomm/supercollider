@@ -18,7 +18,9 @@
 
 #ifndef OSCMESSAGES_H
 #define OSCMESSAGES_H
+#ifndef SCSYNTHSEND_H
 #include "scsynthsend.h"
+#endif
 #include <CoreFoundation/CFString.h>
 
 static int kDefaultNodeId = 1000;

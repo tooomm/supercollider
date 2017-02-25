@@ -46,8 +46,12 @@
 #ifndef AUMIDIEFFECTBASE_H
 #define AUMIDIEFFECTBASE_H
 
+#ifndef AUMIDIBASE_H
 #include "AUMIDIBase.h"
+#endif
+#ifndef AUEFFECTBASE_H
 #include "AUEffectBase.h"
+#endif
 
 // ________________________________________________________________________
 //	AUMIDIEffectBase

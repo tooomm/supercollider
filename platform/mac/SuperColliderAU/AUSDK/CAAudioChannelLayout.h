@@ -62,7 +62,9 @@
 #include <string.h>
 
 #if !HAL_Build
+	#ifndef CAREFERENCECOUNTED_H
 	#include "CAReferenceCounted.h"
+	#endif
 #endif
 
 //=============================================================================

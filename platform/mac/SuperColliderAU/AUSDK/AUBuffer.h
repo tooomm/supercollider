@@ -56,8 +56,12 @@
 #endif
 
 #include <string.h>
+#ifndef CASTREAMBASICDESCRIPTION_H
 #include "CAStreamBasicDescription.h"
+#endif
+#ifndef CADEBUGMACROS_H
 #include "CADebugMacros.h"
+#endif
 
 // make this usable outside the stricter context of AudiUnits
 #ifndef COMPONENT_THROW

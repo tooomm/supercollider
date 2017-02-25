@@ -58,14 +58,30 @@
 
 #include <vector>
 
+#ifndef COMPONENTBASE_H
 #include "ComponentBase.h"
+#endif
+#ifndef AUSCOPEELEMENT_H
 #include "AUScopeElement.h"
+#endif
+#ifndef AUINPUTELEMENT_H
 #include "AUInputElement.h"
+#endif
+#ifndef AUOUTPUTELEMENT_H
 #include "AUOutputElement.h"
+#endif
+#ifndef AUBUFFER_H
 #include "AUBuffer.h"
+#endif
+#ifndef CAMATH_H
 #include "CAMath.h"
+#endif
+#ifndef CATHREADSAFELIST_H
 #include "CAThreadSafeList.h"
+#endif
+#ifndef CAVECTORUNIT_H
 #include "CAVectorUnit.h"
+#endif
 
 typedef AUElement AUGlobalElement;
 typedef AUElement AUGroupElement;

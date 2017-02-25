@@ -22,9 +22,13 @@
 #ifndef SC_REPLYIMPL_HPP
 #define SC_REPLYIMPL_HPP
 
+#ifndef SC_REPLY_H
 #include "SC_Reply.h"
+#endif
 
+#ifndef BOOST_ASIO_HPP
 #include <boost/asio.hpp>
+#endif
 
 enum Protocol {
 	kUDP,

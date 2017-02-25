@@ -52,7 +52,9 @@
 #if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
 	#include <CoreAudio/CoreAudioTypes.h>
 #else
+	#ifndef COREAUDIOTYPES_H
 	#include "CoreAudioTypes.h"
+	#endif
 #endif
 
 //=============================================================================
@@ -87,7 +89,9 @@
 		#define DebugMessageN2(msg, N1, N2)
 		#define DebugMessageN3(msg, N1, N2, N3)
 	#else
+		#ifndef CADEBUGPRINTF_H
 		#include "CADebugPrintf.h"
+		#endif
 
 		#if	(CoreAudio_FlushDebugMessages && !CoreAudio_UseSysLog) || defined(CoreAudio_UseSideFile)
 			#define	FlushRtn	;fflush(DebugPrintfFile)
@@ -97,7 +101,9 @@
 
 		#if		CoreAudio_ThreadStampMessages
 			#include <pthread.h>
+			#ifndef CAHOSTTIMEBASE_H
 			#include "CAHostTimeBase.h"
+			#endif
 			#define	DebugMessage(msg)										DebugPrintfRtn(DebugPrintfFileComma "%p %.4f: %s"DebugPrintfLineEnding, pthread_self(), ((Float64)(CAHostTimeBase::GetCurrentTimeInNanos()) / 1000000.0), msg) FlushRtn
 			#define DebugMessageN1(msg, N1)									DebugPrintfRtn(DebugPrintfFileComma "%p %.4f: "msg"\n", pthread_self(), ((Float64)(CAHostTimeBase::GetCurrentTimeInNanos()) / 1000000.0), N1) FlushRtn
 			#define DebugMessageN2(msg, N1, N2)								DebugPrintfRtn(DebugPrintfFileComma "%p %.4f: "msg"\n", pthread_self(), ((Float64)(CAHostTimeBase::GetCurrentTimeInNanos()) / 1000000.0), N1, N2) FlushRtn
@@ -109,7 +115,9 @@
 			#define DebugMessageN8(msg, N1, N2, N3, N4, N5, N6, N7, N8)		DebugPrintfRtn(DebugPrintfFileComma "%p %.4f: "msg"\n", pthread_self(), ((Float64)(CAHostTimeBase::GetCurrentTimeInNanos()) / 1000000.0), N1, N2, N3, N4, N5, N6, N7, N8) FlushRtn
 			#define DebugMessageN9(msg, N1, N2, N3, N4, N5, N6, N7, N8, N9)	DebugPrintfRtn(DebugPrintfFileComma "%p %.4f: "msg"\n", pthread_self(), ((Float64)(CAHostTimeBase::GetCurrentTimeInNanos()) / 1000000.0), N1, N2, N3, N4, N5, N6, N7, N8, N9) FlushRtn
 		#elif	CoreAudio_TimeStampMessages
+			#ifndef CAHOSTTIMEBASE_H
 			#include "CAHostTimeBase.h"
+			#endif
 			#define	DebugMessage(msg)										DebugPrintfRtn(DebugPrintfFileComma "%.4f: %s"DebugPrintfLineEnding, pthread_self(), ((Float64)(CAHostTimeBase::GetCurrentTimeInNanos()) / 1000000.0), msg) FlushRtn
 			#define DebugMessageN1(msg, N1)									DebugPrintfRtn(DebugPrintfFileComma "%.4f: "msg DebugPrintfLineEnding, ((Float64)(CAHostTimeBase::GetCurrentTimeInNanos()) / 1000000.0), N1) FlushRtn
 			#define DebugMessageN2(msg, N1, N2)								DebugPrintfRtn(DebugPrintfFileComma "%.4f: "msg DebugPrintfLineEnding, ((Float64)(CAHostTimeBase::GetCurrentTimeInNanos()) / 1000000.0), N1, N2) FlushRtn
@@ -142,7 +150,9 @@
 	#endif
 
 	#if	CoreAudio_StopOnFailure
+		#ifndef CADEBUGGER_H
 		#include "CADebugger.h"
+		#endif
 		#define STOP	CADebuggerStop()
 	#else
 		#define	STOP

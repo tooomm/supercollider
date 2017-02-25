@@ -50,11 +50,17 @@
 	#include <CoreAudio/CoreAudioTypes.h>
 	#include <CoreFoundation/CoreFoundation.h>
 #else
+	#ifndef COREAUDIOTYPES_H
 	#include "CoreAudioTypes.h"
+	#endif
+	#ifndef COREFOUNDATION_H
 	#include "CoreFoundation.h"
+	#endif
 #endif
 
+#ifndef CADEBUGMACROS_H
 #include "CADebugMacros.h"
+#endif
 #include <string.h>	// for memset, memcpy
 #include <stdio.h>	// for FILE *
 

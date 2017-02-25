@@ -23,7 +23,9 @@
 
 #include <atomic>
 
+#ifndef BOOST_OFFSET_PTR_HPP
 #include <boost/interprocess/offset_ptr.hpp>
+#endif
 
 extern "C" {
 #include "tlsf.h"

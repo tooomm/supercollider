@@ -46,10 +46,14 @@
 #ifndef AUMIDIBASE_H
 #define AUMIDIBASE_H
 
+#ifndef AUBASE_H
 #include "AUBase.h"
+#endif
 
 #if CA_AUTO_MIDI_MAP
+	#ifndef CAAUMIDIMAPMANAGER_H
 	#include "CAAUMIDIMapManager.h"
+	#endif
 #endif
 
 struct MIDIPacketList;

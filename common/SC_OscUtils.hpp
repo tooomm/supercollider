@@ -21,7 +21,9 @@
 #ifndef SC_OSCUTILS_HPP
 #define SC_OSCUTILS_HPP
 
+#ifndef SC_REPLYIMPL_HPP
 #include "SC_ReplyImpl.hpp"
+#endif
 #include <cinttypes>
 
 static bool dumpOSCmsg(int inSize, char* inData, bool skipStatus = false)

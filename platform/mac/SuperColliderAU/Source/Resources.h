@@ -19,7 +19,9 @@
 
 #ifndef RESOURCES_H
 #define RESOURCES_H
+#ifndef SC_WORLD_H
 #include "SC_World.h"
+#endif
 #include <CoreFoundation/CFString.h>
 
 #include <mach-o/dyld.h>

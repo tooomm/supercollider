@@ -46,8 +46,12 @@
 #ifndef AUEFFECTBASE_H
 #define AUEFFECTBASE_H
 
+#ifndef AUBASE_H
 #include "AUBase.h"
+#endif
+#ifndef AUSILENTTIMEOUT_H
 #include "AUSilentTimeout.h"
+#endif
 
 class AUKernelBase;
 

@@ -34,7 +34,9 @@
 # define snprintf _snprintf
 #endif
 
+#ifndef BOOST_ALGORITH
 #include <boost/algorithm/string.hpp>
+#endif
 
 static inline bool stringCaseCompare(const char * a, const char * b)
 {

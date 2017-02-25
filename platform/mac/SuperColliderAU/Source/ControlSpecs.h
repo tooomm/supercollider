@@ -21,7 +21,9 @@
 #define CONTROLSPECS_H
 #include <Carbon/Carbon.h>
 #include <AudioUnit/AudioUnitProperties.h>
+#ifndef SC_WORLD_H
 #include "SC_World.h"
+#endif
 
 
 const  CFStringRef kSynthDefSpecKey = CFSTR("Synthdef");

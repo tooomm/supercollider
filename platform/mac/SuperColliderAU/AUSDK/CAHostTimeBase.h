@@ -63,7 +63,9 @@
 	#error	Unsupported operating system
 #endif
 
+#ifndef CADEBUGMACROS_H
 #include "CADebugMacros.h"
+#endif
 
 //=============================================================================
 //	CAHostTimeBase

@@ -46,7 +46,9 @@
 #ifndef CATHREADSAFELIST_H
 #define CATHREADSAFELIST_H
 
+#ifndef CAATOMICSTACK_H
 #include "CAAtomicStack.h"
+#endif
 
 //  linked list of T's
 //	T must define operator ==

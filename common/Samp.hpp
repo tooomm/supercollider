@@ -21,7 +21,9 @@
 #ifndef SAMP_HPP
 #define SAMP_HPP
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 
 const long kSineSize = 8192;
 const long kSineMask = kSineSize - 1;

@@ -47,7 +47,9 @@
 #define CAVECTORUNIT_H
 
 #include <TargetConditionals.h>
+#ifndef CAVECTORUNITTYPES_H
 #include "CAVectorUnitTypes.h"
+#endif
 
 #if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
 	#include <CoreServices/CoreServices.h>

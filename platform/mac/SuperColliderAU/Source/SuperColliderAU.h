@@ -20,11 +20,17 @@
 #define SUPERCOLLIDERAU_H
 
 
+#ifndef AUMIDIEFFECTBASE_H
 #include "AUMIDIEffectBase.h"
+#endif
+#ifndef SUPERCOLLIDERAUVERSION_H
 #include "SuperColliderAUVersion.h"
+#endif
 
 #if AU_DEBUG_DISPATCHER
+#ifndef AUDEBUGDISPATCHER_H
 #include "AUDebugDispatcher.h"
+#endif
 #endif
 
 #include <pthread.h>
@@ -33,15 +39,31 @@
 #include <sys/time.h>
 #include <CoreFoundation/CoreFoundation.h>
 
+#ifndef SC_COREAUDIO_H
 #include "SC_CoreAudio.h"
+#endif
+#ifndef SC_WORLDOPTIONS_H
 #include "SC_WorldOptions.h"
+#endif
+#ifndef SC_WORLD_H
 #include "SC_World.h"
+#endif
+#ifndef SC_HIDDENWORLD_H
 #include "SC_HiddenWorld.h"
+#endif
 
+#ifndef SCPROCESS_H
 #include "SCProcess.h"
+#endif
+#ifndef OSCMESSAGES_H
 #include "OSCMessages.h"
+#endif
+#ifndef CONTROLSPECS_H
 #include "ControlSpecs.h"
+#endif
+#ifndef RESOURCES_H
 #include "Resources.h"
+#endif
 
 
 using namespace std;

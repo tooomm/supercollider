@@ -46,8 +46,12 @@
 #ifndef AUINPUTELEMENT_H
 #define AUINPUTELEMENT_H
 
+#ifndef AUSCOPEELEMENT_H
 #include "AUScopeElement.h"
+#endif
+#ifndef AUBUFFER_H
 #include "AUBuffer.h"
+#endif
 
 /*! @class AUInputElement */
 class AUInputElement : public AUIOElement {

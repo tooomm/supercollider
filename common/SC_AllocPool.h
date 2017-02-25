@@ -30,9 +30,15 @@ Improved bit block scanning by using a count leading zeroes instruction.
 #ifndef SC_ALLOCPOOL_H
 #define SC_ALLOCPOOL_H
 
+#ifndef SC_LIST_H
 #include "SC_List.h"
+#endif
+#ifndef CLZ_H
 #include "clz.h"
+#endif
+#ifndef FUNCTION_ATTRIBUTES_H
 #include "function_attributes.h"
+#endif
 #include <stdlib.h>
 
 const int kNumAllocBins = 128;

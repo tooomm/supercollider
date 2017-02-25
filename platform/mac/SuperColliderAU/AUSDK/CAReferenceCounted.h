@@ -53,7 +53,9 @@
 #endif
 
 #if TARGET_OS_WIN32
+	#ifndef CAWINDOWS_H
 	#include "CAWindows.h"
+	#endif
 #endif
 
 // base class for reference-counted objects

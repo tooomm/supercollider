@@ -10,7 +10,9 @@
 #endif
 
 #ifdef _WIN32
+#ifndef SC_WIN32UTILS_H
 #include "SC_Win32Utils.h"
+#endif
 /*
  *	Signal stuff
  *	For WIN32, there is no wait() call so there are no wait() macros

@@ -19,19 +19,33 @@
 #ifndef SCPROCESS_H
 #define SCPROCESS_H
 
+#ifndef SC_WORLDOPTIONS_H
 #include "SC_WorldOptions.h"
+#endif
+#ifndef SC_WORLD_H
 #include "SC_World.h"
+#endif
+#ifndef SC_HIDDENWORLD_H
 #include "SC_HiddenWorld.h"
+#endif
 
+#ifndef RESOURCES_H
 #include "Resources.h"
+#endif
+#ifndef OSCMESSAGES_H
 #include "OSCMessages.h"
+#endif
 
 #include <sys/socket.h>
 #include <stdio.h>
 #include <unistd.h>
 
+#ifndef SC_COREAUDIO_H
 #include "SC_CoreAudio.h"
+#endif
+#ifndef SC_AU_H
 #include "SC_AU.h"
+#endif
 
 class SCProcess {
 
