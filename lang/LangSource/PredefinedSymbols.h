@@ -17,7 +17,8 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
-
+#ifndef PREDEFINEDSYMBOLS_H
+#define PREDEFINEDSYMBOLS_H
 
 extern PyrSymbol *s_func, *s_absfunc;
 extern PyrSymbol *s_doesNotUnderstand;
@@ -26,3 +27,4 @@ extern PyrSymbol *s_startup;
 extern PyrSymbol *s_shutdown;
 extern PyrSymbol *s_envirGet, *s_envirPut;
 
+#endif
