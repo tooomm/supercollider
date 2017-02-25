@@ -21,7 +21,9 @@
 #ifndef AUDIO_STATUS_BOX_HPP
 #define AUDIO_STATUS_BOX_HPP
 
+#ifndef STATUS_BOX_HPP
 #include "util/status_box.hpp"
+#endif
 
 namespace ScIDE {
 

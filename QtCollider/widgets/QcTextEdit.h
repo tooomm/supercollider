@@ -22,7 +22,9 @@
 #ifndef QCTEXTEDIT_H
 #define QCTEXTEDIT_H
 
+#ifndef QCHELPER_H
 #include "../QcHelper.h"
+#endif
 
 #include <QTextEdit>
 

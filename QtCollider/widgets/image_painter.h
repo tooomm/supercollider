@@ -22,8 +22,12 @@
 #ifndef IMAGE_PAINTER_H
 #define IMAGE_PAINTER_H
 
+#ifndef IMAGE_H
 #include "../image.h"
+#endif
+#ifndef DEBUG_H
 #include "../debug.h"
+#endif
 
 #include <QPainter>
 

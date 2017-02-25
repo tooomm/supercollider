@@ -22,7 +22,9 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+#ifndef DEBUG_H
 #include "debug.h"
+#endif
 
 #include <QList>
 #include <QVariant>

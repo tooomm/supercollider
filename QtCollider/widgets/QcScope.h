@@ -22,7 +22,9 @@
 #ifndef QCSCOPE_H
 #define QCSCOPE_H
 
+#ifndef QCHELPER_H
 #include "../QcHelper.h"
+#endif
 
 #include <SC_Types.h>
 #include <SC_SndBuf.h>

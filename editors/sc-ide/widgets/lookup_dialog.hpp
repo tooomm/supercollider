@@ -26,8 +26,12 @@
 #include <QStandardItemModel>
 #include <QTreeWidget>
 
+#ifndef SC_PROCESS_HPP
 #include "../core/sc_process.hpp"
+#endif
+#ifndef SC_EDITOR_HPP
 #include "code_editor/sc_editor.hpp"
+#endif
 
 namespace ScIDE {
 

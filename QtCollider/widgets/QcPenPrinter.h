@@ -22,8 +22,12 @@
 #ifndef QCPENPRINTER_H
 #define QCPENPRINTER_H
 
+#ifndef PAINTING_H
 #include "../painting.h"
+#endif
+#ifndef DEBUG_H
 #include "../debug.h"
+#endif
 #include <QPrintDialog>
 #include <QPrinter>
 #include <QPainter>

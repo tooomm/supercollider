@@ -22,8 +22,12 @@
 #ifndef VIEW_HPP
 #define VIEW_HPP
 
+#ifndef COMMON_H
 #include "../../Common.h"
+#endif
+#ifndef QCHELPER_H
 #include "../../QcHelper.h"
+#endif
 
 #include <sndfile.h>
 

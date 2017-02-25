@@ -21,8 +21,12 @@
 #ifndef COMPLETION_MENU_HPP
 #define COMPLETION_MENU_HPP
 
+#ifndef POPUP_WIDGET_HPP
 #include "../util/popup_widget.hpp"
+#endif
+#ifndef SC_INTROSPECTION_HPP
 #include "../../core/sc_introspection.hpp"
+#endif
 
 #include <QObject>
 #include <QStandardItemModel>

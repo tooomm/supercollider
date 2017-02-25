@@ -22,9 +22,15 @@
 #ifndef QCGRAPH_H
 #define QCGRAPH_H
 
+#ifndef COMMON_H
 #include "../Common.h"
+#endif
+#ifndef QCHELPER_H
 #include "../QcHelper.h"
+#endif
+#ifndef STYLE_HPP
 #include "../style/style.hpp"
+#endif
 
 #include <QWidget>
 

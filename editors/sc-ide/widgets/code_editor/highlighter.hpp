@@ -21,7 +21,9 @@
 #ifndef HIGHLIGHTER_HPP
 #define HIGHLIGHTER_HPP
 
+#ifndef SC_LEXER_HPP
 #include "../../core/sc_lexer.hpp"
+#endif
 
 #include <QSyntaxHighlighter>
 #include <QVector>

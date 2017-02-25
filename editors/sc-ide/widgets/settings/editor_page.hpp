@@ -26,7 +26,9 @@
 #include <QTreeWidgetItem>
 #include <QTextCharFormat>
 
+#ifndef THEME_HPP
 #include "../../core/settings/theme.hpp"
+#endif
 
 class QFontDatabase;
 

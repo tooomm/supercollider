@@ -22,7 +22,9 @@
 #ifndef QWIDGETPROXY_H
 #define QWIDGETPROXY_H
 
+#ifndef QOBJECTPROXY_H
 #include "QObjectProxy.h"
+#endif
 
 #include <QWidget>
 #include <QAtomicInt>

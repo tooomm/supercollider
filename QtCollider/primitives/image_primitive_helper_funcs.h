@@ -25,8 +25,12 @@
 #define IMAGE_PRIMITIVE_HELPER_FUNCS_H
 
 #include <QImage>
+#ifndef IMAGE_H
 #include "../image.h"
+#endif
+#ifndef TYPE_CODEC_HPP
 #include "../type_codec.hpp"
+#endif
 
 namespace QC = QtCollider;
 

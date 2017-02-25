@@ -22,9 +22,15 @@
 #ifndef QCTREEWIDGET_H
 #define QCTREEWIDGET_H
 
+#ifndef COMMON_H
 #include "../Common.h"
+#endif
+#ifndef QOBJECTPROXY_H
 #include "../QObjectProxy.h"
+#endif
+#ifndef SAFEPTR_HPP
 #include "../safeptr.hpp"
+#endif
 
 #include <VMGlobals.h>
 #include <PyrObject.h>

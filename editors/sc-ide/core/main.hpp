@@ -28,10 +28,18 @@
 #include <QtNetwork/QLocalSocket>
 #include <QtNetwork/QLocalServer>
 
+#ifndef SC_PROCESS_HPP
 #include "sc_process.hpp"
+#endif
+#ifndef SC_SERVER_HPP
 #include "sc_server.hpp"
+#endif
+#ifndef DOC_MANAGER_HPP
 #include "doc_manager.hpp"
+#endif
+#ifndef MANAGER_HPP
 #include "settings/manager.hpp"
+#endif
 
 namespace ScIDE {
 

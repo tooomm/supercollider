@@ -1,7 +1,9 @@
 #ifndef QCHELPER_H
 #define QCHELPER_H
 
+#ifndef COMMON_H
 #include "Common.h"
+#endif
 
 #include <QColor>
 #include <QString>

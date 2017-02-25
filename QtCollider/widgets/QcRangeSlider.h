@@ -22,9 +22,15 @@
 #ifndef QCRANGESLIDER_H
 #define QCRANGESLIDER_H
 
+#ifndef QCABSTRACTSTEPVALUE_H
 #include "QcAbstractStepValue.h"
+#endif
+#ifndef QCHELPER_H
 #include "../QcHelper.h"
+#endif
+#ifndef STYLE_HPP
 #include "../style/style.hpp"
+#endif
 
 #include <QWidget>
 

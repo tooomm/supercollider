@@ -21,7 +21,9 @@
 #ifndef SC_PROCESS_HPP
 #define SC_PROCESS_HPP
 
+#ifndef SC_INTROSPECTION_HPP
 #include "sc_introspection.hpp"
+#endif
 
 #include <QAction>
 #include <QByteArray>

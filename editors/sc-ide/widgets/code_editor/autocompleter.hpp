@@ -28,10 +28,16 @@
 #include <QStringList>
 #include <QPointer>
 
+#ifndef TOKENS_HPP
 #include "tokens.hpp"
+#endif
+#ifndef COMPLETION_MENU_HPP
 #include "completion_menu.hpp"
+#endif
 
+#ifndef SCDOC_H
 #include "SCDoc/SCDoc.h"
+#endif
 
 namespace ScIDE {
 

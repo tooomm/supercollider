@@ -24,7 +24,9 @@
 
 #include <QWidget>
 #include <QResizeEvent>
+#ifndef COMMON_H
 #include "../Common.h"
+#endif
 
 namespace QtCollider
 {

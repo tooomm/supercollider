@@ -22,7 +22,9 @@
 #ifndef QCFILEDIALOG_H
 #define QCFILEDIALOG_H
 
+#ifndef COMMON_H
 #include "../Common.h"
+#endif
 
 #include <QFileDialog>
 #include <QPointer>

@@ -22,9 +22,15 @@
 #ifndef BASICWIDGETS_H
 #define BASICWIDGETS_H
 
+#ifndef QCCANVAS_H
 #include "QcCanvas.h"
+#endif
+#ifndef CLASSIC_LAYOUTS_HPP
 #include "../layouts/classic_layouts.hpp"
+#endif
+#ifndef IMAGE_PAINTER_H
 #include "image_painter.h"
+#endif
 
 class QcSimpleWidget : public QWidget
 {

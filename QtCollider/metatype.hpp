@@ -22,7 +22,9 @@
 #ifndef METATYPE_HPP
 #define METATYPE_HPP
 
+#ifndef TYPE_CODEC_HPP
 #include "type_codec.hpp"
+#endif
 
 #include <PyrSlot.h>
 

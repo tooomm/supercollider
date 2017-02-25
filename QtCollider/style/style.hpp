@@ -1,8 +1,12 @@
 #ifndef STYLE_HPP
 #define STYLE_HPP
 
+#ifndef PROXYSTYLE_HPP
 #include "ProxyStyle.hpp"
+#endif
+#ifndef ROUTINES_HPP
 #include "routines.hpp"
+#endif
 
 #include <QStyleOptionComplex>
 

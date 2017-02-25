@@ -22,10 +22,18 @@
 #ifndef LAYOUTS_HPP
 #define LAYOUTS_HPP
 
+#ifndef STACK_LAYOUT_HPP
 #include "stack_layout.hpp"
+#endif
+#ifndef COMMON_H
 #include "../Common.h"
+#endif
+#ifndef QCOBJECTFACTORY_H
 #include "../QcObjectFactory.h"
+#endif
+#ifndef QOBJECTPROXY_H
 #include "../QObjectProxy.h"
+#endif
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>

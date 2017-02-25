@@ -32,7 +32,9 @@
 #include <string>
 #include <map>
 
+#ifndef BOOST_FLYWEIGHT_HPP
 #include <boost/flyweight.hpp>
+#endif
 
 
 static inline std::size_t hash_value(QString const& b)

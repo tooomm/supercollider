@@ -21,7 +21,9 @@
 #ifndef DOC_MANAGER_HPP
 #define DOC_MANAGER_HPP
 
+#ifndef EDITOR_HPP
 #include "../widgets/code_editor/editor.hpp"
+#endif
 #include <QDateTime>
 #include <QFileSystemWatcher>
 #include <QHash>

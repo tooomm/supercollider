@@ -22,7 +22,9 @@
 #define MULTI_SPLITTER_HPP
 
 #include <QSplitter>
+#ifndef MULTI_EDITOR_HPP
 #include "../multi_editor.hpp"
+#endif
 
 namespace ScIDE {
 

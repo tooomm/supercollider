@@ -21,7 +21,9 @@
 #ifndef QCPOPUPMENU_H
 #define QCPOPUPMENU_H
 
+#ifndef QCHELPER_H
 #include "../QcHelper.h"
+#endif
 #include <QComboBox>
 
 class QcPopUpMenu : public QComboBox, QcHelper

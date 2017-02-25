@@ -21,8 +21,12 @@
 #ifndef QCLISTWIDGET_H
 #define QCLISTWIDGET_H
 
+#ifndef QCHELPER_H
 #include "../QcHelper.h"
+#endif
+#ifndef COMMON_H
 #include "../Common.h"
+#endif
 #include <QListWidget>
 
 class QcListWidget : public QListWidget, QcHelper

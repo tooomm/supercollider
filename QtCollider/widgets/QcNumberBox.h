@@ -24,8 +24,12 @@
 
 #include <QLineEdit>
 
+#ifndef QCABSTRACTSTEPVALUE_H
 #include "QcAbstractStepValue.h"
+#endif
+#ifndef QCHELPER_H
 #include "../QcHelper.h"
+#endif
 
 #include <QDoubleValidator>
 

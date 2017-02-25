@@ -22,7 +22,9 @@
 #ifndef SCOPE_SHM_INTERFACE_HPP
 #define SCOPE_SHM_INTERFACE_HPP
 
+#ifndef SERVER_SHM_HPP
 #include "../../common/server_shm.hpp"
+#endif
 #include <QObject>
 
 namespace QtCollider {

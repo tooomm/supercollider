@@ -21,8 +21,12 @@
 #ifndef DOC_LIST_HPP
 #define DOC_LIST_HPP
 
+#ifndef DOCKLET_HPP
 #include "util/docklet.hpp"
+#endif
+#ifndef DOC_MANAGER_HPP
 #include "../core/doc_manager.hpp"
+#endif
 
 #include <QListWidget>
 #include <QSignalMapper>

@@ -21,9 +21,15 @@
 #ifndef SC_EDITOR_HPP
 #define SC_EDITOR_HPP
 
+#ifndef EDITOR_HPP
 #include "editor.hpp"
+#endif
+#ifndef TOKENS_HPP
 #include "tokens.hpp"
+#endif
+#ifndef THEME_HPP
 #include "../core/settings/theme.hpp"
+#endif
 
 #include <QTextBlock>
 #include <utility>

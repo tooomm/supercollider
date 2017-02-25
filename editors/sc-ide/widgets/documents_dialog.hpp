@@ -21,7 +21,9 @@
 #ifndef DOCUMENTS_DIALOG_HPP
 #define DOCUMENTS_DIALOG_HPP
 
+#ifndef DOC_MANAGER_HPP
 #include "../core/doc_manager.hpp"
+#endif
 
 #include <QDialog>
 #include <QTreeWidget>

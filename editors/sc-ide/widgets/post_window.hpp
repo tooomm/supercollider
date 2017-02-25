@@ -21,7 +21,9 @@
 #ifndef POST_WINDOW_HPP
 #define POST_WINDOW_HPP
 
+#ifndef DOCKLET_HPP
 #include "util/docklet.hpp"
+#endif
 #include <QAction>
 #include <QPlainTextEdit>
 

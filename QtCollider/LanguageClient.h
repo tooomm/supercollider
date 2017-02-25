@@ -22,8 +22,12 @@
 #ifndef LANGUAGECLIENT_H
 #define LANGUAGECLIENT_H
 
+#ifndef SC_TERMINALCLIENT_H
 #include "SC_TerminalClient.h"
+#endif
+#ifndef COMMON_H
 #include "Common.h"
+#endif
 
 #include <QObject>
 #include <QBasicTimer>

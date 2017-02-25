@@ -22,8 +22,12 @@
 #ifndef TYPE_CODEC_HPP
 #define TYPE_CODEC_HPP
 
+#ifndef QCTREEWIDGET_H
 #include "widgets/QcTreeWidget.h"
+#endif
+#ifndef IMAGE_H
 #include "image.h"
+#endif
 
 #include <PyrSlot.h>
 

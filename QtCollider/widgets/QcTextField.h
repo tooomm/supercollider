@@ -21,7 +21,9 @@
 #ifndef QCTEXTFIELD_H
 #define QCTEXTFIELD_H
 
+#ifndef QCWIDGETFACTORY_H
 #include "../QcWidgetFactory.h"
+#endif
 
 #include <QLineEdit>
 #include <QKeyEvent>

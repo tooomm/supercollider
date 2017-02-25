@@ -22,8 +22,12 @@
 #ifndef QCWINDOW_H
 #define QCWINDOW_H
 
+#ifndef BASICWIDGETS_H
 #include "BasicWidgets.h"
+#endif
+#ifndef QCSCROLLAREA_H
 #include "QcScrollArea.h"
+#endif
 
 class QcWindow : public QcCustomPainted
 {

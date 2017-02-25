@@ -27,7 +27,9 @@
 #include <QSignalMapper>
 #include <QStatusBar>
 
+#ifndef STATUS_BOX_HPP
 #include "util/status_box.hpp"
+#endif
 
 namespace ScIDE {
 

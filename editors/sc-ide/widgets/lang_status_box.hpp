@@ -21,7 +21,9 @@
 #ifndef LANG_STATUS_BOX_HPP
 #define LANG_STATUS_BOX_HPP
 
+#ifndef STATUS_BOX_HPP
 #include "util/status_box.hpp"
+#endif
 #include <QProcess>
 
 namespace ScIDE {

@@ -22,7 +22,9 @@
 #ifndef SAFEPTR_HPP
 #define SAFEPTR_HPP
 
+#ifndef COMMON_H
 #include "Common.h"
+#endif
 
 #include <QApplication>
 #include <QAtomicPointer>

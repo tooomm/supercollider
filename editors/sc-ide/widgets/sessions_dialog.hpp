@@ -21,7 +21,9 @@
 #ifndef SESSIONS_DIALOG_HPP
 #define SESSIONS_DIALOG_HPP
 
+#ifndef SESSION_MANAGER_HPP
 #include "../core/session_manager.hpp"
+#endif
 
 #include <QDialog>
 #include <QListWidget>

@@ -22,7 +22,9 @@
 #ifndef QCAPPLICATION_H
 #define QCAPPLICATION_H
 
+#ifndef COMMON_H
 #include "Common.h"
+#endif
 
 #include <QApplication>
 #include <QEventLoop>

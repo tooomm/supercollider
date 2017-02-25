@@ -22,8 +22,12 @@
 #ifndef QCWIDGETFACTORY_H
 #define QCWIDGETFACTORY_H
 
+#ifndef QCOBJECTFACTORY_H
 #include "QcObjectFactory.h"
+#endif
+#ifndef QWIDGETPROXY_H
 #include "QWidgetProxy.h"
+#endif
 
 #include <QMetaMethod>
 #include <QLayout>

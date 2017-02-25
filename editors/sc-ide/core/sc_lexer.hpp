@@ -21,7 +21,9 @@
 #ifndef SC_LEXER_HPP
 #define SC_LEXER_HPP
 
+#ifndef TOKENS_HPP
 #include "../widgets/code_editor/tokens.hpp"
+#endif
 
 #include <QVector>
 #include <QRegExp>

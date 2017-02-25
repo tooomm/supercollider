@@ -30,9 +30,15 @@
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
 
+#ifndef DOC_MANAGER_HPP
 #include "../core/doc_manager.hpp"
+#endif
+#ifndef MAIN_HPP
 #include "../core/main.hpp"
+#endif
+#ifndef MULTI_SPLITTER_HPP
 #include "util/multi_splitter.hpp"
+#endif
 
 namespace ScIDE {
 

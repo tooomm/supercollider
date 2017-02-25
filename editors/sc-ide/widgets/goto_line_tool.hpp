@@ -21,8 +21,12 @@
 #ifndef GOTO_LINE_TOOL_HPP
 #define GOTO_LINE_TOOL_HPP
 
+#ifndef EDITOR_HPP
 #include "code_editor/editor.hpp"
+#endif
+#ifndef DOC_MANAGER_HPP
 #include "../core/doc_manager.hpp"
+#endif
 
 #include <QWidget>
 #include <QSpinBox>

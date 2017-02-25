@@ -22,7 +22,9 @@
 #ifndef QCCANVAS_H
 #define QCCANVAS_H
 
+#ifndef IMAGE_PAINTER_H
 #include "image_painter.h"
+#endif
 
 #include <QWidget>
 #include <QPixmap>

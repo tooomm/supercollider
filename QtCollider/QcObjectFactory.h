@@ -22,9 +22,15 @@
 #ifndef QCOBJECTFACTORY_H
 #define QCOBJECTFACTORY_H
 
+#ifndef QOBJECTPROXY_H
 #include "QObjectProxy.h"
+#endif
+#ifndef COMMON_H
 #include "Common.h"
+#endif
+#ifndef METATYPE_HPP
 #include "metatype.hpp"
+#endif
 
 #include <PyrObject.h>
 

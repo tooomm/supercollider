@@ -22,8 +22,12 @@
 #ifndef QCSCROLLAREA_H
 #define QCSCROLLAREA_H
 
+#ifndef QCCANVAS_H
 #include "QcCanvas.h"
+#endif
+#ifndef QCHELPER_H
 #include "../QcHelper.h"
+#endif
 
 #include <QScrollArea>
 

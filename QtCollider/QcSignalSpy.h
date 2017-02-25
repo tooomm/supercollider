@@ -22,8 +22,12 @@
 #ifndef QCSIGNALSPY_H
 #define QCSIGNALSPY_H
 
+#ifndef COMMON_H
 #include "Common.h"
+#endif
+#ifndef QOBJECTPROXY_H
 #include "QObjectProxy.h"
+#endif
 
 #include <PyrKernel.h>
 #include <PyrSymbol.h>

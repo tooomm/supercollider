@@ -21,7 +21,9 @@
 #ifndef QCCHECKBOX_H
 #define QCCHECKBOX_H
 
+#ifndef QCWIDGETFACTORY_H
 #include "../QcWidgetFactory.h"
+#endif
 
 #include <QCheckBox>
 

@@ -23,8 +23,12 @@
 #define QCKNOB_HPP
 
 #include <QWidget>
+#ifndef QCABSTRACTSTEPVALUE_H
 #include "QcAbstractStepValue.h"
+#endif
+#ifndef STYLE_HPP
 #include "../style/style.hpp"
+#endif
 
 class QcKnob : public QWidget, QcAbstractStepValue, QtCollider::Style::Client
 {

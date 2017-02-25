@@ -21,7 +21,9 @@
 #ifndef HELP_BROWSER_HPP
 #define HELP_BROWSER_HPP
 
+#ifndef DOCKLET_HPP
 #include "util/docklet.hpp"
+#endif
 
 #include <QWebView>
 #include <QLabel>

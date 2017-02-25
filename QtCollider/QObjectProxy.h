@@ -22,7 +22,9 @@
 #ifndef QOBJECTPROXY_H
 #define QOBJECTPROXY_H
 
+#ifndef COMMON_H
 #include "Common.h"
+#endif
 
 #include <QObject>
 #include <QString>
