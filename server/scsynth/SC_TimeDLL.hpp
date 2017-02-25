@@ -17,6 +17,9 @@
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 */
+
+#ifndef SC_TIMEDLL_HPP
+#define SC_TIMEDLL_HPP
 /*
 #include "SC_CoreAudio.h"
 #include <stdarg.h>
@@ -94,3 +97,5 @@ private:
 	double m_ei;
 	int m_ec;
 };
+
+#endif // SC_TIMEDLL_HPP
