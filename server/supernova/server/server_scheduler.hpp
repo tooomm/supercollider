@@ -21,12 +21,24 @@
 
 #include <mutex>
 
+#ifndef DSP_TH
 #include "dsp_thread_queue/dsp_thread.hpp"
+#endif
+#ifndef GROUP_HPP
 #include "group.hpp"
+#endif
+#ifndef MEMORY_POOL_HPP
 #include "memory_pool.hpp"
+#endif
+#ifndef BRANCH_HINTS_HPP
 #include "utilities/branch_hints.hpp"
+#endif
+#ifndef CALLBACK_SYSTEM_HPP
 #include "utilities/callback_system.hpp"
+#endif
+#ifndef STATIC_POOLED_CLASS_HPP
 #include "utilities/static_pooled_class.hpp"
+#endif
 
 namespace nova
 {

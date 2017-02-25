@@ -24,7 +24,9 @@
 #include <memory>               /* std::allocator */
 #include <type_traits>
 
+#ifndef BOOST_IF_HPP
 #include <boost/mpl/if.hpp>
+#endif
 
 namespace nova {
 

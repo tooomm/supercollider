@@ -22,15 +22,29 @@
 #include <mutex>
 #include <vector>
 
+#ifndef AUDIO_BUS_MANAGER_HPP
 #include "../server/audio_bus_manager.hpp"
+#endif
+#ifndef NODE_TYPES_HPP
 #include "../server/node_types.hpp"
+#endif
+#ifndef SYNTH_HPP
 #include "../server/synth.hpp"
+#endif
+#ifndef MEMORY_POOL_HPP
 #include "../server/memory_pool.hpp"
+#endif
 
+#ifndef SC_INTERFACETABLE_H
 #include "SC_InterfaceTable.h"
+#endif
+#ifndef SC_WORLD_H
 #include "SC_World.h"
+#endif
 
+#ifndef BOOST_SCOPED_ARRAY_HPP
 #include <boost/scoped_array.hpp>
+#endif
 
 namespace nova {
 

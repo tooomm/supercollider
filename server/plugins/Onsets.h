@@ -26,7 +26,9 @@
 #ifndef ONSETS_H
 #define ONSETS_H
 
+#ifndef ONSETSDS_H
 #include "onsetsds.h"
+#endif
 
 struct Onsets : Unit
 {

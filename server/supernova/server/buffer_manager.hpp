@@ -27,7 +27,9 @@
 #include <vector>
 
 #include "nova-simd/simd_memory.hpp"
+#ifndef MALLOC_ALIGNED_HPP
 #include "utilities/malloc_aligned.hpp"
+#endif
 
 
 namespace nova {

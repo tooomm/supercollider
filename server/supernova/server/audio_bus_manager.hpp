@@ -20,9 +20,13 @@
 #define AUDIO_BUS_MANAGER_HPP
 
 #include <cstdint>
+#ifndef SAMPLE_TYPES_HPP
 #include "sample_types.hpp"
+#endif
 
+#ifndef MALLOC_ALIGNED_HPP
 #include "../utilities/malloc_aligned.hpp"
+#endif
 #include "nova-tt/rw_spinlock.hpp"
 
 namespace nova {

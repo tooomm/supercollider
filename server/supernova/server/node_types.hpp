@@ -19,13 +19,25 @@
 #ifndef NODE_TYPES_HPP
 #define NODE_TYPES_HPP
 
+#ifndef BOOST_ATOMIC_COUNT_HPP
 #include <boost/detail/atomic_count.hpp>
+#endif
+#ifndef BOOST_LIST_HPP
 #include <boost/intrusive/list.hpp>
+#endif
+#ifndef BOOST_UNORDERED_SET_HPP
 #include <boost/intrusive/unordered_set.hpp>
+#endif
 
+#ifndef MEMORY_POOL_HPP
 #include "memory_pool.hpp"
+#endif
+#ifndef SYNTH_DEFINITION_HPP
 #include "synth_definition.hpp"
+#endif
+#ifndef STATIC_POOL_HPP
 #include "utilities/static_pool.hpp"
+#endif
 
 namespace nova {
 

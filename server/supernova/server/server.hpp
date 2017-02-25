@@ -21,27 +21,59 @@
 
 #include <atomic>
 
+#ifndef BUFFER_MANAGER_HPP
 #include "buffer_manager.hpp"
+#endif
+#ifndef MEMORY_POOL_HPP
 #include "memory_pool.hpp"
+#endif
+#ifndef NODE_GRAPH_HPP
 #include "node_graph.hpp"
+#endif
+#ifndef SC_OSC_HANDLER_HPP
 #include "../sc/sc_osc_handler.hpp"
+#endif
+#ifndef SERVER_ARGS_HPP
 #include "server_args.hpp"
+#endif
+#ifndef SERVER_SCHEDULER_HPP
 #include "server_scheduler.hpp"
+#endif
+#ifndef SYNTH_FACTORY_HPP
 #include "synth_factory.hpp"
+#endif
+#ifndef SC_UGEN_FACTORY_HPP
 #include "../sc/sc_ugen_factory.hpp"
+#endif
+#ifndef CALLBACK_INTERPRETER_HPP
 #include "../utilities/callback_interpreter.hpp"
+#endif
+#ifndef STATIC_POOLED_CLASS_HPP
 #include "../utilities/static_pooled_class.hpp"
+#endif
+#ifndef ASYNCHRONOUS_LOG_HPP
 #include "../utilities/asynchronous_log.hpp"
+#endif
+#ifndef SERVER_SHM_HPP
 #include "../../common/server_shm.hpp"
-
-#ifdef PORTAUDIO_BACKEND
-#include "audio_backend/portaudio_backend.hpp"
-#elif defined(JACK_BACKEND)
-#include "audio_backend/jack_backend.hpp"
 #endif
 
+#ifdef PORTAUDIO_BACKEND
+#ifndef PORTAUDIO_BACKEND_HPP
+#include "audio_backend/portaudio_backend.hpp"
+#endif
+#elif defined(JACK_BACKEND)
+#ifndef JACK_BACKEND_HPP
+#include "audio_backend/jack_backend.hpp"
+#endif
+#endif
+
+#ifndef SCSYNTH
 #include "../../scsynth/SC_TimeDLL.hpp"
+#endif
+#ifndef SCSYNTH
 #include "../../scsynth/SC_Time.hpp"
+#endif
 namespace nova {
 
 struct realtime_engine_functor

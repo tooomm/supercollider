@@ -31,7 +31,9 @@ extern "C"
 #include "nova-tt/dummy_mutex.hpp"
 #include "nova-tt/mlock.hpp"
 
+#ifndef FUNCTION_ATTRIBUTES_H
 #include "function_attributes.h"
+#endif
 
 namespace nova {
 

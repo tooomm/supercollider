@@ -25,9 +25,13 @@
 #include <new>     // for std::bad_alloc
 #include <utility> // for std::forward
 
+#ifndef BOOST_ALIGNED_ALLOC_HPP
 #include <boost/align/aligned_alloc.hpp>
+#endif
 
+#ifndef FUNCTION_ATTRIBUTES_H
 #include "function_attributes.h"
+#endif
 
 namespace nova {
 

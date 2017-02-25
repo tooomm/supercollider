@@ -19,18 +19,36 @@
 #ifndef SC_UGEN_FACTORY_HPP
 #define SC_UGEN_FACTORY_HPP
 
+#ifndef BOOST_SET_HPP
 #include <boost/intrusive/set.hpp>
+#endif
+#ifndef BOOST_UNORDERED_SET_HPP
 #include <boost/intrusive/unordered_set.hpp>
+#endif
+#ifndef BOOST_CHECKED_DELETE_HPP
 #include <boost/checked_delete.hpp>
+#endif
 
+#ifndef SC_SYNTHDEF_HPP
 #include "sc_synthdef.hpp"
+#endif
+#ifndef SC_SYNTH_HPP
 #include "sc_synth.hpp"
+#endif
+#ifndef SC_PLUGIN_INTERFACE_HPP
 #include "sc_plugin_interface.hpp"
+#endif
 
+#ifndef SC_INTERFACETABLE_H
 #include "SC_InterfaceTable.h"
+#endif
+#ifndef SC_UNIT_H
 #include "SC_Unit.h"
+#endif
 
+#ifndef NAMED_HASH_ENTRY_HPP
 #include "utilities/named_hash_entry.hpp"
+#endif
 
 namespace nova {
 namespace bi = boost::intrusive;

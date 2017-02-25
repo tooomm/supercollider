@@ -22,9 +22,15 @@
 #ifndef SC_LIB_CINTF_H
 #define SC_LIB_CINTF_H
 
+#ifndef SC_LIB_H
 #include "SC_Lib.h"
+#endif
+#ifndef SC_REPLY_H
 #include "SC_Reply.h"
+#endif
+#ifndef SC_OSC_COMMANDS_H
 #include "SC_OSC_Commands.h"
+#endif
 
 
 typedef SCErr (*SC_CommandFunc)(struct World *inWorld, int inSize, char *inData, ReplyAddress *inReply);

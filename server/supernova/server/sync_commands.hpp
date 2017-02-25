@@ -19,7 +19,9 @@
 #ifndef SYNC_COMMANDS_HPP
 #define SYNC_COMMANDS_HPP
 
+#ifndef SERVER_SCHEDULER_HPP
 #include "server_scheduler.hpp"
+#endif
 
 namespace nova
 {

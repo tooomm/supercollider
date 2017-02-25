@@ -23,7 +23,9 @@
 #ifndef SC_STR4_H
 #define SC_STR4_H
 
+#ifndef HASH_H
 #include "Hash.h"
+#endif
 #include <stdio.h>
 #include <limits.h>
 

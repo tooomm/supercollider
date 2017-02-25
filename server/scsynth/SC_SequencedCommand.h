@@ -29,10 +29,18 @@
 #ifndef SC_SEQUENCEDCOMMAND_H
 #define SC_SEQUENCEDCOMMAND_H
 
+#ifndef OSC_PACKET_H
 #include "OSC_Packet.h"
+#endif
+#ifndef SC_WORLD_H
 #include "SC_World.h"
+#endif
+#ifndef SC_BUFGEN_H
 #include "SC_BufGen.h"
+#endif
+#ifndef SC_MSG_ITER_H
 #include "sc_msg_iter.h"
+#endif
 #ifndef NO_LIBSNDFILE
 #include <sndfile.h>
 #endif
@@ -435,7 +443,9 @@ protected:
 
 ///////////////////////////////////////////////////////////////////////////
 
+#ifndef SC_GRAPHDEF_H
 #include "SC_GraphDef.h"
+#endif
 
 class LoadSynthDefCmd : public SC_SequencedCommand
 {
@@ -458,7 +468,9 @@ protected:
 
 ///////////////////////////////////////////////////////////////////////////
 
+#ifndef SC_GRAPHDEF_H
 #include "SC_GraphDef.h"
+#endif
 
 class RecvSynthDefCmd : public SC_SequencedCommand
 {

@@ -19,7 +19,9 @@
 #ifndef ALIGNED_CLASS_HPP
 #define ALIGNED_CLASS_HPP
 
+#ifndef MALLOC_ALIGNED_HPP
 #include "malloc_aligned.hpp"
+#endif
 
 namespace nova {
 

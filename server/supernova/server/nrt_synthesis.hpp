@@ -23,16 +23,32 @@
 #include <fstream>
 #include <string>
 
+#ifndef BOOST_ARITHMETIC_HPP
 #include <boost/endian/arithmetic.hpp>
+#endif
+#ifndef BOOST_FORMAT_HPP
 #include <boost/format.hpp>
+#endif
 
+#ifndef SERVER_ARGS_HPP
 #include "server_args.hpp"
+#endif
+#ifndef SERVER_HPP
 #include "server.hpp"
+#endif
+#ifndef SNDFILE_BACKEND_HPP
 #include "audio_backend/sndfile_backend.hpp"
+#endif
+#ifndef SC_PLUGIN_INTERFACE_HPP
 #include "sc/sc_plugin_interface.hpp"
+#endif
 
+#ifndef SC_SNDFILEHELPERS_HPP
 #include "../../common/SC_SndFileHelpers.hpp"
+#endif
+#ifndef SC_INLINEUNARYOP_H
 #include "../../include/plugin_interface/SC_InlineUnaryOp.h"
+#endif
 
 namespace nova {
 

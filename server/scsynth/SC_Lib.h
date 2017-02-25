@@ -22,10 +22,18 @@
 #ifndef SC_LIB_H
 #define SC_LIB_H
 
+#ifndef SC_ERRORS_H
 #include "SC_Errors.h"
+#endif
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef HASH_H
 #include "Hash.h"
+#endif
+#ifndef HASHTABLE_H
 #include "HashTable.h"
+#endif
 #include <stdlib.h>
 #include <string.h>
 

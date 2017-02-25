@@ -22,7 +22,9 @@
 #ifndef READWRITEMACROS_H
 #define READWRITEMACROS_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 #include <stdio.h>
 #include <string.h>
 #include <stdexcept>

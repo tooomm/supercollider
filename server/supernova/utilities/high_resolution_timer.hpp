@@ -9,12 +9,18 @@
 #if !defined(HIGH_RESOLUTION_TIMER_HPP)
 #define HIGH_RESOLUTION_TIMER_HPP
 
+#ifndef BOOST_CONFIG_HPP
 #include <boost/config.hpp>
+#endif
+#ifndef BOOST_THROW_EXCEPTION_HPP
 #include <boost/throw_exception.hpp>
+#endif
 
 #if _POSIX_C_SOURCE >= 199309L
 
+#ifndef TIME_H
 #include "time.h"
+#endif
 
 #include <stdexcept>
 #include <limits>
@@ -195,8 +201,14 @@ private:
 #else
 
 //  For other platforms, simply fall back to boost::timer
+#ifndef BOOST_TIMER_HPP
 #include <boost/timer.hpp>
+#endif
+#ifndef BOOST_THROW_EXCEPTION_HPP
+#ifndef BOOST_THROW_EXCEPTION_HPP
 #include <boost/throw_exception.hpp>
+#endif
+#endif
 
 namespace boost {
     typedef boost::timer high_resolution_timer;

@@ -23,7 +23,9 @@
 #define SC_TIME_HPP
 
 #include "../../common/SC_Lock.h" // for chrono
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 
 const int32 kSECONDS_FROM_1900_to_1970 = (int32)2208988800UL; /* 17 leap years */
 const double kOSCtoSecs = 2.328306436538696e-10;

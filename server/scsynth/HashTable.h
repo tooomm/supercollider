@@ -21,10 +21,18 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_BOUNDSMACROS_H
 #include "SC_BoundsMacros.h"
+#endif
+#ifndef SC_STR4_H
 #include "SC_Str4.h"
+#endif
+#ifndef HASH_H
 #include "Hash.h"
+#endif
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>

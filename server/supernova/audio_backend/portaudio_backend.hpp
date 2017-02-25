@@ -28,9 +28,15 @@
 #include "portaudio/portaudio_config.h"
 #endif /* HAVE_PORTAUDIO_CONFIG_H */
 
+#ifndef AUDIO_BACKEND_COMMON_HPP
 #include "audio_backend_common.hpp"
+#endif
+#ifndef BRANCH_HINTS_HPP
 #include "utilities/branch_hints.hpp"
+#endif
+#ifndef CPU_TIME_INFO_HPP
 #include "cpu_time_info.hpp"
+#endif
 
 namespace nova {
 

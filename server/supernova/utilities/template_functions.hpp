@@ -22,9 +22,13 @@
 #include <cmath>
 #include <algorithm> // for std::min & std::max
 
+#ifndef BOOST_MATH
 #include <boost/math/special_functions/fpclassify.hpp>
+#endif
 
+#ifndef FORCE_INLINE_HPP
 #include "force_inline.hpp"
+#endif
 
 namespace nova
 {

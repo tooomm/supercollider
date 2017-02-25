@@ -21,7 +21,9 @@
 #ifndef SC_WIRESPEC_H
 #define SC_WIRESPEC_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 
 struct InputSpec
 {

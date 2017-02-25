@@ -19,12 +19,20 @@
 #ifndef SC_SYNTH_DEFINITION_HPP
 #define SC_SYNTH_DEFINITION_HPP
 
+#ifndef BOOST_PATH_HPP
 #include <boost/filesystem/path.hpp>
+#endif
 
+#ifndef SC_SYNTHDEF_HPP
 #include "sc_synthdef.hpp"
+#endif
 
+#ifndef SYNTH_DEFINITION_HPP
 #include "server/synth_definition.hpp"
+#endif
+#ifndef SIZED_ARRAY_HPP
 #include "utilities/sized_array.hpp"
+#endif
 
 namespace nova {
 

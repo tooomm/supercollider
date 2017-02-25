@@ -21,7 +21,9 @@
 
 #include <vector>
 
+#ifndef BOOST_ALIGNED_ALLOCATOR_HPP
 #include <boost/align/aligned_allocator.hpp>
+#endif
 
 #include "nova-simd/simd_horizontal_functions.hpp"
 

@@ -21,15 +21,25 @@
 #ifndef SC_TIMEDLL_HPP
 #define SC_TIMEDLL_HPP
 /*
+#ifndef SC_COREAUDIO_H
 #include "SC_CoreAudio.h"
+#endif
 #include <stdarg.h>
+#ifndef SC_PROTOTYPES_H
 #include "SC_Prototypes.h"
+#endif
+#ifndef SC_HIDDENWORLD_H
 #include "SC_HiddenWorld.h"
+#endif
+#ifndef SC_WORLDOPTIONS_H
 #include "SC_WorldOptions.h"
+#endif
 #include <stdlib.h>
 
 #ifdef _WIN32
+#ifndef SC_WIN32UTILS_H
 #include "SC_Win32Utils.h"
+#endif
 #else
 #include <sys/time.h>
 #endif

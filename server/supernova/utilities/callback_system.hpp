@@ -23,10 +23,16 @@
 #include <exception>
 #include <iostream>
 
+#ifndef BOOST_CHECKED_DELETE_HPP
 #include <boost/checked_delete.hpp>
+#endif
 
+#ifndef BOOST_SPSC_QUEUE_HPP
 #include <boost/lockfree/spsc_queue.hpp>
+#endif
+#ifndef BOOST_QUEUE_HPP
 #include <boost/lockfree/queue.hpp>
+#endif
 
 
 namespace nova {

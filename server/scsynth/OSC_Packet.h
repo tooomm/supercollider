@@ -29,8 +29,12 @@
 #ifndef OSC_PACKET_H
 #define OSC_PACKET_H
 
+#ifndef SC_REPLYIMPL_HPP
 #include "SC_ReplyImpl.hpp"
+#endif
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 
 struct OSC_Packet
 {

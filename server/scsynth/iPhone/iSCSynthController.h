@@ -11,10 +11,18 @@
 #import <UIKit/UIKit.h>
 #import "FileBrowserViewController.h"
 
+#ifndef SC_WORLD_H
 #include "SC_World.h"
+#endif
+#ifndef SC_HIDDENWORLD_H
 #include "SC_HiddenWorld.h"
+#endif
+#ifndef SC_COREAUDIO_H
 #include "SC_CoreAudio.h"
+#endif
+#ifndef SC_WORLDOPTIONS_H
 #include "SC_WorldOptions.h"
+#endif
 
 @interface iSCSynthController : NSObject <UITabBarControllerDelegate> {
 	WorldOptions options;

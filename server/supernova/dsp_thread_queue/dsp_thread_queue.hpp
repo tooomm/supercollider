@@ -30,13 +30,21 @@
 
 #include <cstdio>
 
+#ifndef BOOST_STACK_HPP
 #include <boost/lockfree/stack.hpp>
+#endif
+#ifndef BOOST_IF_HPP
 #include <boost/mpl/if.hpp>
+#endif
 
 #include "nova-tt/pause.hpp"
 
+#ifndef BRANCH_HINTS_HPP
 #include "utilities/branch_hints.hpp"
+#endif
+#ifndef UTILS_HPP
 #include "utilities/utils.hpp"
+#endif
 
 namespace nova {
 

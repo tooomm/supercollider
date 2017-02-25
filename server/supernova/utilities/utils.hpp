@@ -24,15 +24,25 @@
 
 #include <type_traits>
 
+#ifndef BOOST_INTRUSIVE_PTR_HPP
 #include <boost/intrusive_ptr.hpp>
+#endif
+#ifndef BOOST_NONCOPYABLE_HPP
 #include <boost/noncopyable.hpp>
+#endif
+#ifndef BOOST_ATOMIC_COUNT_HPP
 #include <boost/detail/atomic_count.hpp>
+#endif
 
+#ifndef BRANCH_HINTS_HPP
 #include "branch_hints.hpp"
+#endif
 
 typedef unsigned int uint;
 
+#ifndef FUNCTION_ATTRIBUTES_H
 #include "function_attributes.h"
+#endif
 
 
 namespace nova {

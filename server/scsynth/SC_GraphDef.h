@@ -22,8 +22,12 @@
 #ifndef SC_GRAPHDEF_H
 #define SC_GRAPHDEF_H
 
+#ifndef SC_SYNTHDEF_H
 #include "SC_SynthDef.h"
+#endif
+#ifndef HASHTABLE_H
 #include "HashTable.h"
+#endif
 
 struct ParamSpec
 {

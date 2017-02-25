@@ -24,13 +24,23 @@
 #include <string>
 #include <vector>
 
+#ifndef BOOST_ALIGNED_ALLOCATOR_HPP
 #include <boost/align/aligned_allocator.hpp>
+#endif
+#ifndef BOOST_PATH_HPP
 #include <boost/filesystem/path.hpp>
+#endif
 
+#ifndef NAMED_HASH_ENTRY_HPP
 #include "utilities/named_hash_entry.hpp"
+#endif
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_WIRE_H
 #include "SC_Wire.h"
+#endif
 
 namespace nova {
 

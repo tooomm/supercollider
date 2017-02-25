@@ -21,16 +21,22 @@
 
 extern "C"
 {
+#ifndef TLSF_H
 #include "tlsf.h"
+#endif
 }
 
 #include <exception>
 #include <cstring>
 #include <array>
 
+#ifndef BOOST_TH
 #include <boost/thread/tss.hpp>
+#endif
 
+#ifndef BRANCH_HINTS_HPP
 #include "branch_hints.hpp"
+#endif
 
 namespace nova {
 

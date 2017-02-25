@@ -26,9 +26,15 @@
 #include <thread>
 
 
+#ifndef BOOST_SPSC_QUEUE_HPP
 #include <boost/lockfree/spsc_queue.hpp>
+#endif
+#ifndef BOOST_IF_HPP
 #include <boost/mpl/if.hpp>
+#endif
+#ifndef BOOST_SEMAPHORE_HPP
 #include <boost/sync/semaphore.hpp>
+#endif
 
 namespace nova {
 namespace asynchronous_log_impl {

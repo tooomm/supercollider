@@ -22,7 +22,9 @@
 #ifndef SC_GROUP_H
 #define SC_GROUP_H
 
+#ifndef SC_GRAPH_H
 #include "SC_Graph.h"
+#endif
 
 struct Group {
 	Node mNode;

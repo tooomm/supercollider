@@ -19,7 +19,9 @@
 #ifndef FREELIST_HPP
 #define FREELIST_HPP
 
+#ifndef BOOST_TAGGED_PTR_HPP
 #include <boost/lockfree/detail/tagged_ptr.hpp>
+#endif
 #include <atomic>
 
 namespace nova {

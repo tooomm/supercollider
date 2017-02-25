@@ -22,8 +22,12 @@
 #include <cstdint>
 #include <cmath>
 
+#ifndef POSIX_TIME_TYPES_HPP
 #include "boost/date_time/posix_time/posix_time_types.hpp"
+#endif
+#ifndef GREGORIAN_TYPES_HPP
 #include "boost/date_time/gregorian/gregorian_types.hpp"
+#endif
 
 namespace nova {
 

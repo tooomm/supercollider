@@ -24,9 +24,15 @@
 
 #include <cstdint>
 
+#ifndef NODE_TYPES_HPP
 #include "node_types.hpp"
+#endif
+#ifndef SYNTH_DEFINITION_HPP
 #include "synth_definition.hpp"
+#endif
+#ifndef TIME_TAG_HPP
 #include "utilities/time_tag.hpp"
+#endif
 
 namespace nova   {
 namespace detail {

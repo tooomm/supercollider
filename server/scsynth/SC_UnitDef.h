@@ -21,9 +21,15 @@
 #ifndef SC_UNITDEF_H
 #define SC_UNITDEF_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_UNIT_H
 #include "SC_Unit.h"
+#endif
+#ifndef HASHTABLE_H
 #include "HashTable.h"
+#endif
 
 struct PlugInCmd
 {

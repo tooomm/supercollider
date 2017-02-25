@@ -20,16 +20,32 @@
 #ifndef SC_SYNTH_HPP
 #define SC_SYNTH_HPP
 
+#ifndef SC_UNIT_H
 #include "SC_Unit.h"
+#endif
+#ifndef SC_GRAPH_H
 #include "SC_Graph.h"
+#endif
+#ifndef SC_RATE_H
 #include "SC_Rate.h"
+#endif
+#ifndef SC_RGEN_H
 #include "SC_RGen.h"
+#endif
+#ifndef SC_WIRE_H
 #include "SC_Wire.h"
+#endif
 
+#ifndef SC_SYNTH_DEFINITION_HPP
 #include "sc_synth_definition.hpp"
+#endif
 
+#ifndef SYNTH_HPP
 #include "../server/synth.hpp"
+#endif
+#ifndef MEMORY_POOL_HPP
 #include "../server/memory_pool.hpp"
+#endif
 
 namespace nova
 {

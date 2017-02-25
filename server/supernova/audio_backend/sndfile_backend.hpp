@@ -27,16 +27,26 @@
 #include <thread>
 #include <vector>
 
+#ifndef BOOST_ALIGNED_ALLOCATOR_HPP
 #include <boost/align/aligned_allocator.hpp>
+#endif
+#ifndef BOOST_SPSC_QUEUE_HPP
 #include <boost/lockfree/spsc_queue.hpp>
+#endif
+#ifndef BOOST_SEMAPHORE_HPP
 #include <boost/sync/semaphore.hpp>
+#endif
 
 #include <sndfile.hh>
 
 #include "nova-tt/name_thread.hpp"
+#ifndef BRANCH_HINTS_HPP
 #include "utilities/branch_hints.hpp"
+#endif
 
+#ifndef AUDIO_BACKEND_COMMON_HPP
 #include "audio_backend_common.hpp"
+#endif
 
 namespace nova {
 

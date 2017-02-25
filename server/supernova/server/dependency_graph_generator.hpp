@@ -19,8 +19,12 @@
 #ifndef DEPENDENCY_GRAPH_GENERATOR_HPP
 #define DEPENDENCY_GRAPH_GENERATOR_HPP
 
+#ifndef NODE_GRAPH_HPP
 #include "node_graph.hpp"
+#endif
+#ifndef FUNCTION_ATTRIBUTES_H
 #include "function_attributes.h"
+#endif
 
 namespace nova {
 

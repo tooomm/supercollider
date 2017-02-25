@@ -19,12 +19,22 @@
 #ifndef GROUP_HPP
 #define GROUP_HPP
 
+#ifndef MEMORY_POOL_HPP
 #include "memory_pool.hpp"
+#endif
+#ifndef NODE_TYPES_HPP
 #include "node_types.hpp"
+#endif
+#ifndef DSP_THREAD_QUEUE_NODE_HPP
 #include "dsp_thread_queue_node.hpp"
+#endif
 
+#ifndef DSP_TH
 #include "dsp_thread_queue/dsp_thread_queue.hpp"
+#endif
+#ifndef EXISTS_HPP
 #include "utilities/exists.hpp"
+#endif
 
 namespace nova {
 

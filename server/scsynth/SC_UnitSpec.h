@@ -23,7 +23,9 @@
 
 #include <ctype.h> // for size_t
 
+#ifndef SC_UNIT_H
 #include "SC_Unit.h"
+#endif
 
 struct UnitSpec
 {

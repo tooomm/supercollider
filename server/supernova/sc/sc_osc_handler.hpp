@@ -29,23 +29,49 @@
 #endif
 #endif
 
+#ifndef BOOST_TCP_HPP
 #include <boost/asio/ip/tcp.hpp>
+#endif
 
+#ifndef BOOST_ENABLE_SHARED_FROM_THIS_HPP
 #include <boost/enable_shared_from_this.hpp>
+#endif
+#ifndef BOOST_MICROSEC_TIME_CLOCK_HPP
 #include <boost/date_time/microsec_time_clock.hpp>
+#endif
+#ifndef BOOST_TREAP_SET_HPP
 #include <boost/intrusive/treap_set.hpp>
+#endif
 
+#ifndef BOOST_ARITHMETIC_HPP
 #include <boost/endian/arithmetic.hpp>
+#endif
 
+#ifndef OSCRECEIVEDELEMENTS_H
 #include "osc/OscReceivedElements.h"
+#endif
 
+#ifndef MEMORY_POOL_HPP
 #include "../server/memory_pool.hpp"
+#endif
+#ifndef SERVER_ARGS_HPP
 #include "../server/server_args.hpp"
+#endif
+#ifndef SERVER_SCHEDULER_HPP
 #include "../server/server_scheduler.hpp"
+#endif
+#ifndef OSC_SERVER_HPP
 #include "../utilities/osc_server.hpp"
+#endif
+#ifndef SIZED_ARRAY_HPP
 #include "../utilities/sized_array.hpp"
+#endif
+#ifndef STATIC_POOL_HPP
 #include "../utilities/static_pool.hpp"
+#endif
+#ifndef TIME_TAG_HPP
 #include "../utilities/time_tag.hpp"
+#endif
 
 namespace nova {
 

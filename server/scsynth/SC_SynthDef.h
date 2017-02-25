@@ -21,8 +21,12 @@
 #ifndef SC_SYNTHDEF_H
 #define SC_SYNTHDEF_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_MSG_ITER_H
 #include "sc_msg_iter.h"
+#endif
 
 typedef void (*NodeDtorFunc)(struct Node* inNode);
 

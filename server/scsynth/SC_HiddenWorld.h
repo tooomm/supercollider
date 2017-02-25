@@ -22,19 +22,39 @@
 #ifndef SC_HIDDENWORLD_H
 #define SC_HIDDENWORLD_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_RATE_H
 #include "SC_Rate.h"
+#endif
+#ifndef SC_SNDBUF_H
 #include "SC_SndBuf.h"
+#endif
+#ifndef SC_RGEN_H
 #include "SC_RGen.h"
+#endif
+#ifndef HASHTABLE_H
 #include "HashTable.h"
+#endif
+#ifndef SC_WORLD_H
 #include "SC_World.h"
+#endif
+#ifndef SC_REPLY_H
 #include "SC_Reply.h"
+#endif
+#ifndef MSGFIFO_H
 #include "MsgFifo.h"
+#endif
 #include <map>
 
+#ifndef SEMAPHORE_HPP
 #include "boost/sync/semaphore.hpp"
+#endif
 
+#ifndef SERVER_SHM_HPP
 #include "../../common/server_shm.hpp"
+#endif
 
 extern HashTable<struct UnitDef, Malloc> *gUnitDefLib;
 

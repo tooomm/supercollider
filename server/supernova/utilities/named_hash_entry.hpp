@@ -20,10 +20,16 @@
 
 #include <string>
 
+#ifndef BOOST_UNORDERED_SET_HOOK_HPP
 #include <boost/intrusive/unordered_set_hook.hpp>
+#endif
+#ifndef BOOST_UNORDERED_SET_HPP
 #include <boost/unordered_set.hpp>
+#endif
 
+#ifndef UTILS_HPP
 #include "utils.hpp"
+#endif
 #include "nova-tt/nova-tt/rw_mutex.hpp"
 
 #include <utilities/malloc_aligned.hpp>

@@ -22,12 +22,22 @@
 #include <cassert>
 #include <cstdint>
 
+#ifndef BOOST_CHECKED_DELETE_HPP
 #include <boost/checked_delete.hpp>
+#endif
+#ifndef BOOST_UNORDERED_SET_HPP
 #include <boost/intrusive/unordered_set.hpp>
+#endif
 
+#ifndef ALIGNED_CLASS_HPP
 #include "utilities/aligned_class.hpp"
+#endif
+#ifndef NAMED_HASH_ENTRY_HPP
 #include "utilities/named_hash_entry.hpp"
+#endif
+#ifndef UTILS_HPP
 #include "utilities/utils.hpp"
+#endif
 
 namespace nova {
 

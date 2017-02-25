@@ -22,12 +22,24 @@
 #ifndef SC_COREAUDIO_H
 #define SC_COREAUDIO_H
 
+#ifndef MSGFIFO_H
 #include "MsgFifo.h"
+#endif
+#ifndef SC_FIFOMSG_H
 #include "SC_FifoMsg.h"
+#endif
+#ifndef OSC_PACKET_H
 #include "OSC_Packet.h"
+#endif
+#ifndef SC_SYNCCONDITION_H
 #include "SC_SyncCondition.h"
+#endif
+#ifndef PRIORITYQUEUE_H
 #include "PriorityQueue.h"
+#endif
+#ifndef BOOST_OPTIONAL_HPP
 #include <boost/optional.hpp>
+#endif
 
 #include <SC_Lock.h>
 

@@ -21,12 +21,22 @@
 #ifndef SIMD_UNIT_HPP
 #define SIMD_UNIT_HPP
 
+#ifndef SC_PLUGIN_HPP
 #include "SC_PlugIn.hpp"
+#endif
 
+#ifndef SIMD_MEMORY_HPP
 #include "simd_memory.hpp"
+#endif
+#ifndef SIMD_BINARY_ARITHMETIC_HPP
 #include "simd_binary_arithmetic.hpp"
+#endif
+#ifndef SIMD_TERNARY_ARITHMETIC_HPP
 #include "simd_ternary_arithmetic.hpp"
+#endif
+#ifndef SIMD_MIX_HPP
 #include "simd_mix.hpp"
+#endif
 
 using nova::slope_argument;
 

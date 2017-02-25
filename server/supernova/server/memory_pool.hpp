@@ -19,7 +19,9 @@
 #ifndef MEMORY_POOL_HPP
 #define MEMORY_POOL_HPP
 
+#ifndef SIMPLE_POOL_HPP
 #include "../utilities/simple_pool.hpp"
+#endif
 
 namespace nova
 {

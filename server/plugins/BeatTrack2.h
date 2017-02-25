@@ -28,7 +28,9 @@
 //assume 4 features * 120 tempi * 2 groove * 20 phase = 19200 per calculation time; say you calculate each 0.5 sec, amortise over (44100/64*0.5 >344.5) control blocks;
 //calculate over 240 blocks
 
+#ifndef SC_PLUGIN_H
 #include "SC_PlugIn.h"
+#endif
 
 struct BeatTrack2 : Unit {
 

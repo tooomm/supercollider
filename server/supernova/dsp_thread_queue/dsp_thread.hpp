@@ -25,10 +25,16 @@
 #include <thread>
 #include <vector>
 
+#ifndef BOOST_SEMAPHORE_HPP
 #include <boost/sync/semaphore.hpp>
+#endif
 
+#ifndef DSP_THREAD_QUEUE_HPP
 #include "dsp_thread_queue.hpp"
+#endif
+#ifndef MALLOC_ALIGNED_HPP
 #include "../utilities/malloc_aligned.hpp"
+#endif
 #include "nova-tt/mlock.hpp"
 
 namespace nova {

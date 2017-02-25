@@ -21,10 +21,16 @@
 
 #include <cstddef>
 
+#ifndef BOOST_IF_HPP
 #include <boost/mpl/if.hpp>
+#endif
 
+#ifndef FREELIST_HPP
 #include "freelist.hpp"
+#endif
+#ifndef STATIC_POOL_HPP
 #include "static_pool.hpp"
+#endif
 
 namespace nova {
 

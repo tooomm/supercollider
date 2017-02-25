@@ -21,14 +21,20 @@
 
 #include <vector>
 
+#ifndef BOOST_IF_HPP
 #include <boost/mpl/if.hpp>
+#endif
+#ifndef BOOST_ALIGNED_ALLOCATOR_HPP
 #include <boost/align/aligned_allocator.hpp>
+#endif
 
 #include "nova-simd/simd_memory.hpp"
 #include "nova-tt/dummy_mutex.hpp"
 #include "nova-tt/spin_lock.hpp"
 
+#ifndef MALLOC_ALIGNED_HPP
 #include "utilities/malloc_aligned.hpp"
+#endif
 
 namespace nova   {
 namespace detail {

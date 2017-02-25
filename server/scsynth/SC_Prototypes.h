@@ -26,8 +26,12 @@
 #include <cstdlib>
 #include <cstring>
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SCSYNTHSEND_H
 #include "scsynthsend.h"
+#endif
 
 ////////////////////////////////////////////////////////////////////////
 

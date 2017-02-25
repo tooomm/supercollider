@@ -20,7 +20,9 @@
 #ifndef ML_H
 #define ML_H
 
+#ifndef SC_PLUGIN_H
 #include "SC_PlugIn.h"
+#endif
 
 //global data
 
@@ -37,11 +39,17 @@ extern float contours[42][11];
 extern double phons[11];
 
 //#include "KeyTrack.h"
+#ifndef BEATTRACK_H
 #include "BeatTrack.h"
+#endif
 //#include "Loudness.h"
+#ifndef ONSETS_H
 #include "Onsets.h"
+#endif
 //#include "MFCC.h"
+#ifndef BEATTRACK2_H
 #include "BeatTrack2.h"
+#endif
 
 struct Loudness : Unit {
 

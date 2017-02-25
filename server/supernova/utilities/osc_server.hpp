@@ -21,10 +21,16 @@
 
 #include <thread>
 
+#ifndef BOOST_IO_SERVICE_HPP
 #include <boost/asio/io_service.hpp>
+#endif
+#ifndef BOOST_UDP_HPP
 #include <boost/asio/ip/udp.hpp>
+#endif
 
+#ifndef BRANCH_HINTS_HPP
 #include "branch_hints.hpp"
+#endif
 
 #include "nova-tt/semaphore.hpp"
 #include "nova-tt/thread_priority.hpp"

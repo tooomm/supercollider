@@ -22,8 +22,12 @@
 #include <map>
 #include <string>
 
+#ifndef SYNTH_HPP
 #include "synth.hpp"
+#endif
+#ifndef SYNTH_DEFINITION_HPP
 #include "synth_definition.hpp"
+#endif
 
 namespace nova {
 

@@ -24,9 +24,15 @@
 #include <vector>
 
 
+#ifndef SYNTH_HPP
 #include "server/synth.hpp"
+#endif
+#ifndef SC_SYNTH_HPP
 #include "../sc/sc_synth.hpp"
+#endif
+#ifndef FUNCTION_ATTRIBUTES_H
 #include "function_attributes.h"
+#endif
 
 namespace nova {
 

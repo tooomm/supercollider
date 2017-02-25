@@ -26,9 +26,15 @@
 #define SC_AU_H
 
 
+#ifndef SC_COREAUDIO_H
 #include "SC_CoreAudio.h"
+#endif
+#ifndef SC_PROTOTYPES_H
 #include "SC_Prototypes.h"
+#endif
+#ifndef SC_HIDDENWORLD_H
 #include "SC_HiddenWorld.h"
+#endif
 #include <CoreAudio/HostTime.h>
 
 class SC_AUAudioDriver : public SC_CoreAudioDriver

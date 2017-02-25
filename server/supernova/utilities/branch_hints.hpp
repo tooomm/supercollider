@@ -19,7 +19,9 @@
 #ifndef BRANCH_HINTS_HPP
 #define BRANCH_HINTS_HPP
 
+#ifndef BOOST_CONFIG_HPP
 #include <boost/config.hpp>
+#endif
 
 #define likely(x)   BOOST_LIKELY(x)
 #define unlikely(x) BOOST_UNLIKELY(x)

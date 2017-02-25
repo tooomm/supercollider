@@ -22,13 +22,21 @@
 #include <atomic>
 #include <thread>
 
+#ifndef BRANCH_HINTS_HPP
 #include "branch_hints.hpp"
+#endif
+#ifndef CALLBACK_SYSTEM_HPP
 #include "callback_system.hpp"
+#endif
 
 #include "nova-tt/thread_priority.hpp"
 
+#ifndef BOOST_CHECKED_DELETE_HPP
 #include <boost/checked_delete.hpp>
+#endif
+#ifndef BOOST_SEMAPHORE_HPP
 #include <boost/sync/semaphore.hpp>
+#endif
 
 
 namespace nova {
