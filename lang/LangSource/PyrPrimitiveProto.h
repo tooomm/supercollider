@@ -21,7 +21,9 @@
 #ifndef PYRPRIMITIVEPROTO_H
 #define PYRPRIMITIVEPROTO_H
 
+#ifndef PYRPRIMITIVE_H
 #include "PyrPrimitive.h"
+#endif
 
 int basicNew(VMGlobals *g, int numArgsPushed);
 int basicNewClear(VMGlobals *g, int numArgsPushed);

@@ -26,8 +26,12 @@ A PyrSymbol is a unique string that resides in a global hash table.
 #ifndef PYRSYMBOL_H
 #define PYRSYMBOL_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef PYRSLOT_H
 #include "PyrSlot.h"
+#endif
 
 struct PyrSymbol {
 	char *name;

@@ -25,9 +25,15 @@
 // generic pyrslot implementation
 #define PYR_SLOTS_GENERIC
 
+#ifndef SC_ENDIAN_H
 #include "SC_Endian.h"
+#endif
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef PYRERRORS_H
 #include "PyrErrors.h"
+#endif
 
 #include <cstddef>
 #include <cassert>

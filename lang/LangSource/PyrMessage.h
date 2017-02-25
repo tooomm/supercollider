@@ -22,7 +22,9 @@
 #ifndef PYRMESSAGE_H
 #define PYRMESSAGE_H
 
+#ifndef PYRKERNEL_H
 #include "PyrKernel.h"
+#endif
 
 #define MAXKEYSLOTS 128
 extern PyrSlot keywordstack[MAXKEYSLOTS];

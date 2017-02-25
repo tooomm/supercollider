@@ -26,8 +26,12 @@ This file contains the definitions of the core objects that implement the class 
 #ifndef PYRKERNEL_H
 #define PYRKERNEL_H
 
+#ifndef PYROBJECT_H
 #include "PyrObject.h"
+#endif
+#ifndef VMGLOBALS_H
 #include "VMGlobals.h"
+#endif
 
 #define classClassNumInstVars 19
 

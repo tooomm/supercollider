@@ -21,7 +21,9 @@
 #ifndef PYROBJECTPROTO_H
 #define PYROBJECTPROTO_H
 
+#ifndef PYROBJECT_H
 #include "PyrObject.h"
+#endif
 
 void initSymbols();
 void initClasses();

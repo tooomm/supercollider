@@ -26,7 +26,9 @@ Functions for defining language primitives.
 #ifndef PYRPRIMITIVE_H
 #define PYRPRIMITIVE_H
 
+#ifndef PYRSLOT_H
 #include "PyrSlot.h"
+#endif
 
 typedef int (*PrimitiveHandler)(struct VMGlobals *g, int numArgsPushed);
 typedef int (*PrimitiveWithKeysHandler)(struct VMGlobals *g, int numArgsPushed, int numKeyArgsPushed);

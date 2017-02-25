@@ -21,8 +21,12 @@
 #ifndef PYRSIGNAL_H
 #define PYRSIGNAL_H
 
+#ifndef PYROBJECT_H
 #include "PyrObject.h"
+#endif
+#ifndef GC_H
 #include "GC.h"
+#endif
 
 #define UNROLL 1
 

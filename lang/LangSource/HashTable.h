@@ -21,9 +21,15 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_BOUNDSMACROS_H
 #include "SC_BoundsMacros.h"
+#endif
+#ifndef HASH_H
 #include "Hash.h"
+#endif
 #include <stddef.h>
 
 template<class T, class Allocator, class KeyType>

@@ -22,8 +22,12 @@
 #ifndef READWRITEMACROS_H
 #define READWRITEMACROS_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef SC_ENDIAN_H
 #include "SC_Endian.h"
+#endif
 #include <stdio.h>
 #include <string.h>
 #include <stdexcept>

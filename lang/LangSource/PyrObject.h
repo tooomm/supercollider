@@ -26,7 +26,9 @@ PyrObject represents the structure of all SC Objects.
 #ifndef PYROBJECT_H
 #define PYROBJECT_H
 
+#ifndef PYRSLOT_H
 #include "PyrSlot.h"
+#endif
 
 /* special gc colors */
 enum {

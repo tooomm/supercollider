@@ -21,9 +21,15 @@
 #ifndef PYRINTERPRETER_H
 #define PYRINTERPRETER_H
 
+#ifndef PYRSLOT_H
 #include "PyrSlot.h"
+#endif
+#ifndef VMGLOBALS_H
 #include "VMGlobals.h"
+#endif
+#ifndef SC_EXPORT_H
 #include "SC_Export.h"
+#endif
 
 extern bool gRunningInterpreterThread;
 

@@ -21,11 +21,19 @@
 #ifndef SC_COMPORT_H
 #define SC_COMPORT_H
 
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
 
+#ifndef BOOST_ARRAY_HPP
 #include <boost/array.hpp>
+#endif
+#ifndef BOOST_ASIO_HPP
 #include <boost/asio.hpp>
+#endif
+#ifndef BOOST_ENABLE_SHARED_FROM_THIS_HPP
 #include <boost/enable_shared_from_this.hpp>
+#endif
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 

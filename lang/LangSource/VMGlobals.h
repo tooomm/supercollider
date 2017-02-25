@@ -26,9 +26,15 @@ Each virtual machine has a copy of VMGlobals, which contains the state of the vi
 #ifndef VMGLOBALS_H
 #define VMGLOBALS_H
 
+#ifndef PYRSLOT_H
 #include "PyrSlot.h"
+#endif
+#ifndef SC_ALLOCPOOL_H
 #include "SC_AllocPool.h"
+#endif
+#ifndef SC_RGEN_H
 #include "SC_RGen.h"
+#endif
 #include <setjmp.h>
 
 #define TAILCALLOPTIMIZE 1

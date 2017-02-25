@@ -30,11 +30,21 @@
 #endif
 #endif
 
+#ifndef SC_BOUNDSMACROS_H
 #include "SC_BoundsMacros.h"
+#endif
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef PYRERRORS_H
 #include "PyrErrors.h"
+#endif
+#ifndef ALLOCPOOLS_H
 #include "AllocPools.h"
+#endif
+#ifndef SC_EXPORT_H
 #include "SC_Export.h"
+#endif
 
 void postfl(const char *fmt, ...);
 void post(const char *fmt, ...);

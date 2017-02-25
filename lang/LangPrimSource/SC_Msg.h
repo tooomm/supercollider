@@ -25,8 +25,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifndef SC_REPLYIMPL_HPP
 #include "SC_ReplyImpl.hpp"
+#endif
+#ifndef SC_MSG_ITER_H
 #include "sc_msg_iter.h"
+#endif
 
 class SC_Msg;
 

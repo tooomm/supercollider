@@ -27,13 +27,25 @@
 #ifndef SC_TERMINALCLIENT_H
 #define SC_TERMINALCLIENT_H
 
+#ifndef SC_LANGUAGECLIENT_H
 #include "SC_LanguageClient.h"
+#endif
+#ifndef SC_STRINGBUFFER_H
 #include "SC_StringBuffer.h"
+#endif
+#ifndef SC_LOCK_H
 #include "SC_Lock.h"
+#endif
 
+#ifndef BOOST_ARRAY_HPP
 #include <boost/array.hpp>
+#endif
+#ifndef BOOST_ASIO_HPP
 #include <boost/asio.hpp>
+#endif
+#ifndef BOOST_SEMAPHORE_HPP
 #include <boost/sync/semaphore.hpp>
+#endif
 
 // =====================================================================
 // SC_TerminalClient - command line sclang client.

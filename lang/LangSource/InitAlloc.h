@@ -21,8 +21,12 @@
 #ifndef INITALLOC_H
 #define INITALLOC_H
 
+#ifndef SCBASE_H
 #include "SCBase.h"
+#endif
+#ifndef SC_ALLOCPOOL_H
 #include "SC_AllocPool.h"
+#endif
 #include <stdexcept>
 
 #define MEMFAIL(ptr) if (!(ptr)) { throw std::runtime_error("Out of memory!\n"); }

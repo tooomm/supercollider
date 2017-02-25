@@ -21,11 +21,21 @@
 #ifndef PYRPARSENODE_H
 #define PYRPARSENODE_H
 
+#ifndef PYRSLOT_H
 #include "PyrSlot.h"
+#endif
+#ifndef PYRKERNEL_H
 #include "PyrKernel.h"
+#endif
+#ifndef BYTECODEARRAY_H
 #include "ByteCodeArray.h"
+#endif
+#ifndef OPCODES_H
 #include "Opcodes.h"
+#endif
+#ifndef ADVANCINGALLOCPOOL_H
 #include "AdvancingAllocPool.h"
+#endif
 
 
 enum { rwPrivate=0, rwReadOnly=1, rwWriteOnly=2, rwReadWrite=3 };

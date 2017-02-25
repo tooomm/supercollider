@@ -20,7 +20,9 @@
 #ifndef PYRFILEPRIM_H
 #define PYRFILEPRIM_H
 
+#ifndef PYROBJECT_H
 #include "PyrObject.h"
+#endif
 
 struct PyrFile : public PyrObjectHdr
 {

@@ -28,9 +28,15 @@ A PyrSlot is an 8-byte value which is either a double precision float or a
 #ifndef PYRSLOT32_H
 #define PYRSLOT32_H
 
+#ifndef SC_ENDIAN_H
 #include "SC_Endian.h"
+#endif
+#ifndef SC_TYPES_H
 #include "SC_Types.h"
+#endif
+#ifndef PYRERRORS_H
 #include "PyrErrors.h"
+#endif
 
 #include <cassert>
 #include <cstddef>

@@ -21,9 +21,15 @@
 #ifndef PYRSCHED_H
 #define PYRSCHED_H
 
+#ifndef VMGLOBALS_H
 #include "VMGlobals.h"
+#endif
+#ifndef SC_EXPORT_H
 #include "SC_Export.h"
+#endif
+#ifndef SC_LOCK_H
 #include "SC_Lock.h"
+#endif
 #include <cerrno>
 
 extern timed_mutex gLangMutex;

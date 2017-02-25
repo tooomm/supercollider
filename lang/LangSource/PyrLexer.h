@@ -22,10 +22,18 @@
 #ifndef PYRLEXER_H
 #define PYRLEXER_H
 
+#ifndef PYRSLOT_H
 #include "PyrSlot.h"
+#endif
+#ifndef PYRSYMBOL_H
 #include "PyrSymbol.h"
+#endif
+#ifndef SC_EXPORT_H
 #include "SC_Export.h"
+#endif
+#ifndef SCBASE_H
 #include "SCBase.h"
+#endif
 
 extern int charno, lineno, linepos;
 extern int *linestarts;

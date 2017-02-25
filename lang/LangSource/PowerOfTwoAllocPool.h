@@ -29,9 +29,15 @@
 
 #include <stdexcept>
 #include <stdlib.h>
+#ifndef CLZ_H
 #include "clz.h"
+#endif
+#ifndef ADVANCINGALLOCPOOL_H
 #include "AdvancingAllocPool.h"
+#endif
+#ifndef SC_ALLOCPOOL_H
 #include "SC_AllocPool.h"
+#endif
 void post(const char *fmt, ...);
 void postbuf(const char *fmt, ...);
 

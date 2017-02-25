@@ -21,9 +21,15 @@
 #ifndef PYRSYMBOLTABLE_H
 #define PYRSYMBOLTABLE_H
 
+#ifndef PYRSYMBOL_H
 #include "PyrSymbol.h"
+#endif
+#ifndef ADVANCINGALLOCPOOL_H
 #include "AdvancingAllocPool.h"
+#endif
+#ifndef SC_EXPORT_H
 #include "SC_Export.h"
+#endif
 
 #define STRINGCHUNK 32000
 #define SYMBOLCHUNK 32000

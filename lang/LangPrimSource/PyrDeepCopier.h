@@ -27,13 +27,25 @@ An object archiving system for SuperCollider.
 #ifndef PYRDEEPCOPIER_H
 #define PYRDEEPCOPIER_H
 
+#ifndef PYROBJECT_H
 #include "PyrObject.h"
+#endif
+#ifndef SC_ALLOCPOOL_H
 #include "SC_AllocPool.h"
+#endif
 
+#ifndef PYRKERNEL_H
 #include "PyrKernel.h"
+#endif
+#ifndef PYRPRIMITIVE_H
 #include "PyrPrimitive.h"
+#endif
+#ifndef VMGLOBALS_H
 #include "VMGlobals.h"
+#endif
+#ifndef GC_H
 #include "GC.h"
+#endif
 
 const int32 kDeepCopierObjectArrayInitialCapacity = 32;
 

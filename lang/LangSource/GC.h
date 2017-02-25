@@ -27,10 +27,18 @@ Based on Wilson and Johnstone's real time collector and the Baker treadmill.
 #ifndef GC_H
 #define GC_H
 
+#ifndef PYROBJECT_H
 #include "PyrObject.h"
+#endif
+#ifndef VMGLOBALS_H
 #include "VMGlobals.h"
+#endif
+#ifndef ADVANCINGALLOCPOOL_H
 #include "AdvancingAllocPool.h"
+#endif
+#ifndef FUNCTION_ATTRIBUTES_H
 #include "function_attributes.h"
+#endif
 
 void DumpSimpleBackTrace(VMGlobals *g);
 
