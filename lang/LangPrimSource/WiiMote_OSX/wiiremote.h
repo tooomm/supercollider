@@ -1,6 +1,8 @@
 // wiiremote.h
 // Copyright by Masayuki Akamatsu
 // Based on "DarwiinRemote" by Hiroaki Kimura
+#ifndef WIIREMOTE_H
+#define WIIREMOTE_H
 
 //#define BLUETOOTH_VERSION_USE_CURRENT
 //#include <AvailabilityMacros.h>
@@ -168,3 +170,5 @@ Boolean			wiiremote_led(WiiRemoteRef wiiremote, Boolean enabled1, Boolean enable
 Boolean			wiiremote_expansion(WiiRemoteRef wiiremote, Boolean enabled);
 Boolean			wiiremote_getstatus(WiiRemoteRef wiiremote);
 
+
+#endif
