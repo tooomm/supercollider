@@ -1,3 +1,6 @@
+#ifndef FFTLIB_H
+#define FFTLIB_H
+
 long FFTInit(long *fftMptr, long fftN, float *Utbl);
 /* Compute cosine table and check size for complex ffts	*/
 /* INPUTS */
@@ -60,3 +63,5 @@ void riffts(float *ioptr, long M, long Rows, float *Utbl);
 /* Rows = number of rows in ioptr array (use Rows of 1 if ioptr is a 1 dimensional array)	*/
 /* OUTPUTS */
 /* *ioptr = real output data array	*/
+
+#endif
