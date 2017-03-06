@@ -146,6 +146,11 @@ Platform {
 	killAll { |cmdLineArgs|
 		^this.subclassResponsibility(\killAll)
 	}
+
+	// used to format paths correctly for command-line calls
+	// On Windows, encloses with quotes; on Unix systems, escapes spaces.
+	formatPathForCmdLine { ^this.subclassResponsibility }
+
 }
 
 UnixPlatform : Platform {
@@ -177,4 +182,9 @@ UnixPlatform : Platform {
 			File.exists(path);
 		});
 	}
+
+	formatPathForCmdLine { |path|
+		^path.escapeChar($ );
+	}
+
 }

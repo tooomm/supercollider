@@ -13,7 +13,7 @@ Git {
 		this.git([
 			"clone",
 			url,
-			localPath.escapeChar($ )
+			thisProcess.platform.formatPathForCmdLine(localPath)
 		], false);
 		this.url = url;
 	}
@@ -99,7 +99,7 @@ Git {
 		var cmd, result="";
 
 		if(cd, {
-			cmd = ["cd", localPath.escapeChar($ ), "&&", "git"];
+			cmd = ["cd", thisProcess.platform.formatPathForCmdLine(localPath), "&&", "git"];
 		},{
 			cmd = ["git"];
 		});

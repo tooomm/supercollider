@@ -42,4 +42,9 @@ WindowsPlatform : Platform {
 	}
 
 	myDocumentsDir { _WinPlatform_myDocumentsDir }
+
+	formatPathForCmdLine { |path|
+		^path.quote;
+	}
+
 }
