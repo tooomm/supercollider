@@ -32,16 +32,13 @@
 #include <map> // map
 #include <boost/filesystem/path.hpp> // path
 
-#if defined(__APPLE__) && !defined(SC_IPHONE)
-#  include "SC_StandAloneInfo_Darwin.h"
-#endif
-
 class SC_Filesystem {
 public:
+	enum class DirName;
 	typedef boost::filesystem::path Path;
+	typedef std::map<DirName, Path> DirMap;
 	struct Glob;
 
-	// Enumerated standard directory names used by SuperCollider
 	enum class DirName {
 		SystemAppSupport,
 		SystemExtension,
@@ -53,69 +50,44 @@ public:
 	};
 
 	// singleton
+	SC_Filesystem(SC_Filesystem const&) = delete;
+	void operator=(SC_Filesystem const&) = delete;
 	static SC_Filesystem& instance()
 	{
 		static SC_Filesystem instance;
 		return instance;
 	}
 
-	SC_Filesystem(SC_Filesystem const&) = delete;
-	void operator=(SC_Filesystem const&) = delete;
-
-	// Gets the path associated with the directory name.
-	// The path is initialized if it is not already set.
-	Path getDirectory(const DirName&);
-
-	// Sets the path associated with the directory name
-	inline void setDirectory(const DirName& dn, const Path& p)
-	{
-		mDirectoryMap[dn] = p;
-	}
+	// Get and set the path associated with a directory name.
+	// The path is initialized first if necessary.
+	Path        getDirectory(const DirName& dn);
+	inline void setDirectory(const DirName& dn, const Path& p) { mDirectoryMap[dn] = p; }
 
 	// Expands a path starting with `~` to use the user's home directory.
-	// Works cross-platform.
-	Path expandTilde(const Path&);
+	Path        expandTilde(const Path& p);
 
-	// Returns `true` if the directory is to be ignored during compilation.
-	bool shouldNotCompileDirectory(const Path&) const;
-
-#if defined(__APPLE__) && !defined(SC_IPHONE)
-	// Returns `true` if this is a standalone (only on macOS)
-	static inline bool isStandalone() { return SC_StandAloneInfo::IsStandAlone(); }
+	bool        shouldNotCompileDirectory(const Path& p) const;
+	static bool isStandalone();
 
 	// postconditions: isAlias is true if path is an alias, and false otherwise
 	// returns: the resolved path if resolution occurred
 	//          the original path if no resolution occurred
 	//          Path() if resolution failed
-	// Could possibly be split into `isAlias` and `resolveAlias` to avoid
-	// unnecessary duplication
-	static Path resolveIfAlias(const Path&, bool&);
-#else
-	static inline bool isStandalone() { return false; }
+	// @TODO: Could possibly be split into `isAlias` and `resolveAlias` to avoid
+	// unnecessary copying
+	static Path resolveIfAlias(const Path& p, bool& isAlias);
 
-	static Path resolveIfAlias(const Path& p, bool& isAlias)
-	{
-		isAlias = false;
-		return p;
-	}
-#endif // defined(__APPLE__) && !defined(SC_IPHONE)
-
-	static Glob* makeGlob(const char*);
-
-	// Returns empty path if end of stream is reached
-	static Path globNext(Glob*);
-
-	static void freeGlob(Glob*);
+	static Glob* makeGlob(const char* pattern);
+	static Path globNext(Glob* g); // Returns empty path for end-of-stream
+	static void freeGlob(Glob* g);
 
 private:
 	SC_Filesystem() {};
 
-	static bool isNonHostPlatformDirectory(const std::string&);
+	static bool isNonHostPlatformDirectory(const std::string& p);
 
-	bool initDirectory(const DirName&);
-
-	// Get default directories based on the OS's filesystem.
-	// Returns an empty path to indicate failure.
+	// Loads in the default directories (OS-specific)
+	bool initDirectory(const DirName& dn);
 	static Path defaultSystemAppSupportDirectory();
 	static Path defaultSystemExtensionDirectory();
 	static Path defaultUserHomeDirectory();
@@ -124,7 +96,7 @@ private:
 	static Path defaultUserConfigDirectory();
 	static Path defaultResourceDirectory();
 
-	std::map<DirName, Path> mDirectoryMap;
+	DirMap mDirectoryMap;
 };
 
 #endif // SC_FILESYSTEM_HPP_INCLUDED

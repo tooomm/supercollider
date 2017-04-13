@@ -24,12 +24,13 @@
 #if defined(__APPLE__) && !defined(SC_IPHONE)
 
 #include "SC_Filesystem.hpp"
+#include "SC_StandAloneInfo_Darwin.h"
 
 // stdlib
 #include <string>   // std::string
 #include <map>      // std::map
 
-//#define DEBUG_SCFS
+#define DEBUG_SCFS
 #ifdef DEBUG_SCFS
 #include <iostream>
 using std::cout;
@@ -49,7 +50,7 @@ using std::endl;
 
 using Path = SC_Filesystem::Path;
 using DirName = SC_Filesystem::DirName;
-using std::map;
+using DirMap = SC_Filesystem::DirMap;
 
 //============ DIRECTORY NAMES =============//
 const char* gIdeName = "none"; // @TODO: move out
@@ -76,18 +77,12 @@ Path SC_Filesystem::getDirectory(const DirName& dn)
 #ifdef DEBUG_SCFS
 	cout << "SCFS::getDirectory: enter" << endl;
 #endif
-	map<DirName, Path>::const_iterator it = mDirectoryMap.find(dn);
+	const DirMap::const_iterator& it = mDirectoryMap.find(dn);
 	Path p;
 	if (it != mDirectoryMap.end()) {
 		p = it->second;
 	} else {
-		if ( ! initDirectory(dn) ) {
-			// failed, return empty directory
-			p = Path();
-		} else {
-			it = mDirectoryMap.find(dn);
-			p = it->second;
-		}
+		p = initDirectory(dn) ? mDirectoryMap.find(dn)->second : Path();
 	}
 #ifdef DEBUG_SCFS
 	cout << "\tgot " << p << endl;
@@ -113,6 +108,9 @@ Path SC_Filesystem::expandTilde(const Path& p)
 bool SC_Filesystem::shouldNotCompileDirectory(const Path& p) const
 {
 	const std::string& dirname = p.filename().string();
+#ifdef DEBUG_SCFS
+	cout << "shouldNotCompileDirectory: dirname: " << dirname << endl;
+#endif
 	const std::string& idePath = std::string("scide_") + gIdeName;
 	return (boost::iequals(dirname, "help") ||
 					boost::iequals(dirname, "ignore") ||
@@ -121,6 +119,11 @@ bool SC_Filesystem::shouldNotCompileDirectory(const Path& p) const
 					dirname == "_darcs" ||
 					dirname == idePath ||
 					isNonHostPlatformDirectory(dirname));
+}
+
+bool SC_Filesystem::isStandalone()
+{
+	return SC_StandAloneInfo::IsStandAlone();
 }
 
 Path SC_Filesystem::resolveIfAlias(const Path& p, bool& isAlias)
