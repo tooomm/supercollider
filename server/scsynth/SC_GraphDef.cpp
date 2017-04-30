@@ -644,10 +644,10 @@ GraphDef* GraphDef_LoadGlob(World *inWorld, const char *pattern, GraphDef *inLis
 	SC_Filesystem::Path path;
 	while (!(path = SC_Filesystem::globNext(glob)).empty()) {
 		if (path.extension() == ".scsyndef") {
-			inList = GraphDef_Load(inWorld, path.c_str(), inList);
+			inList = GraphDef_Load(inWorld, SC_Filesystem::pathAsUTF8String(path).c_str(), inList);
 		}
 		// why? <sk>
-		GraphDef_Load(inWorld, path.c_str(), inList);
+		GraphDef_Load(inWorld, SC_Filesystem::pathAsUTF8String(path).c_str(), inList);
 	}
 
 	SC_Filesystem::freeGlob(glob);
@@ -734,7 +734,7 @@ GraphDef* GraphDef_LoadDir(World *inWorld, const char *dirname, GraphDef *inList
 #ifdef DEBUG_SCFS
 				cout << "Processing" << endl;
 #endif
-				inList = GraphDef_Load(inWorld, path.c_str(), inList);
+				inList = GraphDef_Load(inWorld, SC_Filesystem::pathAsUTF8String(path).c_str(), inList);
 			} else {
 #ifdef DEBUG_SCFS
 				cout << "File was not .scsyndef" << endl;
@@ -747,7 +747,7 @@ GraphDef* GraphDef_LoadDir(World *inWorld, const char *dirname, GraphDef *inList
 #endif
 		rditer.increment(ec);
 		if (ec) {
-			scprintf("Could not iterate on '%s': %s\n", path.c_str(), ec.message().c_str());
+			scprintf("Could not iterate on '%s': %s\n", SC_Filesystem::pathAsUTF8String(path).c_str(), ec.message().c_str());
 			return inList;
 		}
 	}

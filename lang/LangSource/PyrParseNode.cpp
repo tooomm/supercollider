@@ -39,6 +39,7 @@
 #include "PyrPrimitive.h"
 #include "SC_Win32Utils.h"
 #include "SC_LanguageConfig.hpp"
+#include "SC_Filesystem.hpp" // pathAsUTF8String
 
 AdvancingAllocPool gParseNodePool;
 
@@ -341,7 +342,7 @@ void PyrClassExtNode::compile(PyrSlot *result)
 		const boost::filesystem::path relpath = relativeToCompileDir(boost::filesystem::path(gCompilingFileSym->name));
 		error("Class extension for nonexistent class '%s'\n     In file:'%s'\n",
 			slotRawSymbol(&mClassName->mSlot)->name,
-			relpath.c_str()
+			SC_Filesystem::pathAsUTF8String(relpath).c_str()
 		);
 		return;
 	}

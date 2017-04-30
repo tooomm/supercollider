@@ -219,7 +219,7 @@ int prArrayPOpen(struct VMGlobals *g, int numArgsPushed)
 	
 	path p;
 	p /= filename;
-	std::string filenameOnly = p.filename().string();
+	std::string filenameOnly = SC_Filesystem::pathAsUTF8String(p.filename());
 	std::vector<char> vfilenameOnly(filenameOnly.begin(), filenameOnly.end());
 	vfilenameOnly.push_back('\0');
 	

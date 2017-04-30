@@ -64,7 +64,7 @@ SC_LanguageConfig::SC_LanguageConfig(bool optStandalone)
 void SC_LanguageConfig::postExcludedDirectories(void) const
 {
 	for (auto it : mExcludedDirectories) {
-		post("\texcluding dir: '%s'\n", it.c_str());
+		post("\texcluding dir: '%s'\n", SC_Filesystem::pathAsUTF8String(it).c_str());
 	}
 }
 
@@ -173,13 +173,13 @@ bool SC_LanguageConfig::writeLibraryConfigYAML(const Path& fileName)
 	out << Key << INCLUDE_PATHS;
 	out << Value << BeginSeq;
 	for (const auto& it : gLanguageConfig->mIncludedDirectories)
-		out << it.c_str();
+		out << SC_Filesystem::pathAsUTF8String(it).c_str();
 	out << EndSeq;
 
 	out << Key << EXCLUDE_PATHS;
 	out << Value << BeginSeq;
 	for (const auto& it : gLanguageConfig->mExcludedDirectories)
-		out << it.c_str();
+		out << SC_Filesystem::pathAsUTF8String(it).c_str();
 	out << EndSeq;
 
 	out << Key << POST_INLINE_WARNINGS;

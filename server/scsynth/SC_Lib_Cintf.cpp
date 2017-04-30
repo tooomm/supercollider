@@ -190,6 +190,8 @@ void initialize_library(const char *uGensPluginPath)
 	using Path = SC_Filesystem::Path;
 	using DirName = SC_Filesystem::DirName;
 
+	SC_Filesystem& sc_fs = SC_Filesystem::instance();
+
 	if(loadUGensExtDirs) {
 		// @TODO: probably a better way to do this than through macro
 #ifdef SC_PLUGIN_DIR
@@ -199,7 +201,7 @@ void initialize_library(const char *uGensPluginPath)
 		}
 #endif // SC_PLUGIN_DIR
 		// load default plugin directory
-		const Path pluginDir = SC_Filesystem::instance().getDirectory(DirName::Resource) / SC_PLUGIN_DIR_NAME;
+		const Path pluginDir = sc_fs.getDirectory(DirName::Resource) / SC_PLUGIN_DIR_NAME;
 
 		if (boost::filesystem::is_directory(pluginDir)) {
 			PlugIn_LoadDir(pluginDir, true);
@@ -209,11 +211,11 @@ void initialize_library(const char *uGensPluginPath)
 	// get extension directories
 	if (!SC_Filesystem::isStandalone() && loadUGensExtDirs) {
 		// load system extension plugins
-		const Path sysExtDir = SC_Filesystem::instance().getDirectory(DirName::SystemExtension);
+		const Path sysExtDir = sc_fs.getDirectory(DirName::SystemExtension);
 		PlugIn_LoadDir(sysExtDir, false);
 
 		// load user extension plugins
-		const Path userExtDir = SC_Filesystem::instance().getDirectory(DirName::UserExtension);
+		const Path userExtDir = sc_fs.getDirectory(DirName::UserExtension);
 		PlugIn_LoadDir(userExtDir, false);
 
 		// load user plugin directories
@@ -293,13 +295,13 @@ static bool PlugIn_Load(const SC_Filesystem::Path& filename)
 {
 #ifdef _WIN32
 
-	HINSTANCE hinstance = LoadLibrary( filename.c_str() );
+	HINSTANCE hinstance = LoadLibrary( SC_Filesystem::pathAsUTF8String(filename).c_str() );
 	if (!hinstance) {
 		char *s;
 		DWORD lastErr = GetLastError();
 		FormatMessage( FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
 			NULL, lastErr , MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (char*)&s, 0, NULL );
-		scprintf("*** ERROR: LoadLibrary '%s' err '%s'\n", filename.c_str(), s);
+		scprintf("*** ERROR: LoadLibrary '%s' err '%s'\n", SC_Filesystem::pathAsUTF8String(filename).c_str(), s);
 		LocalFree( s );
 		return false;
 	}
@@ -337,22 +339,22 @@ static bool PlugIn_Load(const SC_Filesystem::Path& filename)
 
 #else // (ifndef _WIN32)
 
-	void* handle = dlopen(filename.c_str(), RTLD_NOW);
+	void* handle = dlopen(SC_Filesystem::pathAsUTF8String(filename).c_str(), RTLD_NOW);
 
 	if (!handle) {
-		scprintf("*** ERROR: dlopen '%s' err '%s'\n", filename.c_str(), dlerror());
+		scprintf("*** ERROR: dlopen '%s' err '%s'\n", SC_Filesystem::pathAsUTF8String(filename).c_str(), dlerror());
 		dlclose(handle);
 		return false;
 	}
 
 	void *apiVersionPtr = (void *)dlsym( handle, "api_version" );
-	if (!checkAPIVersion(apiVersionPtr, filename.c_str())) {
+	if (!checkAPIVersion(apiVersionPtr, SC_Filesystem::pathAsUTF8String(filename).c_str())) {
 		dlclose(handle);
 		return false;
 	}
 
 	void *serverCheckPtr = (void *)dlsym( handle, "server_type" );
-	if (!checkServerVersion(serverCheckPtr , filename.c_str())) {
+	if (!checkServerVersion(serverCheckPtr , SC_Filesystem::pathAsUTF8String(filename).c_str())) {
 		dlclose(handle);
 		return false;
 	}
@@ -383,7 +385,7 @@ static bool PlugIn_LoadDir(const SC_Filesystem::Path& dir, bool reportError)
 
 	if (ec) {
 		if (reportError) {
-			scprintf("*** ERROR: open directory failed '%s': %s\n", dir.c_str(), ec.message().c_str());
+			scprintf("*** ERROR: open directory failed '%s': %s\n", SC_Filesystem::pathAsUTF8String(dir).c_str(), ec.message().c_str());
 			fflush(stdout);
 		}
 		return false;
@@ -431,7 +433,7 @@ static bool PlugIn_LoadDir(const SC_Filesystem::Path& dir, bool reportError)
 
 		rditer.increment(ec);
 		if (ec) {
-			scprintf("ERROR: Could not iterate on directory '%s': %s\n", path.c_str(), ec.message().c_str());
+			scprintf("ERROR: Could not iterate on directory '%s': %s\n", SC_Filesystem::pathAsUTF8String(path).c_str(), ec.message().c_str());
 			return false;
 		}
 	}

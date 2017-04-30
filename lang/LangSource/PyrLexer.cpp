@@ -1914,7 +1914,7 @@ static bool passOne_ProcessDir(const bfs::path& dir, int level)
 	std::string skipReason;
 
 	if (ec) {
-		error("Could not open directory '%s': (%d) %s\n", dir.c_str(), ec.value(), ec.message().c_str());
+		error("Could not open directory '%s': (%d) %s\n", SC_Filesystem::pathAsUTF8String(dir).c_str(), ec.value(), ec.message().c_str());
 		// @TODO: is this the same as the old behavior?
 		if (ec.value() == boost::system::errc::no_such_file_or_directory)
 			return true;
@@ -1922,10 +1922,10 @@ static bool passOne_ProcessDir(const bfs::path& dir, int level)
 			return false;
 	} else if (passOne_ShouldSkipDirectory(dir, skipReason)) {
 		if (!skipReason.empty())
-			post("\t%s: '%s'\n", skipReason.c_str(), dir.c_str());
+			post("\t%s: '%s'\n", skipReason.c_str(), SC_Filesystem::pathAsUTF8String(dir).c_str());
 		return true;
 	} else {
-		post("\tCompiling directory '%s'\n", dir.c_str());
+		post("\tCompiling directory '%s'\n", SC_Filesystem::pathAsUTF8String(dir).c_str());
 	}
 
 	compiledDirectories.insert(dir);
@@ -1949,7 +1949,7 @@ static bool passOne_ProcessDir(const bfs::path& dir, int level)
 				cout << "Skipping directory" << endl;
 #endif
 				if (!skipReason.empty())
-					post("\t%s: '%s'\n", skipReason.c_str(), path.c_str());
+					post("\t%s: '%s'\n", skipReason.c_str(), SC_Filesystem::pathAsUTF8String(path).c_str());
 				rditer.no_push();
 			} else {
 				compiledDirectories.insert(path);
@@ -1972,7 +1972,7 @@ static bool passOne_ProcessDir(const bfs::path& dir, int level)
 #ifdef DEBUG_SCFS
 				cout << "Symlink resolution failed: " << respath << endl;
 #endif
-			} else if (!passOne_ProcessOneFile(respath.c_str(), rditer.level())) {
+			} else if (!passOne_ProcessOneFile(SC_Filesystem::pathAsUTF8String(respath).c_str(), rditer.level())) {
 #ifdef DEBUG_SCFS
 				cout << "Could not process " << respath << endl;
 #endif
@@ -1985,7 +1985,7 @@ static bool passOne_ProcessDir(const bfs::path& dir, int level)
 #endif
 		rditer.increment(ec);
 		if (ec) {
-			error("Could not iterate on '%s': %s\n", path.c_str(), ec.message().c_str());
+			error("Could not iterate on '%s': %s\n", SC_Filesystem::pathAsUTF8String(path).c_str(), ec.message().c_str());
 			return false;
 		}
 	}
@@ -2025,7 +2025,7 @@ bool isValidSourceFileName(const char *filename)
 
 	bfs::path pathname(filename);
 
-	if (pathname.filename().c_str()[0] == '.') // hidden filename
+	if (SC_Filesystem::pathAsUTF8String(pathname.filename()).c_str()[0] == '.') // hidden filename
 		return false;
 
 	return true;

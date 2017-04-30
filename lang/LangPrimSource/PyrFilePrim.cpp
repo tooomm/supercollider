@@ -136,7 +136,7 @@ int prFileRealPath(struct VMGlobals* g, int numArgsPushed )
 		return errNone;
 	}
 
-	strncpy(opath, p.c_str(), PATH_MAX-1);
+	strncpy(opath, SC_Filesystem::pathAsUTF8String(p).c_str(), PATH_MAX-1);
 	opath[PATH_MAX-1] = '\0';
 
 	// @TODO: is this necessary?

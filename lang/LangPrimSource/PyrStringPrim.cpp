@@ -935,7 +935,7 @@ int prString_StandardizePath(struct VMGlobals* g, int /* numArgsPushed */)
 	// original method didn't throw an error if alias resolution failed.
 	// @TODO: determine correct behavior
 
-	PyrString* pyrString = newPyrString(g->gc, p.c_str(), 0, true);
+	PyrString* pyrString = newPyrString(g->gc, SC_Filesystem::pathAsUTF8String(p).c_str(), 0, true);
 	SetObject(arg, pyrString);
 
 	return errNone;
