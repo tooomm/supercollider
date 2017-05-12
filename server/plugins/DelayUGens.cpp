@@ -1094,7 +1094,7 @@ void PlayBuf_next_aa(PlayBuf *unit, int inNumSamples)
 
 	CHECK_BUFFER_DATA;
 
-	double loopMax = (double)(loop ? bufFrames : bufFrames - 1);
+	double loopMax = (double)(bufFrames);
 	double phase = unit->m_phase;
 	float prevtrig = unit->m_prevtrig;
 
@@ -1145,7 +1145,7 @@ void PlayBuf_next_ak(PlayBuf *unit, int inNumSamples)
 
 	CHECK_BUFFER_DATA
 
-	double loopMax = (double)(loop ? bufFrames : bufFrames - 1);
+	double loopMax = (double)(bufFrames);
 	double phase = unit->m_phase;
 	if(phase == -1.) phase = bufFrames;
 	if (trig > 0.f && unit->m_prevtrig <= 0.f) {
@@ -1176,7 +1176,7 @@ void PlayBuf_next_kk(PlayBuf *unit, int inNumSamples)
 
 	CHECK_BUFFER_DATA
 
-	double loopMax = (double)(loop ? bufFrames : bufFrames - 1);
+	double loopMax = (double)(bufFrames);
 	double phase = unit->m_phase;
 	if (trig > 0.f && unit->m_prevtrig <= 0.f) {
 		unit->mDone = false;
@@ -1204,7 +1204,7 @@ void PlayBuf_next_ka(PlayBuf *unit, int inNumSamples)
 
 	CHECK_BUFFER_DATA
 
-	double loopMax = (double)(loop ? bufFrames : bufFrames - 1);
+	double loopMax = (double)(bufFrames);
 	double phase = unit->m_phase;
 	float prevtrig = unit->m_prevtrig;
 	for (int i=0; i<inNumSamples; ++i) {
