@@ -88,7 +88,7 @@ void onsetsds_init(OnsetsDS *ods, float *odsdata, int fftformat,
                            int odftype, size_t fftsize, unsigned int medspan, float srate){
 
    int numbins, realnumbins;
-
+	// TODO: debug here
 	// The main pointer to the processing area - other pointers will indicate areas within this
 	ods->data = odsdata;
 	// Set all vals in processing area to zero
@@ -123,7 +123,7 @@ void onsetsds_init(OnsetsDS *ods, float *odsdata, int fftformat,
 			ods->odfparam = 0.01; // "powthresh" in SC code
 			ods->normfactor = 231.70475f / pow(fftsize, 1.5);// / fftsize;
 			break;
-		case ODS_ODF_RCOMPLEX:
+		case ODS_ODF_RCOMPLEX: // TODO: debug here
 			ods->odfparam = 0.01; // "powthresh" in SC code
 			ods->normfactor = 231.70475f / pow(fftsize, 1.5);// / fftsize;
 			break;
@@ -149,10 +149,10 @@ void onsetsds_init(OnsetsDS *ods, float *odsdata, int fftformat,
 	ods->logmags = false;
 
 	ods->odftype  = odftype;
-	ods->whtype   = ODS_WH_ADAPT_MAX1;
+	ods->whtype   = ODS_WH_ADAPT_MAX1; // TODO: debug here
 	ods->fftformat = fftformat;
 
-	ods->whiten   = (odftype != ODS_ODF_MKL); // Deactivate whitening for MKL by default
+	ods->whiten   = (odftype != ODS_ODF_MKL); // Deactivate whitening for MKL by default// TODO: debug here
 	ods->detected = false;
 	ods->med_odd  = (medspan & 1) != 0;
 
@@ -362,12 +362,12 @@ void onsetsds_odf(OnsetsDS* ods){
 		case ODS_ODF_RCOMPLEX:
 
 			// Note: "other" buf is stored in this format: mag[0],phase[0],d_phase[0],mag[1],phase[1],d_phase[1], ...
-
+// TODO: debug here
 			// Iterate through, calculating the deviation from expected value.
 			totdev = 0.0;
 			tbpointer = 0;
 			for (i=0; i<numbins; ++i) {
-				curmag = ods_abs(curr->bin[i].mag);
+				curmag = ods_abs(curr->bin[i].mag);// TODO: debug here
 
 				// Predict mag as yestermag
 				predmag         = ods->other[tbpointer++];
@@ -375,31 +375,31 @@ void onsetsds_odf(OnsetsDS* ods){
 				yesterphasediff = ods->other[tbpointer++];
 
 				// Thresholding as Brossier did - discard (ignore) bin's deviation if bin's power is minimal
-				if(curmag > ods->odfparam) {
+				if(curmag > ods->odfparam) {// TODO: debug here
 					// If rectifying, ignore decreasing bins
-					if((!rectify) || !(curmag < predmag)){
+					if((!rectify) || !(curmag < predmag)){// TODO: debug here
 
 						// Predict phase as yesterval + yesterfirstdiff
-						predphase = yesterphase + yesterphasediff;
+						predphase = yesterphase + yesterphasediff;// TODO: debug here
 
 						// Here temporarily using the "deviation" var to store the phase difference
 						//  so that the rewrap macro can use it more efficiently
-						deviation = predphase - curr->bin[i].phase;
+						deviation = predphase - curr->bin[i].phase;// TODO: debug here
 
 						// Deviation is Euclidean distance between predicted and actual.
 						// In polar coords: sqrt(r1^2 +  r2^2 - r1r2 cos (theta1 - theta2))
 						deviation = sqrtf(predmag * predmag + curmag * curmag
 										  - predmag * curmag * cosf(onsetsds_phase_rewrap(deviation))
-										);
+										);// TODO: debug here
 
-						totdev += deviation;
+						totdev += deviation;// TODO: debug here
 					}
 				}
 			}
 
 			// totdev will be the output, but first we need to fill tempbuf with today's values, ready for tomorrow.
-			tbpointer = 0;
-			for (i=0; i<numbins; ++i) {
+			tbpointer = 0;// TODO: debug here
+			for (i=0; i<numbins; ++i) {// TODO: debug here
 				ods->other[tbpointer++] = ods_abs(curr->bin[i].mag); // Storing mag
 				diff = curr->bin[i].phase - ods->other[tbpointer]; // Retrieving yesterphase from buf
 				ods->other[tbpointer++] = curr->bin[i].phase; // Storing phase
