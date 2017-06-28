@@ -24,7 +24,7 @@ var searchData=
   ['onepole',['OnePole',['../df/dc9/struct_one_pole.html',1,'']]],
   ['onezero',['OneZero',['../d2/d82/struct_one_zero.html',1,'']]],
   ['onsets',['Onsets',['../d7/d71/struct_onsets.html',1,'']]],
-  ['onsetsds',['OnsetsDS',['../df/db8/struct_onsets_d_s.html',1,'OnsetsDS'],['../d8/db5/onsetsds_8h.html#a02d6cd15a6e2588a0f04e61d09f3b244',1,'OnsetsDS():&#160;onsetsds.h']]],
+  ['onsetsds',['OnsetsDS',['../df/db8/struct_onsets_d_s.html',1,'OnsetsDS'],['../d8/db5/onsetsds_8h.html#a02d6cd15a6e2588a0f04e61d09f3b244',1,'OnsetsDS():&#160;onsetsds.h'],['../d9/d40/group___onsets_d_s.html',1,'(Global Namespace)']]],
   ['onsetsds_2eh',['onsetsds.h',['../d8/db5/onsetsds_8h.html',1,'']]],
   ['onsetsds_5fdetect',['onsetsds_detect',['../df/dcc/group___other_funcs.html#ga75da086395c01242382a2f8d5a38dd7d',1,'onsetsds_detect(OnsetsDS *ods):&#160;onsetsds.c'],['../df/dcc/group___other_funcs.html#ga75da086395c01242382a2f8d5a38dd7d',1,'onsetsds_detect(OnsetsDS *ods):&#160;onsetsds.c']]],
   ['onsetsds_5ffft_5ftypes',['onsetsds_fft_types',['../d8/db5/onsetsds_8h.html#aac4a978d7a67d6e681d666b4c2c10ff6',1,'onsetsds.h']]],
