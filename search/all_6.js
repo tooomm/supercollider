@@ -29,6 +29,6 @@ var searchData=
   ['freeverb2',['FreeVerb2',['../d8/da0/struct_free_verb2.html',1,'']]],
   ['freqshift',['FreqShift',['../d8/da0/struct_freq_shift.html',1,'']]],
   ['fsinosc',['FSinOsc',['../d7/df4/struct_f_sin_osc.html',1,'']]],
-  ['fullbuffersize',['fullBufferSize',['../d0/d5b/class_s_c_unit.html#ad291e620605d9733b8aa6b6af1864c8a',1,'SCUnit']]],
-  ['fullsamplerate',['fullSampleRate',['../d0/d5b/class_s_c_unit.html#a822f4d458e26651f461f695b886e7e5d',1,'SCUnit']]]
+  ['fullbuffersize',['fullBufferSize',['../d0/d5b/class_s_c_unit.html#a55e9c9dc0f236932384b7e7f56d71f04',1,'SCUnit']]],
+  ['fullsamplerate',['fullSampleRate',['../d0/d5b/class_s_c_unit.html#aecdf94c26467178b5980fae532f1ddea',1,'SCUnit']]]
 ];

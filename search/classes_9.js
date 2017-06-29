@@ -34,5 +34,6 @@ var searchData=
   ['iscsynthappdelegate',['iscsynthAppDelegate',['../df/d20/interfaceiscsynth_app_delegate.html',1,'']]],
   ['iscsynthcontroller',['iSCSynthController',['../dc/db5/interfacei_s_c_synth_controller.html',1,'']]],
   ['item',['Item',['../d3/d68/class_qc_tree_widget_1_1_item.html',1,'QcTreeWidget']]],
-  ['itemdelegate',['ItemDelegate',['../d6/d3f/class_sc_i_d_e_1_1_icon_list_widget_1_1_item_delegate.html',1,'ScIDE::IconListWidget::ItemDelegate'],['../d9/d6b/class_sc_i_d_e_1_1_text_format_list_widget_1_1_item_delegate.html',1,'ScIDE::TextFormatListWidget::ItemDelegate']]]
+  ['itemdelegate',['ItemDelegate',['../d6/d3f/class_sc_i_d_e_1_1_icon_list_widget_1_1_item_delegate.html',1,'ScIDE::IconListWidget']]],
+  ['itemdelegate',['ItemDelegate',['../d9/d6b/class_sc_i_d_e_1_1_text_format_list_widget_1_1_item_delegate.html',1,'ScIDE::TextFormatListWidget']]]
 ];

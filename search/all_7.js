@@ -14,7 +14,7 @@ var searchData=
   ['generate_5fnode_5fid',['generate_node_id',['../d9/d30/classnova_1_1node__graph.html#a82ea81418e5f704f3b76d2241a5ed342',1,'nova::node_graph']]],
   ['genericcodeeditor',['GenericCodeEditor',['../de/dac/class_sc_i_d_e_1_1_generic_code_editor.html',1,'ScIDE']]],
   ['genericlookupdialog',['GenericLookupDialog',['../d4/d16/class_sc_i_d_e_1_1_generic_lookup_dialog.html',1,'ScIDE']]],
-  ['get_5fparent',['get_parent',['../d6/dd8/classnova_1_1server__node.html#ab800f71a5f64a8d08ef3bd2db8039e05',1,'nova::server_node']]],
+  ['get_5fparent',['get_parent',['../d6/dd8/classnova_1_1server__node.html#a9fe3d63810d0879c23caf868870e69c7',1,'nova::server_node']]],
   ['gotolinetool',['GoToLineTool',['../db/d3e/class_sc_i_d_e_1_1_go_to_line_tool.html',1,'ScIDE']]],
   ['grain',['Grain',['../d7/def/struct_grain.html',1,'']]],
   ['grainbuf',['GrainBuf',['../d7/d85/struct_grain_buf.html',1,'']]],
@@ -30,6 +30,7 @@ var searchData=
   ['graph',['Graph',['../d4/dd4/struct_graph.html',1,'']]],
   ['graphdef',['GraphDef',['../d0/da8/struct_graph_def.html',1,'']]],
   ['graynoise',['GrayNoise',['../d8/da0/struct_gray_noise.html',1,'']]],
-  ['group',['Group',['../de/d38/struct_group.html',1,'Group'],['../db/df7/classnova_1_1group.html',1,'nova::group']]],
+  ['group',['group',['../db/df7/classnova_1_1group.html',1,'nova']]],
+  ['group',['Group',['../de/d38/struct_group.html',1,'']]],
   ['gverb',['GVerb',['../df/df7/struct_g_verb.html',1,'']]]
 ];

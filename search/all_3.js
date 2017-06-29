@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['calcslope',['calcSlope',['../d0/d5b/class_s_c_unit.html#aeff8f515feed4c99d638924971f9dbb9',1,'SCUnit']]],
+  ['calcslope',['calcSlope',['../d0/d5b/class_s_c_unit.html#abbf62167c177f6fe99082da8ce41b6ef',1,'SCUnit']]],
   ['callback_5finterpreter',['callback_interpreter',['../db/d9b/classnova_1_1callback__interpreter.html',1,'nova']]],
   ['callback_5finterpreter_3c_20callback_5ftype_2c_20true_2c_20callback_5fdeleter_20_3e',['callback_interpreter&lt; callback_type, true, callback_deleter &gt;',['../db/d9b/classnova_1_1callback__interpreter.html',1,'nova']]],
   ['callback_5finterpreter_3c_20nova_3a_3asystem_5fcallback_2c_20false_20_3e',['callback_interpreter&lt; nova::system_callback, false &gt;',['../db/d9b/classnova_1_1callback__interpreter.html',1,'nova']]],
@@ -39,8 +39,8 @@ var searchData=
   ['complex',['Complex',['../d1/df8/structdetail_1_1_complex.html',1,'detail']]],
   ['complexft',['ComplexFT',['../d8/daf/struct_complex_f_t.html',1,'']]],
   ['connection',['Connection',['../d6/d3b/struct_qc_graph_model_1_1_connection.html',1,'QcGraphModel']]],
-  ['controldur',['controlDur',['../d0/d5b/class_s_c_unit.html#ac8a264ef3e9a3b7d57da1c7c27a6ba2d',1,'SCUnit']]],
-  ['controlrate',['controlRate',['../d0/d5b/class_s_c_unit.html#ae6d70823719c6bb36d1e9ea1802b9654',1,'SCUnit']]],
+  ['controldur',['controlDur',['../d0/d5b/class_s_c_unit.html#a401c373a900533c603519c4ab4245b12',1,'SCUnit']]],
+  ['controlrate',['controlRate',['../d0/d5b/class_s_c_unit.html#a9a0630ace6f4565cd5937f4b97b49932',1,'SCUnit']]],
   ['controlrateinput',['ControlRateInput',['../d2/d1a/struct_s_i_m_d___unit_1_1_control_rate_input.html',1,'SIMD_Unit']]],
   ['convolution',['Convolution',['../dd/da1/struct_convolution.html',1,'']]],
   ['convolution2',['Convolution2',['../d9/d87/struct_convolution2.html',1,'']]],

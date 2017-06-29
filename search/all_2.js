@@ -38,7 +38,7 @@ var searchData=
   ['buffeedbackdelay',['BufFeedbackDelay',['../d2/ddd/struct_buf_feedback_delay.html',1,'']]],
   ['buffer_5fmanager',['buffer_manager',['../db/dd7/classnova_1_1buffer__manager.html',1,'nova']]],
   ['buffer_5fwrapper',['buffer_wrapper',['../d1/db4/structnova_1_1buffer__wrapper.html',1,'nova']]],
-  ['buffersize',['bufferSize',['../d0/d5b/class_s_c_unit.html#a44fdf378786e08be071116fc1231cfda',1,'SCUnit']]],
+  ['buffersize',['bufferSize',['../d0/d5b/class_s_c_unit.html#a98384b8a165e2dd4465b925c386d95be',1,'SCUnit']]],
   ['buffreecmd',['BufFreeCmd',['../da/dc5/class_buf_free_cmd.html',1,'']]],
   ['bufgen',['BufGen',['../d6/d7c/struct_buf_gen.html',1,'']]],
   ['bufgencmd',['BufGenCmd',['../d9/df8/class_buf_gen_cmd.html',1,'']]],

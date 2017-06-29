@@ -5,7 +5,8 @@ var searchData=
   ['named_5fhash_5fhash',['named_hash_hash',['../d9/dd4/structnova_1_1named__hash__hash.html',1,'nova']]],
   ['network_5fthread',['network_thread',['../d9/dcf/classnova_1_1detail_1_1network__thread.html',1,'nova::detail']]],
   ['node',['Node',['../db/d8b/struct_node.html',1,'']]],
-  ['node_5fgraph',['node_graph',['../d9/d30/classnova_1_1node__graph.html',1,'nova::node_graph'],['../d9/d30/classnova_1_1node__graph.html#a257a85325571fa4548da5f843952fca8',1,'nova::node_graph::node_graph()']]],
+  ['node_5fgraph',['node_graph',['../d9/d30/classnova_1_1node__graph.html#a257a85325571fa4548da5f843952fca8',1,'nova::node_graph']]],
+  ['node_5fgraph',['node_graph',['../d9/d30/classnova_1_1node__graph.html',1,'nova']]],
   ['nodedef',['NodeDef',['../dc/d2f/struct_node_def.html',1,'']]],
   ['nodeendmsg',['NodeEndMsg',['../d3/dc7/struct_node_end_msg.html',1,'']]],
   ['nodereplymsg',['NodeReplyMsg',['../d8/dfc/struct_node_reply_msg.html',1,'']]],
@@ -19,8 +20,9 @@ var searchData=
   ['notification_5fnode_5fstarted',['notification_node_started',['../d8/dc4/classnova_1_1detail_1_1sc__notify__observers.html#acd464793242b1bc4fcc37b208477d021',1,'nova::detail::sc_notify_observers']]],
   ['notifycmd',['NotifyCmd',['../d3/d62/class_notify_cmd.html',1,'']]],
   ['nova_5fendpoint',['nova_endpoint',['../d9/dac/structnova_1_1detail_1_1nova__endpoint.html',1,'nova::detail']]],
-  ['nova_5fserver',['nova_server',['../d1/da1/classnova_1_1nova__server.html',1,'nova::nova_server'],['../d1/da1/classnova_1_1nova__server.html#a340e8671903926065e1d3b4138b7601f',1,'nova::nova_server::nova_server()']]],
+  ['nova_5fserver',['nova_server',['../d1/da1/classnova_1_1nova__server.html',1,'nova']]],
+  ['nova_5fserver',['nova_server',['../d1/da1/classnova_1_1nova__server.html#a340e8671903926065e1d3b4138b7601f',1,'nova::nova_server']]],
   ['nrand',['NRand',['../db/db6/struct_n_rand.html',1,'']]],
-  ['numinputs',['numInputs',['../d0/d5b/class_s_c_unit.html#ad7173bcd57582e654c426ed895a36172',1,'SCUnit']]],
-  ['numoutputs',['numOutputs',['../d0/d5b/class_s_c_unit.html#aeae367007a311eada94b8ec59307bbaf',1,'SCUnit']]]
+  ['numinputs',['numInputs',['../d0/d5b/class_s_c_unit.html#aca6a4fb7e3ef65ed91cc1bbf409c0f52',1,'SCUnit']]],
+  ['numoutputs',['numOutputs',['../d0/d5b/class_s_c_unit.html#a57d71eb4ae6f8d61e91304cd7fc60448',1,'SCUnit']]]
 ];

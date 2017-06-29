@@ -28,6 +28,7 @@ var searchData=
   ['graph',['Graph',['../d4/dd4/struct_graph.html',1,'']]],
   ['graphdef',['GraphDef',['../d0/da8/struct_graph_def.html',1,'']]],
   ['graynoise',['GrayNoise',['../d8/da0/struct_gray_noise.html',1,'']]],
-  ['group',['Group',['../de/d38/struct_group.html',1,'Group'],['../db/df7/classnova_1_1group.html',1,'nova::group']]],
+  ['group',['group',['../db/df7/classnova_1_1group.html',1,'nova']]],
+  ['group',['Group',['../de/d38/struct_group.html',1,'']]],
   ['gverb',['GVerb',['../df/df7/struct_g_verb.html',1,'']]]
 ];
