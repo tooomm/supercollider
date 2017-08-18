@@ -2,25 +2,25 @@ compiler:
  - gcc
 
 matrix:
-  fast_finish: true
+  fast_finish: true # stop all other builds as soon as one fails
   include:
-    - os: linux
+    - os: linux # Ubuntu 14.04
       sudo: required
       dist: trusty
       env: QT=true
-      group: edge
-    - os: linux
+      group: edge # can be removed now
+    - os: linux # Ubuntu 14.04
       sudo: required
       dist: trusty
       env: QT=false
-      group: edge
-    - os: osx
+      group: edge # can be removed now
+    - os: osx # OS X 10.11
       osx_image: xcode7.3
       env: QT=true
 
 cache:
- - apt
- - bundler
+ - apt # ? does this do anything?
+ - bundler # ? is this necessary? no ruby in this repo it seems
 
 before_install:
  - $TRAVIS_BUILD_DIR/.travis/before-install-$TRAVIS_OS_NAME.sh --qt=$QT
