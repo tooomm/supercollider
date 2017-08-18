@@ -2,6 +2,7 @@ language: cpp
 
 compiler:
  - gcc
+ - clang
 
 matrix:
   fast_finish: true # stop all other builds as soon as one fails
