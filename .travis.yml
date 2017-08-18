@@ -31,7 +31,7 @@ before_script:
  - if [[ $QT == true ]]; then export QT_PLUGIN_PATH=$QT_PREFIX/plugins; fi
 
  - $TRAVIS_BUILD_DIR/.travis/before-script-$TRAVIS_OS_NAME.sh --qt=$QT
-# prep for testing
+# prep for testing by installing Scott Carver's qpm (quarks package manager)
  - if [[ $QT == true ]]; then $TRAVIS_BUILD_DIR/.travis/qpm-prep.sh; fi
 
 script:
@@ -77,6 +77,7 @@ deploy:
      condition: $TRAVIS_OS_NAME = osx && ! -z $GITHUB_KEY
      tags: true
      all_branches: true
+
 after-deploy:
  - "echo S3 Build Location: $S3_URL"
 
