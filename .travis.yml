@@ -78,7 +78,7 @@ deploy:
      tags: true
      all_branches: true
 
-after-deploy:
+after_deploy:
  - "echo S3 Build Location: $S3_URL"
 
 
