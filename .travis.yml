@@ -1,5 +1,4 @@
-compiler:
- - gcc
+language: cpp
 
 matrix:
   fast_finish: true # stop all other builds as soon as one fails
@@ -19,8 +18,7 @@ matrix:
       env: QT=true
 
 cache:
- - apt # ? does this do anything?
- - bundler # ? is this necessary? no ruby in this repo it seems
+ - ccache
 
 before_install:
  - $TRAVIS_BUILD_DIR/.travis/before-install-$TRAVIS_OS_NAME.sh --qt=$QT
