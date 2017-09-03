@@ -34,7 +34,7 @@ before_script:
 # start xvfb so sclang runs properly.
 # see https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
  - "export QT_PLATFORM_PLUGIN=offscreen"
- - "export DISPLAY=:99:0"
+ - "export DISPLAY=:99.0"
 
 script:
  - $TRAVIS_BUILD_DIR/.travis/script-$TRAVIS_OS_NAME.sh
