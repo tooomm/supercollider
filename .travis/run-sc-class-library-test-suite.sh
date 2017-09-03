@@ -6,6 +6,9 @@
 
 if "$SCLANG" -i none "$TRAVIS_BUILD_DIR/.travis/configureTestEnvironment.scd"
 then
+	echo "Configuration complete. Attempting to run unit tests now."
+	sleep 3
+	echo "Path: $TRAVIS_BUILD_DIR/.travis/runAllUnitTests.scd"
 	"$SCLANG" -i none "$TRAVIS_BUILD_DIR/.travis/runAllUnitTests.scd"
 	exit $?
 else

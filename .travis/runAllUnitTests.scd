@@ -11,7 +11,10 @@
  * exits with a result of 1 (indicating failure).
  */
 
+"Script started".postln;
+
 r {
+	"In Routine".postln;
 	try {
 		UnitTest.runAll;
 		UnitTest.failures.size.exit;
@@ -20,3 +23,5 @@ r {
 		1.exit;
 	}
 }.play(AppClock)
+
+"Routine played".postln;
