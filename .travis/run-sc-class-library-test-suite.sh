@@ -7,7 +7,7 @@
 if "$SCLANG" -i none "$TRAVIS_BUILD_DIR/.travis/configureTestEnvironment.scd"
 then
 	echo "Configuration complete. Attempting to run unit tests now."
-	SCLANG_CONF="$TRAVIS_BUILD_DIR/.travis.sclang_conf.yaml"
+	SCLANG_CONF="$TRAVIS_BUILD_DIR/.travis/sclang_conf.yaml"
 	echo "sclang configuration: "
 	cat "$SCLANG_CONF"
 	sleep 3
