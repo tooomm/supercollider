@@ -4,9 +4,10 @@
 # Tests in testsuite/classlibrary/server are ignored,
 # as are tests for the UnitTesting Quark itself.
 
-if $SCLANG "$TRAVIS_BUILD_DIR/.travis/configureTestEnvironment.scd"
+if "$SCLANG" "$TRAVIS_BUILD_DIR/.travis/configureTestEnvironment.scd"
 then
-	exit `$SCLANG $TRAVIS_BUILD_DIR/.travis/runAllUnitTests.scd`
+	"$SCLANG" "$TRAVIS_BUILD_DIR/.travis/runAllUnitTests.scd"
+	exit $?
 else
 	echo "Error while configuring test environment."
 	exit 1
