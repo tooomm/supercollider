@@ -31,6 +31,12 @@ before_script:
  - mkdir BUILD && cd BUILD
  - $TRAVIS_BUILD_DIR/.travis/before-script-$TRAVIS_OS_NAME.sh --qt=$QT
 
+# start xvfb so sclang runs properly.
+# see https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
+ - "export QT_PLATFORM_PLUGIN=offscreen"
+ - "export DISPLAY=:99:0"
+ - "sh -e /etc/init.d/xvfb start"
+
 script:
  - $TRAVIS_BUILD_DIR/.travis/script-$TRAVIS_OS_NAME.sh
  - $TRAVIS_BUILD_DIR/.travis/test.sh
