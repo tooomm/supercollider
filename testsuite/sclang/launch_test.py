@@ -31,6 +31,8 @@ sclang_path = sys.argv[1]
 assert os.path.exists(sclang_path)
 
 env = dict(os.environ)
+print env['QT_PLATFORM_PLUGIN']
+print env['DISPLAY']
 
 proc = subprocess.Popen([sclang_path, '-i' 'python'],
 	stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE,
