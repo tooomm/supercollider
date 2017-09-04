@@ -14,7 +14,13 @@ try {
 	LanguageConfig.addExcludePath(~travisBuildDir +/+ "testsuite/classlibrary/server");
 	LanguageConfig.addExcludePath(Quarks.folder +/+ "UnitTesting/tests");
 	LanguageConfig.store(~travisBuildDir +/+ ".travis/sclang_conf.yaml");
-	0.exit;
+
+	// wait 2 seconds to exit; this avoids a race condition of unknown cause that
+	// sometimes causes sclang to abort with "terminate called without an active exception"
+	r {
+		2.wait;
+		0.exit;
+	}.play;
 } { |e|
 	e.reportError;
 	1.exit;
