@@ -14,6 +14,7 @@ try {
 	LanguageConfig.addIncludePath(~travisBuildDir +/+ "testsuite/classlibrary");
 	LanguageConfig.addExcludePath(~travisBuildDir +/+ "testsuite/classlibrary/server");
 	LanguageConfig.addExcludePath(Quarks.folder +/+ "UnitTesting/tests");
+	postf("Writing configuration to %\n", ~sclangConf);
 	LanguageConfig.store(~sclangConf);
 	0.exit;
 } { |e|
