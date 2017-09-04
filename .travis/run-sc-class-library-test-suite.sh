@@ -5,7 +5,7 @@
 # as are tests for the UnitTesting Quark itself.
 
 echo "Attempting to configure test environment."
-SCLANG_CONF="$TRAVIS_BUILD_DIR/.travis/sclang_conf.yaml"
+export SCLANG_CONF="$TRAVIS_BUILD_DIR/.travis/sclang_conf.yaml"
 "$SCLANG" -i none "$TRAVIS_BUILD_DIR/.travis/configureTestEnvironment.scd"
 sleep 1
 if [[ -e "$SCLANG_CONF" ]]
