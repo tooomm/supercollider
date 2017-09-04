@@ -6,7 +6,10 @@ matrix:
     - os: linux
       sudo: required
       dist: trusty
-      env: QT=true
+      env:
+        - QT=true
+        - QT_PLATFORM_PLUGIN=offscreen
+        - DISPLAY=:99.0
       group: edge
     - os: linux
       sudo: required
@@ -32,8 +35,6 @@ before_script:
 # setup environment variables for xvfb / Qt
 # see https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
 # xvfb is started in before-script-linux.sh if QT == true
- - export QT_PLATFORM_PLUGIN=offscreen
- - export DISPLAY=:99.0
  - $TRAVIS_BUILD_DIR/.travis/before-script-$TRAVIS_OS_NAME.sh --qt=$QT
 
 script:
