@@ -28,14 +28,14 @@ cache:
  - ccache
 
 before_install:
- - $TRAVIS_BUILD_DIR/.travis/before-install-$TRAVIS_OS_NAME.sh --qt=$QT
+ - $TRAVIS_BUILD_DIR/.travis/before-install-$TRAVIS_OS_NAME.sh
 
 before_script:
  - mkdir BUILD && cd BUILD
 # setup environment variables for xvfb / Qt
 # see https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-xvfb-to-Run-Tests-That-Require-a-GUI
 # xvfb is started in before-script-linux.sh if QT == true
- - $TRAVIS_BUILD_DIR/.travis/before-script-$TRAVIS_OS_NAME.sh --qt=$QT
+ - $TRAVIS_BUILD_DIR/.travis/before-script-$TRAVIS_OS_NAME.sh
 
 script:
  - $TRAVIS_BUILD_DIR/.travis/script-$TRAVIS_OS_NAME.sh
