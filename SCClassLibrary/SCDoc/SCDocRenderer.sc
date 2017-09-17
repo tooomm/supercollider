@@ -942,8 +942,14 @@ SCDocHTMLRenderer {
 			<< doc.fullPath << "</a><br>"
 		};
 		stream << "link::" << doc.path << "::<br>"
-		<< "</div>"
-		<< "</div></body></html>";
+		<< "</div>";
+
+		// Add a link to edit on GitHub if possible.
+		if(doc.isExtension.not) {
+			stream << this.prGitHubLink(doc.path, doc.isUndocumentedClass);
+		};
+
+		stream << "</div></body></html>";
 	}
 
 	*renderOnStream {|stream, doc, root|
@@ -988,5 +994,29 @@ SCDocHTMLRenderer {
 		} {
 			warn("SCDoc: Could not open file % for writing".format(filename));
 		}
+	}
+
+	*prGitHubLink { |docPath, isUndocumented|
+		var url = this.prGitHubLinkURL(docPath, isUndocumented);
+		var message = if(isUndocumented) {
+			"Create this file on GitHub"
+		} {
+			"Edit this file on GitHub"
+		};
+		var divTag = "<div class='githubedit'>%</div>";
+		var aTag = "<a href=\"%\" target=\"_blank\">%</a>";
+		aTag = aTag.format(url, message);
+		^divTag.format(aTag);
+	}
+
+	*prGitHubLinkURL { |docPath, isUndocumented|
+		var urlFormat = "https://github.com/supercollider/supercollider/%/develop/HelpSource/%";
+		var mode = if(isUndocumented) { "new" } { "edit" };
+		var pathExtension = if(isUndocumented) {
+			docPath.split($/).drop(-1).join("/")
+		} {
+			docPath ++ ".schelp";
+		};
+		^urlFormat.format(mode, pathExtension);
 	}
 }
