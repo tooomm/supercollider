@@ -43,6 +43,10 @@ WebView::WebView( QWidget *parent ) :
 {
   QtCollider::WebPage *page = new WebPage(this);
   page->setDelegateReload(true);
+
+  // Make page open external links in desktop browser.
+  page->setUsingDesktopBrowser(true);
+
   setPage( page );
 
   // Set the style's standard palette to avoid system's palette incoherencies
