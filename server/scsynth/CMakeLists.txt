@@ -54,37 +54,37 @@ set(scsynth_sources
 	SC_World.cpp
 	Rendezvous.cpp
 
-	${CMAKE_SOURCE_DIR}/common/SC_Filesystem_macos.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_Filesystem_win.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_Filesystem_unix.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_Filesystem_iphone.cpp
+	"${CMAKE_SOURCE_DIR}/common/SC_Filesystem_macos.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_Filesystem_win.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_Filesystem_unix.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_Filesystem_iphone.cpp"
 
-	${CMAKE_SOURCE_DIR}/common/SC_fftlib.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_AllocPool.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_Errors.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_Reply.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_StringBuffer.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_StringParser.cpp
-	${CMAKE_SOURCE_DIR}/common/Samp.cpp
-	${CMAKE_SOURCE_DIR}/common/sc_popen.cpp
+	"${CMAKE_SOURCE_DIR}/common/SC_fftlib.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_AllocPool.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_Errors.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_Reply.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_StringBuffer.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_StringParser.cpp"
+	"${CMAKE_SOURCE_DIR}/common/Samp.cpp"
+	"${CMAKE_SOURCE_DIR}/common/sc_popen.cpp"
 
 	${boost_system_sources}
 	${boost_filesystem_sources}
 )
 
 if(APPLE)
-	set_property(SOURCE ${CMAKE_SOURCE_DIR}/common/SC_Filesystem_macos.cpp PROPERTY COMPILE_FLAGS -xobjective-c++)
+	set_property(SOURCE "${CMAKE_SOURCE_DIR}/common/SC_Filesystem_macos.cpp" PROPERTY COMPILE_FLAGS -xobjective-c++)
 
 	list(APPEND scsynth_sources
-		${CMAKE_SOURCE_DIR}/common/SC_Apple.mm
+		"${CMAKE_SOURCE_DIR}/common/SC_Apple.mm"
 	)
-	set_source_files_properties( ${CMAKE_SOURCE_DIR}/common/SC_Apple.mm
+	set_source_files_properties( "${CMAKE_SOURCE_DIR}/common/SC_Apple.mm"
 	    PROPERTIES COMPILE_FLAGS "-x objective-c++ -fobjc-exceptions"
 	)
 endif()
 
 if(WIN32)
-	list(APPEND scsynth_sources ${CMAKE_SOURCE_DIR}/common/SC_Win32Utils.cpp)
+	list(APPEND scsynth_sources "${CMAKE_SOURCE_DIR}/common/SC_Win32Utils.cpp")
 endif()
 
 if (FFT_GREEN)
@@ -92,23 +92,23 @@ if (FFT_GREEN)
 endif()
 
 
-include_directories(${CMAKE_SOURCE_DIR}/include/common
-                    ${CMAKE_SOURCE_DIR}/common
-                    ${CMAKE_SOURCE_DIR}/include/server
-                    ${CMAKE_SOURCE_DIR}/include/plugin_interface
+include_directories("${CMAKE_SOURCE_DIR}/include/common"
+                    "${CMAKE_SOURCE_DIR}/common"
+                    "${CMAKE_SOURCE_DIR}/include/server"
+                    "${CMAKE_SOURCE_DIR}/include/plugin_interface"
                     .
 )
 
-include_directories (${CMAKE_SOURCE_DIR}/external_libraries/boost_sync/include)
+include_directories ("${CMAKE_SOURCE_DIR}/external_libraries/boost_sync/include")
 
 if (AUDIOAPI STREQUAL jack)
 	list(APPEND scsynth_sources SC_Jack.cpp)
 	add_definitions("-DSC_AUDIO_API=SC_AUDIO_API_JACK" ${JACK_DEFINITIONS})
-	include_directories(${JACK_INCLUDE_DIRS})
+	include_directories("${JACK_INCLUDE_DIRS}")
 elseif (AUDIOAPI STREQUAL portaudio)
 	list(APPEND scsynth_sources SC_PortAudio.cpp)
 	add_definitions("-DSC_AUDIO_API=SC_AUDIO_API_PORTAUDIO" ${PORTAUDIO_DEFINITIONS})
-	include_directories(${PORTAUDIO_INCLUDE_DIRS})
+	include_directories("${PORTAUDIO_INCLUDE_DIRS}")
 endif()
 
 set (FINAL_BUILD 0) # disable final build for scsynth
@@ -140,7 +140,7 @@ target_link_libraries(libscsynth tlsf)
 
 find_library(DL NAMES dl)
 if(DL)
-    target_link_libraries(libscsynth ${DL})
+    target_link_libraries(libscsynth "${DL}")
 endif()
 
 if(NOVA_SIMD)
@@ -148,8 +148,8 @@ if(NOVA_SIMD)
 endif()
 
 if(SNDFILE_FOUND)
-	target_link_libraries(libscsynth ${SNDFILE_LIBRARIES})
-	target_include_directories(libscsynth PUBLIC ${SNDFILE_INCLUDE_DIR})
+	target_link_libraries(libscsynth "${SNDFILE_LIBRARIES}")
+	target_include_directories(libscsynth PUBLIC "${SNDFILE_INCLUDE_DIR}")
 elseif(NOT NO_LIBSNDFILE)
 	message(SEND_ERROR "Cannot find libsndfile")
 endif(SNDFILE_FOUND)
@@ -166,27 +166,27 @@ if(NOT NO_AVAHI)
 		find_package(Avahi)
 		if(AVAHI_FOUND)
 			target_compile_definitions(libscsynth PUBLIC USE_RENDEZVOUS=1 HAVE_AVAHI=1)
-			target_link_libraries(libscsynth ${AVAHI_LIBRARIES})
-			target_include_directories(libscsynth PUBLIC ${AVAHI_INCLUDE_DIRS})
+			target_link_libraries(libscsynth "${AVAHI_LIBRARIES}")
+			target_include_directories(libscsynth PUBLIC "${AVAHI_INCLUDE_DIRS}")
 		endif()
 	endif()
 endif()
 
 
 if (AUDIOAPI STREQUAL jack)
-	target_link_libraries(libscsynth ${JACK_LIBRARIES})
+	target_link_libraries(libscsynth "${JACK_LIBRARIES}")
 elseif(AUDIOAPI STREQUAL portaudio)
 	if(WIN32 AND NOT MSYS)
 		target_link_libraries(libscsynth portaudio)
 	else()
-		target_link_libraries(libscsynth ${PORTAUDIO_LIBRARIES})
+		target_link_libraries(libscsynth "${PORTAUDIO_LIBRARIES}")
 	endif()
 elseif(AUDIOAPI STREQUAL coreaudio)
 	target_link_libraries(libscsynth "-framework CoreAudio")
 endif()
 
 if (Boost_FOUND)
-	target_link_libraries(libscsynth ${Boost_SYSTEM_LIBRARY} ${Boost_FILESYSTEM_LIBRARY} )
+	target_link_libraries(libscsynth "${Boost_SYSTEM_LIBRARY}" "${Boost_FILESYSTEM_LIBRARY}" )
 else()
 	target_link_libraries(libscsynth boost_system boost_filesystem)
 endif()
@@ -206,8 +206,8 @@ if (LIBSCSYNTH)
 endif()
 
 if (FFTW3F_FOUND)
-	target_include_directories(libscsynth PUBLIC ${FFTW3F_INCLUDE_DIR})
-	target_link_libraries(libscsynth ${FFTW3F_LIBRARY})
+	target_include_directories(libscsynth PUBLIC "${FFTW3F_INCLUDE_DIR}")
+	target_link_libraries(libscsynth "${FFTW3F_LIBRARY}")
 endif()
 
 if (APPLE)
@@ -222,7 +222,7 @@ add_executable(scsynth scsynth_main.cpp)
 target_link_libraries(scsynth libscsynth)
 
 if (PTHREADS_FOUND)
-    target_link_libraries(scsynth ${PTHREADS_LIBRARIES})
+    target_link_libraries(scsynth "${PTHREADS_LIBRARIES}")
 endif()
 
 if(LTO)
