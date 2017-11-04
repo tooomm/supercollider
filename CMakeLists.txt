@@ -25,12 +25,12 @@ else()
 	endif()
 endif()
 
-if (${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
+if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
 	message(WARNING "WARNING: IN-PLACE BUILDS ARE NOT RECOMMENDED - PLEASE USE A BUILD DIRECTORY")
 endif()
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules
-                      ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules"
+                      "${CMAKE_MODULE_PATH}")
 
 CONFIGURE_FILE(
   "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules/cmake_uninstall.cmake.in"
@@ -177,7 +177,7 @@ if (AUDIOAPI STREQUAL jack)
 	CHECK_INCLUDE_FILES("jack/metadata.h" JACK_USE_METADATA_API)
 	if(${JACK_USE_METADATA_API})
 		message(STATUS "using JACK metadata API")
-	    include_directories(${CMAKE_SOURCE_DIR}/external_libraries/jackey)
+	    include_directories("${CMAKE_SOURCE_DIR}/external_libraries/jackey")
 	endif()
 endif()
 
@@ -251,7 +251,7 @@ if (NOT WIN32)
     if (NOT PTHREADS_FOUND)
         message(SEND_ERROR "cannot find libpthreads")
     endif()
-    include_directories(${PTHREADS_INCLUDE_DIR})
+    include_directories("${PTHREADS_INCLUDE_DIR}")
 endif()
 
 if(SYSTEM_BOOST)
@@ -260,7 +260,7 @@ if(SYSTEM_BOOST)
 endif()
 
 if (Boost_FOUND)
-	link_directories(${Boost_LIBRARY_DIRS})
+	link_directories("${Boost_LIBRARY_DIRS}")
 else()
 	message(STATUS "building boost libraries manually")
 endif()
@@ -396,7 +396,7 @@ file(GLOB_RECURSE Examples     examples/*)
 
 if(APPLE)
   include(cmake_modules/MacAppFolder.cmake)
-  set(ide_name ${scappbundlename})
+  set(ide_name "${scappbundlename}")
 else()
   set(ide_name scide)
 endif()
@@ -408,18 +408,18 @@ add_subdirectory(editors)
 
 if(UNIX AND NOT APPLE)
     install(DIRECTORY include/common include/plugin_interface include/server include/lang
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/include/SuperCollider
+        DESTINATION "${CMAKE_INSTALL_PREFIX}/include/SuperCollider"
 	FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp"
     )
     install(FILES SCVersion.txt
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/include/SuperCollider
+        DESTINATION "${CMAKE_INSTALL_PREFIX}/include/SuperCollider"
     )
 endif()
 
 if (WIN32)
   set(auxresourcesdir "${SC_WIN_BUNDLE_NAME}" CACHE STRING "Resources directory")
 elseif(APPLE)
-	set(auxresourcesdir ${scappbundlename} CACHE STRING "Resources directory")
+	set(auxresourcesdir "${scappbundlename}" CACHE STRING "Resources directory")
 else()
 	set(auxresourcesdir "share/SuperCollider" CACHE STRING "Resources directory")
 endif()
@@ -460,7 +460,7 @@ if(APPLE)
 	endif()
 else()
 	install(DIRECTORY SCClassLibrary
-		DESTINATION ${auxresourcesdir}
+		DESTINATION "${auxresourcesdir}"
 		REGEX ${SCCLASSLIB_EXCLUDE_REGEX} EXCLUDE
 		PATTERN "*~" EXCLUDE
 		PATTERN "*#" EXCLUDE
@@ -468,10 +468,10 @@ else()
 endif()
 
 if(NOT APPLE)
-	install(DIRECTORY sounds   DESTINATION ${auxresourcesdir})
-	install(DIRECTORY examples DESTINATION ${auxresourcesdir})
+	install(DIRECTORY sounds   DESTINATION "${auxresourcesdir}")
+	install(DIRECTORY examples DESTINATION "${auxresourcesdir}")
 elseif(APPLE)
-	install(DIRECTORY examples DESTINATION ${auxresourcesdir})
+	install(DIRECTORY examples DESTINATION "${auxresourcesdir}")
 endif()
 
 if (WIN32)
@@ -500,7 +500,7 @@ else()
 	)
 endif()
 
-install(FILES ${AdditionalInstallFiles} DESTINATION ${auxresourcesdir})
+install(FILES ${AdditionalInstallFiles} DESTINATION "${auxresourcesdir}")
 
 if(INSTALL_HELP)
 	if(SC_SYMLINK_CLASSLIB AND APPLE)
@@ -512,7 +512,7 @@ if(INSTALL_HELP)
 					"EXECUTE_PROCESS(COMMAND ln -shF ${CMAKE_CURRENT_SOURCE_DIR}/HelpSource ${CMAKE_INSTALL_PREFIX}/${auxresourcesdir}/HelpSource )" )
 	elseif(NOT APPLE)
 		install(DIRECTORY HelpSource
-			DESTINATION ${auxresourcesdir}
+			DESTINATION "${auxresourcesdir}"
 			REGEX ${SCCLASSLIB_EXCLUDE_REGEX} EXCLUDE
 			PATTERN "*~" EXCLUDE
 			PATTERN "*#" EXCLUDE
@@ -539,7 +539,7 @@ foreach(arg ${BUILD_CLASSLIBRARIES})
 	set(BUILD_CLASSLIBRARYPATH "${BUILD_CLASSLIBRARYPATH}+${arg}\n")
 endforeach()
 
-configure_file(build_sclang.cfg.in ${CMAKE_CURRENT_BINARY_DIR}/build_sclang.cfg)
+configure_file(build_sclang.cfg.in "${CMAKE_CURRENT_BINARY_DIR}/build_sclang.cfg")
 
 if(SC_DOC_RENDER)
 	file(GLOB_RECURSE SCDocSources RELATIVE HelpSource .*[^~])
@@ -547,9 +547,10 @@ if(SC_DOC_RENDER)
 
 	add_custom_target(doc ALL
 		COMMAND $<TARGET_FILE_DIR:sclang>/sclang${CMAKE_EXECUTABLE_SUFFIX}
-			-l ${CMAKE_CURRENT_BINARY_DIR}/build_sclang.cfg
-			platform/renderAllHelp.scd ${CMAKE_CURRENT_SOURCE_DIR}/HelpSource ${CMAKE_CURRENT_BINARY_DIR}/RenderedHelp
-		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+			-l "${CMAKE_CURRENT_BINARY_DIR}/build_sclang.cfg"
+			platform/renderAllHelp.scd "${CMAKE_CURRENT_SOURCE_DIR}/HelpSource"
+            "${CMAKE_CURRENT_BINARY_DIR}/RenderedHelp"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 		DEPENDS sclang ${SCDocSources} ${SCDocClasses})
 
 endif()
