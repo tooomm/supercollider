@@ -30,7 +30,7 @@ if (CMAKE_SYSTEM_NAME MATCHES "Linux")
 endif()
 
 add_library(boost_test STATIC boost_test.cpp)
-target_include_directories(boost_test PUBLIC ${CMAKE_SOURCE_DIR}/external_libraries/boost)
+target_include_directories(boost_test PUBLIC "${CMAKE_SOURCE_DIR}/external_libraries/boost")
 
 # run simple tests
 foreach(test ${simple_tests})
@@ -39,5 +39,5 @@ foreach(test ${simple_tests})
 
   target_link_libraries(${test_name} libsupernova boost_test boost_thread)
 
-  add_test(${test_name}_run ${EXECUTABLE_OUTPUT_PATH}/${test_name})
+  add_test(${test_name}_run "${EXECUTABLE_OUTPUT_PATH}/${test_name}")
 endforeach(test)
