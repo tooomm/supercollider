@@ -4,20 +4,20 @@ cmake_minimum_required(VERSION 2.8.11)
 SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
 SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
-include_directories(${CMAKE_SOURCE_DIR}/include/common
-                    ${CMAKE_SOURCE_DIR}/include/lang
-                    ${CMAKE_SOURCE_DIR}/include/plugin_interface
-                    ${CMAKE_SOURCE_DIR}/include/server
-                    ${CMAKE_SOURCE_DIR}/common
+include_directories("${CMAKE_SOURCE_DIR}/include/common"
+                    "${CMAKE_SOURCE_DIR}/include/lang"
+                    "${CMAKE_SOURCE_DIR}/include/plugin_interface"
+                    "${CMAKE_SOURCE_DIR}/include/server"
+                    "${CMAKE_SOURCE_DIR}/common"
 
-                    ${YAMLCPP_INCLUDE_DIR}
+                    "${YAMLCPP_INCLUDE_DIR}"
 
-                    ${CMAKE_SOURCE_DIR}/external_libraries/boost_sync/include
+                    "${CMAKE_SOURCE_DIR}/external_libraries/boost_sync/include"
 
                     LangSource
                     LangPrimSource
 
-                    ${CMAKE_SOURCE_DIR}/external_libraries/nova-tt
+                    "${CMAKE_SOURCE_DIR}/external_libraries/nova-tt"
                     LangSource/Bison
 )
 
@@ -31,7 +31,7 @@ find_package(Readline 5.0)
 find_package(Sndfile)
 
 if (SC_QT OR SC_IDE)
-	set(LOCALSOCK_UTIL_FILE ${CMAKE_SOURCE_DIR}/editors/sc-ide/primitives/localsocket_utils.cpp)
+	set(LOCALSOCK_UTIL_FILE "${CMAKE_SOURCE_DIR}/editors/sc-ide/primitives/localsocket_utils.cpp")
 else ()
 	set(LOCALSOCK_UTIL_FILE)
 endif ()
@@ -75,28 +75,28 @@ set(sclang_sources
 	LangSource/VMGlobals.cpp
 	LangSource/dumpByteCodes.cpp
 
-	${CMAKE_SOURCE_DIR}/common/SC_Filesystem_macos.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_Filesystem_win.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_Filesystem_unix.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_Filesystem_iphone.cpp
+	"${CMAKE_SOURCE_DIR}/common/SC_Filesystem_macos.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_Filesystem_win.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_Filesystem_unix.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_Filesystem_iphone.cpp"
 
-	${CMAKE_SOURCE_DIR}/common/fftlib.c
-	${CMAKE_SOURCE_DIR}/common/Samp.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_AllocPool.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_Reply.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_StringBuffer.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_StringParser.cpp
-	${CMAKE_SOURCE_DIR}/common/SC_TextUtils.cpp
-	${LOCALSOCK_UTIL_FILE}
+	"${CMAKE_SOURCE_DIR}/common/fftlib.c"
+	"${CMAKE_SOURCE_DIR}/common/Samp.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_AllocPool.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_Reply.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_StringBuffer.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_StringParser.cpp"
+	"${CMAKE_SOURCE_DIR}/common/SC_TextUtils.cpp"
+	"${LOCALSOCK_UTIL_FILE}"
 
-	${CMAKE_SOURCE_DIR}/common/sc_popen.cpp
+	"${CMAKE_SOURCE_DIR}/common/sc_popen.cpp"
 )
 
 if(APPLE)
-	set_property(SOURCE ${CMAKE_SOURCE_DIR}/common/SC_Filesystem_macos.cpp PROPERTY COMPILE_FLAGS -xobjective-c++)
+	set_property(SOURCE "${CMAKE_SOURCE_DIR}/common/SC_Filesystem_macos.cpp" PROPERTY COMPILE_FLAGS -xobjective-c++)
 
-	list(APPEND sclang_sources ${CMAKE_SOURCE_DIR}/common/SC_Apple.mm)
-	set_source_files_properties(${CMAKE_SOURCE_DIR}/common/SC_Apple.mm PROPERTIES COMPILE_FLAGS "-x objective-c++ -fobjc-exceptions")
+	list(APPEND sclang_sources "${CMAKE_SOURCE_DIR}/common/SC_Apple.mm")
+	set_source_files_properties("${CMAKE_SOURCE_DIR}/common/SC_Apple.mm" PROPERTIES COMPILE_FLAGS "-x objective-c++ -fobjc-exceptions")
 endif()
 
 if (NOT Boost_FOUND)
@@ -136,7 +136,7 @@ if(UNIX)
 endif(UNIX)
 
 if(WIN32)
-        list(APPEND sclang_sources ${CMAKE_SOURCE_DIR}/common/SC_Win32Utils.cpp)
+        list(APPEND sclang_sources "${CMAKE_SOURCE_DIR}/common/SC_Win32Utils.cpp")
 	include_directories (../platform/windows/compat_stuff)
         if(NOT MINGW)
                 # mingw-w64 provides getopt
@@ -149,7 +149,7 @@ endif()
 
 # This sets up the exe icon for windows.
 if(WIN32)
- set(RES_FILES ${CMAKE_SOURCE_DIR}/platform/windows/Resources/sclang.rc)
+ set(RES_FILES "${CMAKE_SOURCE_DIR}/platform/windows/Resources/sclang.rc")
  set(CMAKE_RC_COMPILER_INIT windres)
  ENABLE_LANGUAGE(RC)
  SET(CMAKE_RC_COMPILE_OBJECT
@@ -159,8 +159,8 @@ endif(WIN32)
 if(SC_HIDAPI)
     list(APPEND sclang_sources LangPrimSource/SC_HID_api.cpp)
     include_directories(
-        ${CMAKE_SOURCE_DIR}/external_libraries/hidapi/hidapi
-        ${CMAKE_SOURCE_DIR}/external_libraries/hidapi/hidapi_parser
+        "${CMAKE_SOURCE_DIR}/external_libraries/hidapi/hidapi"
+        "${CMAKE_SOURCE_DIR}/external_libraries/hidapi/hidapi_parser"
     )
     add_definitions(-DSC_HIDAPI)
 endif(SC_HIDAPI)
@@ -214,8 +214,8 @@ target_link_libraries(libsclang tlsf ${PTHREADS_LIBRARIES})
 if(SC_IDE OR SC_QT)
 	find_package(Qt5Core)
 	get_target_property(QtCore_location Qt5::Core LOCATION)
-	message(STATUS "Found Qt: " ${QtCore_location} )
-  get_filename_component(QT_BIN_PATH ${QtCore_location} DIRECTORY CACHE)
+	message(STATUS "Found Qt: " "${QtCore_location}" )
+  get_filename_component(QT_BIN_PATH "${QtCore_location}" DIRECTORY CACHE)
 
 	target_link_libraries(libsclang ${QT_COLLIDER_LIBS})
 endif()
@@ -229,7 +229,7 @@ if(SC_HIDAPI)
   target_compile_definitions(libsclang PRIVATE HAVE_HIDAPI)
   target_link_libraries( libsclang hidapi hidapi_parser )
 
-  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" AND HID_HIDRAW)
+  if("${CMAKE_SYSTEM_NAME}" MATCHES "Linux" AND HID_HIDRAW)
     target_link_libraries( libsclang ${UDEV_LIBRARIES})
   endif()
   if(HID_LIBUSB)
@@ -250,9 +250,10 @@ endif()
 
 if (Boost_FOUND)
 	target_include_directories(libsclang PUBLIC ${Boost_INCLUDE_DIRS})
-	target_link_libraries(libsclang ${Boost_THREAD_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${Boost_REGEX_LIBRARY} ${Boost_FILESYSTEM_LIBRARY})
+	target_link_libraries(libsclang "${Boost_THREAD_LIBRARY}" "${Boost_SYSTEM_LIBRARY}"
+        "${Boost_REGEX_LIBRARY}" "${Boost_FILESYSTEM_LIBRARY}")
 else()
-	target_include_directories(libsclang PUBLIC ${CMAKE_SOURCE_DIR}/external_libraries/boost)
+	target_include_directories(libsclang PUBLIC "${CMAKE_SOURCE_DIR}/external_libraries/boost")
 	target_link_libraries(libsclang boost_thread)
 endif()
 
@@ -272,8 +273,8 @@ endif()
 if(READLINE_FOUND)
 	message(STATUS "Compiling with Readline support")
 	target_compile_definitions(libsclang PUBLIC HAVE_READLINE)
-	target_include_directories(libsclang PUBLIC ${READLINE_INCLUDE_DIR})
-	target_link_libraries(libsclang ${READLINE_LIBRARY})
+	target_include_directories(libsclang PUBLIC "${READLINE_INCLUDE_DIR}")
+	target_link_libraries(libsclang "${READLINE_LIBRARY}")
 endif(READLINE_FOUND)
 mark_as_advanced(READLINE_INCLUDE_DIR READLINE_LIBRARY)
 
@@ -289,19 +290,19 @@ endif()
 if(ALSA_FOUND)
 	message(STATUS "Compiling with ALSA midi support")
 	target_compile_definitions(libsclang PUBLIC HAVE_ALSA=1)
-	target_link_libraries(libsclang ${ALSA_LIBRARY})
+	target_link_libraries(libsclang "${ALSA_LIBRARY}")
 endif(ALSA_FOUND)
 
 if(SNDFILE_FOUND)
-	target_include_directories(libsclang PUBLIC ${SNDFILE_INCLUDE_DIR})
-	target_link_libraries(libsclang ${SNDFILE_LIBRARIES})
+	target_include_directories(libsclang PUBLIC "${SNDFILE_INCLUDE_DIR}")
+	target_link_libraries(libsclang "${SNDFILE_LIBRARIES}")
 elseif(NOT NO_LIBSNDFILE)
 	message(SEND_ERROR "Cannot find libsndfile")
 endif(SNDFILE_FOUND)
 
 if (FFTW3F_FOUND)
-	target_include_directories (libsclang ${FFTW3F_INCLUDE_DIR})
-	target_link_libraries(libsclang ${FFTW3F_LIBRARY})
+	target_include_directories (libsclang "${FFTW3F_INCLUDE_DIR}")
+	target_link_libraries(libsclang "${FFTW3F_LIBRARY}")
 endif()
 
 if (WIN32 AND SC_HIDAPI)
@@ -318,11 +319,11 @@ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
 	target_link_libraries(libsclang rt)
 endif()
 
-target_link_libraries(libsclang ${YAMLCPP_LIBRARY})
+target_link_libraries(libsclang "${YAMLCPP_LIBRARY}")
 
 add_executable(sclang LangSource/cmdLineFuncs.cpp ${RES_FILES})
 target_link_libraries(sclang libsclang)
-target_link_libraries(sclang ${ICU_LIBRARIES})
+target_link_libraries(sclang "${ICU_LIBRARIES}")
 
 target_compile_definitions(sclang PUBLIC USE_SC_TERMINAL_CLIENT)
 
@@ -373,9 +374,9 @@ elseif(WIN32)
       else()
         add_custom_command(TARGET sclang
           POST_BUILD
-          COMMAND cmd /C ${CMAKE_SOURCE_DIR}/platform/windows/junctions.bat remove \"$<TARGET_FILE_DIR:sclang>\"
+          COMMAND cmd /C \"${CMAKE_SOURCE_DIR}/platform/windows/junctions.bat\" remove \"$<TARGET_FILE_DIR:sclang>\"
           COMMAND ${CMAKE_COMMAND} -E copy_directory $<TARGET_FILE_DIR:sclang> $<TARGET_FILE_DIR:SuperCollider>
-          COMMAND cmd /C ${CMAKE_SOURCE_DIR}/platform/windows/junctions.bat create \"$<TARGET_FILE_DIR:sclang>\" \"${CMAKE_SOURCE_DIR}\"
+          COMMAND cmd /C \"${CMAKE_SOURCE_DIR}/platform/windows/junctions.bat\" create \"$<TARGET_FILE_DIR:sclang>\" \"${CMAKE_SOURCE_DIR}\"
           COMMENT "Copying files in target sclang to target SuperCollider (scide) and creating links to SCClassLibrary e.a."
         )
       endif()
@@ -396,11 +397,11 @@ elseif(WIN32)
         endif()
 
         foreach(plugin ${Qt5Network_PLUGINS} ${Qt5Gui_PLUGINS} ${Qt5Sensors_PLUGINS} ${Qt5Sql_PLUGINS} ${Qt5PrintSupport_PLUGINS})
-            get_target_property(_loc ${plugin} LOCATION)
-            get_filename_component(_parent_dir ${_loc} DIRECTORY)
-            get_filename_component(_name_we ${_loc} NAME_WE)
-            get_filename_component(_abs ${QT_PLUGINS_DIR} ABSOLUTE)
-            string(REPLACE "${_abs}/" "" _dest_dir ${_parent_dir})
+            get_target_property(_loc "${plugin}" LOCATION)
+            get_filename_component(_parent_dir "${_loc}" DIRECTORY)
+            get_filename_component(_name_we "${_loc}" NAME_WE)
+            get_filename_component(_abs "${QT_PLUGINS_DIR}" ABSOLUTE)
+            string(REPLACE "${_abs}/" "" _dest_dir "${_parent_dir}")
             install(FILES "${_parent_dir}/${_name_we}$<$<CONFIG:DEBUG>:d>.dll"
                 DESTINATION "${CMAKE_INSTALL_PREFIX}/${SC_WIN_BUNDLE_NAME}/${_dest_dir}"
             )
