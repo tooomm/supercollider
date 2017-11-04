@@ -10,8 +10,6 @@ include_directories("${CMAKE_SOURCE_DIR}/include/common"
                     "${CMAKE_SOURCE_DIR}/include/server"
                     "${CMAKE_SOURCE_DIR}/common"
 
-                    "${YAMLCPP_INCLUDE_DIR}"
-
                     "${CMAKE_SOURCE_DIR}/external_libraries/boost_sync/include"
 
                     LangSource
@@ -21,6 +19,10 @@ include_directories("${CMAKE_SOURCE_DIR}/include/common"
                     LangSource/Bison
 )
 
+# This is sometimes empty
+if("${YAMLCPP_INCLUDE_DIR}")
+    include_directories("${YAMLCPP_INCLUDE_DIR}")
+endif()
 
 if(CMAKE_SYSTEM_NAME MATCHES "Linux")
 	find_package(ALSA)
