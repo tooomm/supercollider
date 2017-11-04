@@ -1,5 +1,5 @@
 file(GLOB scel_sources
-	 RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.sc)
+	 RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" *.sc)
 
 
 install(FILES ${scel_sources}

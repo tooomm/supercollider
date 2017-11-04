@@ -28,7 +28,7 @@ elseif(NOT WIN32 AND SC_ED EQUAL 3)
     install(FILES data/supercollider.lang
             DESTINATION share/gtksourceview-3.0/language-specs)
 
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/sced3/supercollider.plugin sced3/supercollider.py
+    install(FILES "${CMAKE_CURRENT_BINARY_DIR}/sced3/supercollider.plugin" sced3/supercollider.py
             DESTINATION lib${LIB_SUFFIX}/gedit/plugins)
 
 elseif(WIN32)
