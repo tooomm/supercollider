@@ -1,4 +1,4 @@
-if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/nova-simd/vec.hpp)
+if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/nova-simd/vec.hpp")
 	message(FATAL_ERROR "nova-simd submodule is missing: please run `git submodule init && git submodule update' from the toplevel of your git working tree")
 endif()
 
@@ -41,7 +41,7 @@ if(NOT Boost_FOUND) # we compile boost ourselves
 	target_compile_definitions(boost_thread PUBLIC BOOST_THREAD_USE_LIB) # for win32
 
 	if(PTHREADS_FOUND)
-		target_include_directories(boost_thread PUBLIC ${PTHREADS_INCLUDE_DIR})
+		target_include_directories(boost_thread PUBLIC "${PTHREADS_INCLUDE_DIR}")
 	endif()
 	if(WIN32)
 		target_compile_definitions( boost_thread PRIVATE BOOST_THREAD_BUILD_LIB)
@@ -89,11 +89,11 @@ if(NOT YAMLCPP_FOUND)
   message(STATUS "using bundled libyaml-cpp")
 
   # yaml-cpp
-  aux_source_directory(${CMAKE_SOURCE_DIR}/external_libraries/yaml-cpp/src yaml_src)
-  CREATE_FINAL_FILE(${CMAKE_CURRENT_BINARY_DIR}/libyamlcpp.cpp ${yaml_src})
+  aux_source_directory("${CMAKE_SOURCE_DIR}/external_libraries/yaml-cpp/src" yaml_src)
+  CREATE_FINAL_FILE("${CMAKE_CURRENT_BINARY_DIR}/libyamlcpp.cpp" ${yaml_src})
 
-  add_library(yaml STATIC EXCLUDE_FROM_ALL ${CMAKE_CURRENT_BINARY_DIR}/libyamlcpp.cpp)
-  target_include_directories(yaml PUBLIC ${CMAKE_SOURCE_DIR}/external_libraries/yaml-cpp/include boost)
+  add_library(yaml STATIC EXCLUDE_FROM_ALL "${CMAKE_CURRENT_BINARY_DIR}/libyamlcpp.cpp")
+  target_include_directories(yaml PUBLIC "${CMAKE_SOURCE_DIR}/external_libraries/yaml-cpp/include" boost)
   set_property( TARGET yaml PROPERTY FOLDER 3rdparty )
 
   if(CMAKE_COMPILER_IS_GNUCXX)
