@@ -5,9 +5,9 @@ else()
 endif()
 
 include_directories(
-	${CMAKE_SOURCE_DIR}/include/common
-	${CMAKE_SOURCE_DIR}/common
-	${CMAKE_SOURCE_DIR}/include/plugin_interface
+	"${CMAKE_SOURCE_DIR}/include/common"
+	"${CMAKE_SOURCE_DIR}/common"
+	"${CMAKE_SOURCE_DIR}/include/plugin_interface"
 )
 
 # large file support
@@ -64,8 +64,8 @@ if (${CMAKE_COMPILER_IS_GNUCXX})
 endif()
 
 foreach(plugin ${plugin_sources})
-	string(REPLACE .cpp "" plugin_name ${plugin} )
-		add_library(${plugin_name} MODULE ${plugin})
+	string(REPLACE .cpp "" plugin_name "${plugin}" )
+		add_library(${plugin_name} MODULE "${plugin}")
 	list(APPEND plugins ${plugin_name})
 endforeach(plugin)
 
@@ -74,7 +74,7 @@ if (APPLE)
 	add_library(UIUGens MODULE UIUGens.mm)
 else()
 	add_library(UIUGens MODULE UIUGens.cpp)
-	target_link_libraries(UIUGens ${PTHREADS_LIBRARY})
+	target_link_libraries(UIUGens "${PTHREADS_LIBRARY}")
 endif()
 
 set(uiugens UIUGens)
@@ -127,8 +127,8 @@ if(NOT NO_LIBSNDFILE)
 	add_library(DiskIO_UGens MODULE ${diskio_sources})
 
 	if(SNDFILE_FOUND)
-		target_include_directories(DiskIO_UGens PUBLIC ${SNDFILE_INCLUDE_DIR})
-		target_link_libraries(DiskIO_UGens ${PTHREADS_LIBRARY} ${SNDFILE_LIBRARIES})
+		target_include_directories(DiskIO_UGens PUBLIC "${SNDFILE_INCLUDE_DIR}")
+		target_link_libraries(DiskIO_UGens "${PTHREADS_LIBRARY}" "${SNDFILE_LIBRARIES}")
 		list(APPEND plugins DiskIO_UGens)
 	else()
 		message(SEND_ERROR "Cannot find libsndfile")
@@ -139,13 +139,13 @@ set(fft_ugens FFT_UGens PV_ThirdParty ML_UGens)
 list(APPEND plugins FFT_UGens PV_ThirdParty ML_UGens)
 
 if (FFTW3F_FOUND)
-	include_directories (${FFTW3F_INCLUDE_DIR})
+	include_directories ("${FFTW3F_INCLUDE_DIR}")
 endif()
 
 if (SUPERNOVA)
 	foreach(plugin ${plugin_sources})
-		string(REPLACE .cpp "_supernova" plugin_name ${plugin} )
-		add_library(${plugin_name} MODULE ${plugin})
+		string(REPLACE .cpp "_supernova" plugin_name "${plugin}" )
+		add_library(${plugin_name} MODULE "${plugin}")
 		list(APPEND supernova_plugins ${plugin_name})
 	endforeach(plugin)
 
@@ -185,7 +185,7 @@ if (SUPERNOVA)
 		add_library(UIUGens_supernova MODULE UIUGens.mm)
 	else()
 		add_library(UIUGens_supernova MODULE UIUGens.cpp)
-		target_link_libraries(UIUGens_supernova ${PTHREADS_LIBRARY})
+		target_link_libraries(UIUGens_supernova "${PTHREADS_LIBRARY}")
 	endif()
 	list(APPEND uiugens UIUGens_supernova)
 
@@ -193,8 +193,9 @@ if (SUPERNOVA)
 		add_library(DiskIO_UGens_supernova MODULE DiskIO_UGens.cpp)
 
 		if(SNDFILE_FOUND)
-			target_include_directories(DiskIO_UGens_supernova PUBLIC ${SNDFILE_INCLUDE_DIR})
-			target_link_libraries(DiskIO_UGens_supernova ${SNDFILE_LIBRARIES} ${PTHREADS_LIBRARY} ${MATH_LIBRARY} ${Boost_THREAD_LIBRARY})
+			target_include_directories(DiskIO_UGens_supernova PUBLIC "${SNDFILE_INCLUDE_DIR}")
+			target_link_libraries(DiskIO_UGens_supernova "${SNDFILE_LIBRARIES}"
+                "${PTHREADS_LIBRARY}" "${MATH_LIBRARY}" "${Boost_THREAD_LIBRARY}")
 			list(APPEND supernova_plugins DiskIO_UGens_supernova)
 		else()
 			message(SEND_ERROR "Cannot find libsndfile")
@@ -203,7 +204,7 @@ if (SUPERNOVA)
 endif(SUPERNOVA)
 
 foreach(ugen ${fft_ugens})
-	target_link_libraries(${ugen} ${PTHREADS_LIBRARY} ${MATH_LIBRARY})
+	target_link_libraries(${ugen} "${PTHREADS_LIBRARY}" "${MATH_LIBRARY}")
 
 	if(APPLE)
 		target_link_libraries(${ugen} "-framework Accelerate")
@@ -211,7 +212,7 @@ foreach(ugen ${fft_ugens})
 endforeach()
 
 foreach(ugen ${uiugens})
-	target_link_libraries(${ugen} ${Boost_THREAD_LIBRARY})
+	target_link_libraries(${ugen} "${Boost_THREAD_LIBRARY}")
 endforeach()
 
 foreach(plugin ${plugins})
@@ -223,7 +224,8 @@ endforeach()
 
 if(NOVA_SIMD)
 	foreach(plugin ${plugins} ${supernova_plugins})
-		target_include_directories(${plugin} PUBLIC ${CMAKE_SOURCE_DIR}/external_libraries/nova-simd)
+		target_include_directories(${plugin} PUBLIC
+            "${CMAKE_SOURCE_DIR}/external_libraries/nova-simd")
 		target_compile_definitions(${plugin} PUBLIC NOVA_SIMD)
 	endforeach()
 endif()
@@ -243,10 +245,10 @@ if (CMAKE_SYSTEM_NAME MATCHES "Linux|FreeBSD|DragonFly|OpenBSD|NetBSD")
 		message(FATAL_ERROR "libxt not found")
 	endif()
 
-	include_directories(${X11_Xt_INCLUDE_PATH})
+	include_directories("${X11_Xt_INCLUDE_PATH}")
 
 	foreach (ugen ${uiugens})
-		target_link_libraries(${ugen} ${X11_X11_LIB})
+		target_link_libraries(${ugen} "${X11_X11_LIB}")
 	endforeach()
 elseif (APPLE)
 	foreach (ugen ${uiugens})
