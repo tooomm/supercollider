@@ -133,7 +133,7 @@ ServerStatusWatcher {
 
 		^Routine {
 			while {
-				serverRunning.not
+				server.isFullyBooted.not
 				/*
 				// this is not yet implemented.
 				or: { serverBooting and: mBootNotifyFirst.not }
@@ -144,7 +144,8 @@ ServerStatusWatcher {
 			} {
 				0.2.wait;
 			};
-			if(serverRunning.not, {
+
+			if(server.isFullyBooted.not, {
 				if(onFailure.notNil) {
 					postError = (onFailure.value(server) == false);
 				};
