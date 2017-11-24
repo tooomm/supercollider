@@ -1,6 +1,6 @@
 #!/bin/sh
 
-brew update
+export HOMEBREW_NO_AUTO_UPDATE=1
 brew tap homebrew/versions
 brew outdated cmake || brew upgrade cmake
 
