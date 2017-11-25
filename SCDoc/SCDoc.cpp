@@ -22,6 +22,8 @@
 #include <stdio.h>
 #include <string.h>
 
+absolute failure
+
 #ifdef _WIN32
 #    include "SC_Codecvt.hpp" // utf8_cstr_to_utf16_wstring
 #endif // _WIN32
