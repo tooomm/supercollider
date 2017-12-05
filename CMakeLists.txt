@@ -1,3 +1,8 @@
+# Check if the user actually cloned submodules. Trips up some first-time contributors.
+if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/external_libraries/nova-simd/vec.hpp)
+    message(FATAL_ERROR "The nova-simd submodule is missing. This probably means you forgot to clone submodules. To fix this, run `git submodule update --init` from the root folder of this repository")
+endif()
+
 project (SuperCollider)
 
 if (CMAKE_SYSTEM_NAME MATCHES "Linux")
